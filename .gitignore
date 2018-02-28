@@ -1,4 +1,7 @@
 coverage/
 node_modules/
+.nuxt/
+lib/
+.tmp/
 npm-debug.log
 .DS_Store

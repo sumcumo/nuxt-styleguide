@@ -1,0 +1,12 @@
+{
+  "name": "nuxt-styleguide-demo",
+  "version": "0.0.0-development",
+  "private": true,
+  "scripts": {
+    "start": "nuxt"
+  },
+  "devDependencies": {
+    "nuxt-styleguide": "0.0.0-development",
+    "nuxt": "1.3.0"
+  }
+}

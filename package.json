@@ -1,9 +1,15 @@
 {
-  "name": "nuxt-styleguide",
+  "name": "nuxt-styleguide-workspaces",
   "version": "0.0.0-development",
   "description": "styleguide and pattern library support for your nuxt application",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "demo",
+    "packages/*"
+  ],
   "scripts": {
+    "start": "cd demo && npm start",
+    "lint": "eslint .",
     "test": "jest"
   },
   "repository": {
@@ -23,11 +29,12 @@
   },
   "homepage": "https://github.com/sumcumo/nuxt-styleguide#readme",
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.1",
     "eslint": "4.18.1",
-    "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-prettier": "2.9.0",
-    "eslint-plugin-import": "2.9.0",
     "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-vue": "4.3.0",
     "prettier": "1.11.0"
   }
 }
