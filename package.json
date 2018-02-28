@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-styleguide",
+  "version": "0.0.0-development",
+  "description": "styleguide and pattern library support for your nuxt application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sumcumo/nuxt-styleguide.git"
+  },
+  "keywords": [
+    "styleguide",
+    "pattern-library",
+    "nuxt",
+    "component-library"
+  ],
+  "author": "sum.cumo GmbH, Hannes Diercks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sumcumo/nuxt-styleguide/issues"
+  },
+  "homepage": "https://github.com/sumcumo/nuxt-styleguide#readme",
+  "devDependencies": {
+    "eslint": "4.18.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "prettier": "1.11.0"
+  }
+}
