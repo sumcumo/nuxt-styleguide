@@ -2,11 +2,11 @@ import extendVueLoaders from './extendVueLoaders';
 import extendRoutes from './extendRoutes';
 import normalizeExtends from './normalizeExtends';
 import buildProxyComponents from './buildProxyComponents';
+import getPages from './getPages';
 import * as path from 'path';
 
 export default function NuxtStyleguide(moduleOptions) {
   const pkg = require(path.resolve(this.options.rootDir, 'package.json'));
-
   const options = {
     ...this.options,
     ...pkg,
@@ -15,6 +15,10 @@ export default function NuxtStyleguide(moduleOptions) {
     ...moduleOptions,
     extends: normalizeExtends(moduleOptions.extends),
   };
+  const pagesDir = path.join(
+    path.dirname(require.resolve(path.join(options.renderer, 'component.vue'))),
+    'pages'
+  );
 
   extendVueLoaders(this.nuxt);
 
@@ -33,19 +37,29 @@ export default function NuxtStyleguide(moduleOptions) {
 
   let builder = null;
   let components = null;
+  let pages = null;
   this.nuxt.hook('build:done', (b) => {
     builder = b;
   });
 
   this.nuxt.hook('build:extendRoutes', (routes) => {
-    return extendRoutes(options, routes, components);
+    return extendRoutes(options, routes, components, pagesDir, pages);
   });
 
-  return buildProxyComponents(options, this.nuxt, (c) => {
-    components = c;
+  return Promise.all([
+    buildProxyComponents(options, this.nuxt, (c) => {
+      components = c;
 
-    if (builder) {
-      builder.generateRoutesAndFiles();
-    }
-  });
+      if (builder) {
+        builder.generateRoutesAndFiles();
+      }
+    }),
+    getPages(options, pagesDir, (p) => {
+      pages = p;
+
+      if (builder) {
+        builder.generateRoutesAndFiles();
+      }
+    }),
+  ]);
 }

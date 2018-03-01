@@ -5,6 +5,7 @@ import chokidar from 'chokidar';
 import _template from 'lodash.template';
 import { parse } from 'vue-docgen-api';
 import chalk from 'chalk';
+import Deferred from './Deferred';
 
 const styleguideSrcDir = path.resolve(__dirname, '..', 'src');
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
@@ -36,15 +37,6 @@ function getRelPath(srcDir, extend) {
     }
 
     return path.resolve(extend);
-  }
-}
-
-class Deferred {
-  constructor() {
-    this.promise = new Promise((resolve, reject) => {
-      this.resolve = resolve;
-      this.reject = reject;
-    });
   }
 }
 
