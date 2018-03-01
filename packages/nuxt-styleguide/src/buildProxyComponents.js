@@ -49,13 +49,9 @@ class Deferred {
 }
 
 function getInfo(file, relPath, log) {
-  const originalLog = console.log;
-  console.log = () => {};
   try {
     return parse(file);
-    console.log = originalLog;
   } catch (e) {
-    console.log = originalLog;
     if (log) {
       if (e.message.indexOf('SyntaxError: unknown: Unexpected token') === 0) {
         console.warn(
