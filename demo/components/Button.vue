@@ -4,11 +4,11 @@
   </button>
 </template>
 
-<styleguide-doc lang="md">
+<styleguide-doc>
 # Hello From Styleguide Doc
 </styleguide-doc>
 
-<styleguide-states lang="json">
+<styleguide-states>
 [{
   "title": "Default Button",
   "props": {},
