@@ -1,6 +1,5 @@
 import extendVueLoaders from './extendVueLoaders';
-import extendRouter from './extendRouter';
-import getComponents from './getComponents';
+import extendRoutes from './extendRoutes';
 import normalizeExtends from './normalizeExtends';
 import buildProxyComponents from './buildProxyComponents';
 
@@ -15,11 +14,21 @@ export default function NuxtStyleguide(moduleOptions) {
 
   extendVueLoaders(this.nuxt);
 
-  return getComponents(options)
-    .then((components) => {
-      return buildProxyComponents(options, components);
-    })
-    .then((proxyComponents) => {
-      return extendRouter(options, proxyComponents);
-    });
+  let builder = null;
+  let components = null;
+  this.nuxt.hook('build:done', (b) => {
+    builder = b;
+  });
+
+  this.nuxt.hook('build:extendRoutes', (routes) => {
+    return extendRouter(options, routes, components);
+  });
+
+  return buildProxyComponents(options, this.nuxt, (c) => {
+    components = c;
+
+    if (builder) {
+      builder.generateRoutesAndFiles();
+    }
+  });
 }
