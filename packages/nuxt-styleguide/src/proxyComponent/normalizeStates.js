@@ -1,36 +1,40 @@
-function getDefault(type) {
+function getDefault(type, name) {
   switch (type) {
-    case String:
-      return 'Hello World';
-    case Number:
-      return 42;
-    case Boolean:
-      return true;
-    case Function:
-      return () => {};
-    case Object:
-      return {};
-    case Array:
-      return [];
-    case Symbol:
-      return Symbol('Hello World');
+    case 'string':
+      return `prop: ${name}`;
+    case 'number':
+      return name.length;
+    case 'boolean':
+      return name.length % 2 == 0;
+    case 'func':
+      return () => {
+        console.log(`hello from prop: ${name}`);
+      };
+    case 'object':
+      return { [name]: true };
+    case 'array':
+      return [name];
+    case 'symbol':
+      return Symbol(`prop: ${name}`);
   }
 }
 
-export default function normalizeStates(states, props) {
+export default function normalizeStates(states, props, slots) {
   if (!states || !states.length) {
     function defaultProps(props) {
-      if (!props || Array.isArray(props)) {
+      if (!props) {
         return {};
       }
 
       return Object.keys(props).reduce((memo, propName) => {
         const def = props[propName];
 
-        if (def.default) {
-          memo[propName] = def.default;
+        if (def.defaultValue) {
+          memo[propName] = def.defaultValue.func
+            ? def.defaultValue.value()
+            : def.defaultValue.value;
         } else if (def.type && def.required) {
-          memo[propName] = getDefault(def.type);
+          memo[propName] = getDefault(def.type.name, propName);
         }
 
         return memo;
@@ -41,7 +45,11 @@ export default function normalizeStates(states, props) {
       {
         title: 'Default',
         props: defaultProps(props),
-        slots: { default: 'Hello World' },
+        slots: Object.keys(slots).reduce((memo, name) => {
+          memo[name] = `slot: ${name}`;
+
+          return memo;
+        }, {}),
       },
     ];
   }

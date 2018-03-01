@@ -1,5 +1,6 @@
 <template>
   <button :class="$style.button" @click="(e) => this.$emit('click', e)">
+    <!-- @slot Content of the button -->
     <slot />
   </button>
 </template>
@@ -13,6 +14,12 @@
   "content": "Hello World"
 }]
 </styleguide-states>
+
+<script>
+export default {
+  name: 'Button',
+}
+</script>
 
 <style lang="scss" module>
 .button {

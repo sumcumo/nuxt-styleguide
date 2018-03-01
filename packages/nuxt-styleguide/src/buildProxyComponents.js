@@ -3,6 +3,8 @@ import * as path from 'path';
 import osTmpdir from 'os-tmpdir';
 import chokidar from 'chokidar';
 import _template from 'lodash.template';
+import { parse } from 'vue-docgen-api';
+import chalk from 'chalk';
 
 const styleguideSrcDir = path.resolve(__dirname, '..', 'src');
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
@@ -43,6 +45,36 @@ class Deferred {
       this.resolve = resolve;
       this.reject = reject;
     });
+  }
+}
+
+function getInfo(file, relPath, log) {
+  const originalLog = console.log;
+  console.log = () => {};
+  try {
+    return parse(file);
+    console.log = originalLog;
+  } catch (e) {
+    console.log = originalLog;
+    if (log) {
+      if (e.message.indexOf('SyntaxError: unknown: Unexpected token') === 0) {
+        console.warn(
+          `${chalk.dim('  nuxt:styleguide')} ${chalk.yellow(
+            'WARNING'
+          )}(${chalk.dim(
+            relPath
+          )}):\n    Could not generate docs. Ensure <script> tag is present.`
+        );
+      } else {
+        console.warn(
+          `${chalk.dim('  nuxt:styleguide')} ${chalk.yellow(
+            'WARNING'
+          )}(${chalk.dim(relPath)}):\n    ${e.message}`
+        );
+      }
+    }
+
+    return {};
   }
 }
 
@@ -139,13 +171,15 @@ export default function buildProxyComponents(options, nuxt, updated) {
       .then((template) => {
         Promise.all(
           Object.keys(sourceFiles).map((name) => {
-            const { relPath, proxyPath, upToDate } = sourceFiles[name];
+            const { relPath, proxyPath, upToDate, file } = sourceFiles[name];
 
             if (upToDate) {
               return Promise.resolve();
             }
 
             return new Promise((resolve, reject) => {
+              const componentInfo = getInfo(file, relPath, options.dev);
+
               const content = template({
                 rendererPath: require.resolve(
                   path.join(options.renderer, 'component.vue')
@@ -155,6 +189,7 @@ export default function buildProxyComponents(options, nuxt, updated) {
                   'proxyComponent',
                   'normalizeStates.js'
                 ),
+                componentInfo: JSON.stringify(componentInfo),
                 buildId: i++,
                 name,
                 relPath,

@@ -5,16 +5,18 @@ import normalizeStates from '<%= normalizeStatesPath %>';
 
 const styleguide = Comp.__styleguide || {};
 const cacheBust = '<%= buildId %>';
+const componentInfo = <%= componentInfo %>;
 
 export default Vue.component('nuxt-styleguide-<%= name %>', {
   render: function(createElement) {
     return createElement(Renderer, {
       props: {
+        ...componentInfo,
         Comp,
         name: '<%= name %>',
         importPath: '<%= relPath %>',
-        states: normalizeStates(styleguide.states, Comp.props),
-        docs: styleguide.docs,
+        states: normalizeStates(styleguide.states, componentInfo.props, componentInfo.slots),
+        description: styleguide.docs || componentInfo.description,
       },
     });
   },
