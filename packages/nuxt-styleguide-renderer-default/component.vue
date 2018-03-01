@@ -4,7 +4,7 @@
   <code><pre>import {{name}} from '{{importPath}}';</pre></code>
   <div v-if="docs" v-html="docs" />
   <h3>Demo:</h3>
-  <div v-if="states" v-for="(state) in states">
+  <div v-for="(state) in states">
     <h3>{{state.title}}</h3>
     <component v-bind:is="Comp" v-bind="state.props">
         <span v-for="(slot, name) in state.slots" v-bind:slot="name" key="name">
