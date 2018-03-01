@@ -21,7 +21,7 @@ export default function NuxtStyleguide(moduleOptions) {
   });
 
   this.nuxt.hook('build:extendRoutes', (routes) => {
-    return extendRouter(options, routes, components);
+    return extendRoutes(options, routes, components);
   });
 
   return buildProxyComponents(options, this.nuxt, (c) => {
