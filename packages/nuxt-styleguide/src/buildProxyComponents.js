@@ -135,78 +135,80 @@ export default function buildProxyComponents(options, nuxt, updated) {
         }
 
         return new Promise((resolve, reject) => {
-          fs.writeFile(
-            proxyPath,
-            `
-              import Vue from 'vue';
-              import Comp from '${relPath}';
-              import Renderer from '${require.resolve(
-                path.join(options.renderer, 'component.vue')
-              )}';
-              const styleguide = Comp.__styleguide || {};
-              const cacheBust = ${i++};
+          const content = `
+          import Vue from 'vue';
+          import Comp from '${relPath}';
+          import Renderer from '${require.resolve(
+            path.join(options.renderer, 'component.vue')
+          )}';
+          const styleguide = Comp.__styleguide || {};
+          const cacheBust = ${i++};
 
-              function getDefault(type) {
-                switch(type) {
-                  case String:
-                    return 'Hello World';
-                  case Number:
-                    return 42
-                  case Boolean:
-                    return true;
-                  case Function:
-                    return () => {};
-                  case Object:
-                    return {};
-                  case Array:
-                    return [];
-                  case Symbol:
-                    return Symbol('Hello World');
-                }
-              }
-
-              if (!styleguide.states || !styleguide.states.length) {
-                function defaultProps(props) {
-                  if (!props || Array.isArray(props)) {
-                    return {};
-                  }
-
-                  return Object.keys(Comp.props).reduce((memo, propName) => {
-                    const def = Comp.props[propName];
-
-                    if (def.default) {
-                      memo[propName] = def.default;
-                    } else if (def.type && def.required) {
-                      memo[propName] = getDefault(def.type);
-                    }
-
-                    return memo;
-                  }, {});
-                }
-
-                styleguide.states = [{
-                  title: 'Default',
-                  props: defaultProps(Comp.props),
-                  slots: { default: 'Hello World' }
-                }]
-              }
-
-              export default Vue.component('nuxt-styleguide-${name}', {
-                render: function(createElement) {
-                  return createElement(Renderer, { props: {
-                    Comp,
-                    name: '${name}',
-                    importPath: '${relPath}',
-                    states: styleguide.states,
-                    docs: styleguide.docs,
-                  } });
-                },
-              });
-              `,
-            (err) => {
-              return err ? reject(err) : resolve();
+          function getDefault(type) {
+            switch(type) {
+              case String:
+                return 'Hello World';
+              case Number:
+                return 42
+              case Boolean:
+                return true;
+              case Function:
+                return () => {};
+              case Object:
+                return {};
+              case Array:
+                return [];
+              case Symbol:
+                return Symbol('Hello World');
             }
-          );
+          }
+
+          if (!styleguide.states || !styleguide.states.length) {
+            function defaultProps(props) {
+              if (!props || Array.isArray(props)) {
+                return {};
+              }
+
+              return Object.keys(Comp.props).reduce((memo, propName) => {
+                const def = Comp.props[propName];
+
+                if (def.default) {
+                  memo[propName] = def.default;
+                } else if (def.type && def.required) {
+                  memo[propName] = getDefault(def.type);
+                }
+
+                return memo;
+              }, {});
+            }
+
+            styleguide.states = [{
+              title: 'Default',
+              props: defaultProps(Comp.props),
+              slots: { default: 'Hello World' }
+            }]
+          }
+
+          export default Vue.component('nuxt-styleguide-${name}', {
+            render: function(createElement) {
+              return createElement(Renderer, { props: {
+                Comp,
+                name: '${name}',
+                importPath: '${relPath}',
+                states: styleguide.states,
+                docs: styleguide.docs,
+              } });
+            },
+          });
+          `;
+
+          if (typeof content !== 'string') {
+            console.error(content);
+          }
+
+          fs.writeFile(proxyPath, content, (err) => {
+            return err ? reject(err) : resolve();
+          });
         }).then(() => {
           sourceFiles[name].upToDate = true;
         });
