@@ -1,5 +1,6 @@
 <template>
 <div>
+  <styleguide-nav />
   <h2>{{name}}</h2>
   <code><pre>import {{name}} from '{{importPath}}';</pre></code>
   <div v-if="docs" v-html="docs" />
@@ -17,14 +18,17 @@
 
 <script>
 
+import StyleguideNav from './nav';
+
 export default {
+  components: { StyleguideNav },
   props: {
     Comp: Object,
     name: String,
     docs: String,
     states: Array,
     importPath: String
-  }
+  },
 }
 
 </script>
