@@ -7,6 +7,7 @@ import chokidar from 'chokidar';
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
 
 const COMPONENTS_DIRNAME = 'components';
+let i = 0;
 
 function getRelPath(srcDir, extend) {
   try {
@@ -97,6 +98,15 @@ export default function buildProxyComponents(options, nuxt, updated) {
 
       update();
     })
+    .on('change', (file) => {
+      if (path.extname(file) !== '.vue') {
+        return;
+      }
+
+      files.find(({ file: f }) => f === file).upToDate = false;
+
+      update();
+    })
     .on('error', (error) => d.reject(error))
     .on('ready', () => {
       if (!options.dev) {
@@ -134,6 +144,7 @@ export default function buildProxyComponents(options, nuxt, updated) {
                 path.join(options.renderer, 'component.vue')
               )}';
               const styleguide = Comp.__styleguide || {};
+              const cacheBust = ${i++};
 
               function getDefault(type) {
                 switch(type) {
