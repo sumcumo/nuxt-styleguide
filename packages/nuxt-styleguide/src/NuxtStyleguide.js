@@ -2,10 +2,14 @@ import extendVueLoaders from './extendVueLoaders';
 import extendRoutes from './extendRoutes';
 import normalizeExtends from './normalizeExtends';
 import buildProxyComponents from './buildProxyComponents';
+import * as path from 'path';
 
 export default function NuxtStyleguide(moduleOptions) {
+  const pkg = require(path.resolve(this.options.rootDir, 'package.json'));
+
   const options = {
     ...this.options,
+    ...pkg,
     path: '/styleguide',
     renderer: 'nuxt-styleguide-renderer-default',
     ...moduleOptions,
@@ -13,6 +17,19 @@ export default function NuxtStyleguide(moduleOptions) {
   };
 
   extendVueLoaders(this.nuxt);
+
+  this.addPlugin({
+    src: path.resolve(__dirname, 'styleguideProvider.js'),
+    options: {
+      data: JSON.stringify({
+        name: options.name,
+        version: options.version,
+        description: options.description,
+        homepage: options.homepage,
+        path: options.path,
+      }),
+    },
+  });
 
   let builder = null;
   let components = null;

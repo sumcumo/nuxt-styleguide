@@ -14,7 +14,7 @@ export default function extendRouter(options, routes, components) {
   });
 
   routes.push({
-    name: 'styleguide:index',
+    name: 'styleguide:Home',
     path: options.path,
     component: require.resolve(path.join(options.renderer, 'index.vue')),
     chunkName: `styleguide/index`,
@@ -25,7 +25,7 @@ export default function extendRouter(options, routes, components) {
     const kebabName = kebabCase(name);
 
     routes.push({
-      name: `styleguide:component:${name}`,
+      name: `styleguide:Components:${name}`,
       path: urlJoin(options.path, 'components', kebabName),
       component: proxyPath,
       chunkName: `styleguide/component/${name}`,
