@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "cd demo && npm start",
+    "start": "cd demo && yarn start $1",
     "lint": "eslint .",
     "test": "jest"
   },
