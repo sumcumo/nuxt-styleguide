@@ -24,9 +24,6 @@ export default {
     docs: String,
     states: Array,
     importPath: String
-  },
-  mounted() {
-    console.log(this.Comp);
   }
 }
 
