@@ -177,7 +177,7 @@ export default function buildProxyComponents(options, nuxt, updated) {
         }
       })
       .catch((e) => {
-        process.stderr.write(e);
+        process.stderr.write(e.stack);
       });
   }
 
