@@ -9,11 +9,11 @@
     "babel-cli": "6.26.0"
   },
   "dependencies": {
-    "fast-glob": "2.1.0",
+    "chokidar": "2.0.2",
     "lodash.kebabcase": "4.1.1",
+    "lodash.template": "4.4.0",
     "marked": "0.3.17",
     "nuxt-styleguide-renderer-default": "0.0.0-development",
-    "os-tmpdir": "1.0.2",
     "url-join": "4.0.0"
   }
 }
