@@ -10,8 +10,6 @@
 
 <styleguide-states>
 [{
-  "title": "Default Button",
-  "props": {},
   "content": "Hello World"
 }]
 </styleguide-states>
