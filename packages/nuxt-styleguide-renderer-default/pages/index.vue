@@ -5,7 +5,7 @@
         <Card :style='{"--card-color": "var(--sum-green)"}'>Sketch Library</Card>
         <Card :style='{"--card-color": "var(--sum-red)"}'>Colors</Card>
         <Card :style='{"--card-color": "var(--sum-purple)"}'>Gitlab Repo</Card>
-        <Card :style='{"--card-color": "var(--sum-brown)"}'>Components</Card>
+        <Card v-bind:href="$styleguide.path + '/components'" :style='{"--card-color": "var(--sum-brown)"}'>Components</Card>
       </Grid>
       <Footer></Footer>
       <Font></Font>

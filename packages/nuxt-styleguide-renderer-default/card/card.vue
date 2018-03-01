@@ -1,13 +1,19 @@
 <template lang="html">
-  <div class="sum-card">
+  <a class="sum-card" v-bind:href="href">
     <div class="sum-card-content">
       <slot></slot>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    href: {
+      type: String
+    }
+  }
+};
 </script>
 
 <style lang="scss">
