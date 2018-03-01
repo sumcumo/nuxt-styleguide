@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import StyleguideNav from './nav';
-import Card from './card/card';
-import Grid from './grid/grid';
-import Header from './header/header';
-import Font from './fonts/fonts';
-import Footer from './footer/footer';
-import Headline from './headline/headline';
+import StyleguideNav from '../nav';
+import Card from '../card/card';
+import Grid from '../grid/grid';
+import Header from '../header/header';
+import Font from '../fonts/fonts';
+import Footer from '../footer/footer';
+import Headline from '../headline/headline';
 export default {
   components: { StyleguideNav, Card, Header, Headline, Grid, Footer, Font },
 };
