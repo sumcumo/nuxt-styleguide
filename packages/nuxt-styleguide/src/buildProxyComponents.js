@@ -2,9 +2,18 @@ import * as fs from 'fs';
 import * as path from 'path';
 import osTmpdir from 'os-tmpdir';
 import chokidar from 'chokidar';
+import _template from 'lodash.template';
 
-// const tmpDir = osTmpdir();
+const styleguideSrcDir = path.resolve(__dirname, '..', 'src');
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
+const proxyTemplatePromise = new Promise((resolve, reject) => {
+  fs.readFile(
+    path.resolve(styleguideSrcDir, 'proxyComponent', 'proxyComponent.tjs'),
+    (err, content) => {
+      return err ? reject(err) : resolve(_template(content.toString()));
+    }
+  );
+});
 
 const COMPONENTS_DIRNAME = 'components';
 let i = 0;
@@ -126,94 +135,40 @@ export default function buildProxyComponents(options, nuxt, updated) {
         return memo;
       }, {});
 
-    Promise.all(
-      Object.keys(sourceFiles).map((name) => {
-        const { relPath, proxyPath, upToDate } = sourceFiles[name];
+    proxyTemplatePromise
+      .then((template) => {
+        Promise.all(
+          Object.keys(sourceFiles).map((name) => {
+            const { relPath, proxyPath, upToDate } = sourceFiles[name];
 
-        if (upToDate) {
-          return Promise.resolve();
-        }
-
-        return new Promise((resolve, reject) => {
-          const content = `
-          import Vue from 'vue';
-          import Comp from '${relPath}';
-          import Renderer from '${require.resolve(
-            path.join(options.renderer, 'component.vue')
-          )}';
-          const styleguide = Comp.__styleguide || {};
-          const cacheBust = ${i++};
-
-          function getDefault(type) {
-            switch(type) {
-              case String:
-                return 'Hello World';
-              case Number:
-                return 42
-              case Boolean:
-                return true;
-              case Function:
-                return () => {};
-              case Object:
-                return {};
-              case Array:
-                return [];
-              case Symbol:
-                return Symbol('Hello World');
-            }
-          }
-
-          if (!styleguide.states || !styleguide.states.length) {
-            function defaultProps(props) {
-              if (!props || Array.isArray(props)) {
-                return {};
-              }
-
-              return Object.keys(Comp.props).reduce((memo, propName) => {
-                const def = Comp.props[propName];
-
-                if (def.default) {
-                  memo[propName] = def.default;
-                } else if (def.type && def.required) {
-                  memo[propName] = getDefault(def.type);
-                }
-
-                return memo;
-              }, {});
+            if (upToDate) {
+              return Promise.resolve();
             }
 
-            styleguide.states = [{
-              title: 'Default',
-              props: defaultProps(Comp.props),
-              slots: { default: 'Hello World' }
-            }]
-          }
+            return new Promise((resolve, reject) => {
+              const content = template({
+                rendererPath: require.resolve(
+                  path.join(options.renderer, 'component.vue')
+                ),
+                normalizeStatesPath: path.resolve(
+                  styleguideSrcDir,
+                  'proxyComponent',
+                  'normalizeStates.js'
+                ),
+                buildId: i++,
+                name,
+                relPath,
+              });
 
-          export default Vue.component('nuxt-styleguide-${name}', {
-            render: function(createElement) {
-              return createElement(Renderer, { props: {
-                Comp,
-                name: '${name}',
-                importPath: '${relPath}',
-                states: styleguide.states,
-                docs: styleguide.docs,
-              } });
-            },
-          });
-          `;
-
-          if (typeof content !== 'string') {
-            console.error(content);
-          }
-
-          fs.writeFile(proxyPath, content, (err) => {
-            return err ? reject(err) : resolve();
-          });
-        }).then(() => {
-          sourceFiles[name].upToDate = true;
-        });
+              fs.writeFile(proxyPath, content, (err) => {
+                return err ? reject(err) : resolve();
+              });
+            }).then(() => {
+              sourceFiles[name].upToDate = true;
+            });
+          })
+        );
       })
-    )
       .then(() => {
         updated(sourceFiles);
         if (!ready) {

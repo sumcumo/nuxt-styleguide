@@ -1,0 +1,21 @@
+import Vue from 'vue';
+import Comp from '${relPath}';
+import Renderer from '<%= rendererPath %>';
+import normalizeStates from '<%= normalizeStatesPath %>';
+
+const styleguide = Comp.__styleguide || {};
+const cacheBust = '<%= buildId %>';
+
+export default Vue.component('nuxt-styleguide-<%= name %>', {
+  render: function(createElement) {
+    return createElement(Renderer, {
+      props: {
+        Comp,
+        name: '<%= name %>',
+        importPath: '<%= relPath %>',
+        states: normalizeStates(styleguide.states, Comp.props),
+        docs: styleguide.docs,
+      },
+    });
+  },
+});
