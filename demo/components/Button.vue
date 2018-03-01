@@ -16,7 +16,7 @@
 }]
 </styleguide-states>
 
-<style lang="scss">
+<style lang="scss" module>
 .button {
   font-family: 'Cabin Sketch', cursive;
   border: 5px solid transparent;
