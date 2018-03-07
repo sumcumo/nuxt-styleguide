@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",
@@ -15,7 +15,7 @@
     "lodash.kebabcase": "4.1.1",
     "lodash.template": "4.4.0",
     "marked": "0.3.17",
-    "@sum.cumo/nuxt-styleguide-renderer-default": "0.1.0",
+    "@sum.cumo/nuxt-styleguide-renderer-default": "^0",
     "url-join": "4.0.0",
     "vue-docgen-api": "2.2.4"
   }

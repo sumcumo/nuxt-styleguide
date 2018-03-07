@@ -1,4 +1,221 @@
 {
+  "0.1.0": {
+    "date": "Wed, 07 Mar 2018 19:37:17 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "render component info",
+            "body": "like props, methods, tags etc.\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "adapt renaming of docs to description",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "add components route",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "move index page into pages dir",
+            "body": "appliance to new nuxt-styleguide api\n\n"
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "add navigation",
+            "body": ""
+          },
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "remove superflous v-if",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not use object-spread opperator",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use prepare script instead of prepublish",
+            "body": "for npm@5 compat\n\n"
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "apply markdown to all component info descriptions",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "fix template syntax in proxyComponent",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use dynamic pages from renderer",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "stop messing with the console",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "generate docs from component files",
+            "body": "using vue-docgen-api <3\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "fix error reporting",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use template for proxy component",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "provide $styleguide global",
+            "body": "containing meta informations such as project name, version and routes\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update styleguide when component changes",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "fix typo",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "watch components in dev mode",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: render component info",
+            "body": "like props, methods, tags etc.\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "fix: adapt renaming of docs to description",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: add components route",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: move index page into pages dir",
+            "body": "appliance to new nuxt-styleguide api\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: add navigation",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "perf: remove superflous v-if",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "0.0.0": {
     "date": "Wed, 07 Mar 2018 15:48:54 GMT",
     "changes": {}
