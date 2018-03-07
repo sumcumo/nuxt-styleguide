@@ -10,14 +10,13 @@ const componentInfo = <%= componentInfo %>;
 export default Vue.component('nuxt-styleguide-<%= name %>', {
   render: function(createElement) {
     return createElement(Renderer, {
-      props: {
-        ...componentInfo,
+      props: Object.assign(componentInfo, {
         Comp,
         name: '<%= name %>',
         importPath: '<%= relPath %>',
         states: normalizeStates(styleguide.states, componentInfo.props, componentInfo.slots),
         description: styleguide.docs || componentInfo.description,
-      },
+      }),
     });
   },
 });
