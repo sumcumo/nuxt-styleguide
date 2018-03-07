@@ -36,6 +36,12 @@
     "eslint-plugin-prettier": "2.6.0",
     "eslint-plugin-vue": "4.3.0",
     "prettier": "1.11.0",
-    "rlsr": "3.0.0"
+    "xiphe-fork-rlsr": "2.1.0"
+  },
+  "rlsr": {
+    "scopeToNameMap": {
+      "nuxt-styleguide": "@sum.cumo/nuxt-styleguide",
+      "nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default"
+    }
   }
 }
