@@ -10,15 +10,15 @@
 export default {
   props: {
     href: {
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .sum-card {
-  color: inherit;
+  color: white;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 30px;
