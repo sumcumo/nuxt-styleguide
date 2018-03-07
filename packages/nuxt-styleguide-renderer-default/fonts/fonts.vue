@@ -6,6 +6,7 @@ export default {};
 </script>
 
 <style lang="scss">
+
 @font-face {
   font-family: "GothamHTF-Book";
   src: url("./GothamHTF-Book.woff") format("woff"),
@@ -33,5 +34,6 @@ export default {};
     url("./GothamHTF-Light.eot"),
     url("./GothamHTF-Light.eot?#iefix") format("embedded-opentype");
 }
+
 
 </style>
