@@ -5,27 +5,27 @@
   </button>
 </template>
 
-<styleguide-doc>
-# Hello From Styleguide Doc
-</styleguide-doc>
-
 <styleguide-states>
 [{
   "content": "Hello World"
 }]
 </styleguide-states>
 
+<styleguide-doc>
+### Hello From Styleguide Doc
+</styleguide-doc>
+
+
 <script>
 export default {
   name: 'Button',
-}
+};
 </script>
 
 <style lang="scss" module>
 .button {
   font-family: 'Cabin Sketch', cursive;
   border: 5px solid transparent;
-  border-image: url("http://s3.amazonaws.com/dfc_attachments/images/3247065/sketchy_web.png") 30 30 round;
   padding: 0.2em 0.4em;
   font-size: 2rem;
   font-weight: default;

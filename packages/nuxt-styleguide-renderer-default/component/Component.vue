@@ -1,45 +1,45 @@
 <template>
-<Wrap>
-  <Header>Nexible</Header>
+<div>
   <a href=".." class="href">Back</a>
-  <Headline level="2">{{name}}</Headline>
-  <div v-if="description" v-html="description" />
+  <h1>{{name}}</h1>
 
-  <tags v-bind:tags="tags" />
-  
-  <h3>Demo:</h3>
+  <h2>Demo:</h2>
   <div v-for="(state) in states">
-    <Headline>{{state.title}}</Headline>
+    <h4>{{state.title}}</h4>
     <component v-bind:is="Comp" v-bind="state.props">
         <span v-for="(slot, name) in state.slots" v-bind:slot="name" key="name">
           {{slot}}
         </span>
     </component>
-    <Code>import {{name}} from '{{importPath}}';</Code>
+    <code><pre>import {{name}} from '{{importPath}}';</pre></code>
   </div>
 
-  <h2 v-if="hasProps">Props</h2>
+  <div v-if="description" v-html="description" />
+
+  <tags v-bind:tags="tags" />
+
+  <h3 v-if="hasProps">Props</h3>
   <div v-if="hasProps" v-for="(entry, name) in props">
     <h3>{{name}}<span v-if="entry.type">&#32;<code>[{{entry.type.name}}]</code></span></h3>
     <div v-html="entry.description" />
     <tags v-bind:tags="entry.tags" />
   </div>
 
-  <h2 v-if="hasSlots">Slots</h2>
+  <h3 v-if="hasSlots">Slots</h3>
   <div v-if="hasSlots" v-for="(entry, name) in slots">
     <h3>{{name}}</h3>
     <div v-html="entry.description" />
     <tags v-bind:tags="entry.tags" />
   </div>
 
-  <h2 v-if="hasEvents">Events</h2>
+  <h3 v-if="hasEvents">Events</h3>
   <div v-if="hasEvents" v-for="(entry, name) in events">
     <h3>{{name}}<span v-if="entry.type">&#32;<code>[{{entry.type.name}}]</code></span></h3>
     <div v-html="entry.description" />
     <tags v-bind:tags="entry.tags" />
   </div>
 
-  <h2 v-if="hasMethods">Methods</h2>
+  <h3 v-if="hasMethods">Methods</h3>
   <div v-if="hasMethods" v-for="(entry, name) in methods">
     <h3>{{name}}<span v-if="entry.params">({{entry.params.map(({ name, type }) => {
       return `${name}${type ? `: ${type.name}` : ''}`
@@ -56,33 +56,28 @@
     </ul>
     <tags v-bind:tags="filterMethodTags(entry.tags)" />
   </div>
-</Wrap>
+</div>
 </template>
 
 <script>
-
-import Wrap from '../wrap/wrap';
-import Headline from '../headline/headline';
-import Code from '../code/code';
-import Header from '../header/header';
 import StyleguideNav from '../nav';
 import Tags from './Tags';
 
 export default {
-  components: { StyleguideNav, Wrap, Headline, Header, Code, Tags },
+  components: { StyleguideNav, Tags },
   computed: {
     hasSlots() {
-      return Object.keys(this.slots).length !== 0
+      return Object.keys(this.slots).length !== 0;
     },
     hasMethods() {
-      return Object.keys(this.methods).length !== 0
+      return Object.keys(this.methods).length !== 0;
     },
     hasProps() {
-      return Object.keys(this.props).length !== 0
+      return Object.keys(this.props).length !== 0;
     },
     hasEvents() {
-      return Object.keys(this.events).length !== 0
-    }
+      return Object.keys(this.events).length !== 0;
+    },
   },
   data() {
     return {
@@ -93,9 +88,9 @@ export default {
           }
 
           return memo;
-        }, {})
-      }
-    }
+        }, {});
+      },
+    };
   },
   props: {
     Comp: Object,
@@ -107,8 +102,7 @@ export default {
     events: Object,
     slots: Object,
     tags: Object,
-    methods: Object
+    methods: Object,
   },
-}
-
+};
 </script>

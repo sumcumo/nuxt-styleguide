@@ -26,8 +26,8 @@ export default {
         memo[category].push(route);
 
         return memo;
-      }, {})
+      }, {}),
     };
-  }
-}
+  },
+};
 </script>

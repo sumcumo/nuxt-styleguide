@@ -1,7 +1,6 @@
 <template>
-  <Wrap>
-    <Header>Nexible</Header>
-      <Headline level="2">Components</Headline>
+  <div>
+      <h2>Components</h2>
       <nav>
         <ul>
           <li v-for="(route) in $styleguide.routes" v-if="route.category === 'Components'">
@@ -9,17 +8,11 @@
           </li>
         </ul>
       </nav>
-    </Wrap>
+  </div>
 </template>
 
 <script>
-import Wrap from '../wrap/wrap';
-import Header from '../header/header';
-import Headline from '../headline/headline';
-
-export default {
-  components: { Wrap, Header, Headline },
-};
+export default {};
 </script>
 
 <style lang="scss">
