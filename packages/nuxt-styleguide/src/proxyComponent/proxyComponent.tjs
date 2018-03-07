@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Comp from '${relPath}';
+import Comp from '<%= relPath %>';
 import Renderer from '<%= rendererPath %>';
 import normalizeStates from '<%= normalizeStatesPath %>';
 
