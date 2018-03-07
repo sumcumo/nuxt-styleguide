@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-styleguide-renderer-default",
+  "name": "@sum.cumo/nuxt-styleguide-renderer-default",
   "version": "0.0.0-development",
   "dependencies": {
     "node-sass": "4.7.2",

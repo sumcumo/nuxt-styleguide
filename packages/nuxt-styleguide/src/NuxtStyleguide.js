@@ -11,7 +11,7 @@ export default function NuxtStyleguide(moduleOptions) {
     ...this.options,
     ...pkg,
     path: '/styleguide',
-    renderer: 'nuxt-styleguide-renderer-default',
+    renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
     ...moduleOptions,
     extends: normalizeExtends(moduleOptions.extends),
   };

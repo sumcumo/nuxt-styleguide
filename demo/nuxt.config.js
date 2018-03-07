@@ -7,7 +7,7 @@ module.exports = {
   srcDir: __dirname,
   modules: [
     [
-      'nuxt-styleguide',
+      '@sum.cumo/nuxt-styleguide',
       { extends: [path.resolve(__dirname, 'subStyleguide')] },
     ],
   ],
