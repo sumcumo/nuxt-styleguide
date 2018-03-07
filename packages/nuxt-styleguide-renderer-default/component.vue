@@ -3,7 +3,7 @@
   <Header>Nexible</Header>
   <a href=".." class="href">Back</a>
   <Headline level="2">{{name}}</Headline>
-  <div v-if="docs" v-html="docs" />
+  <div v-if="description" v-html="description" />
   <h3>Demo:</h3>
   <div v-for="(state) in states">
     <Headline>{{state.title}}</Headline>
@@ -30,7 +30,7 @@ export default {
   props: {
     Comp: Object,
     name: String,
-    docs: String,
+    description: String,
     states: Array,
     importPath: String,
   },
