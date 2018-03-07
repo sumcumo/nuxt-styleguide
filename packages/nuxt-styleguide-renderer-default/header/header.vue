@@ -1,6 +1,8 @@
 <template lang="html">
   <header class="sum-header">
-    <Headline><slot /></Headline>
+    <a href="/">
+      <Headline><slot /></Headline>
+    </a>
   </header>
 </template>
 
@@ -13,8 +15,15 @@ export default {
 </script>
 
 <style lang="scss">
+
 .sum-header{
-padding: 2em 0.3em;  
+padding: 2em 0.3em;
+
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+
 }
 
 </style>
