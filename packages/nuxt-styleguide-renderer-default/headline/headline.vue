@@ -1,9 +1,23 @@
 <template lang="html">
-  <h1><slot /></h1>
+  <component v-bind:is="Elm">
+    <slot></slot>
+  </component>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    Elm() {
+      return `h${this.level}`;
+    },
+  },
+  props: {
+    level: {
+      type: String | Number,
+      default: 1,
+    },
+  },
+};
 </script>
 
 <style lang="scss">
