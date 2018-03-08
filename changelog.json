@@ -1,4 +1,23 @@
 {
+  "0.2.1": {
+    "date": "Thu, 08 Mar 2018 15:10:01 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.1.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not resolve default prop values manually",
+            "body": "this fixes an issue where function props with default value break the preview\n\n"
+          }
+        ]
+      }
+    }
+  },
   "0.2.0": {
     "date": "Thu, 08 Mar 2018 15:02:28 GMT",
     "changes": {

@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.1.3
+
+### 🐞 Bug Fixes
+
+→ **do not resolve default prop values manually**
+> this fixes an issue where function props with default value break the preview
+> 
+> 
+
+
 ## Version 0.1.2
 
 ### 🔨 Refactorings
