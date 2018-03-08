@@ -40,7 +40,9 @@ export default function NuxtStyleguide() {
     return extendRoutes(options, routes, componentPaths, pagesDir, pages);
   });
 
-  const components = getComponents(options.extends.concat(options.srcDir));
+  const components = getComponents(
+    options.extends.concat(path.join(options.srcDir, 'components'))
+  );
 
   components.on('updateAll', (componentList) => {
     componentPaths = componentList.map(({ name }) => {
