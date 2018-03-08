@@ -59,14 +59,14 @@ module.exports = Object.assign(
   options,
   pkg,
   {
-    extends: [],
     path: '/styleguide',
     renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
   },
   moduleOptions,
   {
-    extends: !Array.isArray(moduleOptions.extends)
-      ? [moduleOptions.extends]
-      : moduleOptions.extends,
+    extends:
+      moduleOptions.extends && !Array.isArray(moduleOptions.extends)
+        ? [moduleOptions.extends]
+        : moduleOptions.extends || [],
   }
 );
