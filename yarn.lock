@@ -10,6 +10,19 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@sum.cumo/nuxt-styleguide@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-styleguide/-/nuxt-styleguide-0.1.0.tgz#a3663cc0c16c22dff01d5e6494528579bbbeaf94"
+  dependencies:
+    "@sum.cumo/nuxt-styleguide-renderer-default" "0.1.0"
+    chalk "2.3.1"
+    chokidar "2.0.2"
+    lodash.kebabcase "4.1.1"
+    lodash.template "4.4.0"
+    marked "0.3.17"
+    url-join "4.0.0"
+    vue-docgen-api "2.2.4"
+
 JSONStream@^1.0.4:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.2.tgz#c102371b6ec3a7cf3b847ca00c20bb0fce4c6dea"
@@ -6025,6 +6038,19 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
+rlsr@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/rlsr/-/rlsr-3.1.0.tgz#4c13627d83421d533129196d41d60df0a07d4ece"
+  dependencies:
+    conventional-commits-parser "1.3.0"
+    git-latest-semver-tag "1.0.2"
+    git-raw-commits "1.1.2"
+    glob "7.1.2"
+    npmlog "4.1.2"
+    ramda "0.25.0"
+    recursive-diff "^0.1.2"
+    semver "5.4.1"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -7309,19 +7335,6 @@ ws@^4.0.0:
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
-
-xiphe-fork-rlsr@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/xiphe-fork-rlsr/-/xiphe-fork-rlsr-2.1.1.tgz#4542b69004a165c6210c218ef4c1bd9e8b70d9a7"
-  dependencies:
-    conventional-commits-parser "1.3.0"
-    git-latest-semver-tag "1.0.2"
-    git-raw-commits "1.1.2"
-    glob "7.1.2"
-    npmlog "4.1.2"
-    ramda "0.25.0"
-    recursive-diff "^0.1.2"
-    semver "5.4.1"
 
 xml-char-classes@^1.0.0:
   version "1.0.0"
