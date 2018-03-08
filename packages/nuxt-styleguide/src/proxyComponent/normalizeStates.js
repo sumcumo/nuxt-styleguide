@@ -29,11 +29,7 @@ export default function normalizeStates(states, props, slots) {
       return Object.keys(props).reduce((memo, propName) => {
         const def = props[propName];
 
-        if (def.defaultValue) {
-          memo[propName] = def.defaultValue.func
-            ? def.defaultValue.value()
-            : def.defaultValue.value;
-        } else if (def.type && def.required) {
+        if (!def.defaultValue && def.type && def.required) {
           memo[propName] = getDefault(def.type.name, propName);
         }
 
