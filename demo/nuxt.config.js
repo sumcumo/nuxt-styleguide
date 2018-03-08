@@ -8,7 +8,11 @@ module.exports = {
   modules: [
     [
       '@sum.cumo/nuxt-styleguide',
-      { extends: [path.resolve(__dirname, 'subStyleguide')] },
+      {
+        name: '@sum.cumo/nuxt-styleguide-demo-library',
+        private: false,
+        extends: [path.resolve(__dirname, 'subStyleguide')],
+      },
     ],
   ],
 };
