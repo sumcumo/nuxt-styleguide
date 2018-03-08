@@ -1,20 +1,11 @@
 import extendVueLoaders from './extendVueLoaders';
 import extendRoutes from './extendRoutes';
-import normalizeExtends from './normalizeExtends';
 import buildProxyComponents from './buildProxyComponents';
 import getPages from './getPages';
 import * as path from 'path';
+import options from '@sum.cumo/nuxt-styleguide-config';
 
-export default function NuxtStyleguide(moduleOptions) {
-  const pkg = require(path.resolve(this.options.rootDir, 'package.json'));
-  const options = {
-    ...this.options,
-    ...pkg,
-    path: '/styleguide',
-    renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
-    ...moduleOptions,
-    extends: normalizeExtends(moduleOptions.extends),
-  };
+export default function NuxtStyleguide() {
   const pagesDir = path.join(
     path.dirname(require.resolve(path.join(options.renderer, 'component.vue'))),
     'pages'
