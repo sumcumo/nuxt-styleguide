@@ -34,6 +34,8 @@ getRoutes.cache = null;
 
 Vue.mixin({
   created: function() {
-    this.$styleguide.routes = getRoutes(this.$router.options.routes);
+    this.$styleguide.routes = getRoutes(
+      this.$router ? this.$router.options.routes : []
+    );
   },
 });
