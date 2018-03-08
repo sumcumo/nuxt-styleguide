@@ -37,7 +37,7 @@ exports.publish = function() {
     });
   });
   const indexPromise = new Promise((resolve, reject) => {
-    getComponents(config.srcDir)
+    getComponents(path.join(config.srcDir, 'components'))
       .on('error', reject)
       .on('updateAll', (components) => {
         resolve(
