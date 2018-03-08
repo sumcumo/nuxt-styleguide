@@ -1,4 +1,23 @@
 {
+  "1.0.1": {
+    "date": "Thu, 08 Mar 2018 18:26:19 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-publish-npm": {
+        "version": "0.2.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-publish-npm"
+            ],
+            "subject": "fix race condition",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.0.0": {
     "date": "Thu, 08 Mar 2018 18:13:53 GMT",
     "changes": {

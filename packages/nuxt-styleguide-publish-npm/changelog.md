@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-publish-npm
 
+## Version 0.2.2
+
+### 🐞 Bug Fixes
+
+→ **fix race condition**
+
+
 ## Version 0.2.1
 
 ### 🐞 Bug Fixes

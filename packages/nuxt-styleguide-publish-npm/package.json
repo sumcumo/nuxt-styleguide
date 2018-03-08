@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide-publish-npm",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "publish.js",
   "bin": {
     "nuxt-styleguide-publish-npm": "./cli.js"
