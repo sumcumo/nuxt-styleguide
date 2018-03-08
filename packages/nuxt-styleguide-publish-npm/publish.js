@@ -8,7 +8,7 @@ const exec = require('child_process').exec;
 exports.pkg = {
   name: config.name,
   version: config.version,
-  main: './index.js',
+  main: './index.vue',
   description: config.description,
   private: config.private,
   repository: config.repository,
@@ -21,7 +21,7 @@ exports.pkg = {
 };
 
 const componentsDir = path.join(config.srcDir, 'components');
-const indexFile = path.join(componentsDir, 'index.js');
+const indexFile = path.join(componentsDir, 'index.vue');
 const packageFile = path.join(componentsDir, 'package.json');
 
 exports.componentsDir = componentsDir;
@@ -52,9 +52,13 @@ exports.publish = function() {
       });
   }).then((componentsIndex) => {
     return new Promise((resolve, reject) => {
-      fs.writeFile(indexFile, componentsIndex, (err) => {
-        return err ? reject(err) : resolve(indexFile);
-      });
+      fs.writeFile(
+        indexFile,
+        `<script>\n${componentsIndex}\nexport default {}\n</script>`,
+        (err) => {
+          return err ? reject(err) : resolve(indexFile);
+        }
+      );
     });
   });
 
