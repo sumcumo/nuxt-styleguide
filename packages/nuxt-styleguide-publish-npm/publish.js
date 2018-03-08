@@ -31,11 +31,6 @@ exports.publish = function() {
 
   config.dev = false;
 
-  const packageJsonPromise = new Promise((resolve, reject) => {
-    fs.writeFile(packageFile, JSON.stringify(exports.pkg, null, 2), (err) => {
-      return err ? reject(err) : resolve(packageFile);
-    });
-  });
   const indexPromise = new Promise((resolve, reject) => {
     getComponents(path.join(config.srcDir, 'components'))
       .on('error', reject)
@@ -69,11 +64,21 @@ exports.publish = function() {
     } catch (e) {}
   }
 
-  Promise.all([packageJsonPromise, indexPromise])
-    .then((data) => {
-      const packageFile = data[0];
-      const indexFile = data[1];
-
+  indexPromise
+    .then((indexFile) => {
+      return new Promise((resolve, reject) => {
+        fs.writeFile(
+          packageFile,
+          JSON.stringify(exports.pkg, null, 2),
+          (err) => {
+            return err ? reject(err) : resolve(packageFile);
+          }
+        );
+      }).then((packageFile) => {
+        return [packageFile, indexFile];
+      });
+    })
+    .then(() => {
       return new Promise((resolve, reject) => {
         exec(`cd ${componentsDir} && npm publish`, (err, stdout, stderr) => {
           return err ? reject(err) : resolve(stdout);
