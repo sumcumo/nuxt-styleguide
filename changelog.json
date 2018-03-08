@@ -1,4 +1,83 @@
 {
+  "1.0.0": {
+    "date": "Thu, 08 Mar 2018 18:13:53 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-components": {
+        "version": "1.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-components"
+            ],
+            "subject": "dont add component to sourceDirs",
+            "body": "published libraries will not have a components dir so we\nneed to assume sourceDirs are allready pointing to the correct dir\n\nBREAKING CHANGE:\nsourceDirs passed to getComponents must point to the correct components folder\ninstead of the project root"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-publish-npm": {
+        "version": "0.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-publish-npm"
+            ],
+            "subject": "compat patch for nuxt-styleguide-components",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-publish-npm"
+            ],
+            "subject": "use vue file as index",
+            "body": "nuxt does not compile js files in node_modules\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-components"
+            ],
+            "subject": "feat: dont add component to sourceDirs",
+            "body": "published libraries will not have a components dir so we\nneed to assume sourceDirs are allready pointing to the correct dir\n\nBREAKING CHANGE:\nsourceDirs passed to getComponents must point to the correct components folder\ninstead of the project root"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.1.6",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "handle case when component has no slot",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "compat patch for nuxt-styleguide-components",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-components"
+            ],
+            "subject": "feat: dont add component to sourceDirs",
+            "body": "published libraries will not have a components dir so we\nneed to assume sourceDirs are allready pointing to the correct dir\n\nBREAKING CHANGE:\nsourceDirs passed to getComponents must point to the correct components folder\ninstead of the project root"
+          }
+        ]
+      }
+    }
+  },
   "0.2.3": {
     "date": "Thu, 08 Mar 2018 16:38:36 GMT",
     "changes": {

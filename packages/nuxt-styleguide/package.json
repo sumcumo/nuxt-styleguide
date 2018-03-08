@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",
@@ -17,7 +17,7 @@
     "marked": "0.3.17",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^0",
     "@sum.cumo/nuxt-styleguide-config": "^0",
-    "@sum.cumo/nuxt-styleguide-components": "rlsr-latest",
+    "@sum.cumo/nuxt-styleguide-components": "^1.0.0",
     "url-join": "4.0.0",
     "vue-docgen-api": "2.2.4"
   }

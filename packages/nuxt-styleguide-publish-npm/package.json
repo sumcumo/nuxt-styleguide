@@ -1,12 +1,12 @@
 {
   "name": "@sum.cumo/nuxt-styleguide-publish-npm",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "publish.js",
   "bin": {
     "nuxt-styleguide-publish-npm": "./cli.js"
   },
   "dependencies": {
-    "@sum.cumo/nuxt-styleguide-components": "rlsr-latest",
+    "@sum.cumo/nuxt-styleguide-components": "^1.0.0",
     "@sum.cumo/nuxt-styleguide-config": "^0",
     "chalk": "2.3.2",
     "minimist": "1.2.0",

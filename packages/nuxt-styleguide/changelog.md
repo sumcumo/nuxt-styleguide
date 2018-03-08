@@ -1,5 +1,20 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.1.6
+
+### 🐞 Bug Fixes
+
+→ **handle case when component has no slot**
+
+### 🔨 Refactorings
+
+→ **compat patch for nuxt-styleguide-components**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-components@1.0.0: **dont add component to sourceDirs**
+
+
 ## Version 0.1.5
 
 ### 🐞 Bug Fixes
