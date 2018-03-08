@@ -41,7 +41,7 @@ export default function normalizeStates(states, props, slots) {
       {
         title: 'Default',
         props: defaultProps(props),
-        slots: Object.keys(slots).reduce((memo, name) => {
+        slots: Object.keys(slots || {}).reduce((memo, name) => {
           memo[name] = `slot: ${name}`;
 
           return memo;
