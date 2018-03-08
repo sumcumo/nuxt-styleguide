@@ -3,8 +3,6 @@ const chokidar = require('chokidar');
 const path = require('path');
 const EventEmitter = require('events');
 
-const COMPONENTS_DIRNAME = 'components';
-
 function getRelPath(srcDir, extend) {
   try {
     require.resolve(extend);
@@ -30,11 +28,8 @@ module.exports = function getComponents(sourceDirs) {
   const sources = (Array.isArray(sourceDirs) ? sourceDirs : [sourceDirs]).map(
     (sourceDir) => {
       return {
-        importPath: path.join(sourceDir, COMPONENTS_DIRNAME),
-        relPath: path.join(
-          getRelPath(config.srcDir, sourceDir),
-          COMPONENTS_DIRNAME
-        ),
+        importPath: sourceDir,
+        relPath: path.join(getRelPath(config.srcDir, sourceDir)),
       };
     }
   );
