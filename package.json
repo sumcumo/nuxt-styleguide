@@ -41,6 +41,7 @@
   "rlsr": {
     "scopeToNameMap": {
       "nuxt-styleguide": "@sum.cumo/nuxt-styleguide",
+      "nuxt-styleguide-config": "@sum.cumo/nuxt-styleguide-config",
       "nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default"
     }
   }
