@@ -1,5 +1,6 @@
 const parseArgs = require('minimist');
 const Utils = require('nuxt').Utils;
+const Options = require('nuxt').Options;
 const resolve = require('path').resolve;
 const existsSync = require('fs').existsSync;
 
@@ -54,6 +55,7 @@ const moduleOptions = Object.assign(
 );
 
 module.exports = Object.assign(
+  Options.defaults,
   options,
   pkg,
   {
