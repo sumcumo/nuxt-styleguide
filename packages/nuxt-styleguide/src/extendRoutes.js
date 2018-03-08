@@ -9,7 +9,7 @@ function ucFirst(string) {
 export default function extendRouter(
   options,
   routes,
-  components,
+  componentPaths,
   pagesDir,
   pages
 ) {
@@ -44,8 +44,7 @@ export default function extendRouter(
     });
   });
 
-  Object.keys(components).forEach((name) => {
-    const { proxyPath } = components[name];
+  componentPaths.forEach(({ name, proxyPath }) => {
     const kebabName = kebabCase(name);
 
     routes.push({

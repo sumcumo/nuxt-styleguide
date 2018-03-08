@@ -4,6 +4,9 @@ import buildProxyComponents from './buildProxyComponents';
 import getPages from './getPages';
 import * as path from 'path';
 import options from '@sum.cumo/nuxt-styleguide-config';
+import getComponents from '@sum.cumo/nuxt-styleguide-components';
+
+const tmpDir = path.resolve(__dirname, '..', '.tmp');
 
 export default function NuxtStyleguide() {
   const pagesDir = path.join(
@@ -27,24 +30,30 @@ export default function NuxtStyleguide() {
   });
 
   let builder = null;
-  let components = null;
   let pages = null;
+  let componentPaths = null;
   this.nuxt.hook('build:done', (b) => {
     builder = b;
   });
 
   this.nuxt.hook('build:extendRoutes', (routes) => {
-    return extendRoutes(options, routes, components, pagesDir, pages);
+    return extendRoutes(options, routes, componentPaths, pagesDir, pages);
+  });
+
+  const components = getComponents(options.extends.concat(options.srcDir));
+
+  components.on('updateAll', (componentList) => {
+    componentPaths = componentList.map(({ name }) => {
+      return { name, proxyPath: path.join(tmpDir, `${name}.js`) };
+    });
+
+    if (builder) {
+      builder.generateRoutesAndFiles();
+    }
   });
 
   return Promise.all([
-    buildProxyComponents(options, this.nuxt, (c) => {
-      components = c;
-
-      if (builder) {
-        builder.generateRoutesAndFiles();
-      }
-    }),
+    buildProxyComponents(components, tmpDir),
     getPages(options, pagesDir, (p) => {
       pages = p;
 
