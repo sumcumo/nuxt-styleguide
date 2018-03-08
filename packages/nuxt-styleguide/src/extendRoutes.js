@@ -11,7 +11,7 @@ export default function extendRouter(
   routes,
   componentPaths,
   pagesDir,
-  pages = []
+  pages
 ) {
   const renderer = options.renderer;
 
