@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.1.2
+
+### 🔨 Refactorings
+
+→ **use nuxt-styleguide-components helper**
+
+→ **use nuxt-styleguide-config package**
+
+
 ## Version 0.1.1
 
 ### 🆕  New Features

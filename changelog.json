@@ -1,4 +1,81 @@
 {
+  "0.2.0": {
+    "date": "Thu, 08 Mar 2018 15:02:28 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-components": {
+        "version": "0.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-components"
+            ],
+            "subject": "add package",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "0.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "add nuxt default options to config",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "add package",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-publish-npm": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-publish-npm"
+            ],
+            "subject": "add package",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.1.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use nuxt-styleguide-components helper",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use nuxt-styleguide-config package",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "0.1.0": {
     "date": "Wed, 07 Mar 2018 19:37:17 GMT",
     "changes": {

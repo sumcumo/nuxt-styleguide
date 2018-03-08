@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide-components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {},
   "dependencies": {
