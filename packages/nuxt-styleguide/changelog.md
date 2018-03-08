@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.1.5
+
+### 🐞 Bug Fixes
+
+→ **stop handling empty pages**
+
+
 ## Version 0.1.4
 
 ### 🐞 Bug Fixes

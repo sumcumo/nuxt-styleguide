@@ -1,4 +1,37 @@
 {
+  "0.2.3": {
+    "date": "Thu, 08 Mar 2018 16:38:36 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "0.1.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "ensure empty extend value is treated correctly",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.1.5",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "stop handling empty pages",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "0.2.2": {
     "date": "Thu, 08 Mar 2018 16:09:14 GMT",
     "changes": {
