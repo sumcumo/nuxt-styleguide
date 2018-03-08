@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.1.4
+
+### 🐞 Bug Fixes
+
+→ **handle cases where $router is not initialized**
+
+→ **do not break when no pages exist**
+
+
 ## Version 0.1.3
 
 ### 🐞 Bug Fixes

@@ -1,4 +1,31 @@
 {
+  "0.2.2": {
+    "date": "Thu, 08 Mar 2018 16:09:14 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.1.4",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "handle cases where $router is not initialized",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not break when no pages exist",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "0.2.1": {
     "date": "Thu, 08 Mar 2018 15:10:01 GMT",
     "changes": {
