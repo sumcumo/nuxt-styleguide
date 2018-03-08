@@ -1,6 +1,6 @@
 {
   "name": "nuxt-styleguide-workspaces",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "styleguide and pattern library support for your nuxt application",
   "private": true,
   "workspaces": [
@@ -45,6 +45,7 @@
       "nuxt-styleguide-components": "@sum.cumo/nuxt-styleguide-components",
       "nuxt-styleguide-publish-npm": "@sum.cumo/nuxt-styleguide-publish-npm",
       "nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default"
-    }
+    },
+    "shouldBeCommitted": []
   }
 }
