@@ -1,4 +1,23 @@
 {
+  "1.1.2": {
+    "date": "Tue, 13 Mar 2018 17:08:28 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.2.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "allow imports in variable files",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.1.1": {
     "date": "Tue, 13 Mar 2018 16:41:30 GMT",
     "changes": {

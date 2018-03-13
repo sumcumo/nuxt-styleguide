@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.2.2
+
+### 🐞 Bug Fixes
+
+→ **allow imports in variable files**
+
+
 ## Version 0.2.1
 
 ### 🐞 Bug Fixes
