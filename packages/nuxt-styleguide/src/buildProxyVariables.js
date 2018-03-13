@@ -74,7 +74,8 @@ function getRestTags(tags) {
 }
 
 function getDecoratedDeclarations(ast, globalComment) {
-  const defaultRenderer = getRenderFromTags(globalComment.tags) || 'default';
+  const defaultRenderer =
+    getRenderFromTags(globalComment.tags || {}) || 'default';
 
   // console.log(defaultRenderer);
   return ast.nodes.reduce((memo, node, i) => {
@@ -101,7 +102,7 @@ function getDecoratedDeclarations(ast, globalComment) {
 
       memo.push({
         ...nodeData,
-        render: getRenderFromTags(docs.tags) || nodeData.render,
+        render: getRenderFromTags(docs.tags || {}) || nodeData.render,
         tags: getRestTags(docs.tags),
         description: docs.description,
       });
