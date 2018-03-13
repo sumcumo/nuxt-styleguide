@@ -51,9 +51,24 @@ export default function NuxtStyleguide() {
     '**/*.vue'
   );
 
+  const variables = getFiles(
+    path.resolve(options.srcDir, options.variablesName),
+    '**/*.+(scss|sass)'
+  );
+
+  variables.on('updateAll', (variableList) => {
+    variablesPaths = variableList.map(({ name }) => {
+      return { name, proxyPath: path.join(tmpDir, `${name}.vars.js`) };
+    });
+
+    if (builder) {
+      builder.generateRoutesAndFiles();
+    }
+  });
+
   components.on('updateAll', (componentList) => {
     componentPaths = componentList.map(({ name }) => {
-      return { name, proxyPath: path.join(tmpDir, `${name}.js`) };
+      return { name, proxyPath: path.join(tmpDir, `${name}.comp.js`) };
     });
 
     if (builder) {

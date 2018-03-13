@@ -25,7 +25,7 @@ export default function buildProxyComponents(components, tmpDir) {
     .on('update', (component) => {
       proxyTemplatePromise.then((template) => {
         const { relPath, name, file } = component;
-        const proxyPath = path.join(tmpDir, `${name}.js`);
+        const proxyPath = path.join(tmpDir, `${name}.comp.js`);
 
         return new Promise((resolve, reject) => {
           const componentInfo = getComponentInfo(file, relPath, options.dev);
