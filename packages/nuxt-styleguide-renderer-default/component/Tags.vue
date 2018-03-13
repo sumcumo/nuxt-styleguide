@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     hasTags() {
-      return Object.keys(this.tags).length > 0;
+      return Object.keys(this.tags || {}).length > 0;
     }
   }
 }

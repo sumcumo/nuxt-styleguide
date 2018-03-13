@@ -67,22 +67,22 @@ export default {
   components: { StyleguideNav, Tags },
   computed: {
     hasSlots() {
-      return Object.keys(this.slots).length !== 0;
+      return Object.keys(this.slots || {}).length !== 0;
     },
     hasMethods() {
-      return Object.keys(this.methods).length !== 0;
+      return Object.keys(this.methods || {}).length !== 0;
     },
     hasProps() {
-      return Object.keys(this.props).length !== 0;
+      return Object.keys(this.props || {}).length !== 0;
     },
     hasEvents() {
-      return Object.keys(this.events).length !== 0;
+      return Object.keys(this.events || {}).length !== 0;
     },
   },
   data() {
     return {
       filterMethodTags(tags) {
-        return Object.keys(tags).reduce((memo, tagName) => {
+        return Object.keys(tags || {}).reduce((memo, tagName) => {
           if (['params', 'returns'].indexOf(tagName) === -1) {
             memo[tagName] = tags[tagName];
           }
