@@ -1,0 +1,11 @@
+{
+  "name": "@sum.cumo/nuxt-styleguide-files",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "@sum.cumo/nuxt-styleguide-config": "^0",
+    "chokidar": "2.0.2",
+    "minimatch": "3.0.4"
+  }
+}

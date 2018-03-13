@@ -42,7 +42,7 @@
     "scopeToNameMap": {
       "nuxt-styleguide": "@sum.cumo/nuxt-styleguide",
       "nuxt-styleguide-config": "@sum.cumo/nuxt-styleguide-config",
-      "nuxt-styleguide-components": "@sum.cumo/nuxt-styleguide-components",
+      "nuxt-styleguide-files": "@sum.cumo/nuxt-styleguide-files",
       "nuxt-styleguide-publish-npm": "@sum.cumo/nuxt-styleguide-publish-npm",
       "nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default"
     },
