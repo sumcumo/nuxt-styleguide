@@ -3,10 +3,16 @@ import extendRoutes from './extendRoutes';
 import buildProxyComponents from './buildProxyComponents';
 import getPages from './getPages';
 import * as path from 'path';
+import * as fs from 'fs';
 import options from '@sum.cumo/nuxt-styleguide-config';
 import getFiles from '@sum.cumo/nuxt-styleguide-files';
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
+try {
+  fs.mkdirSync(tmpDir);
+} catch (e) {
+  /* noop */
+}
 
 export default function NuxtStyleguide() {
   const pagesDir = path.join(
