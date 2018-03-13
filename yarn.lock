@@ -10,6 +10,15 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@sum.cumo/nuxt-styleguide-publish-npm@0.1.0":
+  version "0.2.2"
+  dependencies:
+    "@sum.cumo/nuxt-styleguide-config" "^0"
+    "@sum.cumo/nuxt-styleguide-files" "^0"
+    chalk "2.3.2"
+    minimist "1.2.0"
+    prompt "1.0.0"
+
 "@sum.cumo/nuxt-styleguide@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-styleguide/-/nuxt-styleguide-0.1.0.tgz#a3663cc0c16c22dff01d5e6494528579bbbeaf94"

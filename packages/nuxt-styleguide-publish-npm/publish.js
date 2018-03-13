@@ -1,5 +1,5 @@
 const config = require('@sum.cumo/nuxt-styleguide-config');
-const getComponents = require('@sum.cumo/nuxt-styleguide-components');
+const getFiles = require('@sum.cumo/nuxt-styleguide-files');
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
@@ -32,7 +32,7 @@ exports.publish = function() {
   config.dev = false;
 
   const indexPromise = new Promise((resolve, reject) => {
-    getComponents(path.join(config.srcDir, 'components'))
+    getFiles(path.join(config.srcDir, 'components'), '**/*.vue')
       .on('error', reject)
       .on('updateAll', (components) => {
         resolve(

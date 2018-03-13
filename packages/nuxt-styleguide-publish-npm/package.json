@@ -6,7 +6,7 @@
     "nuxt-styleguide-publish-npm": "./cli.js"
   },
   "dependencies": {
-    "@sum.cumo/nuxt-styleguide-components": "^1.0.0",
+    "@sum.cumo/nuxt-styleguide-files": "^0",
     "@sum.cumo/nuxt-styleguide-config": "^0",
     "chalk": "2.3.2",
     "minimist": "1.2.0",
