@@ -4,7 +4,7 @@ import buildProxyComponents from './buildProxyComponents';
 import getPages from './getPages';
 import * as path from 'path';
 import options from '@sum.cumo/nuxt-styleguide-config';
-import getComponents from '@sum.cumo/nuxt-styleguide-components';
+import getFiles from '@sum.cumo/nuxt-styleguide-files';
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
 
@@ -40,8 +40,9 @@ export default function NuxtStyleguide() {
     return extendRoutes(options, routes, componentPaths, pagesDir, pages);
   });
 
-  const components = getComponents(
-    options.extends.concat(path.join(options.srcDir, 'components'))
+  const components = getFiles(
+    options.extends.concat(path.join(options.srcDir, 'components')),
+    '**/*.vue'
   );
 
   components.on('updateAll', (componentList) => {

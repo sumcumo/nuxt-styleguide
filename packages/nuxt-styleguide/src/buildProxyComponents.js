@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import _template from 'lodash.template';
-import getComponents from '@sum.cumo/nuxt-styleguide-components';
 import options from '@sum.cumo/nuxt-styleguide-config';
 import getComponentInfo from './getComponentInfo';
 import Deferred from './Deferred';
