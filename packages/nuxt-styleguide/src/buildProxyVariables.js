@@ -52,6 +52,10 @@ function getGlobalComment(ast) {
 const allowedTypes = ['comment', 'decl'];
 function validate(ast, file) {
   ast.nodes.forEach((node) => {
+    if (node.type === 'atrule' && node.name === 'import') {
+      return;
+    }
+
     if (allowedTypes.indexOf(node.type) === -1) {
       throw new Error(
         `Unexpected ${node.type} in ./${path.relative(process.cwd(), file)}:${
