@@ -1,51 +1,13 @@
 import { parse } from 'vue-docgen-api';
+import applyMarkdownToDocs from './applyMarkdownToDocs';
 import chalk from 'chalk';
-import marked from 'marked';
-
-function tryInline(desc) {
-  if (desc.split('\n').length > 1) {
-    return marked(desc);
-  }
-
-  return marked.inlineLexer(desc, []);
-}
-
-function applyMarkdownToTags(data) {
-  const retVal = {
-    ...data,
-    description: tryInline(data.description),
-    tags: Object.keys(data.tags || {}).reduce((memo, key) => {
-      memo[key] = data.tags[key].map((tag) => {
-        return {
-          ...tag,
-          description: tryInline(tag.description),
-        };
-      });
-
-      return memo;
-    }, {}),
-  };
-
-  if (retVal.type && retVal.type.names) {
-    retVal.type.name = retVal.type.names.join('|');
-    delete retVal.type.names;
-  }
-
-  if (retVal.type && retVal.type.name) {
-    retVal.type.name = retVal.type.name.split('|').join(' | ');
-  }
-
-  delete retVal.comment;
-
-  return retVal;
-}
 
 function applyMarkdown(data) {
   return {
-    ...applyMarkdownToTags(data),
+    ...applyMarkdownToDocs(data),
     ...['events', 'props', 'slots'].reduce((memo1, type) => {
       memo1[type] = Object.keys(data[type] || {}).reduce((memo, key) => {
-        memo[key] = applyMarkdownToTags(data[type][key]);
+        memo[key] = applyMarkdownToDocs(data[type][key]);
 
         return memo;
       }, {});
@@ -53,7 +15,7 @@ function applyMarkdown(data) {
       return memo1;
     }, {}),
     methods: (data.methods || []).reduce((memo, methodDesc) => {
-      const withMd = applyMarkdownToTags(methodDesc);
+      const withMd = applyMarkdownToDocs(methodDesc);
 
       delete withMd.modifiers;
       delete withMd.name;
