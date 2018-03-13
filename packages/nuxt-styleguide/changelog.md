@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.2.1
+
+### 🐞 Bug Fixes
+
+→ **stop assuming existing tags for variables files**
+
+
 ## Version 0.2.0
 
 ### 🆕  New Features
