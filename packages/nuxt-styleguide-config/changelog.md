@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 0.2.0
+
+### 🆕  New Features
+
+→ **add default value for variablesName**
+
+
 ## Version 0.1.1
 
 ### 🐞 Bug Fixes

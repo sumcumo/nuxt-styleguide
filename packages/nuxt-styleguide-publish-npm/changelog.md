@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-publish-npm
 
+## Version 0.2.3
+
+### 🔨 Refactorings
+
+→ **update to nuxt-styleguide-files**
+
+
 ## Version 0.2.2
 
 ### 🐞 Bug Fixes

@@ -1,4 +1,14 @@
-# Changelog @sum.cumo/nuxt-styleguide-components
+# Changelog @sum.cumo/nuxt-styleguide-files
+
+## Version 0.2.0
+
+### 🆕  New Features
+
+→ **add package**
+> as the successor of nuxt-styleguide-components
+> 
+> 
+
 
 ## Version 1.0.0
 

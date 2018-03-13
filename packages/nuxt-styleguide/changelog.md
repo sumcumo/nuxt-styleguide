@@ -1,5 +1,35 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.2.0
+
+### 🆕  New Features
+
+→ **create views for variables files**
+
+### 🐞 Bug Fixes
+
+→ **ensure tmpDir exists**
+
+### 🔨 Refactorings
+
+→ **make applyMarkdownToDocs reusable by future proxy creators**
+
+→ **internally add .comp suffix to proxy files**
+> in order to prevent collisions with other proxy types
+> 
+> 
+
+→ **use nuxt-styleguide-files**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@0.2.0: **add default value for variablesName**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@0.2.0: **add renderer for variables**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@0.2.0: **do not break when no docs have been parsed**
+
+
 ## Version 0.1.6
 
 ### 🐞 Bug Fixes

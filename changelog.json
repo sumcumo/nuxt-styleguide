@@ -1,4 +1,143 @@
 {
+  "1.1.0": {
+    "date": "Tue, 13 Mar 2018 15:56:07 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "add default value for variablesName",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-files": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-files"
+            ],
+            "subject": "add package",
+            "body": "as the successor of nuxt-styleguide-components\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-publish-npm": {
+        "version": "0.2.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-publish-npm"
+            ],
+            "subject": "update to nuxt-styleguide-files",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "add renderer for variables",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "do not break when no docs have been parsed",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "create views for variables files",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "make applyMarkdownToDocs reusable by future proxy creators",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "internally add .comp suffix to proxy files",
+            "body": "in order to prevent collisions with other proxy types\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "ensure tmpDir exists",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use nuxt-styleguide-files",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: add default value for variablesName",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: add renderer for variables",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "fix: do not break when no docs have been parsed",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.0.1": {
     "date": "Thu, 08 Mar 2018 18:26:19 GMT",
     "changes": {
