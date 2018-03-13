@@ -6,6 +6,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import options from '@sum.cumo/nuxt-styleguide-config';
 import getFiles from '@sum.cumo/nuxt-styleguide-files';
+import buildProxyVariables from './buildProxyVariables';
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
 try {
@@ -38,12 +39,20 @@ export default function NuxtStyleguide() {
   let builder = null;
   let pages = null;
   let componentPaths = null;
+  let variablesPaths = null;
   this.nuxt.hook('build:done', (b) => {
     builder = b;
   });
 
   this.nuxt.hook('build:extendRoutes', (routes) => {
-    return extendRoutes(options, routes, componentPaths, pagesDir, pages);
+    return extendRoutes(
+      options,
+      routes,
+      componentPaths,
+      variablesPaths,
+      pagesDir,
+      pages
+    );
   });
 
   const components = getFiles(
@@ -77,6 +86,7 @@ export default function NuxtStyleguide() {
   });
 
   return Promise.all([
+    buildProxyVariables(variables, tmpDir),
     buildProxyComponents(components, tmpDir),
     getPages(options, pagesDir, (p) => {
       pages = p;

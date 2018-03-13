@@ -10,6 +10,7 @@ export default function extendRouter(
   options,
   routes,
   componentPaths,
+  variablesPaths,
   pagesDir,
   pages
 ) {
@@ -52,6 +53,17 @@ export default function extendRouter(
       path: urlJoin(options.path, 'components', kebabName),
       component: proxyPath,
       chunkName: `styleguide/component/${kebabName}`,
+    });
+  });
+
+  variablesPaths.forEach(({ name, proxyPath }) => {
+    const kebabName = kebabCase(name);
+
+    routes.push({
+      name: `styleguide:Variables:${name}`,
+      path: urlJoin(options.path, options.variablesName, kebabName),
+      component: proxyPath,
+      chunkName: `styleguide/variables/${kebabName}`,
     });
   });
 }

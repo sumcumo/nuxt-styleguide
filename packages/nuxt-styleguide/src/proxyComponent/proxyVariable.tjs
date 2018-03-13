@@ -1,0 +1,16 @@
+import Vue from 'vue';
+import Renderer from '<%= rendererPath %>';
+
+const cacheBust = '<%= buildId %>';
+const variables = <%= variables %>;
+
+export default Vue.component('nuxt-styleguide-vars-<%= name %>', {
+  render: function(createElement) {
+    return createElement(Renderer, {
+      props: Object.assign(variables, {
+        name: '<%= name %>',
+        importPath: '<%= relPath %>',
+      }),
+    });
+  },
+});
