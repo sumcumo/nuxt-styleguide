@@ -9,9 +9,11 @@ function ucFirst(string) {
 export default function extendRouter(
   options,
   routes,
+  docsPaths,
   componentPaths,
   variablesPaths,
   pagesDir,
+  docsDir,
   pages
 ) {
   const renderer = options.renderer;
@@ -22,6 +24,27 @@ export default function extendRouter(
 
   conflictingRoutes.forEach((route) => {
     routes.splice(routes.indexOf(route), 1);
+  });
+
+  docsPaths.forEach(({ file }) => {
+    const relPath = path.relative(docsDir, file).replace(/\.md$/, '');
+    const pathTokens = relPath.split(path.sep);
+
+    const routePath = (pathTokens[pathTokens.length - 1] === 'index'
+      ? pathTokens.splice(0, pathTokens.length - 2)
+      : pathTokens
+    ).join('/');
+
+    routes.push({
+      name: `styleguide:Pages:${pathTokens
+        .map((token) => {
+          return ucFirst(token);
+        })
+        .join(':')}`,
+      path: urlJoin(options.path, routePath),
+      component: file,
+      chunkName: `styleguide/page/${relPath}`,
+    });
   });
 
   pages.forEach((page) => {

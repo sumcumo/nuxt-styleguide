@@ -21,7 +21,17 @@ export default function NuxtStyleguide() {
     'pages'
   );
 
+  const docsDir = path.resolve(options.srcDir, options.docsDir);
+
   extendVueLoaders(this);
+
+  this.extendBuild((config) => {
+    config.module.rules.push({
+      test: /\.md?$/,
+      loader: path.resolve(__dirname, 'loaders', 'docmd-loader.js'),
+      include: docsDir,
+    });
+  });
 
   this.addPlugin({
     src: path.resolve(__dirname, 'styleguideProvider.js'),
@@ -40,6 +50,7 @@ export default function NuxtStyleguide() {
   let pages = null;
   let componentPaths = null;
   let variablesPaths = null;
+  let docsPaths = null;
   this.nuxt.hook('build:done', (b) => {
     builder = b;
   });
@@ -48,9 +59,11 @@ export default function NuxtStyleguide() {
     return extendRoutes(
       options,
       routes,
+      docsPaths,
       componentPaths,
       variablesPaths,
       pagesDir,
+      docsDir,
       pages
     );
   });
@@ -60,10 +73,20 @@ export default function NuxtStyleguide() {
     '**/*.vue'
   );
 
+  const docs = getFiles(docsDir, '**/*.md');
+
   const variables = getFiles(
     path.resolve(options.srcDir, options.variablesName),
     '**/*.+(scss|sass)'
   );
+
+  docs.on('updateAll', (docList) => {
+    docsPaths = docList;
+
+    if (builder) {
+      builder.generateRoutesAndFiles();
+    }
+  });
 
   variables.on('updateAll', (variableList) => {
     variablesPaths = variableList.map(({ name }) => {
