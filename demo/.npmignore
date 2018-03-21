@@ -1,0 +1,5 @@
+node_modules/
+pages/
+subStyleguide/
+nuxt.config.js
+yarn-error.log
