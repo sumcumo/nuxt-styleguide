@@ -9,7 +9,7 @@ export default Vue.component('nuxt-styleguide-vars-<%= name %>', {
     return createElement(Renderer, {
       props: Object.assign(variables, {
         name: '<%= name %>',
-        importPath: '<%= relPath %>',
+        importPath: '<%= importPath %>',
       }),
     });
   },

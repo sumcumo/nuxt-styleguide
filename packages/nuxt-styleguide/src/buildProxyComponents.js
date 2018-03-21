@@ -26,6 +26,10 @@ export default function buildProxyComponents(components, tmpDir) {
       proxyTemplatePromise.then((template) => {
         const { relPath, name, file } = component;
         const proxyPath = path.join(tmpDir, `${name}.comp.js`);
+        const importPath =
+          options.importFrom === 'local'
+            ? relPath
+            : relPath.replace(/^~/, options.name);
 
         return new Promise((resolve, reject) => {
           const componentInfo = getComponentInfo(file, relPath, options.dev);
@@ -43,6 +47,7 @@ export default function buildProxyComponents(components, tmpDir) {
             buildId: i++,
             name,
             relPath,
+            importPath,
           });
 
           fs.writeFile(proxyPath, content, (err) => {

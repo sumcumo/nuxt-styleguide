@@ -141,6 +141,10 @@ export default function buildProxyVariables(variables, tmpDir) {
   variables
     .on('update', ({ relPath, name, file }) => {
       const proxyPath = path.join(tmpDir, `${name}.vars.js`);
+      const importPath =
+        options.importFrom === 'local'
+          ? relPath.replace(/^~/, '~@')
+          : relPath.replace(/^~/, `~${options.name}`);
 
       Promise.all([getVariableInfo(file), proxyTemplatePromise])
         .then(([varInfo, template]) => {
@@ -151,7 +155,7 @@ export default function buildProxyVariables(variables, tmpDir) {
             variables: JSON.stringify(varInfo),
             buildId: i++,
             name,
-            relPath,
+            importPath,
           });
 
           return new Promise((resolve, reject) => {
