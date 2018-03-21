@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.3.1
+
+### 🐞 Bug Fixes
+
+→ **use extendBuild method instead of hacking webpack config**
+
+
 ## Version 0.3.0
 
 ### 🆕  New Features

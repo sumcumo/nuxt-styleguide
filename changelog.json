@@ -1,4 +1,23 @@
 {
+  "1.2.1": {
+    "date": "Wed, 21 Mar 2018 14:49:23 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.3.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use extendBuild method instead of hacking webpack config",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.2.0": {
     "date": "Wed, 21 Mar 2018 14:43:07 GMT",
     "changes": {
