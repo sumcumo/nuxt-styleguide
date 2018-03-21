@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss" module>
+@import "../variables/Colors.scss";
+
 .button {
   font-family: 'Cabin Sketch', cursive;
   border: 5px solid transparent;
@@ -31,6 +33,7 @@ export default {
   font-weight: default;
 }
 .button:hover {
-  background-color: fuchsia;
+  background-color: $main;
+  color: $contrast;
 }
 </style>
