@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.2.1
+
+### 🐞 Bug Fixes
+
+→ **remove empty style texts**
+
+
 ## Version 0.2.0
 
 ### 🆕  New Features

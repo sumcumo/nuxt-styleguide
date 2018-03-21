@@ -1,4 +1,59 @@
 {
+  "1.2.0": {
+    "date": "Wed, 21 Mar 2018 14:43:07 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "0.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "introduce importFrom option",
+            "body": "and set default to \"package\"\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "remove empty style texts",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "handle importFrom option",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: introduce importFrom option",
+            "body": "and set default to \"package\"\n\n"
+          }
+        ]
+      }
+    }
+  },
   "1.1.2": {
     "date": "Tue, 13 Mar 2018 17:08:28 GMT",
     "changes": {

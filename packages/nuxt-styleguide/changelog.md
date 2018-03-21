@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.3.0
+
+### 🆕  New Features
+
+→ **handle importFrom option**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@0.3.0: **introduce importFrom option**
+
+
 ## Version 0.2.2
 
 ### 🐞 Bug Fixes

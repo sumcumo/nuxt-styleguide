@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",
@@ -10,7 +10,7 @@
     "babel-cli": "6.26.0"
   },
   "dependencies": {
-    "@sum.cumo/nuxt-styleguide-config": "^0.2.0",
+    "@sum.cumo/nuxt-styleguide-config": "^0",
     "@sum.cumo/nuxt-styleguide-files": "^0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^0.2.0",
     "chalk": "2.3.1",

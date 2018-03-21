@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 0.3.0
+
+### 🆕  New Features
+
+→ **introduce importFrom option**
+> and set default to "package"
+> 
+> 
+
+
 ## Version 0.2.0
 
 ### 🆕  New Features
