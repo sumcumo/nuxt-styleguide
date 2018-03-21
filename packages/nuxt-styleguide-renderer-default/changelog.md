@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.3.0
+
+### 🆕  New Features
+
+→ **add default doc renderer**
+
+
 ## Version 0.2.1
 
 ### 🐞 Bug Fixes

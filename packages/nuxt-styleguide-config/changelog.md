@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 0.4.0
+
+### 🆕  New Features
+
+→ **add default value for docsDir**
+
+
 ## Version 0.3.0
 
 ### 🆕  New Features

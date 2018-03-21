@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@sum.cumo/nuxt-styleguide-config": "^0",
     "@sum.cumo/nuxt-styleguide-files": "^0",
-    "@sum.cumo/nuxt-styleguide-renderer-default": "^0.2.0",
+    "@sum.cumo/nuxt-styleguide-renderer-default": "^0",
     "chalk": "2.3.1",
     "chokidar": "2.0.2",
     "doctrine": "2.1.0",

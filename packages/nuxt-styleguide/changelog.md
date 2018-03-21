@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.4.0
+
+### 🆕  New Features
+
+→ **create routes for doc entries**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@0.3.0: **add default doc renderer**
+
+
 ## Version 0.3.1
 
 ### 🐞 Bug Fixes
