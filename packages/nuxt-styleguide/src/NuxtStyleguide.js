@@ -21,7 +21,7 @@ export default function NuxtStyleguide() {
     'pages'
   );
 
-  extendVueLoaders(this.nuxt);
+  extendVueLoaders(this);
 
   this.addPlugin({
     src: path.resolve(__dirname, 'styleguideProvider.js'),

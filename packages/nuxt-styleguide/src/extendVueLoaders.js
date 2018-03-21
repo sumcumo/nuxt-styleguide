@@ -1,12 +1,7 @@
 import * as path from 'path';
 
-export default function addStyleguideLoaders(nuxt) {
-  const originalExtend = nuxt.options.build.extend;
-  nuxt.options.build.extend = (originalConfig) => {
-    const config = originalExtend
-      ? originalExtend(originalConfig)
-      : originalConfig;
-
+export default function addStyleguideLoaders(module) {
+  module.extendBuild((config) => {
     const vueLoaderRule = config.module.rules.find((rule) => {
       return rule.loader === 'vue-loader';
     });
@@ -21,7 +16,5 @@ export default function addStyleguideLoaders(nuxt) {
       'loaders',
       'states-loader.js'
     );
-
-    return config;
-  };
+  });
 }
