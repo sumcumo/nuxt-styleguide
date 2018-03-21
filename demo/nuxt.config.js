@@ -1,6 +1,7 @@
 // console.log(require.resolve('nuxt-styleguide'));
 
 const path = require('path');
+const pkg = require('./package.json');
 
 module.exports = {
   rootDir: path.resolve(__dirname, '..'),
@@ -9,6 +10,7 @@ module.exports = {
     [
       '@sum.cumo/nuxt-styleguide',
       {
+        name: pkg.name,
         extends: [path.resolve(__dirname, 'subStyleguide')],
       },
     ],
