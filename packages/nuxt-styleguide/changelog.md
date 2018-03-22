@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.6.1
+
+### 🐞 Bug Fixes
+
+→ **do not strip leading slash in basepath**
+
+
 ## Version 0.6.0
 
 ### 🆕  New Features

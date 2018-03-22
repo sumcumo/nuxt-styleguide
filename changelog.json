@@ -1,4 +1,23 @@
 {
+  "1.5.1": {
+    "date": "Thu, 22 Mar 2018 16:41:42 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.6.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not strip leading slash in basepath",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.5.0": {
     "date": "Thu, 22 Mar 2018 16:26:18 GMT",
     "changes": {
