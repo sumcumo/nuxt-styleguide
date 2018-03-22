@@ -7,6 +7,7 @@ import * as fs from 'fs';
 import options from '@sum.cumo/nuxt-styleguide-config';
 import getFiles from '@sum.cumo/nuxt-styleguide-files';
 import buildProxyVariables from './buildProxyVariables';
+import urlJoin from 'url-join';
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
 try {
@@ -38,6 +39,10 @@ export default function NuxtStyleguide() {
     });
   });
 
+  const basePath = `${this.nuxt.options.router.base
+    .replace(/^\//, '')
+    .replace(/\/$/, '')}/`;
+
   this.addPlugin({
     src: path.resolve(__dirname, 'styleguideProvider.js'),
     options: {
@@ -46,7 +51,8 @@ export default function NuxtStyleguide() {
         version: options.version,
         description: options.description,
         homepage: options.homepage,
-        path: options.path,
+        basePath,
+        path: `${urlJoin(basePath, options.path).replace(/\/$/, '')}`,
       }),
     },
   });

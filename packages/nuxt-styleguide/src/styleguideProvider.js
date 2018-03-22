@@ -23,6 +23,10 @@ function getRoutes(routes) {
         return {
           ...route,
           name,
+          path: `${Vue.prototype.$styleguide.basePath}${route.path.replace(
+            /^\//,
+            ''
+          )}`,
           category,
         };
       });
