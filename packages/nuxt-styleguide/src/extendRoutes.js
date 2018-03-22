@@ -27,7 +27,10 @@ export default function extendRouter(
   });
 
   docsPaths.forEach(({ file }) => {
-    const relPath = path.relative(docsDir, file).replace(/\.md$/, '');
+    const relPath = path
+      .relative(docsDir, file)
+      .replace(/\.md$/, '')
+      .replace(/\.vue$/, '');
     const pathTokens = relPath.split(path.sep);
 
     const routePath = (pathTokens[pathTokens.length - 1] === 'index'

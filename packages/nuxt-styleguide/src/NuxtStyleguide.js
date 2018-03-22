@@ -78,7 +78,7 @@ export default function NuxtStyleguide() {
     '**/*.vue'
   );
 
-  const docs = getFiles(docsDir, '**/*.md');
+  const docs = getFiles(docsDir, '**/*.+(md|vue)');
 
   const variables = getFiles(
     path.resolve(options.srcDir, options.variablesName),
