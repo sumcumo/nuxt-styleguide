@@ -1,5 +1,18 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.6.0
+
+### 🆕  New Features
+
+→ **support router.base option with absolute paths**
+
+→ **also allow vue files for docs**
+
+### 🐞 Bug Fixes
+
+→ **ensure docs do not conflict with pages**
+
+
 ## Version 0.5.0
 
 ### 🆕  New Features

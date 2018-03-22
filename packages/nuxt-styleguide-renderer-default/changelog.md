@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.5.0
+
+### 🆕  New Features
+
+→ **use absolute paths for back links**
+
+
 ## Version 0.4.0
 
 ### 🆕  New Features

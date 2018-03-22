@@ -1,4 +1,67 @@
 {
+  "1.5.0": {
+    "date": "Thu, 22 Mar 2018 16:26:18 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.5.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "use absolute paths for back links",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.6.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "support router.base option with absolute paths",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "ensure docs do not conflict with pages",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "also allow vue files for docs",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.1.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "use markdown-it instead of marked",
+            "body": "because marked was not able to correctly render `@scoped/npm-pacakges`\n\n"
+          }
+        ]
+      }
+    }
+  },
   "1.4.0": {
     "date": "Thu, 22 Mar 2018 14:35:02 GMT",
     "changes": {
