@@ -1,11 +1,8 @@
 <template>
-  <div v-html="doc" />
+  <div>
+    <slot />
+  </div>
 </template>
 
 <script>
-export default {
-  props: {
-    doc: String
-  }
-}
 </script>
