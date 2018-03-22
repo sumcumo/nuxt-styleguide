@@ -39,9 +39,7 @@ export default function NuxtStyleguide() {
     });
   });
 
-  const basePath = `${this.nuxt.options.router.base
-    .replace(/^\//, '')
-    .replace(/\/$/, '')}/`;
+  const basePath = `${this.nuxt.options.router.base.replace(/\/$/, '')}/`;
 
   this.addPlugin({
     src: path.resolve(__dirname, 'styleguideProvider.js'),
