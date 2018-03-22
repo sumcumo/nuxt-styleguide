@@ -1,10 +1,11 @@
 'use strict';
 
-const marked = require('marked');
+const markdownIt = require('markdown-it');
 const path = require('path');
 const loaderUtils = require('loader-utils');
 const cheerio = require('cheerio');
 const compiler = require('vue-template-compiler');
+const hljs = require('highlight.js');
 
 const COMPONENT_PREFIX = 'vmc-custom-';
 
@@ -60,9 +61,21 @@ module.exports = function(markdown) {
 
   this.cacheable();
 
-  marked.setOptions(options.marked || {});
+  const md = markdownIt(
+    options.renderer || {
+      highlight(str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value;
+          } catch (__) {}
+        }
 
-  const html = marked(markdown);
+        return '';
+      },
+    }
+  );
+
+  const html = md.render(markdown);
   const $ = cheerio.load(html);
 
   const components = Object.keys(options.components || {}).map(
