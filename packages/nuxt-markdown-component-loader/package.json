@@ -1,0 +1,9 @@
+{
+  "name": "@sum.cumo/nuxt-markdown-component-loader",
+  "version": "0.0.0-development",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "@sum.cumo/vue-markdown-component-loader": "0.0.0-development"
+  }
+}

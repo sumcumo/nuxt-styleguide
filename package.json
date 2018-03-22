@@ -45,6 +45,7 @@
       "nuxt-styleguide-files": "@sum.cumo/nuxt-styleguide-files",
       "nuxt-styleguide-publish-npm": "@sum.cumo/nuxt-styleguide-publish-npm",
       "nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default",
+      "nuxt-markdown-component-loader": "@sum.cumo/nuxt-markdown-component-loader",
       "vue-markdown-component-loader": "@sum.cumo/vue-markdown-component-loader"
     },
     "shouldBeCommitted": []
