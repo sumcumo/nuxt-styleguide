@@ -1,4 +1,81 @@
 {
+  "1.4.0": {
+    "date": "Thu, 22 Mar 2018 14:35:02 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-markdown-component-loader": {
+        "version": "0.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "create package",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "feat: create package",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.4.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "use slot instead of doc prop to get content for doc view",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.5.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use nuxt-markdown-component-loader for docs",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "feat: create package",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "create package",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.3.0": {
     "date": "Wed, 21 Mar 2018 16:51:20 GMT",
     "changes": {

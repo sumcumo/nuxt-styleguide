@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.4.0
+
+### 🆕  New Features
+
+→ **use slot instead of doc prop to get content for doc view**
+
+
 ## Version 0.3.0
 
 ### 🆕  New Features

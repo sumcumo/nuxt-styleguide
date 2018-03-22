@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.5.0
+
+### 🆕  New Features
+
+→ **use nuxt-markdown-component-loader for docs**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/vue-markdown-component-loader@0.1.0: **create package**
+
+
 ## Version 0.4.0
 
 ### 🆕  New Features
