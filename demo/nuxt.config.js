@@ -8,6 +8,10 @@ module.exports = {
   srcDir: __dirname,
   modules: [
     [
+      '@sum.cumo/nuxt-markdown-component-loader',
+      { loader: { exclude: path.resolve(__dirname, 'docs') } },
+    ],
+    [
       '@sum.cumo/nuxt-styleguide',
       {
         name: pkg.name,
