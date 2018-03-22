@@ -1,5 +1,6 @@
 <template>
   <div>
+      <a :href="$styleguide.path">Back</a>
       <h2>Components</h2>
       <nav>
         <ul>

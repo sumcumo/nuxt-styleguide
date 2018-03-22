@@ -1,6 +1,6 @@
 <template>
 <div>
-  <a href=".." class="href">Back</a>
+  <a :href="$styleguide.path" class="href">Back</a>
   <h1>{{name}}</h1>
   <div v-html="description" />
   <tags v-bind:tags="tags" />

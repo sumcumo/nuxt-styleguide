@@ -1,6 +1,6 @@
 <template>
 <div>
-  <a href=".." class="href">Back</a>
+  <a :href="`${$styleguide.path}/components`" class="href">Back</a>
   <h1>{{name}}</h1>
 
   <h2>Demo:</h2>
