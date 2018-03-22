@@ -10,6 +10,7 @@
     "babel-cli": "6.26.0"
   },
   "dependencies": {
+    "@sum.cumo/vue-markdown-component-loader": "0.0.0-development",
     "@sum.cumo/nuxt-styleguide-config": "^0",
     "@sum.cumo/nuxt-styleguide-files": "^0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^0",

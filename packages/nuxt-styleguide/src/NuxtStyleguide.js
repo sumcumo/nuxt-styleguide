@@ -28,8 +28,13 @@ export default function NuxtStyleguide() {
   this.extendBuild((config) => {
     config.module.rules.push({
       test: /\.md?$/,
-      loader: path.resolve(__dirname, 'loaders', 'docmd-loader.js'),
+      loader: '@sum.cumo/vue-markdown-component-loader',
       include: docsDir,
+      options: {
+        components: this.options.markdownComponents,
+        marked: this.options.marked,
+        wrapper: require.resolve(path.join(options.renderer, 'doc.vue')),
+      },
     });
   });
 
