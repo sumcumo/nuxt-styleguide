@@ -39,7 +39,7 @@ export default function extendRouter(
     ).join('/');
 
     routes.push({
-      name: `styleguide:Pages:${pathTokens
+      name: `styleguide:Docs:${pathTokens
         .map((token) => {
           return ucFirst(token);
         })
