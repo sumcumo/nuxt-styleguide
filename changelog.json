@@ -1,4 +1,47 @@
 {
+  "1.9.0": {
+    "date": "Wed, 28 Mar 2018 15:33:58 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.9.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "introduce color renderer",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "introduce sidebar in frame",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "use backlink instead of custom link",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "introduce Backlink",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.8.0": {
     "date": "Wed, 28 Mar 2018 15:33:25 GMT",
     "changes": {
