@@ -1,5 +1,5 @@
 <template>
-<div>
+<Frame>
   <a :href="`${$styleguide.path}/components`" class="href">Back</a>
   <h1>{{name}}</h1>
 
@@ -56,15 +56,18 @@
     </ul>
     <tags v-bind:tags="filterMethodTags(entry.tags)" />
   </div>
-</div>
+</Frame>
+
+
 </template>
 
 <script>
 import StyleguideNav from '../nav';
+import Frame from '../frame';
 import Tags from './Tags';
 
 export default {
-  components: { StyleguideNav, Tags },
+  components: { StyleguideNav, Tags, Frame },
   computed: {
     hasSlots() {
       return Object.keys(this.slots || {}).length !== 0;
@@ -104,5 +107,4 @@ export default {
     tags: Object,
     methods: Object,
   },
-};
-</script>
+};</script>

@@ -1,8 +1,13 @@
 <template>
-  <div>
+  <Frame>
     <slot />
-  </div>
+  </Frame>
 </template>
 
 <script>
-</script>
+import Frame from './frame';
+export default {
+  components: {
+    Frame,
+  },
+};</script>
