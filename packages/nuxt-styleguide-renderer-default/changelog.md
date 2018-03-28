@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.7.0
+
+### 🆕  New Features
+
+→ **introduce frame**
+
+
 ## Version 0.6.0
 
 ### 🆕  New Features
