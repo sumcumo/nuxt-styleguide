@@ -25,7 +25,7 @@
  * @since Version 1.0.1
  */
 export default {
-  name: 'grid',
+  name: 'DocgenExample',
   props: {
 
     /**
