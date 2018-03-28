@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.7.1
+
+### 🐞 Bug Fixes
+
+→ **require latest versions of internal dependencies**
+
+
 ## Version 0.7.0
 
 ### 🆕  New Features

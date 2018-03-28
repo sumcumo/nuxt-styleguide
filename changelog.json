@@ -1,4 +1,23 @@
 {
+  "1.6.1": {
+    "date": "Wed, 28 Mar 2018 10:03:04 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.7.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "require latest versions of internal dependencies",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.6.0": {
     "date": "Wed, 28 Mar 2018 09:57:34 GMT",
     "changes": {
