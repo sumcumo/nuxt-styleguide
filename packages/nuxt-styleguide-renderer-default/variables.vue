@@ -6,14 +6,12 @@
   <div v-html="description" />
   <tags v-bind:tags="tags" />
   <code><pre>@import "{{ importPath }}";</pre></code>
-  <div v-for="(decl) in declarations">
+  <div class="variable" v-for="(decl) in declarations">
     <h2><pre>{{decl.name}}</pre></h2>
     <tags v-bind:tags="decl.tags" />
 
-    <div v-if="decl.render === 'color'">
-      <div v-bind:style="{ backgroundColor: decl.value, height: '50px', width: '50px' }" />
-      {{decl.value}}
-    </div>
+      <ColorRenderer v-if="decl.render === 'color'":color="decl.value"></ColorRenderer>
+
     <div v-else>
       <h3>Value</h3>
       <code><pre>{{decl.value}}</pre></code>
@@ -27,10 +25,11 @@
 <script>
 import Tags from './component/Tags';
 import Backlink from './component/Backlink';
+import ColorRenderer from './component/ColorRenderer';
 import Frame from './frame';
 
 export default {
-  components: { Tags, Frame, Backlink },
+  components: { Tags, Frame, Backlink, ColorRenderer },
   props: {
     name: String,
     description: String,
@@ -39,3 +38,11 @@ export default {
     declarations: Array,
   },
 };</script>
+
+
+
+<style>
+.variable{
+  margin-bottom: 3em;
+}
+</style>
