@@ -1,4 +1,59 @@
 {
+  "1.6.0": {
+    "date": "Wed, 28 Mar 2018 09:57:34 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-files": {
+        "version": "0.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-files"
+            ],
+            "subject": "allow custom getName helper",
+            "body": "in order to support names generated from file content instead of file name\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "0.7.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use component display name instead of file name",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not render markdown of empty description",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.1.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "normalize all props to strings",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.5.1": {
     "date": "Thu, 22 Mar 2018 16:41:42 GMT",
     "changes": {

@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide-files
 
+## Version 0.3.0
+
+### 🆕  New Features
+
+→ **allow custom getName helper**
+> in order to support names generated from file content instead of file name
+> 
+> 
+
+
 ## Version 0.2.0
 
 ### 🆕  New Features

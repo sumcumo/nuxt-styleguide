@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.1.2
+
+### 🐞 Bug Fixes
+
+→ **normalize all props to strings**
+
+
 ## Version 0.1.1
 
 ### 🐞 Bug Fixes

@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 0.7.0
+
+### 🆕  New Features
+
+→ **use component display name instead of file name**
+
+### 🐞 Bug Fixes
+
+→ **do not render markdown of empty description**
+
+
 ## Version 0.6.1
 
 ### 🐞 Bug Fixes
