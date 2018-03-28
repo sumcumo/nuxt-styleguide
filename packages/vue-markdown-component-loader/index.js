@@ -30,7 +30,11 @@ function normalizeComponent(rawComp) {
     comp.props = {};
   } else {
     comp.path = rawComp.path;
-    comp.props = rawComp.props;
+    comp.props = Object.keys(rawComp.props).reduce((memo, k) => {
+      memo[k] = rawComp.props[k].toString();
+
+      return memo;
+    }, {});
   }
 
   return comp;
@@ -63,6 +67,7 @@ module.exports = function(markdown) {
 
   const md = markdownIt(
     options.renderer || {
+      html: true,
       highlight(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
           try {
