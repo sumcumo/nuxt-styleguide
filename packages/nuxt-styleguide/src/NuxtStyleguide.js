@@ -7,6 +7,7 @@ import * as fs from 'fs';
 import options from '@sum.cumo/nuxt-styleguide-config';
 import getFiles from '@sum.cumo/nuxt-styleguide-files';
 import buildProxyVariables from './buildProxyVariables';
+import getComponentInfo from './getComponentInfo';
 import urlJoin from 'url-join';
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp');
@@ -79,7 +80,16 @@ export default function NuxtStyleguide() {
 
   const components = getFiles(
     options.extends.concat(path.join(options.srcDir, 'components')),
-    '**/*.vue'
+    '**/*.vue',
+    (file, relPath) => {
+      try {
+        const info = getComponentInfo(file, relPath, false);
+
+        return info.displayName || false;
+      } catch (e) {
+        return false;
+      }
+    }
   );
 
   const docs = getFiles(docsDir, '**/*.+(md|vue)');
