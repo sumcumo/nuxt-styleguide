@@ -1,6 +1,6 @@
 <template>
 <Frame>
-  <a :href="`${$styleguide.path}/components`" class="href">Back</a>
+  <Backlink :href="`${$styleguide.path}/components`"></Backlink>
   <h1>{{name}}</h1>
 
   <h2>Demo:</h2>
@@ -65,9 +65,10 @@
 import StyleguideNav from '../nav';
 import Frame from '../frame';
 import Tags from './Tags';
+import Backlink from './Backlink';
 
 export default {
-  components: { StyleguideNav, Tags, Frame },
+  components: { StyleguideNav, Tags, Frame, Backlink },
   computed: {
     hasSlots() {
       return Object.keys(this.slots || {}).length !== 0;

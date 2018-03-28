@@ -1,7 +1,7 @@
 <template>
 <Frame>
 
-  <a :href="$styleguide.path" class="href">Back</a>
+  <Backlink :href="$styleguide.path"></Backlink>
   <h1>{{name}}</h1>
   <div v-html="description" />
   <tags v-bind:tags="tags" />
@@ -26,10 +26,11 @@
 
 <script>
 import Tags from './component/Tags';
+import Backlink from './component/Backlink';
 import Frame from './frame';
 
 export default {
-  components: { Tags, Frame },
+  components: { Tags, Frame, Backlink },
   props: {
     name: String,
     description: String,

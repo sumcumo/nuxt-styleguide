@@ -1,6 +1,6 @@
 <template>
   <Frame>
-    <a :href="$styleguide.path">Back</a>
+    <Backlink :href="$styleguide.path"></Backlink>
     <h2>Components</h2>
     <nav>
       <ul>
@@ -14,8 +14,13 @@
 
 <script>
 import Frame from '../frame';
+import StyleguideNav from '../nav';
+import Backlink from '../component/Backlink';
+
 export default {
   components: {
+    StyleguideNav,
+    Backlink,
     Frame,
   },
 };</script>
