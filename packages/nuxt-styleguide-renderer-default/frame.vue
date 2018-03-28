@@ -2,7 +2,7 @@
   <div class="frame">
     <div class="sidebar__placebo">
       <div class="sidebar">
-        <StyleguideNav slot="sidebar"></StyleguideNav>
+        <StyleguideNav />
       </div>
     </div>
     <div class="content">
