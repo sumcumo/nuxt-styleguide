@@ -1,6 +1,6 @@
 <template>
 <div>
-  <nav v-for="(subRoutes, name) in routes">
+  <nav class="nav" v-for="(subRoutes, name) in routes">
     <h3 v-if="name !== rootCategory">{{name}}</h3>
     <ul>
       <li v-for="(route) in subRoutes">
@@ -10,6 +10,24 @@
   </nav>
 </div>
 </template>
+
+<style lang="scss">
+.nav{
+  padding: 1em;
+  box-sizing: border-box;
+
+  a {
+    color: inherit;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+}
+
+
+</style>
 
 <script>
 export default {
@@ -29,5 +47,4 @@ export default {
       }, {}),
     };
   },
-};
-</script>
+};</script>
