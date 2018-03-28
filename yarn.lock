@@ -10,6 +10,11 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@sum.cumo/nuxt-markdown-component-loader@0.0.0-development":
+  version "0.1.0"
+  dependencies:
+    "@sum.cumo/vue-markdown-component-loader" "^0"
+
 "@sum.cumo/nuxt-styleguide-renderer-default@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-styleguide-renderer-default/-/nuxt-styleguide-renderer-default-0.1.0.tgz#fc770ed83cbe6b0ef484a1e2d3d289b806ea5912"
@@ -3236,6 +3241,10 @@ he@1.1.x, he@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+highlight.js@9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -3967,6 +3976,12 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+linkify-it@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.3.tgz#d94a4648f9b1c179d64fa97291268bdb6ce9434f"
+  dependencies:
+    uc.micro "^1.0.1"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4146,6 +4161,16 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+markdown-it@8.4.1:
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.1.tgz#206fe59b0e4e1b78a7c73250af9b34a4ad0aaf44"
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.5"
+
 marked@0.3.17, marked@~0.3.6:
   version "0.3.17"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.17.tgz#607f06668b3c6b1246b28f13da76116ac1aa2d2b"
@@ -4160,6 +4185,10 @@ md5.js@^1.3.4:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+mdurl@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -6954,6 +6983,10 @@ typedarray@^0.0.6:
 typical@^2.6.0, typical@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/typical/-/typical-2.6.1.tgz#5c080e5d661cbbe38259d2e70a3c7253e873881d"
+
+uc.micro@^1.0.1, uc.micro@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.5.tgz#0c65f15f815aa08b560a61ce8b4db7ffc3f45376"
 
 uglify-es@^3.3.4:
   version "3.3.9"
