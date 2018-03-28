@@ -35,7 +35,7 @@ export default function applyMarkdownToDocs(data) {
 
   const retVal = {
     ...data,
-    description: marked(data.description),
+    description: data.description ? marked(data.description) : null,
     tags: Object.keys(tags).reduce((memo, key) => {
       memo[key] = tags[key].map((tag) => {
         return {
