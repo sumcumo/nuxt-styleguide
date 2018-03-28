@@ -1,5 +1,18 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.8.0
+
+### 🆕  New Features
+
+→ **introduce color renderer**
+
+→ **introduce sidebar in frame**
+
+→ **use backlink instead of custom link**
+
+→ **introduce Backlink**
+
+
 ## Version 0.7.0
 
 ### 🆕  New Features
