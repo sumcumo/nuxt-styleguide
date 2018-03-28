@@ -35,7 +35,15 @@ function matchesAnyPattern(patterns) {
   };
 }
 
-module.exports = function getComponents(sourceDirs, patterns) {
+function defaultGetName(file) {
+  return path.basename(file, path.extname(file));
+}
+
+module.exports = function getComponents(
+  sourceDirs,
+  patterns,
+  getName = defaultGetName
+) {
   const components = new EventEmitter();
   const matches = matchesAnyPattern(toArray(patterns));
 
@@ -65,25 +73,30 @@ module.exports = function getComponents(sourceDirs, patterns) {
         return file.indexOf(importPath) === 0;
       });
       const sourceIndex = sources.indexOf(source);
+      const relPath = path.join(
+        source.relPath,
+        path.relative(source.importPath, file)
+      );
 
-      const name = path.basename(file, path.extname(file));
+      Promise.resolve(getName(file, relPath)).then((name) => {
+        if (name === false) {
+          return;
+        }
 
-      const fileObj = {
-        file,
-        sourceIndex,
-        name,
-        relPath: path.join(
-          source.relPath,
-          path.relative(source.importPath, file)
-        ),
-      };
+        const fileObj = {
+          file,
+          sourceIndex,
+          name,
+          relPath,
+        };
 
-      components.emit('add', fileObj);
-      files.push(fileObj);
+        components.emit('add', fileObj);
+        files.push(fileObj);
 
-      if (ready) {
-        update();
-      }
+        if (ready) {
+          update();
+        }
+      });
     })
     .on('unlink', (file) => {
       if (!matches(file)) {
@@ -102,9 +115,37 @@ module.exports = function getComponents(sourceDirs, patterns) {
         return;
       }
 
-      files.find(({ file: f }) => f === file).upToDate = false;
+      const source = sources.find(({ importPath }) => {
+        return file.indexOf(importPath) === 0;
+      });
+      const sourceIndex = sources.indexOf(source);
+      const relPath = path.join(
+        source.relPath,
+        path.relative(source.importPath, file)
+      );
 
-      update();
+      const fileObj = files.find(({ file: f }) => f === file);
+
+      Promise.resolve(getName(file, relPath)).then((name) => {
+        if (name === false && fileObj) {
+          files.splice(files.indexOf(fileObj), 1);
+        } else if (!fileObj) {
+          const fileObj = {
+            file,
+            sourceIndex,
+            name,
+            relPath,
+          };
+
+          components.emit('add', fileObj);
+          files.push(fileObj);
+        } else {
+          fileObj.name = name;
+          fileObj.upToDate = false;
+        }
+
+        update();
+      });
     })
     .on('error', (error) => components.emit('error', error))
     .on('ready', () => {
