@@ -1,4 +1,23 @@
 {
+  "1.7.0": {
+    "date": "Wed, 28 Mar 2018 11:59:20 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.6.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "introduce frame",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.6.1": {
     "date": "Wed, 28 Mar 2018 10:03:04 GMT",
     "changes": {
