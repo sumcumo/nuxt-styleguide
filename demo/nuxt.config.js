@@ -15,7 +15,6 @@ module.exports = {
       '@sum.cumo/nuxt-styleguide',
       {
         name: pkg.name,
-        extends: [path.resolve(__dirname, 'subStyleguide')],
       },
     ],
   ],
