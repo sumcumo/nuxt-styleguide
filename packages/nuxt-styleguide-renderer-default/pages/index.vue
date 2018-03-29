@@ -1,7 +1,7 @@
 <template>
   <Frame>
     <main>
-      <h1>Your library</h1>
+      <h1>{{$styleguide.name}}</h1>
       <a v-bind:href="$styleguide.path + '/components'" >Components</a>
     </main>
   </Frame>
