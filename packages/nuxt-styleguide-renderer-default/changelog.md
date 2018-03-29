@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.2.0
+
+### 🆕  New Features
+
+→ **vertically align lineheightdemo**
+
+
 ## Version 2.1.0
 
 ### 🆕  New Features
