@@ -1,4 +1,105 @@
 {
+  "2.0.0": {
+    "date": "Thu, 29 Mar 2018 11:52:13 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "1.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "use / root route for styleguide",
+            "body": "BREAKING CHANGE:\nStandalone usage is the default mode of the styleguide\nThis means: all other routes of the project are discarded and the styleguide\nrenders directly on the entry route of the route\n\nIf you previously used the default value \"/styleguide\", you should\nnow manually set it in the configuration"
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "rename \"variables\" to \"design-tokens\"",
+            "body": "BREAKING CHANGE\nNot all sass variables are atomic and can be treated as design tokens.\nTherefore the folder previosly named \"variables\" is renamed to \"design-tokens\"\nand the configuration for the folder name has changed from \"variablesName\" to\n\"designTokenName\".\n\nMigration: you should rename the \"variables\" folder to \"design-tokens\"\nYou could also set the configuration of \"designTokenName\" to \"variables\" (not recommended)\nIf you allready had a custom \"variablesName\" configured, change the config key\nto \"designTokenName\"\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-files": {
+        "version": "0.3.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: use / root route for styleguide",
+            "body": "BREAKING CHANGE:\nStandalone usage is the default mode of the styleguide\nThis means: all other routes of the project are discarded and the styleguide\nrenders directly on the entry route of the route\n\nIf you previously used the default value \"/styleguide\", you should\nnow manually set it in the configuration"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: rename \"variables\" to \"design-tokens\"",
+            "body": "BREAKING CHANGE\nNot all sass variables are atomic and can be treated as design tokens.\nTherefore the folder previosly named \"variables\" is renamed to \"design-tokens\"\nand the configuration for the folder name has changed from \"variablesName\" to\n\"designTokenName\".\n\nMigration: you should rename the \"variables\" folder to \"design-tokens\"\nYou could also set the configuration of \"designTokenName\" to \"variables\" (not recommended)\nIf you allready had a custom \"variablesName\" configured, change the config key\nto \"designTokenName\"\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "1.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "rename variabeles renderer to designTokens",
+            "body": "BREAKING CHANGE:\nThe rendering system is now supposed to use `designTokens.vue` instead of `variables.vue`"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "1.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "rename \"variables\" to \"design-tokens\"",
+            "body": "BREAKING CHANGE\nNot all sass variables are atomic and can be treated as design tokens.\nTherefore the folder previosly named \"variables\" is renamed to \"design-tokens\"\nand the configuration for the folder name has changed from \"variablesName\" to\n\"designTokenName\".\n\nMigration: you should rename the \"variables\" folder to \"design-tokens\"\nYou could also set the configuration of \"designTokenName\" to \"variables\" (not recommended)\nIf you allready had a custom \"variablesName\" configured, change the config key\nto \"designTokenName\"\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: use / root route for styleguide",
+            "body": "BREAKING CHANGE:\nStandalone usage is the default mode of the styleguide\nThis means: all other routes of the project are discarded and the styleguide\nrenders directly on the entry route of the route\n\nIf you previously used the default value \"/styleguide\", you should\nnow manually set it in the configuration"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: rename \"variables\" to \"design-tokens\"",
+            "body": "BREAKING CHANGE\nNot all sass variables are atomic and can be treated as design tokens.\nTherefore the folder previosly named \"variables\" is renamed to \"design-tokens\"\nand the configuration for the folder name has changed from \"variablesName\" to\n\"designTokenName\".\n\nMigration: you should rename the \"variables\" folder to \"design-tokens\"\nYou could also set the configuration of \"designTokenName\" to \"variables\" (not recommended)\nIf you allready had a custom \"variablesName\" configured, change the config key\nto \"designTokenName\"\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: rename variabeles renderer to designTokens",
+            "body": "BREAKING CHANGE:\nThe rendering system is now supposed to use `designTokens.vue` instead of `variables.vue`"
+          }
+        ]
+      }
+    }
+  },
   "1.10.0": {
     "date": "Thu, 29 Mar 2018 10:14:41 GMT",
     "changes": {

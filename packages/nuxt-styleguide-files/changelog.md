@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-files
 
+## Version 0.3.1
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@1.0.0: **use / root route for styleguide**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@1.0.0: **rename "variables" to "design-tokens"**
+
+
 ## Version 0.3.0
 
 ### 🆕  New Features

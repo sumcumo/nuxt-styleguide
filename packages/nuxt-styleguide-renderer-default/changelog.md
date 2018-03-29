@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 1.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **rename variabeles renderer to designTokens**
+> BREAKING CHANGE:
+> The rendering system is now supposed to use `designTokens.vue` instead of `variables.vue`
+
+
 ## Version 0.10.0
 
 ### 🆕  New Features
