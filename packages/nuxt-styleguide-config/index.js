@@ -59,7 +59,7 @@ module.exports = Object.assign(
   options,
   pkg,
   {
-    path: '/styleguide',
+    path: '/',
     designTokenName: 'design-tokens',
     importFrom: 'package',
     docsDir: 'docs',
