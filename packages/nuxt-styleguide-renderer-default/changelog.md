@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.3.0
+
+### 🆕  New Features
+
+→ **es koennte alles responsive sein**
+
+
 ## Version 2.2.0
 
 ### 🆕  New Features

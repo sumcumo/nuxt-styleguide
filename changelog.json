@@ -1,4 +1,23 @@
 {
+  "3.3.0": {
+    "date": "Thu, 29 Mar 2018 14:54:08 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "es koennte alles responsive sein",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.2.0": {
     "date": "Thu, 29 Mar 2018 14:19:15 GMT",
     "changes": {
