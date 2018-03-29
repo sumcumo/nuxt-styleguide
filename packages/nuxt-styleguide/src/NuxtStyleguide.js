@@ -52,6 +52,7 @@ export default function NuxtStyleguide() {
         homepage: options.homepage,
         basePath,
         path: `${urlJoin(basePath, options.path).replace(/\/$/, '')}`,
+        ...(options.styleguideData || {}),
       }),
     },
   });
