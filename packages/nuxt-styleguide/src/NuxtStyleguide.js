@@ -6,7 +6,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import options from '@sum.cumo/nuxt-styleguide-config';
 import getFiles from '@sum.cumo/nuxt-styleguide-files';
-import buildProxyVariables from './buildProxyVariables';
+import buildProxyDesignTokens from './buildProxyDesignTokens';
 import getComponentInfo from './getComponentInfo';
 import urlJoin from 'url-join';
 
@@ -59,7 +59,7 @@ export default function NuxtStyleguide() {
   let builder = null;
   let pages = null;
   let componentPaths = null;
-  let variablesPaths = null;
+  let designTokenPaths = null;
   let docsPaths = null;
   this.nuxt.hook('build:done', (b) => {
     builder = b;
@@ -71,7 +71,7 @@ export default function NuxtStyleguide() {
       routes,
       docsPaths,
       componentPaths,
-      variablesPaths,
+      designTokenPaths,
       pagesDir,
       docsDir,
       pages
@@ -94,8 +94,8 @@ export default function NuxtStyleguide() {
 
   const docs = getFiles(docsDir, '**/*.+(md|vue)');
 
-  const variables = getFiles(
-    path.resolve(options.srcDir, options.variablesName),
+  const designTokens = getFiles(
+    path.resolve(options.srcDir, options.designTokenName),
     '**/*.+(scss|sass)'
   );
 
@@ -107,9 +107,9 @@ export default function NuxtStyleguide() {
     }
   });
 
-  variables.on('updateAll', (variableList) => {
-    variablesPaths = variableList.map(({ name }) => {
-      return { name, proxyPath: path.join(tmpDir, `${name}.vars.js`) };
+  designTokens.on('updateAll', (designTokenList) => {
+    designTokenPaths = designTokenList.map(({ name }) => {
+      return { name, proxyPath: path.join(tmpDir, `${name}.dt.js`) };
     });
 
     if (builder) {
@@ -128,7 +128,7 @@ export default function NuxtStyleguide() {
   });
 
   return Promise.all([
-    buildProxyVariables(variables, tmpDir),
+    buildProxyDesignTokens(designTokens, tmpDir),
     buildProxyComponents(components, tmpDir),
     getPages(options, pagesDir, (p) => {
       pages = p;

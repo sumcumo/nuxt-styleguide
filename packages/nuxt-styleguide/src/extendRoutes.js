@@ -11,7 +11,7 @@ export default function extendRouter(
   routes,
   docsPaths,
   componentPaths,
-  variablesPaths,
+  designTokenPaths,
   pagesDir,
   docsDir,
   pages
@@ -82,14 +82,14 @@ export default function extendRouter(
     });
   });
 
-  variablesPaths.forEach(({ name, proxyPath }) => {
+  designTokenPaths.forEach(({ name, proxyPath }) => {
     const kebabName = kebabCase(name);
 
     routes.push({
-      name: `styleguide:Variables:${name}`,
-      path: urlJoin(options.path, options.variablesName, kebabName),
+      name: `styleguide:DesignTokens:${name}`,
+      path: urlJoin(options.path, options.designTokenName, kebabName),
       component: proxyPath,
-      chunkName: `styleguide/variables/${kebabName}`,
+      chunkName: `styleguide/dt/${kebabName}`,
     });
   });
 }

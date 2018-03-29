@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@sum.cumo/vue-markdown-component-loader": "^0.1.2",
-    "@sum.cumo/nuxt-styleguide-config": "^0",
+    "@sum.cumo/nuxt-styleguide-config": "rlsr-latest",
     "@sum.cumo/nuxt-styleguide-files": "^0.3.0",
-    "@sum.cumo/nuxt-styleguide-renderer-default": "^0",
+    "@sum.cumo/nuxt-styleguide-renderer-default": "rlsr-latest",
     "chalk": "2.3.1",
     "chokidar": "2.0.2",
     "doctrine": "2.1.0",
