@@ -10,7 +10,7 @@
     <h2><pre>{{decl.name}}</pre></h2>
     <tags v-bind:tags="decl.tags" />
 
-      <ColorRenderer v-if="decl.render === 'color'":color="decl.value"></ColorRenderer>
+      <ColorDemo v-if="decl.render === 'color'":color="decl.value"></ColorDemo>
 
     <div v-else>
       <h3>Value</h3>
@@ -25,11 +25,11 @@
 <script>
 import Tags from './component/Tags';
 import Backlink from './component/Backlink';
-import ColorRenderer from './component/ColorRenderer';
+import ColorDemo from './component/ColorDemo';
 import Frame from './frame';
 
 export default {
-  components: { Tags, Frame, Backlink, ColorRenderer },
+  components: { Tags, Frame, Backlink, ColorDemo },
   props: {
     name: String,
     description: String,

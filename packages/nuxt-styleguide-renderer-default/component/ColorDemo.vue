@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="color-renderer">
+  <div class="color-demo">
     <div class="color-field" :style='{backgroundColor: this.color}'></div>
     {{color}}
   </div>
@@ -13,7 +13,7 @@ export default {
 };</script>
 
 <style lang="css">
-.color-renderer{
+.color-demo{
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 1em;
