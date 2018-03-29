@@ -2,7 +2,6 @@
   <Frame>
     <main>
       <h1>{{$styleguide.name}}</h1>
-      <a v-bind:href="$styleguide.path + '/components'" >Components</a>
     </main>
   </Frame>
 </template>

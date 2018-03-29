@@ -1,6 +1,6 @@
 <template>
 <div>
-  <nav class="nav" v-for="(subRoutes, name) in routes">
+  <nav class="nav" v-for="(subRoutes, name) in routes" v-if="name !== 'Pages'">
     <h3 v-if="name !== rootCategory">{{name}}</h3>
     <ul>
       <li v-for="(route) in subRoutes">
