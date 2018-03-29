@@ -1,0 +1,39 @@
+
+/* @render fontFamily */
+$font-family: 'Roboto', sans-serif;
+
+/**
+ * @render fontSize
+ */
+$font-size: 15px;
+
+/**
+  * Desktop Fontsize
+ * @render lineHeight
+ */
+$font-line-height: 20px;
+
+
+/**
+  * Desktop Fontsize
+ * @render fontSize
+ */
+$font-size-dt: 16px;
+
+/**
+  * Desktop Lineheight
+ * @render lineHeight
+ */
+$font-line-height-dt: 21px;
+
+/**
+  * Mobile Fontsize
+ * @render fontSize
+ */
+$font-size-small: 13px;
+
+/**
+  * Mobile Lineheight
+ * @render lineHeight
+ */
+$font-line-height-small: 18px;

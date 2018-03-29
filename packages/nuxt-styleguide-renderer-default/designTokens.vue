@@ -11,6 +11,10 @@
     <tags v-bind:tags="decl.tags" />
 
       <ColorDemo v-if="decl.render === 'color'":color="decl.value"></ColorDemo>
+      <FontSizeDemo v-else-if="decl.render === 'fontSize'" :size="decl.value"></FontSizeDemo>
+      <LineHeightDemo v-else-if="decl.render === 'lineHeight'" :size="decl.value"></LineHeightDemo>
+      <FontFamilyDemo v-else-if="decl.render === 'fontFamily'" :family="decl.value"></FontFamilyDemo>
+
 
     <div v-else>
       <h3>Value</h3>
@@ -26,10 +30,13 @@
 import Tags from './component/Tags';
 import Backlink from './component/Backlink';
 import ColorDemo from './component/ColorDemo';
+import FontFamilyDemo from './component/FontFamilyDemo';
+import FontSizeDemo from './component/FontSizeDemo';
+import LineHeightDemo from './component/LineHeightDemo';
 import Frame from './frame';
 
 export default {
-  components: { Tags, Frame, Backlink, ColorDemo },
+  components: { Tags, Frame, Backlink, ColorDemo, FontSizeDemo, FontFamilyDemo, LineHeightDemo},
   props: {
     name: String,
     description: String,
@@ -43,6 +50,6 @@ export default {
 
 <style>
 .variable{
-  margin-bottom: 3em;
+  margin-bottom: 6em;
 }
 </style>
