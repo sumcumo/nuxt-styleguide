@@ -12,7 +12,7 @@ const styleguideSrcDir = path.resolve(__dirname, '..', 'src');
 
 const proxyTemplatePromise = new Promise((resolve, reject) => {
   fs.readFile(
-    path.resolve(styleguideSrcDir, 'proxyComponent', 'proxyVariable.tjs'),
+    path.resolve(styleguideSrcDir, 'proxyComponent', 'proxyDesignTokens.tjs'),
     (err, content) => {
       return err ? reject(err) : resolve(_template(content.toString()));
     }
@@ -118,7 +118,7 @@ function getDecoratedDeclarations(ast, globalComment) {
   }, []);
 }
 
-function getVariableInfo(file) {
+function getInfo(file) {
   return readFile(file).then((content) => {
     const ast = postcss.parse(content, { syntax });
     validate(ast, file);
@@ -135,24 +135,24 @@ function getVariableInfo(file) {
   });
 }
 
-export default function buildProxyVariables(variables, tmpDir) {
+export default function buildProxyDesignTokens(designTokens, tmpDir) {
   const d = new Deferred();
 
-  variables
+  designTokens
     .on('update', ({ relPath, name, file }) => {
-      const proxyPath = path.join(tmpDir, `${name}.vars.js`);
+      const proxyPath = path.join(tmpDir, `${name}.dt.js`);
       const importPath =
         options.importFrom === 'local'
           ? relPath.replace(/^~/, '~@')
           : relPath.replace(/^~/, `~${options.name}`);
 
-      Promise.all([getVariableInfo(file), proxyTemplatePromise])
-        .then(([varInfo, template]) => {
+      Promise.all([getInfo(file), proxyTemplatePromise])
+        .then(([dtInfo, template]) => {
           const content = template({
             rendererPath: require.resolve(
-              path.join(options.renderer, 'variables.vue')
+              path.join(options.renderer, 'designTokens.vue')
             ),
-            variables: JSON.stringify(varInfo),
+            designTokens: JSON.stringify(dtInfo),
             buildId: i++,
             name,
             importPath,

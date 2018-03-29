@@ -2,12 +2,12 @@ import Vue from 'vue';
 import Renderer from '<%= rendererPath %>';
 
 const cacheBust = '<%= buildId %>';
-const variables = <%= variables %>;
+const designTokens = <%= designTokens %>;
 
-export default Vue.component('nuxt-styleguide-vars-<%= name %>', {
+export default Vue.component('nuxt-styleguide-dt-<%= name %>', {
   render: function(createElement) {
     return createElement(Renderer, {
-      props: Object.assign(variables, {
+      props: Object.assign(designTokens, {
         name: '<%= name %>',
         importPath: '<%= importPath %>',
       }),

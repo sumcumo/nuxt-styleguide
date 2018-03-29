@@ -59,8 +59,8 @@ module.exports = Object.assign(
   options,
   pkg,
   {
-    path: '/styleguide',
-    variablesName: 'variables',
+    path: '/',
+    designTokenName: 'design-tokens',
     importFrom: 'package',
     docsDir: 'docs',
     renderer: '@sum.cumo/nuxt-styleguide-renderer-default',

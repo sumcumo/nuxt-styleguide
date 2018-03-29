@@ -1,5 +1,33 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 1.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **use / root route for styleguide**
+> BREAKING CHANGE:
+> Standalone usage is the default mode of the styleguide
+> This means: all other routes of the project are discarded and the styleguide
+> renders directly on the entry route of the route
+> 
+> If you previously used the default value "/styleguide", you should
+> now manually set it in the configuration
+
+→ **rename "variables" to "design-tokens"**
+> BREAKING CHANGE
+> Not all sass variables are atomic and can be treated as design tokens.
+> Therefore the folder previosly named "variables" is renamed to "design-tokens"
+> and the configuration for the folder name has changed from "variablesName" to
+> "designTokenName".
+> 
+> Migration: you should rename the "variables" folder to "design-tokens"
+> You could also set the configuration of "designTokenName" to "variables" (not recommended)
+> If you allready had a custom "variablesName" configured, change the config key
+> to "designTokenName"
+> 
+> 
+
+
 ## Version 0.4.0
 
 ### 🆕  New Features
