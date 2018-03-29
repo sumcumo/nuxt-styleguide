@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 0.10.0
+
+### 🆕  New Features
+
+→ **pass styleguide name to library**
+
+
 ## Version 0.9.0
 
 ### 🆕  New Features

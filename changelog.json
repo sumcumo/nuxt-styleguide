@@ -1,4 +1,23 @@
 {
+  "1.10.0": {
+    "date": "Thu, 29 Mar 2018 10:14:41 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "0.10.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "pass styleguide name to library",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "1.9.0": {
     "date": "Wed, 28 Mar 2018 15:33:58 GMT",
     "changes": {
