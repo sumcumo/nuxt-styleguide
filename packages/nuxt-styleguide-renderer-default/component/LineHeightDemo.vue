@@ -17,7 +17,9 @@ export default {
 <style lang="css">
   .line-height-demo{
       display: flex;
+      align-items: center;
   }
+  
   .line-height-demo-box{
     margin-right: 1em;
     width: 20px;
