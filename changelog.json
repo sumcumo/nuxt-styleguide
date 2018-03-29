@@ -1,4 +1,37 @@
 {
+  "3.4.0": {
+    "date": "Thu, 29 Mar 2018 15:18:46 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "pass through styleguideData to styleguide",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.1.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "stringify all props",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.3.0": {
     "date": "Thu, 29 Mar 2018 14:54:08 GMT",
     "changes": {

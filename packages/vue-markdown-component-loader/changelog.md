@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.1.3
+
+### 🐞 Bug Fixes
+
+→ **stringify all props**
+
+
 ## Version 0.1.2
 
 ### 🐞 Bug Fixes

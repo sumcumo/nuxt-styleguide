@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.1.0
+
+### 🆕  New Features
+
+→ **pass through styleguideData to styleguide**
+
+
 ## Version 2.0.0
 
 ### 🚀  BREAKING CHANGES
