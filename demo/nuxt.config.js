@@ -14,8 +14,33 @@ module.exports = {
     [
       '@sum.cumo/nuxt-styleguide',
       {
+        styleguideData: {
+          repositoryHomepage:
+            'https://gitlab.sumcumo.net/hannes.diercks/nuxt-styleguide/blob/master',
+        },
         name: pkg.name,
+        path: '/styleguide/',
       },
     ],
   ],
+  markdownComponents: {
+    'meta-warning': '~/components/MetaWarning',
+    'missing-doc': '~/components/MissingDoc',
+    'repo-link': '~/components/RepoLink',
+    h2: {
+      path: '~/components/Headline',
+      props($el) {
+        return {
+          level: 2,
+          anchor: $el
+            .text()
+            .replace(/\W+/g, '-')
+            .toLowerCase()
+            .replace(/^-/, '')
+            .replace(/-$/, ''),
+        };
+      },
+    },
+    a: '~/components/A',
+  },
 };

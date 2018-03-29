@@ -14,11 +14,10 @@
 
 <script>
 /**
- * This is an example of creating a reusable grid component and using it with external data.
+ * ### Meta Warning!
  *
- * - with
- * - a
- * - list
+ * This component overuses documentation and its main purpose
+ * is to demonstrate what is technically possible.
  *
  * @version 1.0.5
  * @author [Rafael](https://github.com/rafaesc92)
