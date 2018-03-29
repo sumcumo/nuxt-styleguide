@@ -23,6 +23,14 @@ function toFn(code) {
 
 let i = 0;
 
+function stringifyProps(props) {
+  return Object.keys(props).reduce((memo, k) => {
+    memo[k] = props[k].toString();
+
+    return memo;
+  }, {});
+}
+
 function normalizeComponent(rawComp) {
   const comp = {};
   if (typeof rawComp === 'string') {
@@ -30,11 +38,7 @@ function normalizeComponent(rawComp) {
     comp.props = {};
   } else {
     comp.path = rawComp.path;
-    comp.props = Object.keys(rawComp.props).reduce((memo, k) => {
-      memo[k] = rawComp.props[k].toString();
-
-      return memo;
-    }, {});
+    comp.props = rawComp.props;
   }
 
   return comp;
@@ -89,8 +93,10 @@ module.exports = function(markdown) {
       const proxyName = `${COMPONENT_PREFIX}cmp-${componentName}`;
 
       $(componentName).each((i, el) => {
+        const props =
+          typeof comp.props === 'function' ? comp.props($(el)) : comp.props;
         el.name = proxyName;
-        Object.assign(el.attribs, comp.props, el.attribs);
+        Object.assign(el.attribs, stringifyProps(props), el.attribs);
       });
 
       return Object.assign({
