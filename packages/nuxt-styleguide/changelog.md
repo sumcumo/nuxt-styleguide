@@ -1,5 +1,34 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **rename "variables" to "design-tokens"**
+> BREAKING CHANGE
+> Not all sass variables are atomic and can be treated as design tokens.
+> Therefore the folder previosly named "variables" is renamed to "design-tokens"
+> and the configuration for the folder name has changed from "variablesName" to
+> "designTokenName".
+> 
+> Migration: you should rename the "variables" folder to "design-tokens"
+> You could also set the configuration of "designTokenName" to "variables" (not recommended)
+> If you allready had a custom "variablesName" configured, change the config key
+> to "designTokenName"
+> 
+> 
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@2.0.0: **use / root route for styleguide**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@2.0.0: **rename "variables" to "design-tokens"**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.0.0: **remove components page**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.0.0: **rename variabeles renderer to designTokens**
+
+
 ## Version 1.0.0
 
 ### 🚀  BREAKING CHANGES
