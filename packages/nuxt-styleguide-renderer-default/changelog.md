@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.1.0
+
+### 🆕  New Features
+
+→ **introduce font demos**
+
+
 ## Version 2.0.0
 
 ### 🚀  BREAKING CHANGES

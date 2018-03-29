@@ -1,4 +1,23 @@
 {
+  "3.1.0": {
+    "date": "Thu, 29 Mar 2018 14:12:48 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "introduce font demos",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.0.0": {
     "date": "Thu, 29 Mar 2018 12:16:35 GMT",
     "changes": {
