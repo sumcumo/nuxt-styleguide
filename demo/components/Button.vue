@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import "../variables/Colors.scss";
+@import "../design-tokens/Colors.scss";
 
 .button {
   font-family: 'Cabin Sketch', cursive;
