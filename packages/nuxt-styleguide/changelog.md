@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.4.1
+
+### 🐞 Bug Fixes
+
+→ **bind fix default renderer version**
+
+
 ## Version 2.4.0
 
 ### 🆕  New Features

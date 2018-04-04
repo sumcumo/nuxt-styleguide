@@ -1,4 +1,23 @@
 {
+  "3.8.1": {
+    "date": "Wed, 04 Apr 2018 13:25:38 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.4.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "bind fix default renderer version",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.8.0": {
     "date": "Wed, 04 Apr 2018 13:03:33 GMT",
     "changes": {
