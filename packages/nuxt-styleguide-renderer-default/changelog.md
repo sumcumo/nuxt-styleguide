@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.4.0
+
+### 🆕  New Features
+
+→ **add Icon renderer**
+
+
 ## Version 2.3.0
 
 ### 🆕  New Features

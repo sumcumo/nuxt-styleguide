@@ -1,5 +1,22 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.2.0
+
+### 🆕  New Features
+
+→ **pick up icons and render them in navigation**
+
+### 🐞 Bug Fixes
+
+→ **unlink correct temp component file**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@2.1.0: **add default value for iconName**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.4.0: **add Icon renderer**
+
+
 ## Version 2.1.0
 
 ### 🆕  New Features
