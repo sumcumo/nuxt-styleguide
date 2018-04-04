@@ -62,7 +62,7 @@ export default function buildProxyComponents(components, tmpDir) {
       })
     })
     .on('unlink', ({ name }) => {
-      fs.unlinkSync(path.join(tmpDir, `${name}.js`))
+      fs.unlinkSync(path.join(tmpDir, `${name}.comp.js`))
     })
     .on('ready', () => {
       d.resolve()
