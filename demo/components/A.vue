@@ -8,7 +8,7 @@
 <styleguide-doc>
 ### Meta Warning!
 
-This component is used in the documentation you are just reading.  
+This component is used in the documentation you are just reading.
 It is not part of the re-usable packages and mainly exits for demonstration purposes.
 </styleguide-doc>
 
@@ -21,19 +21,19 @@ export default {
   name: 'A',
   props: {
     /**
-     * target url of the link  
+     * target url of the link
      * use `~` prefix for absolute project-internal links
      */
-    href: String
+    href: { type: String, required: true },
   },
   computed: {
     target() {
       if (!this.href) {
-        return null;
+        return null
       }
-      
+
       return this.href.replace(/^~/, this.$styleguide.path.replace(/\/$/, ''))
-    }
-  }
+    },
+  },
 }
 </script>

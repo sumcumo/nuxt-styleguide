@@ -1,39 +1,53 @@
 <template>
-<div v-if="single" class="single-icon">
-  <img :src="iconUrl" />
-  {{name}}
-</div>
-<Frame v-else>
-  <Backlink href="../"></Backlink>
-  <h1>{{name}}</h1>
-  <img :src="iconUrl" />
-</Frame>
+  <div
+    v-if="single"
+    class="single-icon"
+  >
+    <img :src="iconUrl">
+    {{ name }}
+  </div>
+  <sg-frame v-else>
+    <sg-acklink href="../" />
+    <h1>{{ name }}</h1>
+    <img :src="iconUrl">
+  </sg-frame>
 </template>
 
 <script>
-import Frame from './frame';
-import Backlink from './component/backlink';
+import SgFrame from './frame.vue'
+import SgBacklink from './component/Backlink.vue'
 
 export default {
-  components: { Frame, Backlink },
+  components: { SgFrame, SgBacklink },
   props: {
-    single: Boolean,
-    name: String,
-    iconUrl: String,
-    importPath: String,
+    single: {
+      type: Boolean,
+      default: false,
+    },
+    name: {
+      type: String,
+      default: null,
+    },
+    iconUrl: {
+      type: String,
+      default: null,
+    },
+    importPath: {
+      type: String,
+      default: null,
+    },
   },
-};
-
+}
 </script>
 
 
 
 <style>
-.single-icon{
+.single-icon {
   display: flex;
   align-items: center;
 }
-.single-icon img{
-  margin-right: .3em;
+.single-icon img {
+  margin-right: 0.3em;
 }
 </style>

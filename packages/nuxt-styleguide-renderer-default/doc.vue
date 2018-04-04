@@ -1,15 +1,15 @@
 <template>
-  <Frame>
+  <sg-frame>
     <slot />
-  </Frame>
+  </sg-frame>
 </template>
 
 <script>
-import Frame from './frame';
-import Backlink from './component/Backlink';
+import SgFrame from './frame.vue'
+
 export default {
   components: {
-    Frame,
-    Backlink,
+    SgFrame,
   },
-};</script>
+}
+</script>

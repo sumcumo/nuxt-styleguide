@@ -1,19 +1,18 @@
 <template>
-  <Frame>
+  <sg-frame>
     <main>
-      <h1>{{$styleguide.name}}</h1>
+      <h1>{{ $styleguide.name }}</h1>
     </main>
-  </Frame>
+  </sg-frame>
 </template>
 
 
 <script>
-import Frame from '../frame';
-import StyleguideNav from '../nav';
+import SgFrame from '../frame.vue'
 
 export default {
   components: {
-    StyleguideNav,
-    Frame,
+    SgFrame,
   },
-};</script>
+}
+</script>

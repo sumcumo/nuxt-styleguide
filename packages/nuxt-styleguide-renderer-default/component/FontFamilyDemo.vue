@@ -1,17 +1,18 @@
 <template lang="html">
   <div>
-    <span>{{this.family}}</span>
-    <h1 :style='{fontFamily: this.family}'>The lazy dog jumps ofer the quick brown fox</h1>
+    <span>{{ family }}</span>
+    <h1 :style="{fontFamily: family}">The lazy dog jumps ofer the quick brown fox</h1>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    family: String,
-  }
+    family: { type: String, required: true },
+  },
 }
 </script>
 
 <style lang="css">
+
 </style>

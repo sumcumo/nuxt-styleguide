@@ -1,6 +1,11 @@
 <template>
   <component :is="elm">
-    <span v-if="anchor"><a :id="anchor" :href="`#${anchor}`">#</a>&nbsp;</span>
+    <span v-if="anchor">
+      <a
+        :id="anchor"
+        :href="`#${anchor}`"
+      >#</a>&nbsp;
+    </span>
     <!-- @slot headline content -->
     <slot />
   </component>
@@ -23,29 +28,29 @@
 /**
  * ### Meta Warning!
  *
- * This component is used in the documentation you are just reading.  
+ * This component is used in the documentation you are just reading.
  * It is not part of the re-usable packages and mainly exits for demonstration purposes.
  */
 export default {
   name: 'Headline',
-  computed: {
-    elm() {
-      return `h${this.level}`;
-    },
-  },
   props: {
     /**
-     * Level of the headline (1-6)  
+     * Level of the headline (1-6)
      * Default: `2`
      */
     level: {
       type: [Number, String],
-      default: 2
+      default: 2,
     },
     /**
      * Anchor of the headline
      */
-    anchor: String
-  }
+    anchor: { type: String, default: null },
+  },
+  computed: {
+    elm() {
+      return `h${this.level}`
+    },
+  },
 }
 </script>

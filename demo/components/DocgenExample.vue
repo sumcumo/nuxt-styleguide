@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- @slot Use this slot header -->
-    <slot name="header"></slot>
+    <slot name="header" />
 
     <table class="grid">
       <!-- -->
     </table>
 
     <!-- @slot Use this slot footer -->
-    <slot name="footer"></slot>
+    <slot name="footer" />
   </div>
 </template>
 
@@ -25,8 +25,12 @@
  */
 export default {
   name: 'DocgenExample',
+  filters: {
+    capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    },
+  },
   props: {
-
     /**
      * object/array defaults should be returned from a factory function
      * @version 1.0.5
@@ -36,28 +40,34 @@ export default {
      */
     msg: {
       type: [String, Number],
-      default: 'lol'
+      default: 'lol',
     },
     /**
      * Model example
      * @model
      */
     value: {
-      type: String
+      type: String,
+      default: null,
     },
     /**
      * describe data
      * @version 1.0.5
      */
-    data: [Array],
+    data: {
+      type: [Array],
+      default() {
+        return []
+      },
+    },
     /**
      * get columns list
      */
     columns: {
       type: [Array],
       default() {
-        return [];
-      }
+        return []
+      },
     },
     /**
      * filter key
@@ -65,49 +75,50 @@ export default {
      */
     filterKey: {
       type: String,
-      default: 'example'
-    }
+      default: 'example',
+    },
   },
-  data () {
-    var sortOrders = {}
-    this.columns.forEach(function (key) {
+  data() {
+    const sortOrders = {}
+    this.columns.forEach((key) => {
       sortOrders[key] = 1
     })
     return {
       sortKey: '',
-      sortOrders: sortOrders
+      sortOrders,
     }
   },
   computed: {
-    filteredData: function () {
-      var sortKey = this.sortKey
-      var filterKey = this.filterKey && this.filterKey.toLowerCase()
-      var order = this.sortOrders[sortKey] || 1
-      var data = this.data
+    filteredData() {
+      let { data } = this
+      const { sortKey } = this
+      const filterKey = this.filterKey && this.filterKey.toLowerCase()
+      const order = this.sortOrders[sortKey] || 1
       if (filterKey) {
-        data = data.filter(function (row) {
-          return Object.keys(row).some(function (key) {
-            return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+        data = data.filter((row) => {
+          return Object.keys(row).some((key) => {
+            return (
+              String(row[key])
+                .toLowerCase()
+                .indexOf(filterKey) > -1
+            )
           })
         })
       }
       if (sortKey) {
-        data = data.slice().sort(function (a, b) {
+        data = data.slice().sort((a, b) => {
+          // eslint-disable-next-line no-param-reassign
           a = a[sortKey]
+          // eslint-disable-next-line no-param-reassign
           b = b[sortKey]
+          // eslint-disable-next-line no-nested-ternary
           return (a === b ? 0 : a > b ? 1 : -1) * order
         })
       }
       return data
-    }
-  },
-  filters: {
-    capitalize: function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1)
-    }
+    },
   },
   methods: {
-
     /**
      * Sets the order
      *
@@ -117,9 +128,9 @@ export default {
      * @param {string} key Key to order
      * @returns {string} Test
      */
-    sortBy: function (key) {
+    sortBy(key) {
       this.sortKey = key
-      this.sortOrders[key] = this.sortOrders[key] * -1;
+      this.sortOrders[key] = this.sortOrders[key] * -1
 
       /**
        * Success event.
@@ -132,9 +143,7 @@ export default {
       })
     },
 
-    hiddenMethod: function(){
-
-    }
-  }
+    hiddenMethod() {},
+  },
 }
 </script>

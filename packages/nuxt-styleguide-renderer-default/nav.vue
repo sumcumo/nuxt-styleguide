@@ -1,50 +1,58 @@
 <template>
-<div>
-  <nav class="nav" v-for="(subRoutes, name) in routes" v-if="name !== 'Pages'">
-    <h3 v-if="name !== rootCategory">{{name}}</h3>
-    <ul>
-      <li v-for="(route) in subRoutes">
-        <a v-bind:href="route.path">{{route.name}}</a>
-      </li>
-    </ul>
-  </nav>
-</div>
+  <div>
+    <nav
+      v-for="(subRoutes, name) in routes"
+      v-if="name !== 'Pages'"
+      :key="name"
+      class="nav"
+    >
+      <h3 v-if="name !== rootCategory">{{ name }}</h3>
+      <ul>
+        <li
+          v-for="(route) in subRoutes"
+          :key="route.name"
+        >
+          <a :href="route.path">{{ route.name }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss">
-.nav{
+.nav {
   padding: 1em;
   box-sizing: border-box;
 
   a {
     color: inherit;
   }
-  ul{
+  ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
   }
 }
-
-
 </style>
 
 <script>
 export default {
   data() {
-    const rootCategory = '$$root';
+    const rootCategory = '$$root'
     return {
       rootCategory,
       routes: this.$styleguide.routes.reduce((memo, route) => {
-        const category = route.category || rootCategory;
+        const category = route.category || rootCategory
         if (!memo[category]) {
-          memo[category] = [];
+          // eslint-disable-next-line no-param-reassign
+          memo[category] = []
         }
 
-        memo[category].push(route);
+        memo[category].push(route)
 
-        return memo;
+        return memo
       }, {}),
-    };
+    }
   },
-};</script>
+}
+</script>

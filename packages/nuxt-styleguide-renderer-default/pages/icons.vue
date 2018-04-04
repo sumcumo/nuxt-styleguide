@@ -1,50 +1,58 @@
 <template>
-<Frame>
-  <Backlink href="../"></Backlink>
-  <h1>All Icons</h1>
-  <div class="iconGrid">
-  <div v-for="(icon) in icons">
-    <a :href="icon.path">
-      <component :is="icon.component" v-bind="{ single: true }" />
-    </a>
-  </div>
-</div>
-</Frame>
+  <sg-frame>
+    <sg-backlink href="../" />
+    <h1>All Icons</h1>
+    <div class="iconGrid">
+      <div
+        v-for="(icon) in icons"
+        :key="icon.path"
+      >
+        <a :href="icon.path">
+          <component
+            :is="icon.component"
+            v-bind="{ single: true }"
+          />
+        </a>
+      </div>
+    </div>
+  </sg-frame>
 </template>
 
-
 <script>
-import Frame from '../frame';
-import Backlink from '../component/Backlink';
+import SgFrame from '../frame.vue'
+import SgBacklink from '../component/Backlink.vue'
+
 export default {
-  components: { Frame, Backlink },
+  components: { SgFrame, SgBacklink },
   data() {
     return {
-      icons: []
+      icons: [],
     }
   },
   mounted() {
-    Promise.all(this.$styleguide.routes
-      .filter(({ category }) => category === 'Icons')
-      .map((route) => {
-        return route.component().then(c => {
-          return {
-            ...route,
-            component: c
-          }
+    Promise.all(
+      this.$styleguide.routes
+        .filter(({ category }) => category === 'Icons')
+        .map((route) => {
+          return route.component().then((c) => {
+            return {
+              ...route,
+              component: c,
+            }
+          })
         })
-      })
-    ).then(components => {
+    ).then((components) => {
       this.icons = components
     })
-  }
-};</script>
-
+  },
+}
+</script>
 
 <style>
-.iconGrid{
+.iconGrid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1em;
-}</style>
+}
+</style>

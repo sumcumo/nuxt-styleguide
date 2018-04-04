@@ -1,14 +1,15 @@
 <template lang="html">
-  <span :style='{fontSize: this.size}'>This is the a {{this.size}} font size</span>
+  <span :style="{fontSize: size}">This is the a {{ size }} font size</span>
 </template>
 
 <script>
 export default {
   props: {
-    size: String,
-  }
+    size: { type: String, required: true },
+  },
 }
 </script>
 
 <style lang="css">
+
 </style>
