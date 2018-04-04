@@ -104,7 +104,7 @@ export default function NuxtStyleguide() {
   )
 
   const icons = getFiles(
-    path.resolve(options.srcDir, options.iconName),
+    path.resolve(options.srcDir, options.iconFolder),
     '**/*.svg'
   )
 

@@ -93,7 +93,7 @@ export default function extendRouter(
 
     routes.push({
       name: `styleguide:Icons:${name}`,
-      path: urlJoin(options.path, options.iconName, kebabName),
+      path: urlJoin(options.path, options.iconRoute, kebabName),
       component: proxyPath,
       chunkName: `styleguide/icons/${kebabName}`,
     })
