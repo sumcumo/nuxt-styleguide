@@ -1,13 +1,15 @@
 <template>
-<div>
+<Frame>
   <h1>{{name}}</h1>
   <img :src="iconUrl" />
-</div>
+</Frame>
 </template>
 
 <script>
+import Frame from './frame';
 
 export default {
+  components: { Frame },
   props: {
     name: String,
     iconUrl: String,
