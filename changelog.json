@@ -1,4 +1,23 @@
 {
+  "3.9.1": {
+    "date": "Wed, 04 Apr 2018 14:44:52 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.7.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "forgotten b",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.9.0": {
     "date": "Wed, 04 Apr 2018 14:13:51 GMT",
     "changes": {

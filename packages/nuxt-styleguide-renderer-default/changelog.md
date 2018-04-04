@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.7.1
+
+### 🐞 Bug Fixes
+
+→ **forgotten b**
+
+
 ## Version 2.7.0
 
 ### 🆕  New Features
