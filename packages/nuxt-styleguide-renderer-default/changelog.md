@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.6.0
+
+### 🆕  New Features
+
+→ **add icons index page**
+
+→ **introduce frame to single icon view**
+
+
 ## Version 2.5.0
 
 ### 🆕  New Features
