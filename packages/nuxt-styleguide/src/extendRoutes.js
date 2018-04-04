@@ -1,9 +1,9 @@
-import * as path from 'path';
-import urlJoin from 'url-join';
-import kebabCase from 'lodash.kebabcase';
+import * as path from 'path'
+import urlJoin from 'url-join'
+import kebabCase from 'lodash.kebabcase'
 
 function ucFirst(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 export default function extendRouter(
@@ -16,80 +16,74 @@ export default function extendRouter(
   docsDir,
   pages
 ) {
-  const renderer = options.renderer;
-
-  const conflictingRoutes = routes.filter((route) => {
-    return route.path.indexOf(options.path) === 0;
-  });
+  const conflictingRoutes = routes.filter(
+    (route) => route.path.indexOf(options.path) === 0
+  )
 
   conflictingRoutes.forEach((route) => {
-    routes.splice(routes.indexOf(route), 1);
-  });
+    routes.splice(routes.indexOf(route), 1)
+  })
 
   docsPaths.forEach(({ file }) => {
     const relPath = path
       .relative(docsDir, file)
       .replace(/\.md$/, '')
-      .replace(/\.vue$/, '');
-    const pathTokens = relPath.split(path.sep);
+      .replace(/\.vue$/, '')
+    const pathTokens = relPath.split(path.sep)
 
     const routePath = (pathTokens[pathTokens.length - 1] === 'index'
       ? pathTokens.splice(0, pathTokens.length - 2)
       : pathTokens
-    ).join('/');
+    ).join('/')
 
     routes.push({
       name: `styleguide:Docs:${pathTokens
-        .map((token) => {
-          return ucFirst(token);
-        })
+        .map((token) => ucFirst(token))
         .join(':')}`,
       path: urlJoin(options.path, routePath),
       component: file,
       chunkName: `styleguide/page/${relPath}`,
-    });
-  });
+    })
+  })
 
   pages.forEach((page) => {
-    const relPath = path.relative(pagesDir, page).replace(/\.vue$/, '');
-    const pathTokens = relPath.split(path.sep);
+    const relPath = path.relative(pagesDir, page).replace(/\.vue$/, '')
+    const pathTokens = relPath.split(path.sep)
 
     const routePath = (pathTokens[pathTokens.length - 1] === 'index'
       ? pathTokens.splice(0, pathTokens.length - 2)
       : pathTokens
-    ).join('/');
+    ).join('/')
 
     routes.push({
       name: `styleguide:Pages:${pathTokens
-        .map((token) => {
-          return ucFirst(token);
-        })
+        .map((token) => ucFirst(token))
         .join(':')}`,
       path: urlJoin(options.path, routePath),
       component: page,
       chunkName: `styleguide/page/${relPath}`,
-    });
-  });
+    })
+  })
 
   componentPaths.forEach(({ name, proxyPath }) => {
-    const kebabName = kebabCase(name);
+    const kebabName = kebabCase(name)
 
     routes.push({
       name: `styleguide:Components:${name}`,
       path: urlJoin(options.path, 'components', kebabName),
       component: proxyPath,
       chunkName: `styleguide/component/${kebabName}`,
-    });
-  });
+    })
+  })
 
   designTokenPaths.forEach(({ name, proxyPath }) => {
-    const kebabName = kebabCase(name);
+    const kebabName = kebabCase(name)
 
     routes.push({
       name: `styleguide:DesignTokens:${name}`,
       path: urlJoin(options.path, options.designTokenName, kebabName),
       component: proxyPath,
       chunkName: `styleguide/dt/${kebabName}`,
-    });
-  });
+    })
+  })
 }

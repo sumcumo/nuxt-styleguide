@@ -1,24 +1,21 @@
-import Vue from 'vue';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Vue from 'vue'
 
 Vue.use({
-  install(Vue) {
-    Vue.prototype.$styleguide = Object.assign(
-      JSON.parse('<%= options.data %>')
-    );
+  install() {
+    Vue.prototype.$styleguide = Object.assign(JSON.parse('<%= options.data %>'))
   },
-});
+})
 
 function getRoutes(routes) {
   if (!getRoutes.cache) {
     getRoutes.cache = routes
-      .filter((route) => {
-        return route.name.split(':')[0] === 'styleguide';
-      })
+      .filter((route) => route.name.split(':')[0] === 'styleguide')
       .map((route) => {
-        const tokens = route.name.split(':');
-        const hasCat = tokens.length > 2;
-        const category = hasCat ? tokens[1] : null;
-        const name = tokens.slice(hasCat ? 2 : 1).join(':');
+        const tokens = route.name.split(':')
+        const hasCat = tokens.length > 2
+        const category = hasCat ? tokens[1] : null
+        const name = tokens.slice(hasCat ? 2 : 1).join(':')
 
         return {
           ...route,
@@ -28,18 +25,18 @@ function getRoutes(routes) {
             ''
           )}`,
           category,
-        };
-      });
+        }
+      })
   }
 
-  return getRoutes.cache;
+  return getRoutes.cache
 }
-getRoutes.cache = null;
+getRoutes.cache = null
 
 Vue.mixin({
-  created: function() {
+  created() {
     this.$styleguide.routes = getRoutes(
       this.$router ? this.$router.options.routes : []
-    );
+    )
   },
-});
+})

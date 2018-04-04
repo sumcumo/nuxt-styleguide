@@ -1,6 +1,6 @@
-const marked = require('marked');
+const marked = require('marked')
 
-module.exports = function(source, map) {
+module.exports = function docLoader(source, map) {
   try {
     this.callback(
       null,
@@ -12,8 +12,8 @@ module.exports = function(source, map) {
         Component.options.__styleguide.docs = ${JSON.stringify(marked(source))}
       }`,
       map
-    );
+    )
   } catch (e) {
-    this.callback(e);
+    this.callback(e)
   }
-};
+}

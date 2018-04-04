@@ -1,7 +1,7 @@
 // console.log(require.resolve('nuxt-styleguide'));
 
-const path = require('path');
-const pkg = require('./package.json');
+const path = require('path')
+const pkg = require('./package.json')
 
 module.exports = {
   rootDir: path.resolve(__dirname, '..'),
@@ -37,9 +37,9 @@ module.exports = {
             .toLowerCase()
             .replace(/^-/, '')
             .replace(/-$/, ''),
-        };
+        }
       },
     },
     a: '~/components/A',
   },
-};
+}

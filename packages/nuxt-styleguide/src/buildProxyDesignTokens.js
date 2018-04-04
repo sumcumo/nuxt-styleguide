@@ -1,39 +1,36 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import _template from 'lodash.template';
-import options from '@sum.cumo/nuxt-styleguide-config';
-import Deferred from './Deferred';
-import postcss from 'postcss';
-import syntax from 'postcss-scss';
-import doctrine from 'doctrine';
-import applyMarkdownToDocs from './applyMarkdownToDocs';
+import * as fs from 'fs'
+import * as path from 'path'
+import _template from 'lodash.template'
+import options from '@sum.cumo/nuxt-styleguide-config'
+import postcss from 'postcss'
+import syntax from 'postcss-scss'
+import doctrine from 'doctrine'
+import Deferred from './Deferred'
+import applyMarkdownToDocs from './applyMarkdownToDocs'
 
-const styleguideSrcDir = path.resolve(__dirname, '..', 'src');
+const styleguideSrcDir = path.resolve(__dirname, '..', 'src')
 
 const proxyTemplatePromise = new Promise((resolve, reject) => {
   fs.readFile(
     path.resolve(styleguideSrcDir, 'proxyComponent', 'proxyDesignTokens.tjs'),
-    (err, content) => {
-      return err ? reject(err) : resolve(_template(content.toString()));
-    }
-  );
-});
+    (err, content) =>
+      err ? reject(err) : resolve(_template(content.toString()))
+  )
+})
 
 function readFile(file) {
-  const d = new Deferred();
+  const d = new Deferred()
 
-  fs.readFile(file, (err, data) => {
-    return err ? d.reject(err) : d.resolve(data);
-  });
+  fs.readFile(file, (err, data) => (err ? d.reject(err) : d.resolve(data)))
 
-  return d.promise;
+  return d.promise
 }
 
-let i = 0;
+let i = 0
 
 function getGlobalComment(ast) {
   if (ast.nodes.length < 2) {
-    return {};
+    return {}
   }
 
   if (
@@ -43,17 +40,17 @@ function getGlobalComment(ast) {
   ) {
     return applyMarkdownToDocs(
       doctrine.parse(`${ast.nodes[0].text}`, { unwrap: true })
-    );
+    )
   }
 
-  return {};
+  return {}
 }
 
-const allowedTypes = ['comment', 'decl'];
+const allowedTypes = ['comment', 'decl']
 function validate(ast, file) {
   ast.nodes.forEach((node) => {
     if (node.type === 'atrule' && node.name === 'import') {
-      return;
+      return
     }
 
     if (allowedTypes.indexOf(node.type) === -1) {
@@ -61,30 +58,30 @@ function validate(ast, file) {
         `Unexpected ${node.type} in ./${path.relative(process.cwd(), file)}:${
           node.source.start.line
         }:${node.source.start.column}`
-      );
+      )
     }
-  });
+  })
 }
 
 function getRenderFromTags(tags) {
-  return tags.render && tags.render.length && tags.render[0].description;
+  return tags.render && tags.render.length && tags.render[0].description
 }
 
 function getRestTags(tags) {
-  const rest = { ...tags };
-  delete rest.render;
+  const rest = { ...tags }
+  delete rest.render
 
-  return rest;
+  return rest
 }
 
 function getDecoratedDeclarations(ast, globalComment) {
   const defaultRenderer =
-    getRenderFromTags(globalComment.tags || {}) || 'default';
+    getRenderFromTags(globalComment.tags || {}) || 'default'
 
   // console.log(defaultRenderer);
-  return ast.nodes.reduce((memo, node, i) => {
+  return ast.nodes.reduce((memo, node, ii) => {
     if (node.type !== 'decl') {
-      return memo;
+      return memo
     }
 
     const nodeData = {
@@ -93,37 +90,37 @@ function getDecoratedDeclarations(ast, globalComment) {
       render: defaultRenderer,
       tags: {},
       description: '',
-    };
+    }
 
     if (
-      ast.nodes[i - 1] &&
-      ast.nodes[i - 1].type === 'comment' &&
+      ast.nodes[ii - 1] &&
+      ast.nodes[ii - 1].type === 'comment' &&
       node.raws.before.split('\n').length === 2
     ) {
       const docs = applyMarkdownToDocs(
-        doctrine.parse(`${ast.nodes[i - 1].text}`, { unwrap: true })
-      );
+        doctrine.parse(`${ast.nodes[ii - 1].text}`, { unwrap: true })
+      )
 
       memo.push({
         ...nodeData,
         render: getRenderFromTags(docs.tags || {}) || nodeData.render,
         tags: getRestTags(docs.tags),
         description: docs.description,
-      });
+      })
     } else {
-      memo.push(nodeData);
+      memo.push(nodeData)
     }
 
-    return memo;
-  }, []);
+    return memo
+  }, [])
 }
 
 function getInfo(file) {
   return readFile(file).then((content) => {
-    const ast = postcss.parse(content, { syntax });
-    validate(ast, file);
+    const ast = postcss.parse(content, { syntax })
+    validate(ast, file)
 
-    const globalComment = getGlobalComment(ast);
+    const globalComment = getGlobalComment(ast)
 
     // console.log(getRestTags(globalComment.tags));
 
@@ -131,20 +128,20 @@ function getInfo(file) {
       description: globalComment.description || '',
       tags: getRestTags(globalComment.tags),
       declarations: getDecoratedDeclarations(ast, globalComment),
-    };
-  });
+    }
+  })
 }
 
 export default function buildProxyDesignTokens(designTokens, tmpDir) {
-  const d = new Deferred();
+  const d = new Deferred()
 
   designTokens
     .on('update', ({ relPath, name, file }) => {
-      const proxyPath = path.join(tmpDir, `${name}.dt.js`);
+      const proxyPath = path.join(tmpDir, `${name}.dt.js`)
       const importPath =
         options.importFrom === 'local'
           ? relPath.replace(/^~/, '~@')
-          : relPath.replace(/^~/, `~${options.name}`);
+          : relPath.replace(/^~/, `~${options.name}`)
 
       Promise.all([getInfo(file), proxyTemplatePromise])
         .then(([dtInfo, template]) => {
@@ -153,27 +150,28 @@ export default function buildProxyDesignTokens(designTokens, tmpDir) {
               path.join(options.renderer, 'designTokens.vue')
             ),
             designTokens: JSON.stringify(dtInfo),
-            buildId: i++,
+            buildId: i,
             name,
             importPath,
-          });
+          })
+
+          i += 1
 
           return new Promise((resolve, reject) => {
-            fs.writeFile(proxyPath, content, (err) => {
-              return err ? reject(err) : resolve();
-            });
-          });
+            fs.writeFile(
+              proxyPath,
+              content,
+              (err) => (err ? reject(err) : resolve())
+            )
+          })
         })
         .catch((e) => {
-          process.stderr.write(e.stack);
-        });
-    })
-    .on('unlink', ({ name }) => {
-      // fs.unlinkSync(path.join(tmpDir, `${name}.js`));
+          process.stderr.write(e.stack)
+        })
     })
     .on('ready', () => {
-      d.resolve();
-    });
+      d.resolve()
+    })
 
-  return d.promise;
+  return d.promise
 }

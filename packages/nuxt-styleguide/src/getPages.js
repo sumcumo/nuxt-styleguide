@@ -1,45 +1,45 @@
-import chokidar from 'chokidar';
-import * as path from 'path';
-import Deferred from './Deferred';
+import chokidar from 'chokidar'
+import * as path from 'path'
+import Deferred from './Deferred'
 
 export default function getPages(options, pagesDir, update) {
-  const d = new Deferred();
+  const d = new Deferred()
 
-  const files = [];
-  let ready = false;
-  const watcher = chokidar.watch(path.join(pagesDir, '**'));
+  const files = []
+  const ready = false
+  const watcher = chokidar.watch(path.join(pagesDir, '**'))
 
   watcher
     .on('add', (file) => {
       if (path.extname(file) !== '.vue') {
-        return;
+        return
       }
 
-      files.push(file);
+      files.push(file)
 
       if (ready) {
-        update(files);
+        update(files)
       }
     })
     .on('unlink', (file) => {
       if (path.extname(file) !== '.vue') {
-        return;
+        return
       }
 
-      files.splice(files.indexOf(file), 1);
+      files.splice(files.indexOf(file), 1)
 
-      update(files);
+      update(files)
     })
     .on('error', (error) => {
-      d.reject(error);
+      d.reject(error)
     })
     .on('ready', () => {
       if (!options.dev) {
-        watcher.close();
+        watcher.close()
       }
-      update(files);
-      d.resolve(pagesDir);
-    });
+      update(files)
+      d.resolve(pagesDir)
+    })
 
-  return d.promise;
+  return d.promise
 }

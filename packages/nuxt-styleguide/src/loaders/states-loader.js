@@ -1,28 +1,30 @@
 function normalize(states) {
   if (!states) {
-    return [];
+    return []
   }
 
   if (!Array.isArray(states)) {
-    return [states];
+    return [states]
   }
 
-  return states;
+  return states
 }
 
-module.exports = function(source, map) {
+module.exports = function statesLoader(source, map) {
   try {
     const states = normalize(JSON.parse(source)).map((state) => {
       if (!state.slots) {
-        state.slots = {};
+        // eslint-disable-next-line no-param-reassign
+        state.slots = {}
       }
 
       if (state.content && !state.slots.default) {
-        state.slots.default = state.content;
+        // eslint-disable-next-line no-param-reassign
+        state.slots.default = state.content
       }
 
-      return state;
-    });
+      return state
+    })
 
     this.callback(
       null,
@@ -34,8 +36,8 @@ module.exports = function(source, map) {
           Component.options.__styleguide.states = ${JSON.stringify(states)}
       }`,
       map
-    );
+    )
   } catch (e) {
-    this.callback(e);
+    this.callback(e)
   }
-};
+}

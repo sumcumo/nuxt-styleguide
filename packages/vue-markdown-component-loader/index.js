@@ -1,13 +1,10 @@
-'use strict';
+const markdownIt = require('markdown-it')
+const loaderUtils = require('loader-utils')
+const cheerio = require('cheerio')
+const compiler = require('vue-template-compiler')
+const hljs = require('highlight.js')
 
-const markdownIt = require('markdown-it');
-const path = require('path');
-const loaderUtils = require('loader-utils');
-const cheerio = require('cheerio');
-const compiler = require('vue-template-compiler');
-const hljs = require('highlight.js');
-
-const COMPONENT_PREFIX = 'vmc-custom-';
+const COMPONENT_PREFIX = 'vmc-custom-'
 
 function toFn(code) {
   return `function () {
@@ -18,42 +15,41 @@ function toFn(code) {
       .trim()
       .replace(/^with\(this\)\{/, '')
       .replace(/\}$/, '')};
-  }`;
+  }`
 }
-
-let i = 0;
 
 function stringifyProps(props) {
   return Object.keys(props).reduce((memo, k) => {
-    memo[k] = props[k].toString();
+    // eslint-disable-next-line no-param-reassign
+    memo[k] = props[k].toString()
 
-    return memo;
-  }, {});
+    return memo
+  }, {})
 }
 
 function normalizeComponent(rawComp) {
-  const comp = {};
+  const comp = {}
   if (typeof rawComp === 'string') {
-    comp.path = rawComp;
-    comp.props = {};
+    comp.path = rawComp
+    comp.props = {}
   } else {
-    comp.path = rawComp.path;
-    comp.props = rawComp.props;
+    comp.path = rawComp.path
+    comp.props = rawComp.props
   }
 
-  return comp;
+  return comp
 }
 
 function getWrapper(wrapper) {
   if (!wrapper) {
     return {
       element: 'div',
-    };
+    }
   }
 
-  const comp = normalizeComponent(wrapper);
-  const importName = 'WrapperComponent';
-  const name = `${COMPONENT_PREFIX}wrapper`;
+  const comp = normalizeComponent(wrapper)
+  const importName = 'WrapperComponent'
+  const name = `${COMPONENT_PREFIX}wrapper`
 
   return {
     element: name,
@@ -61,13 +57,13 @@ function getWrapper(wrapper) {
       importName,
       name,
     }),
-  };
+  }
 }
 
-module.exports = function(markdown) {
-  const options = loaderUtils.getOptions(this);
+module.exports = function componentLoader(markdown) {
+  const options = loaderUtils.getOptions(this)
 
-  this.cacheable();
+  this.cacheable()
 
   const md = markdownIt(
     options.renderer || {
@@ -75,71 +71,70 @@ module.exports = function(markdown) {
       highlight(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
           try {
-            return hljs.highlight(lang, str).value;
-          } catch (__) {}
+            return hljs.highlight(lang, str).value
+          } catch (_) {
+            /* noop */
+          }
         }
 
-        return '';
+        return ''
       },
     }
-  );
+  )
 
-  const html = md.render(markdown);
-  const $ = cheerio.load(html);
+  const html = md.render(markdown)
+  const $ = cheerio.load(html)
 
   const components = Object.keys(options.components || {}).map(
     (componentName, i) => {
-      const comp = normalizeComponent(options.components[componentName]);
-      const proxyName = `${COMPONENT_PREFIX}cmp-${componentName}`;
+      const comp = normalizeComponent(options.components[componentName])
+      const proxyName = `${COMPONENT_PREFIX}cmp-${componentName}`
 
-      $(componentName).each((i, el) => {
+      $(componentName).each((_, el) => {
         const props =
-          typeof comp.props === 'function' ? comp.props($(el)) : comp.props;
-        el.name = proxyName;
-        Object.assign(el.attribs, stringifyProps(props), el.attribs);
-      });
+          typeof comp.props === 'function' ? comp.props($(el)) : comp.props
+        // eslint-disable-next-line no-param-reassign
+        el.name = proxyName
+        Object.assign(el.attribs, stringifyProps(props), el.attribs)
+      })
 
       return Object.assign({
         importName: `CustomComp${i}`,
         name: proxyName,
         path: comp.path,
-      });
+      })
     }
-  );
+  )
 
-  const wrapper = getWrapper(options.wrapper);
+  const wrapper = getWrapper(options.wrapper)
 
   if (wrapper.component) {
-    components.push(wrapper.component);
+    components.push(wrapper.component)
   }
 
   const compiled = compiler.compile(
     `<${wrapper.element}>${$('body').html()}</${wrapper.element}>`
-  );
+  )
 
   if (compiled.errors.length) {
     throw new Error(
       `Failed to convert markdown to vue component:\n${compiled.errors}`
-    );
+    )
   }
 
   const component = `
   ${components
-    .map((comp) => {
-      return `import ${comp.importName} from '${comp.path}';`;
-    })
+    .map((comp) => `import ${comp.importName} from '${comp.path}';`)
     .join('\n')}
 
   export default {
     components: {${components
-      .map((comp) => {
-        return `'${comp.name}': ${comp.importName}`;
-      })
+      .map((comp) => `'${comp.name}': ${comp.importName}`)
       .join(',\n')}},
     staticRenderFns: [${compiled.staticRenderFns.map(toFn).join(',')}],
     render: ${toFn(compiled.render)}
   }
-  `;
+  `
 
-  return component;
-};
+  return component
+}

@@ -1,63 +1,63 @@
-import marked from 'marked';
+import marked from 'marked'
 
 function tryInline(desc) {
   if (typeof desc !== 'string') {
-    return desc;
+    return desc
   }
 
   if (desc.split('\n').length > 1) {
-    return marked(desc);
+    return marked(desc)
   }
 
-  return marked.inlineLexer(desc.trim(), []);
+  return marked.inlineLexer(desc.trim(), [])
 }
 
 function getNormalizedTags(data) {
   if (Array.isArray(data.tags)) {
     return data.tags.reduce((memo, tag) => {
       if (!memo[tag.title]) {
-        memo[tag.title] = [];
+        // eslint-disable-next-line no-param-reassign
+        memo[tag.title] = []
       }
 
       memo[tag.title].push({
         ...tag,
-      });
+      })
 
-      return memo;
-    }, {});
+      return memo
+    }, {})
   }
 
-  return data.tags || {};
+  return data.tags || {}
 }
 
 export default function applyMarkdownToDocs(data) {
-  const tags = getNormalizedTags(data);
+  const tags = getNormalizedTags(data)
 
   const retVal = {
     ...data,
     description: data.description ? marked(data.description) : null,
     tags: Object.keys(tags).reduce((memo, key) => {
-      memo[key] = tags[key].map((tag) => {
-        return {
-          ...tag,
-          description: tryInline(tag.description),
-        };
-      });
+      // eslint-disable-next-line no-param-reassign
+      memo[key] = tags[key].map((tag) => ({
+        ...tag,
+        description: tryInline(tag.description),
+      }))
 
-      return memo;
+      return memo
     }, {}),
-  };
+  }
 
   if (retVal.type && retVal.type.names) {
-    retVal.type.name = retVal.type.names.join('|');
-    delete retVal.type.names;
+    retVal.type.name = retVal.type.names.join('|')
+    delete retVal.type.names
   }
 
   if (retVal.type && retVal.type.name) {
-    retVal.type.name = retVal.type.name.split('|').join(' | ');
+    retVal.type.name = retVal.type.name.split('|').join(' | ')
   }
 
-  delete retVal.comment;
+  delete retVal.comment
 
-  return retVal;
+  return retVal
 }

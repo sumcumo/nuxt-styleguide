@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function NuxtMarkdownComponentLoader(moduleOptions) {
   const options = Object.assign(
     {
@@ -10,7 +8,7 @@ module.exports = function NuxtMarkdownComponentLoader(moduleOptions) {
       components: moduleOptions.components,
       marked: moduleOptions.marked,
     }
-  );
+  )
 
   this.extendBuild((config) => {
     config.module.rules.push(
@@ -19,6 +17,6 @@ module.exports = function NuxtMarkdownComponentLoader(moduleOptions) {
         loader: '@sum.cumo/vue-markdown-component-loader',
         options,
       })
-    );
-  });
-};
+    )
+  })
+}

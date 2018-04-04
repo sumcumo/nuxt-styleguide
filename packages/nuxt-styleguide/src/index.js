@@ -1,1 +1,1 @@
-export { default } from './NuxtStyleguide.js';
+export { default } from './NuxtStyleguide'
