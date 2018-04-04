@@ -1,6 +1,37 @@
 {
-  "extends": ["plugin:vue/recommended", "plugin:prettier/recommended"],
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["jest", "vue"],
   "rules": {
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "semi": ["error", "never"],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "vue/html-no-self-closing": "off",
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "vue": "never"
+      }
+    ],
+    "comma-dangle": ["error", "always-multiline"]
   }
 }
