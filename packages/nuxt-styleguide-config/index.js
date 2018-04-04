@@ -63,6 +63,7 @@ module.exports = Object.assign(
     designTokenName: 'design-tokens',
     importFrom: 'package',
     docsDir: 'docs',
+    iconName: 'icons',
     renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
   },
   moduleOptions,
