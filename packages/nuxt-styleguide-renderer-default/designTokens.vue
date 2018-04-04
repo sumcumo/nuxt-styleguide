@@ -1,7 +1,7 @@
 <template>
 <Frame>
 
-  <Backlink :href="$styleguide.path"></Backlink>
+  <Backlink href="../"></Backlink>
   <h1>{{name}}</h1>
   <div v-html="description" />
   <tags v-bind:tags="tags" />

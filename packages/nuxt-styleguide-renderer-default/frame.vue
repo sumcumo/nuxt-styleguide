@@ -46,7 +46,7 @@ body{
   --sidebar-width: 250px;
   display: grid;
   justify-content: start;
-  grid-template-columns: var(--sidebar-width) auto;
+  grid-template-columns: var(--sidebar-width) 1fr;
   grid-column-gap: 1em;
 }
 

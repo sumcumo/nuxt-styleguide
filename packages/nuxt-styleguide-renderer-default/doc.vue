@@ -1,6 +1,5 @@
 <template>
   <Frame>
-    <Backlink :href="$styleguide.path"></Backlink>
     <slot />
   </Frame>
 </template>

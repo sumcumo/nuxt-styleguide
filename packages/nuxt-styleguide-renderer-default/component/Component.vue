@@ -1,6 +1,6 @@
 <template>
 <Frame>
-  <Backlink :href="`${$styleguide.path}`"></Backlink>
+  <Backlink href="../"></Backlink>
   <h1>{{name}}</h1>
 
   <h2>Demo:</h2>

@@ -1,8 +1,10 @@
 <template>
-<div v-if="single">
+<div v-if="single" class="single-icon">
   <img :src="iconUrl" />
+  {{name}}
 </div>
 <Frame v-else>
+  <Backlink href="../"></Backlink>
   <h1>{{name}}</h1>
   <img :src="iconUrl" />
 </Frame>
@@ -10,9 +12,10 @@
 
 <script>
 import Frame from './frame';
+import Backlink from './component/backlink';
 
 export default {
-  components: { Frame },
+  components: { Frame, Backlink },
   props: {
     single: Boolean,
     name: String,
@@ -26,4 +29,11 @@ export default {
 
 
 <style>
+.single-icon{
+  display: flex;
+  align-items: center;
+}
+.single-icon img{
+  margin-right: .3em;
+}
 </style>
