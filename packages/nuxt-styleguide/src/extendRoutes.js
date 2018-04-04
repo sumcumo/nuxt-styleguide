@@ -12,6 +12,7 @@ export default function extendRouter(
   docsPaths,
   componentPaths,
   designTokenPaths,
+  iconPaths,
   pagesDir,
   docsDir,
   pages
@@ -84,6 +85,17 @@ export default function extendRouter(
       path: urlJoin(options.path, options.designTokenName, kebabName),
       component: proxyPath,
       chunkName: `styleguide/dt/${kebabName}`,
+    })
+  })
+
+  iconPaths.forEach(({ name, proxyPath }) => {
+    const kebabName = kebabCase(name)
+
+    routes.push({
+      name: `styleguide:Icons:${name}`,
+      path: urlJoin(options.path, options.iconName, kebabName),
+      component: proxyPath,
+      chunkName: `styleguide/icons/${kebabName}`,
     })
   })
 }

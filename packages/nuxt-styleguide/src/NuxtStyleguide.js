@@ -9,6 +9,7 @@ import buildProxyComponents from './buildProxyComponents'
 import getPages from './getPages'
 import buildProxyDesignTokens from './buildProxyDesignTokens'
 import getComponentInfo from './getComponentInfo'
+import buildProxyIcons from './buildProxyIcons'
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp')
 try {
@@ -62,6 +63,7 @@ export default function NuxtStyleguide() {
   let componentPaths = null
   let designTokenPaths = null
   let docsPaths = null
+  let iconPaths = null
   this.nuxt.hook('build:done', (b) => {
     builder = b
   })
@@ -73,6 +75,7 @@ export default function NuxtStyleguide() {
       docsPaths,
       componentPaths,
       designTokenPaths,
+      iconPaths,
       pagesDir,
       docsDir,
       pages
@@ -99,6 +102,22 @@ export default function NuxtStyleguide() {
     path.resolve(options.srcDir, options.designTokenName),
     '**/*.+(scss|sass)'
   )
+
+  const icons = getFiles(
+    path.resolve(options.srcDir, options.iconName),
+    '**/*.svg'
+  )
+
+  icons.on('updateAll', (iconList) => {
+    iconPaths = iconList.map(({ name }) => ({
+      name,
+      proxyPath: path.join(tmpDir, `${name}.icon.js`),
+    }))
+
+    if (builder) {
+      builder.generateRoutesAndFiles()
+    }
+  })
 
   docs.on('updateAll', (docList) => {
     docsPaths = docList
@@ -133,6 +152,7 @@ export default function NuxtStyleguide() {
   return Promise.all([
     buildProxyDesignTokens(designTokens, tmpDir),
     buildProxyComponents(components, tmpDir),
+    buildProxyIcons(icons, tmpDir),
     getPages(options, pagesDir, (p) => {
       pages = p
 

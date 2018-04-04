@@ -1,0 +1,17 @@
+import Vue from 'vue'
+import Renderer from '<%= rendererPath %>'
+import iconUrl from '<%= file %>'
+
+const cacheBust = '<%= buildId %>'
+
+export default Vue.component('nuxt-styleguide-icon-<%= name %>', {
+  render: function(createElement) {
+    return createElement(Renderer, {
+      props: {
+        iconUrl,
+        name: '<%= name %>',
+        importPath: '<%= importPath %>',
+      },
+    })
+  },
+})
