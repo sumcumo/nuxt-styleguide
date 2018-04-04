@@ -5,7 +5,7 @@
 <script>
 export default {
   props: {
-    file: String
-  }
+    file: { type: String, required: true },
+  },
 }
 </script>

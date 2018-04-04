@@ -1,20 +1,22 @@
 <template>
-<Frame>
-  <h1>All components</h1>
+  <sg-frame>
+    <h1>All components</h1>
     <ul>
-      <li v-for="(route) in $styleguide.routes" v-if="route.category === 'Components'">
-        <a v-bind:href="route.path">{{route.name}}</a>
+      <li
+        v-for="(route) in $styleguide.routes"
+        v-if="route.category === 'Components'"
+        :key="route.path"
+      >
+        <a :href="route.path">{{ route.name }}</a>
       </li>
     </ul>
-</Frame>
+  </sg-frame>
 </template>
 
 <script>
-import Frame from '../frame';
-export default {
-  components: { Frame },
-};
-</script>
+import Sgframe from '../frame.vue'
 
-<style lang="scss">
-</style>
+export default {
+  components: { Sgframe },
+}
+</script>

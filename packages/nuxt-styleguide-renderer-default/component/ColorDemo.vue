@@ -1,19 +1,26 @@
 <template lang="html">
   <div class="color-demo">
-    <div class="color-field" :style='{backgroundColor: this.color}'></div>
-    {{color}}
+    <div
+      :style="{backgroundColor: color}"
+      class="color-field"
+    />
+    {{ color }}
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    color: String,
+    color: {
+      type: String,
+      required: true,
+    },
   },
-};</script>
+}
+</script>
 
 <style lang="css">
-.color-demo{
+.color-demo {
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 1em;

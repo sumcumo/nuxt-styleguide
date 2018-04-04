@@ -1,3 +1,3 @@
 <script>
-export { default } from './component/index.js'
+export { default } from './component/index'
 </script>
