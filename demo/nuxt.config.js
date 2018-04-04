@@ -19,7 +19,6 @@ module.exports = {
             'https://gitlab.sumcumo.net/hannes.diercks/nuxt-styleguide/blob/master',
         },
         name: pkg.name,
-        path: '/styleguide/',
       },
     ],
   ],
