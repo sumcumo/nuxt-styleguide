@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.3.0
+
+### 🆕  New Features
+
+→ **pick up icons and render them in navigation**
+
+### 🐞 Bug Fixes
+
+→ **unlink correct temp component file**
+
+
 ## Version 2.2.0
 
 ### 🆕  New Features

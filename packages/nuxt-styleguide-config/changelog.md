@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 2.2.0
+
+### 🆕  New Features
+
+→ **add default value for iconName**
+
+
 ## Version 2.1.0
 
 ### 🆕  New Features

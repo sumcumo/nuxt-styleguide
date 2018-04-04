@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.5.0
+
+### 🆕  New Features
+
+→ **introduce frame to single icon view**
+
+→ **add Icon renderer**
+
+
 ## Version 2.4.0
 
 ### 🆕  New Features
