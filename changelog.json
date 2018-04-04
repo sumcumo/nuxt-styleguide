@@ -1,4 +1,23 @@
 {
+  "3.8.0": {
+    "date": "Wed, 04 Apr 2018 13:03:33 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.7.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "introduce icon grid and refactor some views",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.7.0": {
     "date": "Wed, 04 Apr 2018 10:44:10 GMT",
     "changes": {

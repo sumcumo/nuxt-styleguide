@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.7.0
+
+### 🆕  New Features
+
+→ **introduce icon grid and refactor some views**
+
+
 ## Version 2.6.0
 
 ### 🆕  New Features
