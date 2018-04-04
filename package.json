@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "cd demo && yarn start $1",
-    "lint": "eslint .",
+    "lint": "eslint --ext .vue,.js .",
     "test": "jest",
     "postinstall": "cd packages/nuxt-styleguide && yarn build"
   },
