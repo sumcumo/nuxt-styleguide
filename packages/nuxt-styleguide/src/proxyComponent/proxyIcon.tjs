@@ -7,11 +7,11 @@ const cacheBust = '<%= buildId %>'
 export default Vue.component('nuxt-styleguide-icon-<%= name %>', {
   render: function(createElement) {
     return createElement(Renderer, {
-      props: {
+      props: Object.assign({}, this.$attrs, {
         iconUrl,
         name: '<%= name %>',
         importPath: '<%= importPath %>',
-      },
+      }),
     })
   },
 })
