@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide-config",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "main": "index.js",
   "scripts": {},
   "dependencies": {

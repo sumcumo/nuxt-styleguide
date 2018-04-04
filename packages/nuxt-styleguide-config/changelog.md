@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 2.3.0
+
+### 🆕  New Features
+
+→ **introduce config for iconRoute and iconFolder**
+
+
 ## Version 2.2.0
 
 ### 🆕  New Features

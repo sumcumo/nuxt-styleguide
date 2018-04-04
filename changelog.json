@@ -1,4 +1,45 @@
 {
+  "3.9.0": {
+    "date": "Wed, 04 Apr 2018 14:13:51 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "2.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "introduce config for iconRoute and iconFolder",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.5.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "introduce config for iconRoute and iconFolder",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: introduce config for iconRoute and iconFolder",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.8.1": {
     "date": "Wed, 04 Apr 2018 13:25:38 GMT",
     "changes": {

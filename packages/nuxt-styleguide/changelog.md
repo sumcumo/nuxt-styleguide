@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.5.0
+
+### 🆕  New Features
+
+→ **introduce config for iconRoute and iconFolder**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@2.3.0: **introduce config for iconRoute and iconFolder**
+
+
 ## Version 2.4.1
 
 ### 🐞 Bug Fixes
