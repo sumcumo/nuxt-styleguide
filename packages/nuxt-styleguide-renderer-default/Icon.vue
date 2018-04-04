@@ -7,7 +7,7 @@
     {{ name }}
   </div>
   <sg-frame v-else>
-    <sg-acklink href="../" />
+    <sg-backlink href="../" />
     <h1>{{ name }}</h1>
     <img :src="iconUrl">
   </sg-frame>
