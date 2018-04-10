@@ -1,4 +1,23 @@
 {
+  "3.9.3": {
+    "date": "Tue, 10 Apr 2018 06:17:44 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.5.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "set default renderer to latest",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.9.2": {
     "date": "Tue, 10 Apr 2018 06:13:58 GMT",
     "changes": {

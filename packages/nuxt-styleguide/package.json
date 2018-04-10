@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",
