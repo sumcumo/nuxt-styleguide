@@ -29,7 +29,7 @@
       v-html="description"
     />
 
-    <tags :tags="tags" />
+    <sg-tags :tags="tags" />
 
     <div v-if="hasProps">
       <h3>Props</h3>
@@ -39,7 +39,7 @@
       >
         <h3>{{ name }}<span v-if="entry.type">&#32;<code>[{{ entry.type.name }}]</code></span></h3>
         <div v-html="entry.description" />
-        <tags :tags="entry.tags" />
+        <sg-tags :tags="entry.tags" />
       </div>
     </div>
 
@@ -51,7 +51,7 @@
       >
         <h3>{{ name }}</h3>
         <div v-html="entry.description" />
-        <tags :tags="entry.tags" />
+        <sg-tags :tags="entry.tags" />
       </div>
     </div>
 
@@ -63,7 +63,7 @@
       >
         <h3>{{ name }}<span v-if="entry.type">&#32;<code>[{{ entry.type.name }}]</code></span></h3>
         <div v-html="entry.description" />
-        <tags :tags="entry.tags" />
+        <sg-tags :tags="entry.tags" />
       </div>
     </div>
 
@@ -92,7 +92,7 @@
             <p v-html="param.description" />
           </li>
         </ul>
-        <tags :tags="filterMethodTags(entry.tags)" />
+        <sg-tags :tags="filterMethodTags(entry.tags)" />
       </div>
     </div>
   </sg-frame>

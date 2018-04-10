@@ -3,7 +3,7 @@
     <sg-backlink href="../" />
     <h1>{{ name }}</h1>
     <div v-html="description" />
-    <tags :tags="tags" />
+    <sg-tags :tags="tags" />
     <code><pre>@import "{{ importPath }}";</pre></code>
     <div
       v-for="(decl) in declarations"
@@ -11,7 +11,7 @@
       class="variable"
     >
       <h2><pre>{{ decl.name }}</pre></h2>
-      <tags :tags="decl.tags" />
+      <sg-tags :tags="decl.tags" />
 
       <sg-color-demo
         v-if="decl.render === 'color'"
