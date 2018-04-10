@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.7.2
+
+### 🐞 Bug Fixes
+
+→ **namespace tags usage**
+
+
 ## Version 2.7.1
 
 ### 🐞 Bug Fixes
