@@ -4,11 +4,11 @@ import options from '@sum.cumo/nuxt-styleguide-config'
 import kebabCase from 'lodash.kebabcase'
 import { parse } from 'vue-docgen-api'
 import urlJoin from 'url-join'
+import customRoutes from '@sum.cumo/nuxt-custom-route-folder'
 import extendVueLoaders from './extendVueLoaders'
 import buildProxyComponents from './buildProxyComponents'
 import buildProxyDesignTokens from './buildProxyDesignTokens'
 import buildProxyIcons from './buildProxyIcons'
-import customRoutes from '@sum.cumo/nuxt-custom-route-folder'
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp')
 try {
