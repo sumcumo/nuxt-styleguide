@@ -26,7 +26,7 @@
 <script>
 export default {
   props: {
-    tags: { type: Object, required: true },
+    tags: { type: Object, default: null },
   },
   computed: {
     hasTags() {
