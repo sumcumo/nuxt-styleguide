@@ -65,6 +65,7 @@ module.exports = Object.assign(
     docsDir: 'docs',
     iconRoute: 'icons',
     iconFolder: 'icons',
+    layout: 'default',
     renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
   },
   moduleOptions,
