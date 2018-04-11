@@ -21,7 +21,7 @@ export default {
   name: 'A',
   props: {
     /**
-     * target url of the link
+     * target url of the link<br>
      * use `~` prefix for absolute project-internal links
      */
     href: { type: String, required: true },
