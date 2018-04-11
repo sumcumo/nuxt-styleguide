@@ -1,40 +1,52 @@
 <template lang="html">
-  <div class="line-height-demo">
-    <div
-      :style="{ height: size }"
-      class="line-height-demo-box"
-    />
-    {{ size }}
+  <div>
+    <div v-for="(size) in data" class="line-height-demo">
+      <span class="line-height-name">
+        {{size.name}}
+      </span>
+      <div
+        class="line-height-demo-box"
+      >
+      <div class="line-height-demo-paragraph" 
+        :style="{ height: size.value }"
+      >
+        The lazy dog jumps ofer the quick brown fox
+      </div>
+      </div>
+        {{ size.value }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    size: { type: String, required: true },
+    data: { type: Array, required: true },
   },
 }
 </script>
 
 <style lang="css">
+
+.line-height-name{
+  font-size: 20px;
+  display: block;
+}
 .line-height-demo {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1em;
 }
 
 .line-height-demo-box {
-  margin-right: 1em;
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  background: AliceBlue;
+  padding: 1em 0;
 }
-.line-height-demo-box:after {
-  content: ' ';
-  height: 100%;
-  display: block;
-  background: #000;
-  width: 1px;
+.line-height-demo-paragraph{
+  box-sizing: border-box;
+  padding: 0 1em;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
+
 </style>
