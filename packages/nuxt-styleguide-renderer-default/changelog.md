@@ -1,5 +1,19 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.8.0
+
+### 🆕  New Features
+
+→ **render index routes on category headlines**
+> and hide icon nav
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **do not require tags in tags renderer**
+
+
 ## Version 2.7.2
 
 ### 🐞 Bug Fixes

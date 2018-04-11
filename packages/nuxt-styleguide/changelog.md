@@ -1,5 +1,20 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.6.0
+
+### 🆕  New Features
+
+→ **use renderer page folders as category**
+
+### 🔨 Refactorings
+
+→ **use nuxt-custom-route-folder to generate additional routes**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-custom-route-folder@0.2.0: **initiate package**
+
+
 ## Version 2.5.1
 
 ### 🐞 Bug Fixes

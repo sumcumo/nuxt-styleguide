@@ -1,4 +1,75 @@
 {
+  "3.10.0": {
+    "date": "Wed, 11 Apr 2018 15:48:23 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "initiate package",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.8.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "render index routes on category headlines",
+            "body": "and hide icon nav\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "do not require tags in tags renderer",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.6.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use renderer page folders as category",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use nuxt-custom-route-folder to generate additional routes",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "feat: initiate package",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.9.3": {
     "date": "Tue, 10 Apr 2018 06:17:44 GMT",
     "changes": {
