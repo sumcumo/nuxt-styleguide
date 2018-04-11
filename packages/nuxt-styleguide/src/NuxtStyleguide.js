@@ -1,5 +1,4 @@
 import * as path from 'path'
-import * as fs from 'fs'
 import options from '@sum.cumo/nuxt-styleguide-config'
 import kebabCase from 'lodash.kebabcase'
 import { parse } from 'vue-docgen-api'
@@ -9,13 +8,6 @@ import extendVueLoaders from './extendVueLoaders'
 import buildProxyComponents from './buildProxyComponents'
 import buildProxyDesignTokens from './buildProxyDesignTokens'
 import buildProxyIcons from './buildProxyIcons'
-
-const tmpDir = path.resolve(__dirname, '..', '.tmp')
-try {
-  fs.mkdirSync(tmpDir)
-} catch (e) {
-  /* noop */
-}
 
 function toName(str) {
   return kebabCase(str)
