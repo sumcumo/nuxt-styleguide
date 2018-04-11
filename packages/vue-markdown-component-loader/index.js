@@ -128,6 +128,7 @@ module.exports = function componentLoader(markdown) {
     .join('\n')}
 
   export default {
+    layout: '${options.layout || 'default'}',
     components: {${components
       .map((comp) => `'${comp.name}': ${comp.importName}`)
       .join(',\n')}},
