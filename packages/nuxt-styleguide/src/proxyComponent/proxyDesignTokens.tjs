@@ -5,6 +5,7 @@ const cacheBust = '<%= buildId %>';
 const designTokens = <%= designTokens %>;
 
 export default {
+  layout: '<%= layout %>',
   render(createElement) {
     return createElement(Renderer, {
       props: Object.assign(designTokens, {

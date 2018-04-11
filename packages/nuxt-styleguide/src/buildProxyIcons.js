@@ -34,6 +34,7 @@ export default function buildProxyIcons(
         rendererPath: require.resolve(path.join(options.renderer, 'Icon.vue')),
         buildId: i,
         file: component,
+        layout: options.layout,
         name,
         relPath,
         importPath,

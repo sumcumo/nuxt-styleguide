@@ -5,6 +5,7 @@ import iconUrl from '<%= file %>'
 const cacheBust = '<%= buildId %>'
 
 export default {
+  layout: '<%= layout %>',
   render(createElement) {
     return createElement(Renderer, {
       props: Object.assign({}, this.$attrs, {

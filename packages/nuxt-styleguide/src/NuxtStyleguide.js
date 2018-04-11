@@ -37,6 +37,7 @@ export default function NuxtStyleguide() {
       loader: '@sum.cumo/vue-markdown-component-loader',
       include: docsDir,
       options: {
+        layout: options.layout,
         components: this.options.markdownComponents,
         marked: this.options.marked,
         wrapper: require.resolve(path.join(options.renderer, 'doc.vue')),
@@ -54,6 +55,7 @@ export default function NuxtStyleguide() {
         version: options.version,
         description: options.description,
         homepage: options.homepage,
+        layout: options.layout,
         basePath,
         path: `${urlJoin(basePath, options.path).replace(/\/$/, '')}`,
         ...(options.styleguideData || {}),

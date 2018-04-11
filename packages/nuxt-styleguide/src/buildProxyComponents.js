@@ -43,6 +43,7 @@ export default function buildProxyComponent(
         ),
         componentInfo: JSON.stringify(componentInfo),
         buildId: i,
+        layout: options.layout,
         name,
         relPath,
         importPath,

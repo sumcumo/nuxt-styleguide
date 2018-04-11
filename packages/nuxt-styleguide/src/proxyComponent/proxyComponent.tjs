@@ -8,6 +8,7 @@ const cacheBust = '<%= buildId %>';
 const componentInfo = <%= componentInfo %>;
 
 export default {
+  layout: '<%= layout %>',
   render(createElement) {
     return createElement(Renderer, {
       props: Object.assign(componentInfo, {

@@ -139,6 +139,7 @@ export default function buildProxyDesignTokens(
         ),
         designTokens: JSON.stringify(getInfo(content, component)),
         buildId: i,
+        layout: options.layout,
         name,
         importPath,
       }),
