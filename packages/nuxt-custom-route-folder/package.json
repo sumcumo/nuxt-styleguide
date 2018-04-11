@@ -1,0 +1,12 @@
+{
+  "name": "@sum.cumo/nuxt-custom-route-folder",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "chokidar": "^2.0.3",
+    "lodash.kebabcase": "^4.1.1",
+    "minimatch": "^3.0.4",
+    "rxjs": "^5.5.8"
+  }
+}
