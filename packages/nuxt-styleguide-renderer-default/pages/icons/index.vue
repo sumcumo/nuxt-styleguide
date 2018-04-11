@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import SgFrame from '../frame.vue'
-import SgBacklink from '../component/Backlink.vue'
+import SgFrame from '../../frame.vue'
+import SgBacklink from '../../component/Backlink.vue'
 
 export default {
   components: { SgFrame, SgBacklink },
@@ -32,7 +32,9 @@ export default {
   mounted() {
     Promise.all(
       this.$styleguide.routes
-        .filter(({ category }) => category === 'Icons')
+        .filter(
+          ({ category, name }) => category === 'Icons' && name !== 'Index'
+        )
         .map((route) => {
           return route.component().then((c) => {
             return {

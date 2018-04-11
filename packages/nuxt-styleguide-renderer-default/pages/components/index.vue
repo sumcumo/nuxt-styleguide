@@ -1,5 +1,6 @@
 <template>
   <sg-frame>
+    <sg-backlink href="../" />
     <h1>All components</h1>
     <ul>
       <li
@@ -14,9 +15,10 @@
 </template>
 
 <script>
-import Sgframe from '../frame.vue'
+import SgFrame from '../../frame.vue'
+import SgBacklink from '../../component/Backlink.vue'
 
 export default {
-  components: { Sgframe },
+  components: { SgFrame, SgBacklink },
 }
 </script>
