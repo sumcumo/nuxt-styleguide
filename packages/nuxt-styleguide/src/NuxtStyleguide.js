@@ -17,14 +17,18 @@ try {
   /* noop */
 }
 
+function toName(str) {
+  return kebabCase(str)
+    .split('-')
+    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+    .join(' ')
+}
+
 function routeNameMapper(category) {
   return (relPath) => {
     const tokens = relPath.split('/')
 
-    const name = kebabCase(tokens[tokens.length - 1])
-      .split('-')
-      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-      .join(' ')
+    const name = toName(tokens[tokens.length - 1])
 
     return `NSG:${JSON.stringify({ name, category })}`
   }
@@ -84,6 +88,17 @@ export default function NuxtStyleguide() {
       nuxt: this.nuxt,
       glob: `${rendererPagesDir}/**/*.vue`,
       srcDir: rendererPagesDir,
+      mapRouteName(p) {
+        const tokens = p.split('/').map(kebabCase)
+
+        if (tokens.length === 1) {
+          return routeNameMapper('$$root')(tokens[0])
+        }
+
+        return routeNameMapper(
+          toName(tokens.slice(0, tokens.length - 1).join('-'))
+        )(tokens[tokens.length - 1])
+      },
     }),
     customRoutes({
       nuxt: this.nuxt,
