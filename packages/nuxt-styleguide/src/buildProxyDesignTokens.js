@@ -5,7 +5,6 @@ import options from '@sum.cumo/nuxt-styleguide-config'
 import postcss from 'postcss'
 import syntax from 'postcss-scss'
 import doctrine from 'doctrine'
-import Deferred from './Deferred'
 import applyMarkdownToDocs from './applyMarkdownToDocs'
 
 const styleguideSrcDir = path.resolve(__dirname, '..', 'src')
@@ -17,14 +16,6 @@ const proxyTemplatePromise = new Promise((resolve, reject) => {
       err ? reject(err) : resolve(_template(content.toString()))
   )
 })
-
-function readFile(file) {
-  const d = new Deferred()
-
-  fs.readFile(file, (err, data) => (err ? d.reject(err) : d.resolve(data)))
-
-  return d.promise
-}
 
 let i = 0
 
@@ -78,7 +69,6 @@ function getDecoratedDeclarations(ast, globalComment) {
   const defaultRenderer =
     getRenderFromTags(globalComment.tags || {}) || 'default'
 
-  // console.log(defaultRenderer);
   return ast.nodes.reduce((memo, node, ii) => {
     if (node.type !== 'decl') {
       return memo
@@ -115,63 +105,43 @@ function getDecoratedDeclarations(ast, globalComment) {
   }, [])
 }
 
-function getInfo(file) {
-  return readFile(file).then((content) => {
-    const ast = postcss.parse(content, { syntax })
-    validate(ast, file)
+function getInfo(content, file) {
+  const ast = postcss.parse(content, { syntax })
+  validate(ast, file)
 
-    const globalComment = getGlobalComment(ast)
+  const globalComment = getGlobalComment(ast)
 
-    // console.log(getRestTags(globalComment.tags));
-
-    return {
-      description: globalComment.description || '',
-      tags: getRestTags(globalComment.tags),
-      declarations: getDecoratedDeclarations(ast, globalComment),
-    }
-  })
+  return {
+    description: globalComment.description || '',
+    tags: getRestTags(globalComment.tags),
+    declarations: getDecoratedDeclarations(ast, globalComment),
+  }
 }
 
-export default function buildProxyDesignTokens(designTokens, tmpDir) {
-  const d = new Deferred()
+export default function buildProxyDesignTokens(
+  content,
+  { name: routeName, component }
+) {
+  i += 1
 
-  designTokens
-    .on('update', ({ relPath, name, file }) => {
-      const proxyPath = path.join(tmpDir, `${name}.dt.js`)
-      const importPath =
-        options.importFrom === 'local'
-          ? relPath.replace(/^~/, '~@')
-          : relPath.replace(/^~/, `~${options.name}`)
+  const relPath = path.relative(options.srcDir, component)
+  const { name } = JSON.parse(routeName.replace(/^NSG:/, ''))
+  const importPath =
+    options.importFrom === 'local'
+      ? `~/${relPath}`
+      : `${options.name}/${relPath}`
 
-      Promise.all([getInfo(file), proxyTemplatePromise])
-        .then(([dtInfo, template]) => {
-          const content = template({
-            rendererPath: require.resolve(
-              path.join(options.renderer, 'designTokens.vue')
-            ),
-            designTokens: JSON.stringify(dtInfo),
-            buildId: i,
-            name,
-            importPath,
-          })
-
-          i += 1
-
-          return new Promise((resolve, reject) => {
-            fs.writeFile(
-              proxyPath,
-              content,
-              (err) => (err ? reject(err) : resolve())
-            )
-          })
-        })
-        .catch((e) => {
-          process.stderr.write(e.stack)
-        })
-    })
-    .on('ready', () => {
-      d.resolve()
-    })
-
-  return d.promise
+  return proxyTemplatePromise.then((template) => {
+    return {
+      contents: template({
+        rendererPath: require.resolve(
+          path.join(options.renderer, 'designTokens.vue')
+        ),
+        designTokens: JSON.stringify(getInfo(content, component)),
+        buildId: i,
+        name,
+        importPath,
+      }),
+    }
+  })
 }

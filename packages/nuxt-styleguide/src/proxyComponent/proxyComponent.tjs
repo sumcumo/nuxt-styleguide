@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Comp from '<%= relPath %>';
+import Comp from '~/<%= relPath %>';
 import Renderer from '<%= rendererPath %>';
 import normalizeStates from '<%= normalizeStatesPath %>';
 
@@ -7,8 +7,8 @@ const styleguide = Comp.__styleguide || {};
 const cacheBust = '<%= buildId %>';
 const componentInfo = <%= componentInfo %>;
 
-export default Vue.component('nuxt-styleguide-<%= name %>', {
-  render: function(createElement) {
+export default {
+  render(createElement) {
     return createElement(Renderer, {
       props: Object.assign(componentInfo, {
         Comp,
@@ -19,4 +19,4 @@ export default Vue.component('nuxt-styleguide-<%= name %>', {
       }),
     });
   },
-});
+};

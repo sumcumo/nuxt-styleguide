@@ -10,12 +10,9 @@ Vue.use({
 function getRoutes(routes) {
   if (!getRoutes.cache) {
     getRoutes.cache = routes
-      .filter((route) => route.name.split(':')[0] === 'styleguide')
+      .filter((route) => route.name.indexOf('NSG:') === 0)
       .map((route) => {
-        const tokens = route.name.split(':')
-        const hasCat = tokens.length > 2
-        const category = hasCat ? tokens[1] : null
-        const name = tokens.slice(hasCat ? 2 : 1).join(':')
+        const { name, category } = JSON.parse(route.name.replace(/^NSG:/, ''))
 
         return {
           ...route,

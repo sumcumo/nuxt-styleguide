@@ -4,8 +4,8 @@ import Renderer from '<%= rendererPath %>';
 const cacheBust = '<%= buildId %>';
 const designTokens = <%= designTokens %>;
 
-export default Vue.component('nuxt-styleguide-dt-<%= name %>', {
-  render: function(createElement) {
+export default {
+  render(createElement) {
     return createElement(Renderer, {
       props: Object.assign(designTokens, {
         name: '<%= name %>',
@@ -13,4 +13,4 @@ export default Vue.component('nuxt-styleguide-dt-<%= name %>', {
       }),
     });
   },
-});
+};

@@ -1,15 +1,14 @@
 import * as path from 'path'
 import * as fs from 'fs'
 import options from '@sum.cumo/nuxt-styleguide-config'
-import getFiles from '@sum.cumo/nuxt-styleguide-files'
+import kebabCase from 'lodash.kebabcase'
+import { parse } from 'vue-docgen-api'
 import urlJoin from 'url-join'
 import extendVueLoaders from './extendVueLoaders'
-import extendRoutes from './extendRoutes'
 import buildProxyComponents from './buildProxyComponents'
-import getPages from './getPages'
 import buildProxyDesignTokens from './buildProxyDesignTokens'
-import getComponentInfo from './getComponentInfo'
 import buildProxyIcons from './buildProxyIcons'
+import customRoutes from '@sum.cumo/nuxt-custom-route-folder'
 
 const tmpDir = path.resolve(__dirname, '..', '.tmp')
 try {
@@ -18,12 +17,20 @@ try {
   /* noop */
 }
 
-export default function NuxtStyleguide() {
-  const pagesDir = path.join(
-    path.dirname(require.resolve(path.join(options.renderer, 'component.vue'))),
-    'pages'
-  )
+function routeNameMapper(category) {
+  return (relPath) => {
+    const tokens = relPath.split('/')
 
+    const name = kebabCase(tokens[tokens.length - 1])
+      .split('-')
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join(' ')
+
+    return `NSG:${JSON.stringify({ name, category })}`
+  }
+}
+
+export default function NuxtStyleguide() {
   const docsDir = path.resolve(options.srcDir, options.docsDir)
 
   extendVueLoaders(this)
@@ -58,107 +65,56 @@ export default function NuxtStyleguide() {
     },
   })
 
-  let builder = null
-  let pages = null
-  let componentPaths = null
-  let designTokenPaths = null
-  let docsPaths = null
-  let iconPaths = null
-  this.nuxt.hook('build:done', (b) => {
-    builder = b
-  })
-
-  this.nuxt.hook('build:extendRoutes', (routes) =>
-    extendRoutes(
-      options,
-      routes,
-      docsPaths,
-      componentPaths,
-      designTokenPaths,
-      iconPaths,
-      pagesDir,
-      docsDir,
-      pages
-    )
+  const rendererPagesDir = path.join(
+    path.dirname(require.resolve(path.join(options.renderer, 'component.vue'))),
+    'pages'
   )
-
-  const components = getFiles(
-    options.extends.concat(path.join(options.srcDir, 'components')),
-    '**/*.vue',
-    (file, relPath) => {
-      try {
-        const info = getComponentInfo(file, relPath, false)
-
-        return info.displayName || false
-      } catch (e) {
-        return false
-      }
-    }
-  )
-
-  const docs = getFiles(docsDir, '**/*.+(md|vue)')
-
-  const designTokens = getFiles(
-    path.resolve(options.srcDir, options.designTokenName),
-    '**/*.+(scss|sass)'
-  )
-
-  const icons = getFiles(
-    path.resolve(options.srcDir, options.iconFolder),
-    '**/*.svg'
-  )
-
-  icons.on('updateAll', (iconList) => {
-    iconPaths = iconList.map(({ name }) => ({
-      name,
-      proxyPath: path.join(tmpDir, `${name}.icon.js`),
-    }))
-
-    if (builder) {
-      builder.generateRoutesAndFiles()
-    }
-  })
-
-  docs.on('updateAll', (docList) => {
-    docsPaths = docList
-
-    if (builder) {
-      builder.generateRoutesAndFiles()
-    }
-  })
-
-  designTokens.on('updateAll', (designTokenList) => {
-    designTokenPaths = designTokenList.map(({ name }) => ({
-      name,
-      proxyPath: path.join(tmpDir, `${name}.dt.js`),
-    }))
-
-    if (builder) {
-      builder.generateRoutesAndFiles()
-    }
-  })
-
-  components.on('updateAll', (componentList) => {
-    componentPaths = componentList.map(({ name }) => ({
-      name,
-      proxyPath: path.join(tmpDir, `${name}.comp.js`),
-    }))
-
-    if (builder) {
-      builder.generateRoutesAndFiles()
-    }
-  })
 
   return Promise.all([
-    buildProxyDesignTokens(designTokens, tmpDir),
-    buildProxyComponents(components, tmpDir),
-    buildProxyIcons(icons, tmpDir),
-    getPages(options, pagesDir, (p) => {
-      pages = p
-
-      if (builder) {
-        builder.generateRoutesAndFiles()
-      }
+    customRoutes({
+      nuxt: this.nuxt,
+      glob: `${docsDir}/**/*.+(md|vue)`,
+      priority: 1,
+      mapRoutePath(p) {
+        return p.replace(/^\/docs/, '')
+      },
+      mapRouteName: routeNameMapper('Docs'),
+    }),
+    customRoutes({
+      nuxt: this.nuxt,
+      glob: `${rendererPagesDir}/**/*.vue`,
+      srcDir: rendererPagesDir,
+    }),
+    customRoutes({
+      nuxt: this.nuxt,
+      glob: `${path.join(options.srcDir, 'components')}/**/*.vue`,
+      transform: buildProxyComponents,
+      mapRouteName(_, component) {
+        return routeNameMapper('Components')(parse(component).displayName)
+      },
+      filter(component) {
+        try {
+          parse(component)
+          return true
+        } catch (err) {
+          return false
+        }
+      },
+    }),
+    customRoutes({
+      nuxt: this.nuxt,
+      glob: `${path.resolve(
+        options.srcDir,
+        options.designTokenName
+      )}/**/*.+(scss|sass)`,
+      transform: buildProxyDesignTokens,
+      mapRouteName: routeNameMapper('Design Tokens'),
+    }),
+    customRoutes({
+      nuxt: this.nuxt,
+      glob: `${path.resolve(options.srcDir, options.iconFolder)}/**/*.svg`,
+      transform: buildProxyIcons,
+      mapRouteName: routeNameMapper('Icons'),
     }),
   ])
 }
