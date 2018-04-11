@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.2.0
+
+### 🆕  New Features
+
+→ **add layout to component**
+> defaults to "default"
+> 
+> 
+
+
 ## Version 0.1.3
 
 ### 🐞 Bug Fixes

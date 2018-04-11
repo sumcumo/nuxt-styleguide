@@ -1,5 +1,22 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.7.0
+
+### 🆕  New Features
+
+→ **apply layout option to rendered pages**
+
+### 🏃 Performance Improvements
+
+→ **stop creating unused temp dir**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-config@2.4.0: **add default value for layout option**
+
+→ feat in @sum.cumo/vue-markdown-component-loader@0.2.0: **add layout to component**
+
+
 ## Version 2.6.0
 
 ### 🆕  New Features

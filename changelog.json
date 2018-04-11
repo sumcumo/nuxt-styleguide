@@ -1,4 +1,75 @@
 {
+  "3.11.0": {
+    "date": "Wed, 11 Apr 2018 16:16:08 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "2.4.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "add default value for layout option",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.7.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "apply layout option to rendered pages",
+            "body": ""
+          },
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "stop creating unused temp dir",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "feat: add default value for layout option",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "feat: add layout to component",
+            "body": "defaults to \"default\"\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "add layout to component",
+            "body": "defaults to \"default\"\n\n"
+          }
+        ]
+      }
+    }
+  },
   "3.10.0": {
     "date": "Wed, 11 Apr 2018 15:48:23 GMT",
     "changes": {
