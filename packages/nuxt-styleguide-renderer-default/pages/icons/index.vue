@@ -23,6 +23,9 @@ import SgFrame from '../../frame.vue'
 import SgBacklink from '../../component/Backlink.vue'
 
 export default {
+  layout(context) {
+    return context.env.nsgLayout
+  },
   components: { SgFrame, SgBacklink },
   data() {
     return {
