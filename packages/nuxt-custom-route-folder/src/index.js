@@ -1,1 +1,1 @@
-module.exports = require('./createCustomRoutesFromFolder')
+export { default } from './createCustomRoutesFromFolder'

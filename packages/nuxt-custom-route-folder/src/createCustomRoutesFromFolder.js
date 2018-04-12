@@ -1,14 +1,13 @@
-const path = require('path')
-const fs = require('fs')
-const crypto = require('crypto')
-const minimatch = require('minimatch')
-const kebabCase = require('lodash.kebabcase')
+import path from 'path'
+import fs from 'fs'
+import crypto from 'crypto'
+import minimatch from 'minimatch'
+import kebabCase from 'lodash.kebabcase'
+import observe from './observe'
+import getRoutes from './getRoutes'
+import { tmpDir, CHUNK_PREFIX, readFile, writeFile } from './common'
 
-const observe = require('./observe')
-const getRoutes = require('./getRoutes')
-const { tmpDir, CHUNK_PREFIX, readFile, writeFile } = require('./common')
-
-module.exports = function createCustomRoutesFromFolder({
+export default function createCustomRoutesFromFolder({
   nuxt,
   glob,
   transform,
@@ -26,21 +25,21 @@ module.exports = function createCustomRoutesFromFolder({
     .filter(({ file, event }) => {
       return event === 'ready' || minimatch(file, glob)
     })
-    .concatMap((message) => {
-      return Promise.resolve(
-        ['ready', 'unlink'].includes(message.event)
+    .concatMap(async (message) => {
+      return {
+        ...message,
+        include: ['ready', 'unlink'].includes(message.event)
           ? true
-          : filter(message.file)
-      ).then((include) => {
-        return Object.assign({}, message, { include })
-      })
+          : await filter(message.file),
+      }
     })
     .filter(({ include }) => include)
     .map((message) => {
       if (message.event === 'ready' || !transform) {
         return message
       }
-      return Object.assign({}, message, {
+      return {
+        ...message,
         proxyPath: path.join(
           tmpDir,
           `${crypto
@@ -48,12 +47,12 @@ module.exports = function createCustomRoutesFromFolder({
             .update(message.file)
             .digest('hex')}.${transformExt}`
         ),
-      })
+      }
     })
-    .concatMap((message) => {
+    .concatMap(async (message) => {
       const { event, file: component } = message
       if (['ready', 'unlink'].includes(event)) {
-        return Promise.resolve(message)
+        return message
       }
 
       const basePath = path
@@ -66,50 +65,48 @@ module.exports = function createCustomRoutesFromFolder({
         .replace(/index$/, '')
       const chunkName = `${CHUNK_PREFIX}/${basePath}`
 
-      return Promise.all([
+      const [routePath, name] = await Promise.all([
         mapRoutePath(`/${urlPath}`),
         mapRouteName(basePath, component),
-      ]).then(([routePath, name]) => {
-        return Object.assign({}, message, {
-          route: {
-            path: routePath,
-            priority,
-            component,
-            chunkName,
-            name,
-          },
-        })
-      })
+      ])
+
+      return {
+        ...message,
+        route: {
+          path: routePath,
+          priority,
+          component,
+          chunkName,
+          name,
+        },
+      }
     })
-    .concatMap((message) => {
+    .concatMap(async (message) => {
       const { event, file, route, proxyPath } = message
 
       if (!transform || !['add', 'change'].includes(event)) {
-        return Promise.resolve(message)
+        return message
       }
 
-      return readFile(file)
-        .then((contents) => {
-          const transformPromise = transform(contents, route)
-          return new Promise((resolve) => {
-            /* If the transform happens to fast, the file change
-               is not picked up by nuxt watchers and the change
-               is not visible in the preview */
-            setTimeout(resolve, 250)
-          }).then(() => {
-            return transformPromise
-          })
-        })
-        .then(({ contents }) => {
-          return writeFile(proxyPath, contents)
-        })
-        .then(() => {
-          return Object.assign(message, {
-            route: Object.assign({}, message.route, {
-              component: proxyPath,
-            }),
-          })
-        })
+      const { contents } = await Promise.all([
+        transform(await readFile(file), route),
+        new Promise((resolve) => {
+          /* If the transform happens to fast, the file change
+             is not picked up by nuxt watchers and the change
+             is not visible in the preview */
+          setTimeout(resolve, 250)
+        }),
+      ])
+
+      await writeFile(proxyPath, contents)
+
+      return {
+        ...message,
+        route: {
+          ...message.route,
+          component: proxyPath,
+        },
+      }
     })
 
   observer
