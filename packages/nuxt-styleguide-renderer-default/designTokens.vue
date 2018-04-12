@@ -5,35 +5,23 @@
     <div v-html="description" />
     <sg-tags :tags="tags" />
     <code><pre>@import "{{ importPath }}";</pre></code>
-    <div
-      v-for="(decl) in declarations"
-      :key="decl.name"
-      class="variable"
-    >
-      <h2><pre>{{ decl.name }}</pre></h2>
-      <sg-tags :tags="decl.tags" />
 
       <sg-color-demo
-        v-if="decl.render === 'color'"
-        :color="decl.value"
-      />
-      <sg-font-size-demo
-        v-else-if="decl.render === 'fontSize'"
-        :size="decl.value"
-      />
-      <sg-line-height-demo
-        v-else-if="decl.render === 'lineHeight'"
-        :size="decl.value"
+        v-if="colors.length"
+        :data="colors"
       />
       <sg-font-family-demo
-        v-else-if="decl.render === 'fontFamily'"
-        :family="decl.value"
+        v-if="fontFamilies.length"
+        :data="fontFamilies"
       />
-      <div v-else>
-        <h3>Value</h3>
-        <code><pre>{{ decl.value }}</pre></code>
-      </div>
-    </div>
+      <sg-font-size-demo
+        v-if="fontSizes.length"
+        :data="fontSizes"
+      />
+      <sg-line-height-demo
+        v-if="lineHeights.length"
+        :data="lineHeights"
+      />
   </sg-frame>
 </template>
 
@@ -55,6 +43,32 @@ export default {
     SgFontSizeDemo,
     SgFontFamilyDemo,
     SgLineHeightDemo,
+  },
+  computed: {
+    colors(){
+      if (!this.declarations){
+        return []
+      }
+      return this.declarations.filter(({render}) => {return render === 'color'})
+    },
+    fontSizes(){
+       if (!this.declarations){
+        return []
+      }
+      return this.declarations.filter(({render}) => {return render === 'fontSize'})
+    },
+    fontFamilies(){
+       if (!this.declarations){
+        return []
+      }
+      return this.declarations.filter(({render}) => {return render === 'fontFamily'})
+    },
+    lineHeights(){
+       if (!this.declarations){
+        return []
+      }
+      return this.declarations.filter(({render}) => {return render === 'lineHeight'})
+    }
   },
   props: {
     name: {
