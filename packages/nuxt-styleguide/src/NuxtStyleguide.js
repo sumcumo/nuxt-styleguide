@@ -29,6 +29,8 @@ function routeNameMapper(category) {
 export default function NuxtStyleguide() {
   const docsDir = path.resolve(options.srcDir, options.docsDir)
 
+  this.options.env.nsgLayout = options.layout
+
   extendVueLoaders(this)
 
   this.extendBuild((config) => {
