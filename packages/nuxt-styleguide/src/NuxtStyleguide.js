@@ -114,6 +114,12 @@ export default function NuxtStyleguide() {
     }),
     customRoutes({
       nuxt: this.nuxt,
+      glob: `${path.join(options.srcDir, 'layouts')}/**/*.vue`,
+      transform: buildProxyComponents,
+      mapRouteName: routeNameMapper('Layouts'),
+    }),
+    customRoutes({
+      nuxt: this.nuxt,
       glob: `${path.resolve(
         options.srcDir,
         options.designTokenName

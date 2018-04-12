@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.10.0
+
+### 🆕  New Features
+
+→ **generate documenation for layouts**
+
+
 ## Version 2.9.0
 
 ### 🆕  New Features

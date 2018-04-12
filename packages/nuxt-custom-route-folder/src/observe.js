@@ -1,10 +1,12 @@
-const { Observable } = require('rxjs')
-const chokidar = require('chokidar')
-const path = require('path')
+import { Observable } from 'rxjs'
+import chokidar from 'chokidar'
+import * as path from 'path'
 
-function observe(srcDir, watch) {
-  if (!observe.cache[srcDir]) {
-    observe.cache[srcDir] = Observable.create((observer) => {
+const cache = {}
+
+export default function observe(srcDir, watch) {
+  if (!cache[srcDir]) {
+    cache[srcDir] = Observable.create((observer) => {
       let done = false
       const watcher = chokidar.watch(path.join(srcDir, '**'))
       ;['add', 'change', 'unlink'].forEach((event) => {
@@ -41,8 +43,5 @@ function observe(srcDir, watch) {
     })
   }
 
-  return observe.cache[srcDir]
+  return cache[srcDir]
 }
-observe.cache = {}
-
-module.exports = observe

@@ -1,6 +1,6 @@
 {
   "name": "nuxt-styleguide-workspaces",
-  "version": "3.13.0",
+  "version": "3.14.0",
   "description": "styleguide and pattern library support for your nuxt application",
   "private": true,
   "workspaces": [
@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start": "cd demo && yarn start $1",
+    "build": "lerna run --parallel build -- --",
     "lint": "eslint --ext .vue,.js .",
     "test": "jest",
     "postinstall": "cd packages/nuxt-styleguide && yarn build"
@@ -40,6 +41,7 @@
     "eslint-plugin-jest": "21.15.0",
     "eslint-plugin-prettier": "2.6.0",
     "eslint-plugin-vue": "4.3.0",
+    "lerna": "2.10.1",
     "prettier": "1.11.0",
     "rlsr": "3.1.0"
   },

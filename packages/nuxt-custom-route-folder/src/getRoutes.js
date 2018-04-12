@@ -1,6 +1,6 @@
-const { CHUNK_PREFIX } = require('./common')
+import { CHUNK_PREFIX } from './common'
 
-module.exports = function getRoutes(nuxt) {
+export default function getRoutes(nuxt) {
   if (!getRoutes.cache) {
     const customRoutes = []
     let builder = null
