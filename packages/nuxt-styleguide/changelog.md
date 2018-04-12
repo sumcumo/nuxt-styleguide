@@ -1,5 +1,40 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.9.0
+
+### 🆕  New Features
+
+→ **pin to latest default renderer version**
+
+→ **expose styleguide layout on env**
+
+→ **apply layout option to rendered pages**
+
+→ **use renderer page folders as category**
+
+### 🏃 Performance Improvements
+
+→ **stop creating unused temp dir**
+
+### 🔨 Refactorings
+
+→ **use nuxt-custom-route-folder to generate additional routes**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-custom-route-folder@0.3.0: **initiate package**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.9.0: **introduce a better way of displaying tokens**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@2.9.0: **use global nuxt styleguide layout**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.9.0: **render index routes on category headlines**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@2.9.0: **do not require tags in tags renderer**
+
+→ feat in @sum.cumo/vue-markdown-component-loader@0.3.0: **add layout to component**
+
+
 ## Version 2.8.0
 
 ### 🆕  New Features

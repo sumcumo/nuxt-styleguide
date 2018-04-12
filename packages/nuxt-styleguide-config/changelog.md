@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 2.5.0
+
+### 🆕  New Features
+
+→ **add default value for layout option**
+
+
 ## Version 2.4.0
 
 ### 🆕  New Features
