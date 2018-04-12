@@ -1,4 +1,23 @@
 {
+  "3.14.0": {
+    "date": "Thu, 12 Apr 2018 09:38:01 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.10.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "generate documenation for layouts",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.13.0": {
     "date": "Thu, 12 Apr 2018 08:43:31 GMT",
     "changes": {
