@@ -1,4 +1,37 @@
 {
+  "3.12.0": {
+    "date": "Thu, 12 Apr 2018 07:56:34 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.8.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "use global nuxt styleguide layout",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.8.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "expose styleguide layout on env",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.11.0": {
     "date": "Wed, 11 Apr 2018 16:16:08 GMT",
     "changes": {

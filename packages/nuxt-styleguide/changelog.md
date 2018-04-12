@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.8.0
+
+### 🆕  New Features
+
+→ **expose styleguide layout on env**
+
+
 ## Version 2.7.0
 
 ### 🆕  New Features

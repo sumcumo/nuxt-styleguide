@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.8.1
+
+### 🐞 Bug Fixes
+
+→ **use global nuxt styleguide layout**
+
+
 ## Version 2.8.0
 
 ### 🆕  New Features
