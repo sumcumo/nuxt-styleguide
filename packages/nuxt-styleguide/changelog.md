@@ -1,5 +1,18 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.11.0
+
+### 🆕  New Features
+
+→ **pin depdendency to latest default renderer**
+
+→ **generate documenation for layouts**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@2.9.1: **introduce transform hack to demo fixed elements**
+
+
 ## Version 2.10.0
 
 ### 🆕  New Features
