@@ -7,6 +7,7 @@
     <div
       v-for="(state) in states"
       :key="state.title"
+      class="component-demo"
     >
       <h4>{{ state.title }}</h4>
       <component
@@ -97,6 +98,12 @@
     </div>
   </sg-frame>
 </template>
+
+<style>
+.component-demo{
+  transform: translateX(1px);
+}
+</style>
 
 <script>
 import SgStyleguideNav from '../nav.vue'
