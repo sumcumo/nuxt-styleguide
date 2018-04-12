@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "main": "index.js",
   "scripts": {
+    "prepare": "npm run build",
     "build": "babel src --out-dir lib"
   },
   "dependencies": {
