@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.1
+
+### 🐞 Bug Fixes
+
+→ **fix destructuring problem**
+
+
 ## Version 0.3.0
 
 ### 🆕  New Features

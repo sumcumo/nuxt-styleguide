@@ -1,4 +1,45 @@
 {
+  "3.16.1": {
+    "date": "Thu, 12 Apr 2018 12:38:22 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "0.3.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "fix destructuring problem",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.12.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use latest patch of nuxt-custom-route-folder",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "fix: fix destructuring problem",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.16.0": {
     "date": "Thu, 12 Apr 2018 09:50:39 GMT",
     "changes": {

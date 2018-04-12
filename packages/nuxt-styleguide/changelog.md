@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.12.1
+
+### 🐞 Bug Fixes
+
+→ **use latest patch of nuxt-custom-route-folder**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@0.3.1: **fix destructuring problem**
+
+
 ## Version 2.12.0
 
 ### 🆕  New Features
