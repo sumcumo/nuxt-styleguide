@@ -8,6 +8,10 @@ Vue.use({
 })
 
 function getRoutes(routes) {
+  if (!routes.length) {
+    return []
+  }
+
   if (!getRoutes.cache) {
     getRoutes.cache = routes
       .filter((route) => route.name.indexOf('NSG:') === 0)
