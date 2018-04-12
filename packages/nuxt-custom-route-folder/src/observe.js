@@ -8,7 +8,10 @@ export default function observe(srcDir, watch) {
   if (!cache[srcDir]) {
     cache[srcDir] = Observable.create((observer) => {
       let done = false
-      const watcher = chokidar.watch(path.join(srcDir, '**'))
+      const watcher = chokidar.watch([
+        path.join(srcDir, '**'),
+        `!${path.join(srcDir, '**', 'node_modules', '**')}`,
+      ])
       ;['add', 'change', 'unlink'].forEach((event) => {
         watcher.on(event, (file) => {
           observer.next({
