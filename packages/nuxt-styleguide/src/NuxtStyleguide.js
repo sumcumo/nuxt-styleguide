@@ -76,7 +76,7 @@ export default function NuxtStyleguide() {
       glob: `${docsDir}/**/*.+(md|vue)`,
       priority: 1,
       mapRoutePath(p) {
-        return p.replace(/^\/docs/, '')
+        return urlJoin(options.path, p.replace(/^\/docs/, ''))
       },
       mapRouteName: routeNameMapper('Docs'),
     }),
@@ -95,6 +95,9 @@ export default function NuxtStyleguide() {
           toName(tokens.slice(0, tokens.length - 1).join('-'))
         )(tokens[tokens.length - 1])
       },
+      mapRoutePath(p) {
+        return urlJoin(options.path, p)
+      },
     }),
     customRoutes({
       nuxt: this.nuxt,
@@ -111,12 +114,18 @@ export default function NuxtStyleguide() {
           return false
         }
       },
+      mapRoutePath(p) {
+        return urlJoin(options.path, p)
+      },
     }),
     customRoutes({
       nuxt: this.nuxt,
       glob: `${path.join(options.srcDir, 'layouts')}/**/*.vue`,
       transform: buildProxyComponents,
       mapRouteName: routeNameMapper('Layouts'),
+      mapRoutePath(p) {
+        return urlJoin(options.path, p)
+      },
     }),
     customRoutes({
       nuxt: this.nuxt,
@@ -126,12 +135,18 @@ export default function NuxtStyleguide() {
       )}/**/*.+(scss|sass)`,
       transform: buildProxyDesignTokens,
       mapRouteName: routeNameMapper('Design Tokens'),
+      mapRoutePath(p) {
+        return urlJoin(options.path, p)
+      },
     }),
     customRoutes({
       nuxt: this.nuxt,
       glob: `${path.resolve(options.srcDir, options.iconFolder)}/**/*.svg`,
       transform: buildProxyIcons,
       mapRouteName: routeNameMapper('Icons'),
+      mapRoutePath(p) {
+        return urlJoin(options.path, p)
+      },
     }),
   ])
 }
