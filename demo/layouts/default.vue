@@ -6,3 +6,9 @@
 ## Default empty noop-layout
 
 </styleguide-doc>
+
+<script>
+export default {
+  name: 'Default',
+}
+</script>
