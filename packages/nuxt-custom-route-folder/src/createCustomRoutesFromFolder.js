@@ -88,7 +88,7 @@ export default function createCustomRoutesFromFolder({
         return message
       }
 
-      const { contents } = await Promise.all([
+      const [{ contents }] = await Promise.all([
         transform(await readFile(file), route),
         new Promise((resolve) => {
           /* If the transform happens to fast, the file change
