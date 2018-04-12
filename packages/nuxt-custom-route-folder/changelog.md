@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.2
+
+### 🏃 Performance Improvements
+
+→ **ignore child node_modules folders**
+
+
 ## Version 0.3.1
 
 ### 🐞 Bug Fixes

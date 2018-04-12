@@ -1,4 +1,37 @@
 {
+  "3.17.1": {
+    "date": "Thu, 12 Apr 2018 15:14:51 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "0.3.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "ignore child node_modules folders",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.13.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not cache empty routes",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.17.0": {
     "date": "Thu, 12 Apr 2018 13:03:29 GMT",
     "changes": {

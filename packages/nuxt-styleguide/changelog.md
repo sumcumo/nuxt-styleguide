@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.13.1
+
+### 🐞 Bug Fixes
+
+→ **do not cache empty routes**
+
+
 ## Version 2.13.0
 
 ### 🆕  New Features
