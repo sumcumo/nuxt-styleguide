@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.12.0
+
+### 🆕  New Features
+
+→ **pin depdendency to latest default renderer**
+
+→ **generate documenation for layouts**
+
+
 ## Version 2.11.0
 
 ### 🆕  New Features

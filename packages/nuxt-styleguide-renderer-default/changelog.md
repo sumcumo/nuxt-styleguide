@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.10.0
+
+### 🆕  New Features
+
+→ **bump version**
+
+### 🐞 Bug Fixes
+
+→ **introduce transform hack to demo fixed elements**
+
+
 ## Version 2.9.1
 
 ### 🐞 Bug Fixes
