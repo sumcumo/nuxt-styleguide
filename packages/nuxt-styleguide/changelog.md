@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.13.0
+
+### 🆕  New Features
+
+→ **re-add path prefix feature**
+> was accitentally removed with move to custom-route-folder module
+> 
+> 
+
+
 ## Version 2.12.1
 
 ### 🐞 Bug Fixes

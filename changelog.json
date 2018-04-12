@@ -1,4 +1,23 @@
 {
+  "3.17.0": {
+    "date": "Thu, 12 Apr 2018 13:03:29 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.13.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "re-add path prefix feature",
+            "body": "was accitentally removed with move to custom-route-folder module\n\n"
+          }
+        ]
+      }
+    }
+  },
   "3.16.1": {
     "date": "Thu, 12 Apr 2018 12:38:22 GMT",
     "changes": {
