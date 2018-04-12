@@ -10,7 +10,7 @@
     "babel-cli": "6.26.0"
   },
   "dependencies": {
-    "@sum.cumo/nuxt-custom-route-folder": "^0",
+    "@sum.cumo/nuxt-custom-route-folder": "rlsr-latest",
     "@sum.cumo/vue-markdown-component-loader": "^0",
     "@sum.cumo/nuxt-styleguide-config": "^2.4.0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^2.9.1",
