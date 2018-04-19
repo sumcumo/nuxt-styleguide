@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.3
+
+### 🏃 Performance Improvements
+
+→ **observe passed globs**
+> insted of abserving whole src folder and filtering later on
+> 
+> 
+
+
 ## Version 0.3.2
 
 ### 🏃 Performance Improvements

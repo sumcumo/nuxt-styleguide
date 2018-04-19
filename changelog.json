@@ -1,4 +1,23 @@
 {
+  "3.17.2": {
+    "date": "Thu, 19 Apr 2018 08:55:30 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "0.3.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "observe passed globs",
+            "body": "insted of abserving whole src folder and filtering later on\n\n"
+          }
+        ]
+      }
+    }
+  },
   "3.17.1": {
     "date": "Thu, 12 Apr 2018 15:14:51 GMT",
     "changes": {
