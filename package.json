@@ -1,6 +1,6 @@
 {
   "name": "nuxt-styleguide-workspaces",
-  "version": "3.17.1",
+  "version": "3.17.2",
   "description": "styleguide and pattern library support for your nuxt application",
   "private": true,
   "workspaces": [
