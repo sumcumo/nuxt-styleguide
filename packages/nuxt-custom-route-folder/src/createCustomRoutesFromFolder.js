@@ -21,7 +21,7 @@ export default function createCustomRoutesFromFolder({
 }) {
   const routes = getRoutes(nuxt)
 
-  const observer = observe(srcDir, watch)
+  const observer = observe(glob, watch)
     .filter(({ file, event }) => {
       return event === 'ready' || minimatch(file, glob)
     })
