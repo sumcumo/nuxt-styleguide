@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.14.2
+
+### 🐞 Bug Fixes
+
+→ **update to latest versions of nuxt-custom-route-folder and nuxt-styleguide-renderer-default**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@0.3.5: **delay final resolve for a tick**
+
+
 ## Version 2.14.1
 
 ### 🐞 Bug Fixes

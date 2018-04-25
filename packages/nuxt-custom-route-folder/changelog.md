@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.5
+
+### 🐞 Bug Fixes
+
+→ **delay final resolve for a tick**
+> in order to prevent some unknown race-condition from blocking the whole module
+> 
+> 
+
+
 ## Version 0.3.4
 
 ### 🏃 Performance Improvements
