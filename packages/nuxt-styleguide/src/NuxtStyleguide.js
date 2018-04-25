@@ -1,7 +1,7 @@
 import * as path from 'path'
+
 import options from '@sum.cumo/nuxt-styleguide-config'
 import kebabCase from 'lodash.kebabcase'
-import { parse } from 'vue-docgen-api'
 import urlJoin from 'url-join'
 import chalk from 'chalk'
 import customRoutes from '@sum.cumo/nuxt-custom-route-folder'
@@ -9,6 +9,7 @@ import extendVueLoaders from './extendVueLoaders'
 import buildProxyComponents from './buildProxyComponents'
 import buildProxyDesignTokens from './buildProxyDesignTokens'
 import buildProxyIcons from './buildProxyIcons'
+import vueDocGenCached from './vueDocGenCached'
 
 function toName(str) {
   return kebabCase(str)
@@ -113,12 +114,14 @@ export default function NuxtStyleguide() {
       nuxt: this.nuxt,
       glob: `${path.join(options.srcDir, 'components')}/**/*.vue`,
       transform: buildProxyComponents,
-      mapRouteName(_, component) {
-        return routeNameMapper('Components')(parse(component).displayName)
+      async mapRouteName(_, component) {
+        return routeNameMapper('Components')(
+          (await vueDocGenCached(component)).displayName
+        )
       },
-      filter(component) {
+      async filter(component) {
         try {
-          parse(component)
+          await vueDocGenCached(component)
           return true
         } catch (err) {
           return false

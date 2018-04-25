@@ -17,7 +17,7 @@ const proxyTemplatePromise = new Promise((resolve, reject) => {
 
 let i = 0
 
-export default function buildProxyComponent(
+export default async function buildProxyComponent(
   contents,
   { name: routeName, component }
 ) {
@@ -29,7 +29,7 @@ export default function buildProxyComponent(
     options.importFrom === 'local'
       ? `~/${relPath}`
       : `${options.name}/${relPath}`
-  const componentInfo = getComponentInfo(component, relPath, options.dev)
+  const componentInfo = await getComponentInfo(component, relPath, options.dev)
 
   return proxyTemplatePromise.then((template) => {
     return {

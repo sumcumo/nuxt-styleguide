@@ -1,6 +1,6 @@
-import { parse } from 'vue-docgen-api'
 import chalk from 'chalk'
 import applyMarkdownToDocs from './applyMarkdownToDocs'
+import vueDocGenCached from './vueDocGenCached'
 
 function applyMarkdown(data) {
   return {
@@ -30,9 +30,9 @@ function applyMarkdown(data) {
   }
 }
 
-export default function getComponentInfo(file, relPath, log) {
+export default async function getComponentInfo(file, relPath, log) {
   try {
-    return applyMarkdown(parse(file))
+    return applyMarkdown(await vueDocGenCached(file))
   } catch (e) {
     if (log) {
       if (e.message.indexOf('SyntaxError: unknown: Unexpected token') === 0) {
