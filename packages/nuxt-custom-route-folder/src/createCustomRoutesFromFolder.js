@@ -150,6 +150,8 @@ export default function createCustomRoutesFromFolder({
     })
 
   return new Promise((resolve, reject) => {
-    fsEvents.filter(({ event }) => event === 'ready').subscribe(resolve, reject)
+    fsEvents.filter(({ event }) => event === 'ready').subscribe(() => {
+      setTimeout(resolve, 0)
+    }, reject)
   })
 }
