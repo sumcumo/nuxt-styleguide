@@ -3,6 +3,7 @@ import * as path from 'path'
 import _template from 'lodash.template'
 import options from '@sum.cumo/nuxt-styleguide-config'
 import getComponentInfo from './getComponentInfo'
+import getRouteInfo from './getRouteInfo'
 
 const styleguideSrcDir = path.resolve(__dirname, '..', 'src')
 
@@ -23,7 +24,7 @@ export default function buildProxyComponent(
   i += 1
 
   const relPath = path.relative(options.srcDir, component)
-  const { name } = JSON.parse(routeName.replace(/^NSG:/, ''))
+  const { name } = getRouteInfo(routeName)
   const importPath =
     options.importFrom === 'local'
       ? `~/${relPath}`

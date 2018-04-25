@@ -6,6 +6,7 @@ import postcss from 'postcss'
 import syntax from 'postcss-scss'
 import doctrine from 'doctrine'
 import applyMarkdownToDocs from './applyMarkdownToDocs'
+import getRouteInfo from './getRouteInfo'
 
 const styleguideSrcDir = path.resolve(__dirname, '..', 'src')
 
@@ -125,7 +126,7 @@ export default function buildProxyDesignTokens(
   i += 1
 
   const relPath = path.relative(options.srcDir, component)
-  const { name } = JSON.parse(routeName.replace(/^NSG:/, ''))
+  const { name } = getRouteInfo(routeName)
   const importPath =
     options.importFrom === 'local'
       ? `~/${relPath}`

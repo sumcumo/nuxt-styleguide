@@ -16,13 +16,21 @@ function toName(str) {
     .join(' ')
 }
 
+function encode(str) {
+  if (global.btoa) {
+    return global.btoa(str)
+  }
+
+  return Buffer.from(str).toString('base64')
+}
+
 function routeNameMapper(category) {
   return (relPath) => {
     const tokens = relPath.split('/')
 
     const name = toName(tokens[tokens.length - 1])
 
-    return `NSG:${JSON.stringify({ name, category })}`
+    return `NSG:${encode(JSON.stringify({ name, category }))}:`
   }
 }
 
