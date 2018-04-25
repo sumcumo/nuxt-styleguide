@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-custom-route-folder",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",

@@ -1,5 +1,24 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.14.1
+
+### 🐞 Bug Fixes
+
+→ **use latest version of vue-docgen-api**
+
+### 🏃 Performance Improvements
+
+→ **use latest version of nuxt-custom-route-folder**
+
+→ **cache vue-docgen results**
+
+→ **communicate initiating of nuxt stylegide**
+
+### 🔄  Dependency Updates
+
+→ perf in @sum.cumo/nuxt-custom-route-folder@0.3.4: **handle initial add batch in parallel**
+
+
 ## Version 2.14.0
 
 ### 🆕  New Features

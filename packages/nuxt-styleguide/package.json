@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide",
-  "version": "2.14.0",
+  "version": "2.14.1",
   "main": "index.js",
   "scripts": {
     "prepare": "npm run build",
@@ -10,7 +10,7 @@
     "babel-cli": "6.26.0"
   },
   "dependencies": {
-    "@sum.cumo/nuxt-custom-route-folder": "rlsr-latest",
+    "@sum.cumo/nuxt-custom-route-folder": "^0.3.4",
     "@sum.cumo/nuxt-styleguide-config": "^2.4.0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^2.9.1",
     "@sum.cumo/vue-markdown-component-loader": "^0",

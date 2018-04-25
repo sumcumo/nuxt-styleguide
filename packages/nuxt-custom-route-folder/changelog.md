@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.4
+
+### 🏃 Performance Improvements
+
+→ **handle initial add batch in parallel**
+
+
 ## Version 0.3.3
 
 ### 🏃 Performance Improvements
