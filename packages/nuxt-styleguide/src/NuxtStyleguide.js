@@ -3,6 +3,7 @@ import options from '@sum.cumo/nuxt-styleguide-config'
 import kebabCase from 'lodash.kebabcase'
 import { parse } from 'vue-docgen-api'
 import urlJoin from 'url-join'
+import chalk from 'chalk'
 import customRoutes from '@sum.cumo/nuxt-custom-route-folder'
 import extendVueLoaders from './extendVueLoaders'
 import buildProxyComponents from './buildProxyComponents'
@@ -35,6 +36,7 @@ function routeNameMapper(category) {
 }
 
 export default function NuxtStyleguide() {
+  console.log(`  ${chalk.dim('nuxt:styleguide')} initiating`)
   const docsDir = path.resolve(options.srcDir, options.docsDir)
 
   this.options.env.nsgLayout = options.layout
@@ -156,5 +158,7 @@ export default function NuxtStyleguide() {
         return urlJoin(options.path, p)
       },
     }),
-  ])
+  ]).then(() => {
+    console.log(`  ${chalk.dim('nuxt:styleguide')} ${chalk.green('OK')}`)
+  })
 }
