@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.14.0
+
+### 🆕  New Features
+
+→ **base64 encode route meta info**
+> in order to prevent corruption by other modules that tinker with the route name
+> 
+> 
+
+
 ## Version 2.13.1
 
 ### 🐞 Bug Fixes

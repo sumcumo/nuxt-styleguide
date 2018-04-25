@@ -1,4 +1,23 @@
 {
+  "3.18.0": {
+    "date": "Wed, 25 Apr 2018 08:58:20 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.14.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "base64 encode route meta info",
+            "body": "in order to prevent corruption by other modules that tinker with the route name\n\n"
+          }
+        ]
+      }
+    }
+  },
   "3.17.2": {
     "date": "Thu, 19 Apr 2018 08:55:30 GMT",
     "changes": {
