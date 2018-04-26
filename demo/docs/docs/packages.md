@@ -12,15 +12,14 @@ The main package that is already documented here
 If you like the way markdown files in the docs folder are loaded, you can
 use this nuxt module to enable it for all markdown files in the project.
 
+### <repo-link file="packages/nuxt-custom-route-folder"><code>@sum.cumo/nuxt-custom-route-folder</code></repo-link>
+
+Module to automatically add nuxt routes for specified files in the nuxt project.
+
 ### <repo-link file="packages/nuxt-styleguide-config"><code>@sum.cumo/nuxt-styleguide-config</code></repo-link>
 
 Manages defaults and configuration of nuxt styleguide. Could be useful when
 you have a custom module that also wants to read the config.
-
-### <repo-link file="packages/nuxt-styleguide-files"><code>@sum.cumo/nuxt-styleguide-files</code></repo-link>
-
-Internal module of nuxt-styleguide that is used to read and monitor files in
-a project folder.
 
 ### <repo-link file="packages/nuxt-styleguide-renderer-default"><code>@sum.cumo/nuxt-styleguide-renderer-default</code></repo-link>
 
