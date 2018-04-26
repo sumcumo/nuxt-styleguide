@@ -1,4 +1,45 @@
 {
+  "3.19.1": {
+    "date": "Thu, 26 Apr 2018 11:30:29 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "0.3.6",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "delay closing of watcher and observable in non-watch mode",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.15.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update to latest version of nuxt-custom-route-folder",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "fix: delay closing of watcher and observable in non-watch mode",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.19.0": {
     "date": "Thu, 26 Apr 2018 09:58:04 GMT",
     "changes": {

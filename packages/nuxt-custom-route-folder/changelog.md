@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.6
+
+### 🐞 Bug Fixes
+
+→ **delay closing of watcher and observable in non-watch mode**
+
+
 ## Version 0.3.5
 
 ### 🐞 Bug Fixes

@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.15.1
+
+### 🐞 Bug Fixes
+
+→ **update to latest version of nuxt-custom-route-folder**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@0.3.6: **delay closing of watcher and observable in non-watch mode**
+
+
 ## Version 2.15.0
 
 ### 🆕  New Features
