@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.13.0
+
+### 🆕  New Features
+
+→ **make color demo wider**
+
+
 ## Version 2.12.0
 
 ### 🆕  New Features

@@ -1,4 +1,23 @@
 {
+  "3.21.0": {
+    "date": "Thu, 26 Apr 2018 14:38:39 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.13.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "make color demo wider",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.20.0": {
     "date": "Thu, 26 Apr 2018 13:19:08 GMT",
     "changes": {

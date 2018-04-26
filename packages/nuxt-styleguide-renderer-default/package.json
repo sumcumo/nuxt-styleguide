@@ -1,6 +1,6 @@
 {
   "name": "@sum.cumo/nuxt-styleguide-renderer-default",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "dependencies": {
     "node-sass": "4.7.2",
     "sass-loader": "6.0.6"
