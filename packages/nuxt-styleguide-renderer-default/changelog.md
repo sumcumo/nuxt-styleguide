@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.12.0
+
+### 🆕  New Features
+
+→ **sidebar nav is scrollable now**
+
+→ **use importName to create import statements**
+
+
 ## Version 2.11.0
 
 ### 🆕  New Features

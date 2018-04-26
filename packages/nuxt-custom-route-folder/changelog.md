@@ -1,5 +1,21 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.7
+
+### 🐞 Bug Fixes
+
+→ **delay closing of watcher and observable in non-watch mode**
+
+→ **delay final resolve for a tick**
+> in order to prevent some unknown race-condition from blocking the whole module
+> 
+> 
+
+### 🏃 Performance Improvements
+
+→ **handle initial add batch in parallel**
+
+
 ## Version 0.3.6
 
 ### 🐞 Bug Fixes

@@ -1,4 +1,139 @@
 {
+  "3.20.0": {
+    "date": "Thu, 26 Apr 2018 13:19:08 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "0.3.7",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "delay closing of watcher and observable in non-watch mode",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "delay final resolve for a tick",
+            "body": "in order to prevent some unknown race-condition from blocking the whole module\n\n"
+          },
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "handle initial add batch in parallel",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.12.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "sidebar nav is scrollable now",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "use importName to create import statements",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.16.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update to latest version of nuxt-custom-route-folder",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update to latest version of nuxt-styleguide-renderer-default",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "expose importName to renderer",
+            "body": "so that the renderer can create correct import statements\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update to latest versions of nuxt-custom-route-folder and nuxt-styleguide-renderer-default",
+            "body": ""
+          },
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use latest version of nuxt-custom-route-folder",
+            "body": ""
+          },
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "cache vue-docgen results",
+            "body": ""
+          },
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "communicate initiating of nuxt stylegide",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use latest version of vue-docgen-api",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "base64 encode route meta info",
+            "body": "in order to prevent corruption by other modules that tinker with the route name\n\n"
+          }
+        ]
+      }
+    }
+  },
   "3.19.1": {
     "date": "Thu, 26 Apr 2018 11:30:29 GMT",
     "changes": {

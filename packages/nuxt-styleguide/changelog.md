@@ -1,5 +1,38 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.16.0
+
+### 🆕  New Features
+
+→ **expose importName to renderer**
+> so that the renderer can create correct import statements
+> 
+> 
+
+→ **base64 encode route meta info**
+> in order to prevent corruption by other modules that tinker with the route name
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **update to latest version of nuxt-custom-route-folder**
+
+→ **update to latest version of nuxt-styleguide-renderer-default**
+
+→ **update to latest versions of nuxt-custom-route-folder and nuxt-styleguide-renderer-default**
+
+→ **use latest version of vue-docgen-api**
+
+### 🏃 Performance Improvements
+
+→ **use latest version of nuxt-custom-route-folder**
+
+→ **cache vue-docgen results**
+
+→ **communicate initiating of nuxt stylegide**
+
+
 ## Version 2.15.1
 
 ### 🐞 Bug Fixes
