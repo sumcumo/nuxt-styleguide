@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.11.0
+
+### 🆕  New Features
+
+→ **use importName to create import statements**
+
+
 ## Version 2.10.0
 
 ### 🆕  New Features

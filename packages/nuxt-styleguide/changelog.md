@@ -1,5 +1,23 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.15.0
+
+### 🆕  New Features
+
+→ **expose importName to renderer**
+> so that the renderer can create correct import statements
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **update to latest version of nuxt-styleguide-renderer-default**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.11.0: **use importName to create import statements**
+
+
 ## Version 2.14.2
 
 ### 🐞 Bug Fixes
