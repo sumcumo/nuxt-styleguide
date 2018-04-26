@@ -28,7 +28,7 @@ export default {
 <style lang="css">
 .color-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(100px, auto));
+  grid-template-columns: repeat(auto-fill,minmax(200px, auto));
   grid-gap: 1em;
 }
 .color-value{
