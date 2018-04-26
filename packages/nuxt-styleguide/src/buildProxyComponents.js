@@ -46,6 +46,7 @@ export default async function buildProxyComponent(
         buildId: i,
         layout: options.layout,
         name,
+        importName: name.replace(/ /g, ''),
         relPath,
         importPath,
       }),

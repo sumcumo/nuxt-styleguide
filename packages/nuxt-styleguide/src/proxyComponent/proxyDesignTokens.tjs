@@ -10,6 +10,7 @@ export default {
     return createElement(Renderer, {
       props: Object.assign(designTokens, {
         name: '<%= name %>',
+        importName: '<%= importName %>',
         importPath: '<%= importPath %>',
       }),
     });

@@ -14,6 +14,7 @@ export default {
       props: Object.assign(componentInfo, {
         Comp,
         name: '<%= name %>',
+        importName: '<%= importName %>',
         importPath: '<%= importPath %>',
         states: normalizeStates(styleguide.states, componentInfo.props, componentInfo.slots),
         description: styleguide.docs || componentInfo.description,

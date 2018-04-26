@@ -37,6 +37,7 @@ export default function buildProxyIcons(
         file: component,
         layout: options.layout,
         name,
+        importName: name.replace(/ /g, ''),
         relPath,
         importPath,
       }),

@@ -142,6 +142,7 @@ export default function buildProxyDesignTokens(
         buildId: i,
         layout: options.layout,
         name,
+        importName: name.replace(/ /g, ''),
         importPath,
       }),
     }
