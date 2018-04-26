@@ -53,7 +53,9 @@
         </svg>
       </label>
       <div class="sidebar">
-        <StyleguideNav />
+          <div class="sidebar__content">
+            <StyleguideNav />
+          </div>
       </div>
     </div>
     <div class="content">
@@ -107,6 +109,11 @@ body {
   position: fixed;
   background: black;
   color: white;
+}
+
+.sidebar__content{
+  max-height: 100%;
+  overflow: auto;
 }
 
 .content {
