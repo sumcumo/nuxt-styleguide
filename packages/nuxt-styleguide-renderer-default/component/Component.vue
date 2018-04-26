@@ -1,6 +1,5 @@
 <template>
   <sg-frame>
-    <sg-backlink href="../" />
     <h1>{{ name }}</h1>
 
     <h2>Demo:</h2>
@@ -109,10 +108,9 @@
 import SgStyleguideNav from '../nav.vue'
 import SgFrame from '../frame.vue'
 import SgTags from './Tags.vue'
-import SgBacklink from './Backlink.vue'
 
 export default {
-  components: { SgStyleguideNav, SgTags, SgFrame, SgBacklink },
+  components: { SgStyleguideNav, SgTags, SgFrame },
   props: {
     Comp: { type: Object, default: null },
     name: { type: String, default: null },

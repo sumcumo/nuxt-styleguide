@@ -1,6 +1,5 @@
 <template>
   <sg-frame>
-    <sg-backlink href="../" />
     <h1>All Icons</h1>
     <div class="iconGrid">
       <div
@@ -20,13 +19,12 @@
 
 <script>
 import SgFrame from '../../frame.vue'
-import SgBacklink from '../../component/Backlink.vue'
 
 export default {
   layout(context) {
     return context.env.nsgLayout
   },
-  components: { SgFrame, SgBacklink },
+  components: { SgFrame },
   data() {
     return {
       icons: [],

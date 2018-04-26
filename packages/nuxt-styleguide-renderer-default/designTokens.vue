@@ -1,6 +1,5 @@
 <template>
   <sg-frame>
-    <sg-backlink href="../" />
     <h1>{{ name }}</h1>
     <div v-html="description" />
     <sg-tags :tags="tags" />
@@ -27,7 +26,6 @@
 
 <script>
 import SgTags from './component/Tags.vue'
-import SgBacklink from './component/Backlink.vue'
 import SgColorDemo from './component/ColorDemo.vue'
 import SgFontFamilyDemo from './component/FontFamilyDemo.vue'
 import SgFontSizeDemo from './component/FontSizeDemo.vue'
@@ -38,7 +36,6 @@ export default {
   components: {
     SgTags,
     SgFrame,
-    SgBacklink,
     SgColorDemo,
     SgFontSizeDemo,
     SgFontFamilyDemo,
