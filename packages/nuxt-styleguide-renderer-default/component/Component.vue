@@ -22,7 +22,7 @@
           {{ slot }}
         </span>
       </component>
-      <code><pre>import {{ name }} from '{{ importPath }}';</pre></code>
+      <code><pre>import {{ importName }} from '{{ importPath }}';</pre></code>
     </div>
 
     <div
@@ -100,7 +100,7 @@
 </template>
 
 <style>
-.component-demo{
+.component-demo {
   transform: translateX(1px);
 }
 </style>
@@ -116,6 +116,7 @@ export default {
   props: {
     Comp: { type: Object, default: null },
     name: { type: String, default: null },
+    importName: { type: String, default: null },
     description: { type: String, default: null },
     states: { type: Array, default: null },
     importPath: { type: String, default: null },
