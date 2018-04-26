@@ -25,6 +25,7 @@ module.exports = {
   markdownComponents: {
     'meta-warning': '~/components/MetaWarning',
     'missing-doc': '~/components/MissingDoc',
+    'sg-highlight': '~/components/Highlight',
     'repo-link': '~/components/RepoLink',
     h2: {
       path: '~/components/Headline',
