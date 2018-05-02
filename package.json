@@ -25,7 +25,7 @@
     "component-library"
   ],
   "author": "sum.cumo GmbH, Hannes Diercks",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/sumcumo/nuxt-styleguide/issues"
   },

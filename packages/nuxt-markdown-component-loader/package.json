@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {},
+  "license": "Apache-2.0",
   "dependencies": {
     "@sum.cumo/vue-markdown-component-loader": "^0"
   }

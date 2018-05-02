@@ -9,6 +9,7 @@
   "devDependencies": {
     "babel-cli": "6.26.0"
   },
+  "license": "Apache-2.0",
   "dependencies": {
     "@sum.cumo/nuxt-custom-route-folder": "^0.3.6",
     "@sum.cumo/nuxt-styleguide-config": "^2.4.0",
