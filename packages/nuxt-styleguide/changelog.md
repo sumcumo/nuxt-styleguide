@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.16.2
+
+### 🐞 Bug Fixes
+
+→ **use latest version of nuxt-custom-route-folder**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@0.3.8: **delay initial buffer for 250**
+
+
 ## Version 2.16.1
 
 ### 🔄  Dependency Updates

@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 0.3.8
+
+### 🐞 Bug Fixes
+
+→ **delay initial buffer for 250**
+> in oder to fight a unindentified race condition
+> 
+> 
+
+
 ## Version 0.3.7
 
 ### 🐞 Bug Fixes
