@@ -1,4 +1,37 @@
 {
+  "3.21.1": {
+    "date": "Wed, 02 May 2018 08:36:16 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "2.13.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "dont use backlink",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "2.16.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "fix: dont use backlink",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "3.21.0": {
     "date": "Thu, 26 Apr 2018 14:38:39 GMT",
     "changes": {

@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.13.1
+
+### 🐞 Bug Fixes
+
+→ **dont use backlink**
+
+
 ## Version 2.13.0
 
 ### 🆕  New Features
