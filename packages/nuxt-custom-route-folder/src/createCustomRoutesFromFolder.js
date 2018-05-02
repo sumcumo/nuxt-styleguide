@@ -31,7 +31,7 @@ export default function createCustomRoutesFromFolder({
         setTimeout(() => {
           obs.next()
           obs.complete()
-        }, 0)
+        }, 250)
         subscription.unsubscribe()
       })
   })
