@@ -11,7 +11,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sum.cumo/nuxt-custom-route-folder": "^0.3.6",
+    "@sum.cumo/nuxt-custom-route-folder": "rlsr-latest",
     "@sum.cumo/nuxt-styleguide-config": "^2.4.0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^2.13.1",
     "@sum.cumo/vue-markdown-component-loader": "^0",
