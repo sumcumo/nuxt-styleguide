@@ -7,7 +7,6 @@
     {{ name }}
   </div>
   <sg-frame v-else>
-    <sg-backlink href="../" />
     <h1>{{ name }}</h1>
     <img :src="iconUrl">
   </sg-frame>
@@ -15,7 +14,6 @@
 
 <script>
 import SgFrame from './frame.vue'
-import SgBacklink from './component/Backlink.vue'
 
 export default {
   components: { SgFrame, SgBacklink },
