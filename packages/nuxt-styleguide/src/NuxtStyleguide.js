@@ -37,6 +37,7 @@ function routeNameMapper(category) {
 }
 
 export default function NuxtStyleguide() {
+  // eslint-disable-next-line no-console
   console.log(`  ${chalk.dim('nuxt:styleguide')} initiating`)
   const docsDir = path.resolve(options.srcDir, options.docsDir)
 
@@ -162,6 +163,7 @@ export default function NuxtStyleguide() {
       },
     }),
   ]).then(() => {
+    // eslint-disable-next-line no-console
     console.log(`  ${chalk.dim('nuxt:styleguide')} ${chalk.green('OK')}`)
   })
 }
