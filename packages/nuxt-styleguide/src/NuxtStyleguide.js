@@ -82,9 +82,13 @@ export default function NuxtStyleguide() {
     'pages'
   )
 
+  const createRoutes = customRoutes.withOptions({
+    nuxt: this.nuxt,
+    extendRoutes: this.extendRoutes.bind(this),
+  })
+
   return Promise.all([
-    customRoutes({
-      nuxt: this.nuxt,
+    createRoutes({
       glob: `${docsDir}/**/*.+(md|vue)`,
       priority: 1,
       mapRoutePath(p) {
@@ -92,8 +96,7 @@ export default function NuxtStyleguide() {
       },
       mapRouteName: routeNameMapper('Docs'),
     }),
-    customRoutes({
-      nuxt: this.nuxt,
+    createRoutes({
       glob: `${rendererPagesDir}/**/*.vue`,
       srcDir: rendererPagesDir,
       mapRouteName(p) {
@@ -111,8 +114,7 @@ export default function NuxtStyleguide() {
         return urlJoin(options.path, p)
       },
     }),
-    customRoutes({
-      nuxt: this.nuxt,
+    createRoutes({
       glob: `${path.join(options.srcDir, 'components')}/**/*.vue`,
       transform: buildProxyComponents,
       async mapRouteName(_, component) {
@@ -132,8 +134,7 @@ export default function NuxtStyleguide() {
         return urlJoin(options.path, p)
       },
     }),
-    customRoutes({
-      nuxt: this.nuxt,
+    createRoutes({
       glob: `${path.join(options.srcDir, 'layouts')}/**/*.vue`,
       transform: buildProxyComponents,
       mapRouteName: routeNameMapper('Layouts'),
@@ -141,8 +142,7 @@ export default function NuxtStyleguide() {
         return urlJoin(options.path, p)
       },
     }),
-    customRoutes({
-      nuxt: this.nuxt,
+    createRoutes({
       glob: `${path.resolve(
         options.srcDir,
         options.designTokenName
@@ -153,8 +153,7 @@ export default function NuxtStyleguide() {
         return urlJoin(options.path, p)
       },
     }),
-    customRoutes({
-      nuxt: this.nuxt,
+    createRoutes({
       glob: `${path.resolve(options.srcDir, options.iconFolder)}/**/*.svg`,
       transform: buildProxyIcons,
       mapRouteName: routeNameMapper('Icons'),
