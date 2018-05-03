@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 2.14.0
+
+### 🆕  New Features
+
+→ **support latest api of states**
+
+
 ## Version 2.13.1
 
 ### 🐞 Bug Fixes

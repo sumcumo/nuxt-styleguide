@@ -1,5 +1,20 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 1.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **require extendRoutes option**
+> instead of hooking into nuxt
+> 
+> and also add withOptions hoc
+> 
+> BREAKING CHNAGE:
+> extendRoutes option must now be passed from parent module
+> 
+> 
+
+
 ## Version 0.3.8
 
 ### 🐞 Bug Fixes

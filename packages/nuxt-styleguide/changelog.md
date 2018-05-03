@@ -1,5 +1,27 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 2.17.0
+
+### 🆕  New Features
+
+→ **support data in component states**
+> in oder to allow demo events
+> 
+> also support js object notation
+> 
+> 
+
+### 🔨 Refactorings
+
+→ **use latest version of nuxt-custom-route-folder**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-custom-route-folder@1.0.0: **require extendRoutes option**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@2.14.0: **support latest api of states**
+
+
 ## Version 2.16.2
 
 ### 🐞 Bug Fixes
