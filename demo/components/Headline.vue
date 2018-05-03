@@ -13,13 +13,13 @@
 
 <styleguide-states>
 [{
-  "title": "Default",
-  "content": "Hello World!"
+  title: 'Default',
+  content: 'Hello World!'
 }, {
-  "title": "With anchor",
-  "content": "Hello See!",
-  "props": {
-    "anchor": "hello-see"
+  title: 'With anchor',
+  content: 'Hello See!',
+  props: {
+    anchor: 'hello-see'
   }
 }]
 </styleguide-states>

@@ -5,17 +5,6 @@
   </a>
 </template>
 
-<styleguide-doc>
-### Meta Warning!
-
-This component is used in the documentation you are just reading.
-It is not part of the re-usable packages and mainly exits for demonstration purposes.
-</styleguide-doc>
-
-<styleguide-states>
-[{ "content": "Click me!", "props": { "href": "#" } }]
-</styleguide-states>
-
 <script>
 export default {
   name: 'A',
@@ -37,3 +26,21 @@ export default {
   },
 }
 </script>
+
+<styleguide-doc>
+### Meta Warning!
+
+This component is used in the documentation you are just reading.
+It is not part of the re-usable packages and mainly exits for demonstration purposes.
+</styleguide-doc>
+
+<styleguide-states>
+[{
+  data: {
+    props: {
+      href: "#"
+    },
+  },
+  content: 'Click me!'
+}]
+</styleguide-states>

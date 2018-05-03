@@ -15,7 +15,7 @@ in a ubiquitous language.
     <script>
     export default {
       name: 'MyButton',
-    };
+    }
     </script>
     ```
 
@@ -69,16 +69,26 @@ for each component. But the demos can be customized using the
 <!-- ... -->
 <styleguide-states>
 [{
-  "name": "Ghost Button",
-  "slots": {
-    "default": "Buuuuhuh"
-  },
-  "props": {
-    "transparent": true
+  name: 'Ghost Button',
+  // https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth
+  data: {
+    scopedSlots: {
+      default() {
+        return 'Buuuhuh'
+      }
+    },
+    props: {
+      transparent: true
+    }
   }
 }, {
-  "name": "Default",
-  "content": "Aaaaah!"
+  name: 'Default',
+  // shorthand for data.scopedSlots.default
+  content: 'Aaaaah!'
+  // shorthand for data.props
+  props: {
+    transparent: false
+  }
 }]
 </styleguide-states>
 ```
