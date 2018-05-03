@@ -12,6 +12,7 @@ export default function createCustomRoutesFromFolder({
   nuxt,
   glob,
   transform,
+  extendRoutes,
   priority = 0,
   mapRouteName = (basePath) => basePath.replace(/\//g, ':'),
   mapRoutePath = (p) => p,
@@ -20,7 +21,7 @@ export default function createCustomRoutesFromFolder({
   srcDir = nuxt.options.srcDir,
   watch = nuxt.options.dev,
 }) {
-  const routes = getRoutes(nuxt)
+  const routes = getRoutes(extendRoutes)
 
   const observer = observe(glob, watch)
 
@@ -154,4 +155,22 @@ export default function createCustomRoutesFromFolder({
       setTimeout(resolve, 0)
     }, reject)
   })
+}
+
+createCustomRoutesFromFolder.withOptions = (options) => {
+  const factory = (moreOptions) => {
+    return createCustomRoutesFromFolder({
+      ...options,
+      ...moreOptions,
+    })
+  }
+
+  factory.withOptions = (evenMoreOptions) => {
+    return createCustomRoutesFromFolder.withOptions({
+      ...options,
+      ...evenMoreOptions,
+    })
+  }
+
+  return factory
 }
