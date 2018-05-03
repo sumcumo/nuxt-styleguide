@@ -9,18 +9,12 @@
       class="component-demo"
     >
       <h4>{{ state.title }}</h4>
-      <component
-        :is="Comp"
-        v-bind="state.props"
+      <sg-component-demo
+        :data="state.data"
+        :comp="Comp"
       >
-        <span
-          v-for="(slot, name) in state.slots"
-          :slot="name"
-          :key="name"
-        >
-          {{ slot }}
-        </span>
-      </component>
+        {{ state.content }}
+      </sg-component-demo>
       <code><pre>import {{ importName }} from '{{ importPath }}';</pre></code>
     </div>
 
@@ -105,12 +99,13 @@
 </style>
 
 <script>
+import SgComponentDemo from './ComponentDemo.vue'
 import SgStyleguideNav from '../nav.vue'
 import SgFrame from '../frame.vue'
 import SgTags from './Tags.vue'
 
 export default {
-  components: { SgStyleguideNav, SgTags, SgFrame },
+  components: { SgStyleguideNav, SgTags, SgFrame, SgComponentDemo },
   props: {
     Comp: { type: Object, default: null },
     name: { type: String, default: null },
