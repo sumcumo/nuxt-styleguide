@@ -39,21 +39,35 @@ function defaultProps(props) {
   }, {})
 }
 
+function toArray(thing) {
+  return Array.isArray(thing) ? thing : [thing]
+}
+
 export default function normalizeStates(states, props, slots) {
   if (!states || !states.length) {
     return [
       {
         title: 'Default',
-        props: defaultProps(props),
-        slots: Object.keys(slots || {}).reduce((memo, name) => {
-          // eslint-disable-next-line no-param-reassign
-          memo[name] = `slot: ${name}`
+        data: {
+          props: defaultProps(props),
+          scopedSlots: Object.keys(slots || {}).reduce((memo, name) => {
+            // eslint-disable-next-line no-param-reassign
+            memo[name] = () => `slot: ${name}`
 
-          return memo
-        }, {}),
+            return memo
+          }, {}),
+        },
       },
     ]
   }
 
-  return states
+  return toArray(states).map((state) => {
+    const data = state.data || {}
+
+    if (state.props) {
+      data.props = state.props
+    }
+
+    return Object.assign({}, state, { data })
+  })
 }

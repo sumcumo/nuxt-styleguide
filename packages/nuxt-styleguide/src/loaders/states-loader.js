@@ -12,28 +12,15 @@ function normalize(states) {
 
 module.exports = function statesLoader(source, map) {
   try {
-    const states = normalize(JSON.parse(source)).map((state) => {
-      if (!state.slots) {
-        // eslint-disable-next-line no-param-reassign
-        state.slots = {}
-      }
-
-      if (state.content && !state.slots.default) {
-        // eslint-disable-next-line no-param-reassign
-        state.slots.default = state.content
-      }
-
-      return state
-    })
-
     this.callback(
       null,
       `
+      const states = ${source};
       module.exports = function(Component) {
-          if (!Component.options.__styleguide) {
-              Component.options.__styleguide = {};
-          }
-          Component.options.__styleguide.states = ${JSON.stringify(states)}
+        if (!Component.options.__styleguide) {
+          Component.options.__styleguide = {};
+        }
+        Component.options.__styleguide.states = states
       }`,
       map
     )
