@@ -16,7 +16,7 @@
 import SgFrame from './frame.vue'
 
 export default {
-  components: { SgFrame, SgBacklink },
+  components: { SgFrame },
   props: {
     single: {
       type: Boolean,

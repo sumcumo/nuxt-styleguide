@@ -42,30 +42,38 @@ export default {
     SgLineHeightDemo,
   },
   computed: {
-    colors(){
-      if (!this.declarations){
+    colors() {
+      if (!this.declarations) {
         return []
       }
-      return this.declarations.filter(({render}) => {return render === 'color'})
+      return this.declarations.filter(({ render }) => {
+        return render === 'color'
+      })
     },
-    fontSizes(){
-       if (!this.declarations){
+    fontSizes() {
+      if (!this.declarations) {
         return []
       }
-      return this.declarations.filter(({render}) => {return render === 'fontSize'})
+      return this.declarations.filter(({ render }) => {
+        return render === 'fontSize'
+      })
     },
-    fontFamilies(){
-       if (!this.declarations){
+    fontFamilies() {
+      if (!this.declarations) {
         return []
       }
-      return this.declarations.filter(({render}) => {return render === 'fontFamily'})
+      return this.declarations.filter(({ render }) => {
+        return render === 'fontFamily'
+      })
     },
-    lineHeights(){
-       if (!this.declarations){
+    lineHeights() {
+      if (!this.declarations) {
         return []
       }
-      return this.declarations.filter(({render}) => {return render === 'lineHeight'})
-    }
+      return this.declarations.filter(({ render }) => {
+        return render === 'lineHeight'
+      })
+    },
   },
   props: {
     name: {
