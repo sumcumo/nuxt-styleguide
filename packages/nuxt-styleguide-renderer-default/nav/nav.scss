@@ -1,38 +1,40 @@
-.nav {
-	padding: 1em 0;
-	box-sizing: border-box;
-	border-bottom: 1px solid var(--grey);
-	a {
-		display: inline-block;
-		padding: 0.5em 1rem;
-		width: 100%;
-		box-sizing: border-box;
-		color: inherit;
-		text-decoration: none;
-	}
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style-type: none;
-	}
+@import '../vars.scss';
 
-	&:last-child {
-		border-bottom: none;
-	}
+.nav {
+  padding: 1em 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid $grey;
+  a {
+    display: inline-block;
+    padding: 0.5em 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration: none;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .nav-title {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 .nav-title__content {
-	display: inline-block;
-	padding: .5em 1rem;
+  display: inline-block;
+  padding: 0.5em 1rem;
 }
 
 .nav-item {
-	transition: background 120ms ease-in-out;
-	&:hover {
-		background: var(--turquoise-color);
-	}
+  transition: background 120ms ease-in-out;
+  &:hover {
+    background: $turquoiseColor;
+  }
 }
