@@ -1,14 +1,5 @@
 # Getting Started
 
-Nuxt styleguide can be run in two modes: "standalone" and "embedded"
-
-In this guide we will setup a new standalone nuxt styleguide.
-To embedded the styleguide into an existing [`nuxt`](https://nuxtjs.org)
-application. See [embedded styleguide section](#embedded-styleguide).
-
-Please ensure you have [node.js](https://nodejs.org/en/) version 9 or higher
-installed on your machine.
-
 ## Create a nuxt project
 
 Please follow the [Installation guide of nuxt](https://nuxtjs.org/guide/installation#starting-from-scratch)

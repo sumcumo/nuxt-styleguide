@@ -1,4 +1,4 @@
-# @sum.cumo/nuxt-styleguide
+# Nuxt-styleguide
 
 Increase QUALITY and EFFICIENCY of product design and development workflows
 
@@ -6,56 +6,14 @@ Nuxt styleguide is a [Nuxt](https://github.com/nuxt/nuxt.js) module that provide
 
 It can live **inside your nuxt project** or as **a standalone library** that provides Vue components.
 
-## Getting started 
+## Documentation
 
-If you're new to nuxt and want to start from scratch we recommend to [checkout the official nuxt docu](https://github.com/nuxt/nuxt.js#getting-started) to create a new project.
-
-To integrate the nuxt styleguide into project: 
-
-```
-npm install @sum.cumo/nuxt-styleguide --save-dev
-```
-
-and create a `nuxt.config.js` with the following content:
-
-```
-module.exports = {
-	modules: [
-		[
-			'@sum.cumo/nuxt-styleguide',
-			{
-				path: '/custompath'
-			}
-		]
-	]
-};
-```
-
-## Options
-
-### path
-
-Set route for styleguide. `Default: '/'`
-
-### designTokenName
-
-Set path for design tokens. `Default: 'design-tokens'`
-
-### docsDir
-
-Set path for documentation. `Default: 'docs'`
-
-### iconFolder
-
-Set path for icons. `Default: 'icons'`
-
-### layout
-
-Set layout for the styleguide. `Default: 'default'`
-
-### renderer
-
-Set renderer of styleguide. `Default: '@sum.cumo/nuxt-styleguide-renderer-default'`
+ * [Getting started](demo/docs/docs/getting-started.md)
+ * [Configuration](./demo/docs/docs/configuration.md)
+ * [Fragmentation](./demo/docs/docs/packages.md)
+ * [Working with Components](./demo/docs/docs/working-with-components.md)
+ * [Working with Design Tokens](./demo/docs/docs/working-with-design-tokens.md)
+ * [Writing Documentation](./demo/docs/docs/writing-documentation.md)
 
 ## Contribution
 
@@ -64,8 +22,6 @@ To run this project locally you'll need yarn@^1.5.1. to perform
 `yarn install && yarn build && yarn start`
 
 Please feel free to [open up an issue](https://github.com/sumcumo/nuxt-styleguide/issues/new) or provide a pull request. 
-
-
 
 ## License
 

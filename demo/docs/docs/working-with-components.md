@@ -1,9 +1,9 @@
 # Working with components
 
 Components are a core building block of every application.
-It is tremendously helpful for designers, design ops and developers
+It is tremendously helpful for designers, developers and everything in-between
 to have a common understanding of components and speak about them
-in a ubiquitous language.
+in an ubiquitous language.
 
 ## Specification
 
