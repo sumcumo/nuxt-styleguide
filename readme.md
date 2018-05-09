@@ -4,7 +4,7 @@ Increase QUALITY and EFFICIENCY of product design and development workflows
 
 Nuxt styleguide is a [Nuxt](https://github.com/nuxt/nuxt.js) module that provides a isolated styleguide view for your components, design tokens and it's documentation.
 
-It can live **inside your nuxt project** or as **a standalone library** that provides Vue components.
+It can live **inside your nuxt project** or as **a standalone library** that provides your Vue components.
 
 ## Documentation
 
