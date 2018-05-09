@@ -1,8 +1,6 @@
 # Getting Started
 
-## Create a nuxt project
-
-Please follow the [Installation guide of nuxt](https://nuxtjs.org/guide/installation#starting-from-scratch)
+If you want to start from scratch we've got you covered with [an Example Styleguide](https://github.com/sumcumo/nuxt-styleguide-example)
 
 ## Install nuxt-styleguide
 
