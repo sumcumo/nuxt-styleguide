@@ -15,7 +15,7 @@
     "build": "lerna run --parallel build -- --",
     "lint": "eslint --ext .vue,.js .",
     "test": "jest",
-    "postinstall": "cd packages/nuxt-styleguide && yarn build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
