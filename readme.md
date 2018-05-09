@@ -20,7 +20,14 @@ and create a `nuxt.config.js` with the following content:
 
 ```
 module.exports = {
-  modules: [ '@sum.cumo/nuxt-styleguide', {path: 'library'} ]
+	modules: [
+		[
+			'@sum.cumo/nuxt-styleguide',
+			{
+				path: '/custompath'
+			}
+		]
+	]
 };
 ```
 
@@ -52,11 +59,13 @@ Set renderer of styleguide. `Default: '@sum.cumo/nuxt-styleguide-renderer-defaul
 
 ## Contribution
 
+To run this project locally you'll need yarn@^1.5.1. to perform
+
+`yarn install && yarn build && yarn start`
+
 Please feel free to [open up an issue](https://github.com/sumcumo/nuxt-styleguide/issues/new) or provide a pull request. 
 
 
-
- 
 
 ## License
 
