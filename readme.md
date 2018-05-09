@@ -1,6 +1,62 @@
 # @sum.cumo/nuxt-styleguide
 
-> Increase QUALITY and EFFICIENCY of product design and development workflows
+Increase QUALITY and EFFICIENCY of product design and development workflows
+
+Nuxt styleguide is a [Nuxt](https://github.com/nuxt/nuxt.js) module that provides a isolated styleguide view for your components, design tokens and it's documentation.
+
+It can live **inside your nuxt project** or as **a standalone library** that provides Vue components.
+
+## Getting started 
+
+If you're new to nuxt and want to start from scratch we recommend to [checkout the official nuxt docu](https://github.com/nuxt/nuxt.js#getting-started) to create a new project.
+
+To integrate the nuxt styleguide into project: 
+
+```
+npm install @sum.cumo/nuxt-styleguide --save-dev
+```
+
+and create a `nuxt.config.js` with the following content:
+
+```
+module.exports = {
+  modules: [ '@sum.cumo/nuxt-styleguide', {path: 'library'} ]
+};
+```
+
+## Options
+
+### path
+
+Set route for styleguide. `Default: '/'`
+
+### designTokenName
+
+Set path for design tokens. `Default: 'design-tokens'`
+
+### docsDir
+
+Set path for documentation. `Default: 'docs'`
+
+### iconFolder
+
+Set path for icons. `Default: 'icons'`
+
+### layout
+
+Set layout for the styleguide. `Default: 'default'`
+
+### renderer
+
+Set renderer of styleguide. `Default: '@sum.cumo/nuxt-styleguide-renderer-default'`
+
+## Contribution
+
+Please feel free to [open up an issue](https://github.com/sumcumo/nuxt-styleguide/issues/new) or provide a pull request. 
+
+
+
+ 
 
 ## License
 
