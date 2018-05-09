@@ -1,6 +1,5 @@
 <template>
   <div>
-      Tigerfurz
     <nuxt/>
   </div>
 </template>
