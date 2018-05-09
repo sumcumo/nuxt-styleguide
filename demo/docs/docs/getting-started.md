@@ -6,7 +6,7 @@ Please follow the [Installation guide of nuxt](https://nuxtjs.org/guide/installa
 
 ## Install nuxt-styleguide
 
-`npm intall @sum.cumo/nuxt-styleguide --save-dev`
+`npm install @sum.cumo/nuxt-styleguide --save-dev`
 
 ## Add as nuxt module
 
