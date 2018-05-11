@@ -1,54 +1,64 @@
 {
-	"name": "nuxt-styleguide-workspaces",
-	"version": "4.0.0",
-	"description": "styleguide and pattern library support for your nuxt application",
-	"private": true,
-	"workspaces": [ "demo", "packages/*" ],
-	"engines": { "node": "^9.0.0" },
-	"scripts": {
-		"start": "cd demo && yarn start $1",
-		"build": "lerna run --parallel build -- --",
-		"lint": "eslint --ext .vue,.js .",
-		"test": "jest",
-		"postinstall": "cd packages/nuxt-styleguide && yarn build"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/sumcumo/nuxt-styleguide.git"
-	},
-	"keywords": [ "styleguide", "pattern-library", "nuxt", "component-library" ],
-	"author": "sum.cumo GmbH, Hannes Diercks",
-	"license": "Apache-2.0",
-	"bugs": {
-		"url": "https://github.com/sumcumo/nuxt-styleguide/issues"
-	},
-	"homepage": "https://github.com/sumcumo/nuxt-styleguide#readme",
-	"devDependencies": {
-		"babel-eslint": "8.2.2",
-		"babel-plugin-transform-object-rest-spread": "6.26.0",
-		"babel-preset-env": "1.6.1",
-		"eslint": "4.18.1",
-		"eslint-config-airbnb-base": "12.1.0",
-		"eslint-config-prettier": "2.9.0",
-		"eslint-plugin-import": "2.10.0",
-		"eslint-plugin-jest": "21.15.0",
-		"eslint-plugin-prettier": "2.6.0",
-		"eslint-plugin-vue": "4.3.0",
-		"lerna": "2.10.1",
-		"prettier": "1.11.0",
-		"rlsr": "3.1.0"
-	},
-	"rlsr": {
-		"scopeToNameMap": {
-			"nuxt-styleguide": "@sum.cumo/nuxt-styleguide",
-			"nuxt-styleguide-config": "@sum.cumo/nuxt-styleguide-config",
-			"nuxt-styleguide-files": "@sum.cumo/nuxt-styleguide-files",
-			"nuxt-styleguide-publish-npm": "@sum.cumo/nuxt-styleguide-publish-npm",
-			"nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default",
-			"nuxt-markdown-component-loader": "@sum.cumo/nuxt-markdown-component-loader",
-			"vue-markdown-component-loader": "@sum.cumo/vue-markdown-component-loader",
-			"nuxt-custom-route-folder": "@sum.cumo/nuxt-custom-route-folder"
-		},
-		"shouldBeCommitted": []
-	}
+  "name": "nuxt-styleguide-workspaces",
+  "version": "5.0.0",
+  "description": "styleguide and pattern library support for your nuxt application",
+  "private": true,
+  "workspaces": [
+    "demo",
+    "packages/*"
+  ],
+  "engines": {
+    "node": "^9.0.0"
+  },
+  "scripts": {
+    "start": "cd demo && yarn start $1",
+    "build": "lerna run --parallel build -- --",
+    "lint": "eslint --ext .vue,.js .",
+    "test": "jest",
+    "postinstall": "cd packages/nuxt-styleguide && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sumcumo/nuxt-styleguide.git"
+  },
+  "keywords": [
+    "styleguide",
+    "pattern-library",
+    "nuxt",
+    "component-library"
+  ],
+  "author": "sum.cumo GmbH, Hannes Diercks",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sumcumo/nuxt-styleguide/issues"
+  },
+  "homepage": "https://github.com/sumcumo/nuxt-styleguide#readme",
+  "devDependencies": {
+    "babel-eslint": "8.2.2",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "eslint": "4.18.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.10.0",
+    "eslint-plugin-jest": "21.15.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-vue": "4.3.0",
+    "lerna": "2.10.1",
+    "prettier": "1.11.0",
+    "rlsr": "3.1.0"
+  },
+  "rlsr": {
+    "scopeToNameMap": {
+      "nuxt-styleguide": "@sum.cumo/nuxt-styleguide",
+      "nuxt-styleguide-config": "@sum.cumo/nuxt-styleguide-config",
+      "nuxt-styleguide-files": "@sum.cumo/nuxt-styleguide-files",
+      "nuxt-styleguide-publish-npm": "@sum.cumo/nuxt-styleguide-publish-npm",
+      "nuxt-styleguide-renderer-default": "@sum.cumo/nuxt-styleguide-renderer-default",
+      "nuxt-markdown-component-loader": "@sum.cumo/nuxt-markdown-component-loader",
+      "vue-markdown-component-loader": "@sum.cumo/vue-markdown-component-loader",
+      "nuxt-custom-route-folder": "@sum.cumo/nuxt-custom-route-folder"
+    },
+    "shouldBeCommitted": []
+  }
 }
