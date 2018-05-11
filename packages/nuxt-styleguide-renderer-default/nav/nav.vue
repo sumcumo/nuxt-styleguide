@@ -6,14 +6,14 @@
       :key="name"
       class="nav"
     >
-      <h3 v-if="name !== rootCategory">
-        <a
+      <h3 class="nav-title" v-if="name !== rootCategory">
+        <a class="nav-title__content"
           v-if="subRoutes.find(({ name }) => name.toLowerCase() === 'index')"
           :href="subRoutes.find(({ name }) => name.toLowerCase() === 'index').path"
         >
           {{ name }}
         </a>
-        <span v-else>
+        <span class="nav-title__content" v-else>
           {{ name }}
         </span>
       </h3>
@@ -22,7 +22,8 @@
           v-for="(route) in subRoutes"
           :key="route.name"
         >
-          <a
+          <a 
+            class="nav-item"
             v-if="route.name.toLowerCase() !== 'index'"
             :href="route.path"
           >
@@ -35,39 +36,27 @@
 </template>
 
 <style lang="scss">
-.nav {
-  padding: 1em;
-  box-sizing: border-box;
-
-  a {
-    color: inherit;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-}
+@import './nav.scss';
 </style>
 
 <script>
 export default {
-  data() {
-    const rootCategory = '$$root'
-    return {
-      rootCategory,
-      routes: this.$styleguide.routes.reduce((memo, route) => {
-        const category = route.category || rootCategory
-        if (!memo[category]) {
-          // eslint-disable-next-line no-param-reassign
-          memo[category] = []
-        }
+	data() {
+		const rootCategory = '$$root'
+		return {
+			rootCategory,
+			routes: this.$styleguide.routes.reduce((memo, route) => {
+				const category = route.category || rootCategory
+				if (!memo[category]) {
+					// eslint-disable-next-line no-param-reassign
+					memo[category] = []
+				}
 
-        memo[category].push(route)
+				memo[category].push(route)
 
-        return memo
-      }, {}),
-    }
-  },
+				return memo
+			}, {}),
+		}
+	},
 }
 </script>

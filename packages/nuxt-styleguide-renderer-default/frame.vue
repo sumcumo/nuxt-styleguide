@@ -65,120 +65,132 @@
 </template>
 
 <script>
-import StyleguideNav from './nav.vue'
+import StyleguideNav from './nav/nav.vue'
 
 export default {
-  components: {
-    StyleguideNav,
-  },
+	components: {
+		StyleguideNav,
+	},
 }
 </script>
 <style lang="css">
 body {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 .frame {
-  font-family: Avenir, sans-serif;
-  --blue-color: #0785b9;
-  --red-color: #d53140;
-  --yellow-color: #ebc500;
-  --turquoise-color: #55b0b7;
-  --green-color: #00555f;
-  --purple-color: #9c488c;
-  --white-color: #fff;
-  --brown-color: #8f5b00;
-  --pink-color: #f08697;
+	font-family: Avenir, sans-serif;
+	--grey: #d3d3d3;
+	--blue-color: #0785b9;
+	--red-color: #d53140;
+	--yellow-color: #ebc500;
+	--turquoise-color: #55b0b7;
+	--green-color: #00555f;
+	--purple-color: #9c488c;
+	--white-color: #fff;
+	--brown-color: #8f5b00;
+	--pink-color: #f08697;
 
-  --sidebar-width: 250px;
-  display: grid;
-  justify-content: start;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  grid-column-gap: 1em;
+	--sidebar-width: 250px;
+	display: grid;
+	justify-content: start;
+	grid-template-columns: var(--sidebar-width) 1fr;
+	grid-column-gap: 3em;
 
-  padding-right: 1em;
+	padding-right: 3em;
 }
 
 .sidebar__placebo {
 }
 
 .sidebar {
-  width: var(--sidebar-width);
-  height: 100vh;
-  position: fixed;
-  background: black;
-  color: white;
+	width: var(--sidebar-width);
+	height: 100vh;
+	position: fixed;
+	border-right: 1px solid var(--grey);
 }
 
-.sidebar__content{
-  max-height: 100%;
-  overflow: auto;
+.sidebar__content {
+	max-height: 100%;
+	overflow: auto;
 }
 
 .content {
-  padding-top: 1em;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow: hidden;
+	box-sizing: border-box;
+	max-width: 100%;
+	overflow: hidden;
 }
 
 h1 {
-  text-transform: uppercase;
-  font-weight: 900;
+	text-transform: uppercase;
+	font-weight: 900;
+}
+
+h1,
+h2,
+h3 {
+	padding-top: 1.8em;
+	padding-bottom: 0.5em;
+	margin: 0;
 }
 
 a {
-  color: var(--blue-color);
+	color: var(--blue-color);
 }
 
+pre {
+	background: var(--grey);
+	padding: 1em;
+}
 .hamburger {
-  display: none;
-  position: relative;
-  width: 50px;
-  position: fixed;
-  right: 25px;
-  top: 25px;
-  z-index: 50;
+	display: none;
+	position: relative;
+	width: 50px;
+	position: fixed;
+	right: 25px;
+	top: 25px;
+	z-index: 50;
 }
 .icon-open {
-  display: none;
+	display: none;
 }
 
 #toggleNav {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 #toggleNav:checked ~ .sidebar {
-  transform: translateY(0);
+	transform: translateY(0);
 }
 #toggleNav:checked ~ .hamburger .icon-closed {
-  display: none;
+	display: none;
 }
 #toggleNav:checked ~ .hamburger .icon-open {
-  display: block;
+	display: block;
 }
 
 @media (max-width: 850px) {
-  .hamburger {
-    display: block;
-  }
+	.hamburger {
+		display: block;
+	}
 
-  .frame {
-    padding: 3em 1em;
-    grid-template-columns: auto;
-  }
+	.frame {
+		padding: 3em 2em;
+		grid-template-columns: 1fr;
+	}
 
-  .sidebar {
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.92);
-    height: 100vh;
-    transform: translateY(-100vh);
-  }
+	.sidebar {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: black;
+		color: white;
+		transform: translateY(-100vh);
+	}
 }
 </style>

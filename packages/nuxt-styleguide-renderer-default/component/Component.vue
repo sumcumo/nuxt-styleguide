@@ -94,58 +94,58 @@
 
 <style>
 .component-demo {
-  transform: translateX(1px);
+	transform: translateX(1px);
 }
 </style>
 
 <script>
 import SgComponentDemo from './ComponentDemo.vue'
-import SgStyleguideNav from '../nav.vue'
+import SgStyleguideNav from '../nav/nav.vue'
 import SgFrame from '../frame.vue'
 import SgTags from './Tags.vue'
 
 export default {
-  components: { SgStyleguideNav, SgTags, SgFrame, SgComponentDemo },
-  props: {
-    Comp: { type: Object, default: null },
-    name: { type: String, default: null },
-    importName: { type: String, default: null },
-    description: { type: String, default: null },
-    states: { type: Array, default: null },
-    importPath: { type: String, default: null },
-    props: { type: Object, default: null },
-    events: { type: Object, default: null },
-    slots: { type: Object, default: null },
-    tags: { type: Object, default: null },
-    methods: { type: Object, default: null },
-  },
-  data() {
-    return {
-      filterMethodTags(tags) {
-        return Object.keys(tags || {}).reduce((memo, tagName) => {
-          if (['params', 'returns'].indexOf(tagName) === -1) {
-            // eslint-disable-next-line no-param-reassign
-            memo[tagName] = tags[tagName]
-          }
+	components: { SgStyleguideNav, SgTags, SgFrame, SgComponentDemo },
+	props: {
+		Comp: { type: Object, default: null },
+		name: { type: String, default: null },
+		importName: { type: String, default: null },
+		description: { type: String, default: null },
+		states: { type: Array, default: null },
+		importPath: { type: String, default: null },
+		props: { type: Object, default: null },
+		events: { type: Object, default: null },
+		slots: { type: Object, default: null },
+		tags: { type: Object, default: null },
+		methods: { type: Object, default: null },
+	},
+	data() {
+		return {
+			filterMethodTags(tags) {
+				return Object.keys(tags || {}).reduce((memo, tagName) => {
+					if (['params', 'returns'].indexOf(tagName) === -1) {
+						// eslint-disable-next-line no-param-reassign
+						memo[tagName] = tags[tagName]
+					}
 
-          return memo
-        }, {})
-      },
-    }
-  },
-  computed: {
-    hasSlots() {
-      return Object.keys(this.slots || {}).length !== 0
-    },
-    hasMethods() {
-      return Object.keys(this.methods || {}).length !== 0
-    },
-    hasProps() {
-      return Object.keys(this.props || {}).length !== 0
-    },
-    hasEvents() {
-      return Object.keys(this.events || {}).length !== 0
-    },
-  },
+					return memo
+				}, {})
+			},
+		}
+	},
+	computed: {
+		hasSlots() {
+			return Object.keys(this.slots || {}).length !== 0
+		},
+		hasMethods() {
+			return Object.keys(this.methods || {}).length !== 0
+		},
+		hasProps() {
+			return Object.keys(this.props || {}).length !== 0
+		},
+		hasEvents() {
+			return Object.keys(this.events || {}).length !== 0
+		},
+	},
 }
 </script>
