@@ -22,8 +22,8 @@ for example.
 Design token files can be documented inline using docBlock comments.
 
 A special `render` tag is used to specify how the value of the variable
-should be used. The custom renderer has to be implemented by the
-<missing-doc>used styleguide renderer for design tokens</missing-doc>.
+should be used. The Design Token is than parsen by the [Design Token Component](https://github.com/sumcumo/nuxt-styleguide/blob/master/packages/nuxt-styleguide-renderer-default/designTokens.vue)
+and directed to the selected render type.
 
 ```
 /**
