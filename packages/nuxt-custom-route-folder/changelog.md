@@ -1,5 +1,53 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 2.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **require extendRoutes option**
+> instead of hooking into nuxt
+> 
+> and also add withOptions hoc
+> 
+> BREAKING CHNAGE:
+> extendRoutes option must now be passed from parent module
+> 
+> 
+
+### 🆕  New Features
+
+→ **initiate package**
+
+### 🐞 Bug Fixes
+
+→ **do not publish tmp folder**
+
+→ **delay initial buffer for 250**
+> in oder to fight a unindentified race condition
+> 
+> 
+
+→ **delay closing of watcher and observable in non-watch mode**
+
+→ **delay final resolve for a tick**
+> in order to prevent some unknown race-condition from blocking the whole module
+> 
+> 
+
+→ **fix destructuring problem**
+
+### 🏃 Performance Improvements
+
+→ **handle initial add batch in parallel**
+
+→ **observe passed globs**
+> insted of abserving whole src folder and filtering later on
+> 
+> 
+
+→ **ignore child node_modules folders**
+
+
 ## Version 1.0.0
 
 ### 🚀  BREAKING CHANGES

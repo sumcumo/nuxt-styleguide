@@ -1,5 +1,327 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 3.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **rename "variables" to "design-tokens"**
+> BREAKING CHANGE
+> Not all sass variables are atomic and can be treated as design tokens.
+> Therefore the folder previosly named "variables" is renamed to "design-tokens"
+> and the configuration for the folder name has changed from "variablesName" to
+> "designTokenName".
+> 
+> Migration: you should rename the "variables" folder to "design-tokens"
+> You could also set the configuration of "designTokenName" to "variables" (not recommended)
+> If you allready had a custom "variablesName" configured, change the config key
+> to "designTokenName"
+> 
+> 
+
+### 🆕  New Features
+
+→ **support data in component states**
+> in oder to allow demo events
+> 
+> also support js object notation
+> 
+> 
+
+→ **expose importName to renderer**
+> so that the renderer can create correct import statements
+> 
+> 
+
+→ **base64 encode route meta info**
+> in order to prevent corruption by other modules that tinker with the route name
+> 
+> 
+
+→ **re-add path prefix feature**
+> was accitentally removed with move to custom-route-folder module
+> 
+> 
+
+→ **pin depdendency to latest default renderer**
+
+→ **generate documenation for layouts**
+
+→ **pin to latest default renderer version**
+
+→ **expose styleguide layout on env**
+
+→ **apply layout option to rendered pages**
+
+→ **use renderer page folders as category**
+
+→ **introduce config for iconRoute and iconFolder**
+
+→ **add icons index page**
+
+→ **pick up icons and render them in navigation**
+
+→ **pass through styleguideData to styleguide**
+
+→ **use component display name instead of file name**
+
+→ **support router.base option with absolute paths**
+
+→ **also allow vue files for docs**
+
+→ **use nuxt-markdown-component-loader for docs**
+
+→ **create routes for doc entries**
+
+→ **handle importFrom option**
+
+→ **create views for variables files**
+
+→ **apply markdown to all component info descriptions**
+
+→ **use dynamic pages from renderer**
+
+→ **generate docs from component files**
+> using vue-docgen-api <3
+> 
+> 
+
+→ **provide $styleguide global**
+> containing meta informations such as project name, version and routes
+> 
+> 
+
+→ **watch components in dev mode**
+
+### 🐞 Bug Fixes
+
+→ **use latest version of nuxt-custom-route-folder**
+
+→ **update to latest version of nuxt-custom-route-folder**
+
+→ **update to latest version of nuxt-styleguide-renderer-default**
+
+→ **update to latest versions of nuxt-custom-route-folder and nuxt-styleguide-renderer-default**
+
+→ **use latest version of vue-docgen-api**
+
+→ **do not cache empty routes**
+
+→ **use latest patch of nuxt-custom-route-folder**
+
+→ **set default renderer to latest**
+
+→ **bind fix default renderer version**
+
+→ **unlink correct temp component file**
+
+→ **require latest versions of internal dependencies**
+
+→ **do not render markdown of empty description**
+
+→ **do not strip leading slash in basepath**
+
+→ **ensure docs do not conflict with pages**
+
+→ **use extendBuild method instead of hacking webpack config**
+
+→ **allow imports in variable files**
+
+→ **stop assuming existing tags for variables files**
+
+→ **ensure tmpDir exists**
+
+→ **handle case when component has no slot**
+
+→ **stop handling empty pages**
+
+→ **handle cases where $router is not initialized**
+
+→ **do not break when no pages exist**
+
+→ **do not resolve default prop values manually**
+> this fixes an issue where function props with default value break the preview
+> 
+> 
+
+→ **do not use object-spread opperator**
+
+→ **use prepare script instead of prepublish**
+> for npm@5 compat
+> 
+> 
+
+→ **fix template syntax in proxyComponent**
+
+→ **stop messing with the console**
+
+→ **fix error reporting**
+
+→ **update styleguide when component changes**
+
+→ **fix typo**
+
+### 🏃 Performance Improvements
+
+→ **use latest version of nuxt-custom-route-folder**
+
+→ **cache vue-docgen results**
+
+→ **communicate initiating of nuxt stylegide**
+
+→ **stop creating unused temp dir**
+
+### 🔨 Refactorings
+
+→ **use latest version of nuxt-custom-route-folder**
+
+→ **use nuxt-custom-route-folder to generate additional routes**
+
+→ **make applyMarkdownToDocs reusable by future proxy creators**
+
+→ **internally add .comp suffix to proxy files**
+> in order to prevent collisions with other proxy types
+> 
+> 
+
+→ **use nuxt-styleguide-files**
+
+→ **compat patch for nuxt-styleguide-components**
+
+→ **use nuxt-styleguide-components helper**
+
+→ **use nuxt-styleguide-config package**
+
+→ **use template for proxy component**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.0.0: **do not publish tmp folder**
+
+→ feat in @sum.cumo/nuxt-custom-route-folder@2.0.0: **require extendRoutes option**
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.0.0: **delay initial buffer for 250**
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.0.0: **delay closing of watcher and observable in non-watch mode**
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.0.0: **delay final resolve for a tick**
+
+→ perf in @sum.cumo/nuxt-custom-route-folder@2.0.0: **handle initial add batch in parallel**
+
+→ perf in @sum.cumo/nuxt-custom-route-folder@2.0.0: **observe passed globs**
+
+→ perf in @sum.cumo/nuxt-custom-route-folder@2.0.0: **ignore child node_modules folders**
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.0.0: **fix destructuring problem**
+
+→ feat in @sum.cumo/nuxt-custom-route-folder@2.0.0: **initiate package**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **add default value for layout option**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **introduce config for iconRoute and iconFolder**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **add default value for iconName**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **use / root route for styleguide**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **rename "variables" to "design-tokens"**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **add default value for docsDir**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **introduce importFrom option**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **add default value for variablesName**
+
+→ fix in @sum.cumo/nuxt-styleguide-config@3.0.0: **ensure empty extend value is treated correctly**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **add nuxt default options to config**
+
+→ feat in @sum.cumo/nuxt-styleguide-config@3.0.0: **add package**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **make sidebar light and create own nav stylesheet**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **remove unused variables**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **support latest api of states**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **dont use backlink**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **make color demo wider**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **sidebar nav is scrollable now**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **use importName to create import statements**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **bump version**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce transform hack to demo fixed elements**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce a better way of displaying tokens**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **use global nuxt styleguide layout**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **render index routes on category headlines**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **do not require tags in tags renderer**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **namespace tags usage**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **forgotten b**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce icon grid and refactor some views**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **add icons index page**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce frame to single icon view**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **add Icon renderer**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **es koennte alles responsive sein**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **vertically align lineheightdemo**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce font demos**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **remove components page**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **rename variabeles renderer to designTokens**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **pass styleguide name to library**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce color renderer**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce sidebar in frame**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **use backlink instead of custom link**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce Backlink**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **introduce frame**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **use absolute paths for back links**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **use slot instead of doc prop to get content for doc view**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **add default doc renderer**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **remove empty style texts**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **add renderer for variables**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **do not break when no docs have been parsed**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **render component info**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **adapt renaming of docs to description**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **add components route**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **move index page into pages dir**
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **add navigation**
+
+→ perf in @sum.cumo/nuxt-styleguide-renderer-default@3.0.0: **remove superflous v-if**
+
+
 ## Version 2.17.0
 
 ### 🆕  New Features

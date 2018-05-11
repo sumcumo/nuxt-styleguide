@@ -1,5 +1,111 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **rename variabeles renderer to designTokens**
+> BREAKING CHANGE:
+> The rendering system is now supposed to use `designTokens.vue` instead of `variables.vue`
+
+### 🆕  New Features
+
+→ **make sidebar light and create own nav stylesheet**
+
+→ **support latest api of states**
+
+→ **make color demo wider**
+
+→ **sidebar nav is scrollable now**
+
+→ **use importName to create import statements**
+
+→ **bump version**
+
+→ **introduce a better way of displaying tokens**
+
+→ **render index routes on category headlines**
+> and hide icon nav
+> 
+> 
+
+→ **introduce icon grid and refactor some views**
+
+→ **add icons index page**
+
+→ **introduce frame to single icon view**
+
+→ **add Icon renderer**
+
+→ **es koennte alles responsive sein**
+
+→ **vertically align lineheightdemo**
+
+→ **introduce font demos**
+
+→ **remove components page**
+
+→ **pass styleguide name to library**
+
+→ **introduce color renderer**
+
+→ **introduce sidebar in frame**
+
+→ **use backlink instead of custom link**
+
+→ **introduce Backlink**
+
+→ **introduce frame**
+
+→ **use absolute paths for back links**
+
+→ **use slot instead of doc prop to get content for doc view**
+
+→ **add default doc renderer**
+
+→ **add renderer for variables**
+
+→ **render component info**
+> like props, methods, tags etc.
+> 
+> 
+
+→ **add components route**
+
+→ **move index page into pages dir**
+> appliance to new nuxt-styleguide api
+> 
+> 
+
+→ **add navigation**
+
+### 🐞 Bug Fixes
+
+→ **remove unused variables**
+
+→ **dont use backlink**
+
+→ **introduce transform hack to demo fixed elements**
+
+→ **use global nuxt styleguide layout**
+
+→ **do not require tags in tags renderer**
+
+→ **namespace tags usage**
+
+→ **forgotten b**
+
+→ **remove empty style texts**
+
+→ **do not break when no docs have been parsed**
+
+→ **adapt renaming of docs to description**
+
+### 🏃 Performance Improvements
+
+→ **remove superflous v-if**
+
+
 ## Version 2.14.0
 
 ### 🆕  New Features
