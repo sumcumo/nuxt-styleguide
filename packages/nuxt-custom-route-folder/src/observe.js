@@ -30,6 +30,7 @@ export default function observe(glob, watch) {
 
         if (!watch) {
           setTimeout(() => {
+            done = true
             watcher.close()
             observer.complete()
           }, 100)

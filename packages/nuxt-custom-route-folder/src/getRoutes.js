@@ -1,4 +1,4 @@
-import { CHUNK_PREFIX } from './common'
+import CHUNK_PREFIX from './chunkPrefix'
 
 export default function getRoutes(extendRoutes) {
   if (!getRoutes.cache) {
