@@ -1,23 +1,20 @@
 import path from 'path'
-import fs from 'fs'
-import crypto from 'crypto'
-import minimatch from 'minimatch'
 import kebabCase from 'lodash.kebabcase'
 import { Observable } from 'rxjs'
 import observe from './observe'
 import getRoutes from './getRoutes'
-import { tmpDir, CHUNK_PREFIX, readFile, writeFile } from './common'
+import CHUNK_PREFIX from './chunkPrefix'
 
 export default function createCustomRoutesFromFolder({
   nuxt,
   glob,
-  transform,
   extendRoutes,
   priority = 0,
+  mapImport = (p) => p,
   mapRouteName = (basePath) => basePath.replace(/\//g, ':'),
   mapRoutePath = (p) => p,
+  mapMeta = () => ({}),
   filter = () => true,
-  transformExt = 'js',
   srcDir = nuxt.options.srcDir,
   watch = nuxt.options.dev,
 }) {
@@ -37,46 +34,10 @@ export default function createCustomRoutesFromFolder({
       })
   })
 
-  const transformFile = async ({ file: component, event }, route) => {
-    const proxyPath = path.join(
-      tmpDir,
-      `${crypto
-        .createHash('md5')
-        .update(component)
-        .digest('hex')}.${transformExt}`
-    )
-
-    const retVal = {
-      route: {
-        ...route,
-        component: proxyPath,
-      },
-      proxyPath,
-    }
-
-    if (event === 'unlink') {
-      return retVal
-    }
-
-    const [{ contents }] = await Promise.all([
-      transform(await readFile(component), route),
-      new Promise((resolve) => {
-        /* If the transform happens to fast, the file change
-        is not picked up by nuxt watchers and the change
-        is not visible in the preview */
-        setTimeout(resolve, 250)
-      }),
-    ])
-
-    await writeFile(proxyPath, contents)
-
-    return retVal
-  }
-
-  const getRoute = async ({ file: component }) => {
+  const getRoute = async ({ file }) => {
     const basePath = path
-      .relative(srcDir, component)
-      .replace(new RegExp(`${path.extname(component)}$`), '')
+      .relative(srcDir, file)
+      .replace(new RegExp(`${path.extname(file)}$`), '')
     const urlPath = basePath
       .split(path.sep)
       .map((t) => kebabCase(t))
@@ -84,15 +45,18 @@ export default function createCustomRoutesFromFolder({
       .replace(/index$/, '')
     const chunkName = `${CHUNK_PREFIX}/${basePath}`
 
-    const [routePath, name] = await Promise.all([
+    const [routePath, name, meta, component] = await Promise.all([
       mapRoutePath(`/${urlPath}`),
-      mapRouteName(basePath, component),
+      mapRouteName(basePath, file),
+      mapMeta(basePath, file),
+      mapImport(file),
     ])
 
     return {
       path: routePath,
       priority,
       component,
+      meta,
       chunkName,
       name,
     }
@@ -109,24 +73,13 @@ export default function createCustomRoutesFromFolder({
       return null
     }
 
-    const directRoute = await getRoute(message)
-
-    const { route, proxyPath } =
-      ['add', 'change', 'unlink'].includes(message.event) && transform
-        ? await transformFile(message, directRoute)
-        : { route: directRoute }
-
     return {
       ...message,
-      route,
-      proxyPath,
+      route: await getRoute(message),
     }
   }
 
   const fsEvents = observer
-    .filter(({ file, event }) => {
-      return event === 'ready' || minimatch(file, glob)
-    })
     .buffer(readyObs)
     .take(Infinity)
     .concatMap((messages) => {
@@ -139,14 +92,11 @@ export default function createCustomRoutesFromFolder({
 
   fsEvents
     .filter(({ event }) => event !== 'ready')
-    .forEach(({ event, route, proxyPath }) => {
+    .forEach(({ event, route }) => {
       if (event === 'unlink') {
         routes.unlink(route)
       } else {
         routes.add(route)
-      }
-      if (proxyPath && event === 'unlink') {
-        fs.unlink(proxyPath)
       }
     })
 
