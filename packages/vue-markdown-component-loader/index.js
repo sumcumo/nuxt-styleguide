@@ -61,7 +61,11 @@ function getWrapper(wrapper) {
 }
 
 module.exports = function componentLoader(markdown) {
-  const options = loaderUtils.getOptions(this)
+  const options = Object.assign(
+    {},
+    this.options.vueMarkdownComponentLoader || {},
+    loaderUtils.getOptions(this)
+  )
 
   this.cacheable()
 
