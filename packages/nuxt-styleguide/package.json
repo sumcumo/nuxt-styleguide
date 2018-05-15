@@ -7,14 +7,15 @@
     "build": "babel src --out-dir lib"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0"
+    "babel-cli": "6.26.0",
+    "webpack": "4.8.3"
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sum.cumo/nuxt-custom-route-folder": "^2",
+    "@sum.cumo/nuxt-custom-route-folder": "rlsr-latest",
     "@sum.cumo/nuxt-styleguide-config": "^3",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^3",
-    "@sum.cumo/vue-markdown-component-loader": "^0",
+    "@sum.cumo/vue-markdown-component-loader": "rlsr-latest",
     "chalk": "2.3.1",
     "chokidar": "2.0.2",
     "doctrine": "2.1.0",
@@ -25,5 +26,8 @@
     "postcss-scss": "1.0.4",
     "url-join": "4.0.0",
     "vue-docgen-api": "2.3.8"
+  },
+  "peerDependencies": {
+    "webpack": "^4"
   }
 }
