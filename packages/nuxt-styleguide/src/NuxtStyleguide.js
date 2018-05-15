@@ -1,38 +1,20 @@
 import * as path from 'path'
 
 import options from '@sum.cumo/nuxt-styleguide-config'
-import kebabCase from 'lodash.kebabcase'
+
 import urlJoin from 'url-join'
 import chalk from 'chalk'
+import kebabCase from 'lodash.kebabcase'
 import customRoutes from '@sum.cumo/nuxt-custom-route-folder'
+import { LoaderOptionsPlugin } from 'webpack'
 import extendVueLoaders from './extendVueLoaders'
-import buildProxyComponents from './buildProxyComponents'
-import buildProxyDesignTokens from './buildProxyDesignTokens'
-import buildProxyIcons from './buildProxyIcons'
-import vueDocGenCached from './vueDocGenCached'
+import docGenCached from './vueDocGenCached'
+import relPathToName from './relPathToName'
+import toName from './toName'
 
-function toName(str) {
-  return kebabCase(str)
-    .split('-')
-    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-    .join(' ')
-}
-
-function encode(str) {
-  if (global.btoa) {
-    return global.btoa(str)
-  }
-
-  return Buffer.from(str).toString('base64')
-}
-
-function routeNameMapper(category) {
+function metaMapper(category) {
   return (relPath) => {
-    const tokens = relPath.split('/')
-
-    const name = toName(tokens[tokens.length - 1])
-
-    return `NSG:${encode(JSON.stringify({ name, category }))}:`
+    return { name: relPathToName(relPath), category, nsg: true }
   }
 }
 
@@ -46,17 +28,18 @@ export default function NuxtStyleguide() {
   extendVueLoaders(this)
 
   this.extendBuild((config) => {
-    config.module.rules.push({
-      test: /\.md?$/,
-      loader: '@sum.cumo/vue-markdown-component-loader',
-      include: docsDir,
-      options: {
-        layout: options.layout,
-        components: this.options.markdownComponents,
-        marked: this.options.marked,
-        wrapper: require.resolve(path.join(options.renderer, 'doc.vue')),
-      },
-    })
+    config.plugins.push(
+      new LoaderOptionsPlugin({
+        options: {
+          vueMarkdownComponentLoader: {
+            layout: options.layout,
+            components: this.options.markdownComponents,
+            marked: this.options.marked,
+            wrapper: require.resolve(path.join(options.renderer, 'doc.vue')),
+          },
+        },
+      })
+    )
   })
 
   const basePath = `${this.nuxt.options.router.base.replace(/\/$/, '')}/`
@@ -94,21 +77,24 @@ export default function NuxtStyleguide() {
       mapRoutePath(p) {
         return urlJoin(options.path, p.replace(/^\/docs/, ''))
       },
-      mapRouteName: routeNameMapper('Docs'),
+      mapImport(p) {
+        return `${path.join('@sum.cumo', 'vue-markdown-component-loader')}!${p}`
+      },
+      mapMeta: metaMapper('Docs'),
     }),
     createRoutes({
       glob: `${rendererPagesDir}/**/*.vue`,
       srcDir: rendererPagesDir,
-      mapRouteName(p) {
+      mapMeta(p) {
         const tokens = p.split('/').map(kebabCase)
 
         if (tokens.length === 1) {
-          return routeNameMapper('$$root')(tokens[0])
+          return metaMapper('$$root')(tokens[0])
         }
 
-        return routeNameMapper(
-          toName(tokens.slice(0, tokens.length - 1).join('-'))
-        )(tokens[tokens.length - 1])
+        return metaMapper(toName(tokens.slice(0, tokens.length - 1).join('-')))(
+          tokens[tokens.length - 1]
+        )
       },
       mapRoutePath(p) {
         return urlJoin(options.path, p)
@@ -116,15 +102,23 @@ export default function NuxtStyleguide() {
     }),
     createRoutes({
       glob: `${path.join(options.srcDir, 'components')}/**/*.vue`,
-      transform: buildProxyComponents,
-      async mapRouteName(_, component) {
-        return routeNameMapper('Components')(
-          (await vueDocGenCached(component)).displayName
+      async mapMeta(_, component) {
+        return metaMapper('Components')(
+          (await docGenCached(component)).displayName
         )
+      },
+      mapImport(p) {
+        return `!${path.join(
+          '@sum.cumo',
+          'nuxt-styleguide',
+          'lib',
+          'loaders',
+          'component-loader.js'
+        )}!${p}`
       },
       async filter(component) {
         try {
-          await vueDocGenCached(component)
+          await docGenCached(component)
           return true
         } catch (err) {
           return false
@@ -136,8 +130,16 @@ export default function NuxtStyleguide() {
     }),
     createRoutes({
       glob: `${path.join(options.srcDir, 'layouts')}/**/*.vue`,
-      transform: buildProxyComponents,
-      mapRouteName: routeNameMapper('Layouts'),
+      mapImport(p) {
+        return `!${path.join(
+          '@sum.cumo',
+          'nuxt-styleguide',
+          'lib',
+          'loaders',
+          'component-loader.js'
+        )}!${p}`
+      },
+      mapMeta: metaMapper('Layouts'),
       mapRoutePath(p) {
         return urlJoin(options.path, p)
       },
@@ -147,16 +149,32 @@ export default function NuxtStyleguide() {
         options.srcDir,
         options.designTokenName
       )}/**/*.+(scss|sass)`,
-      transform: buildProxyDesignTokens,
-      mapRouteName: routeNameMapper('Design Tokens'),
+      mapImport(p) {
+        return `!${path.join(
+          '@sum.cumo',
+          'nuxt-styleguide',
+          'lib',
+          'loaders',
+          'design-token-loader.js'
+        )}!${p}`
+      },
+      mapMeta: metaMapper('Design Tokens'),
       mapRoutePath(p) {
         return urlJoin(options.path, p)
       },
     }),
     createRoutes({
       glob: `${path.resolve(options.srcDir, options.iconFolder)}/**/*.svg`,
-      transform: buildProxyIcons,
-      mapRouteName: routeNameMapper('Icons'),
+      mapMeta: metaMapper('Icons'),
+      mapImport(p) {
+        return `!${path.join(
+          '@sum.cumo',
+          'nuxt-styleguide',
+          'lib',
+          'loaders',
+          'icon-loader.js'
+        )}!${p}`
+      },
       mapRoutePath(p) {
         return urlJoin(options.path, p)
       },

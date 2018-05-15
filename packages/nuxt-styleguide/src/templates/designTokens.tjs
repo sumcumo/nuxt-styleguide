@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Renderer from '<%= rendererPath %>';
 
-const cacheBust = '<%= buildId %>';
 const designTokens = <%= designTokens %>;
 
 export default {

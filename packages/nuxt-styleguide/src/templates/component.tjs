@@ -4,7 +4,6 @@ import Renderer from '<%= rendererPath %>';
 import normalizeStates from '<%= normalizeStatesPath %>';
 
 const styleguide = Comp.__styleguide || {};
-const cacheBust = '<%= buildId %>';
 const componentInfo = <%= componentInfo %>;
 
 export default {

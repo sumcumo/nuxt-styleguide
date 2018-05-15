@@ -1,15 +1,3 @@
-function normalize(states) {
-  if (!states) {
-    return []
-  }
-
-  if (!Array.isArray(states)) {
-    return [states]
-  }
-
-  return states
-}
-
 module.exports = function statesLoader(source, map) {
   try {
     this.callback(

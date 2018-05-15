@@ -1,24 +1,22 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import _template from 'lodash.template'
-import options from '@sum.cumo/nuxt-styleguide-config'
 import postcss from 'postcss'
 import syntax from 'postcss-scss'
 import doctrine from 'doctrine'
-import applyMarkdownToDocs from './applyMarkdownToDocs'
-import getRouteInfo from './getRouteInfo'
+import options from '@sum.cumo/nuxt-styleguide-config'
+import applyMarkdownToDocs from '../applyMarkdownToDocs'
+import relPathToName from '../relPathToName'
 
-const styleguideSrcDir = path.resolve(__dirname, '..', 'src')
+const styleguideSrcDir = path.resolve(__dirname, '..', '..', 'src')
 
-const proxyTemplatePromise = new Promise((resolve, reject) => {
+const templatePromise = new Promise((resolve, reject) => {
   fs.readFile(
-    path.resolve(styleguideSrcDir, 'proxyComponent', 'proxyDesignTokens.tjs'),
+    path.resolve(styleguideSrcDir, 'templates', 'designTokens.tjs'),
     (err, content) =>
       err ? reject(err) : resolve(_template(content.toString()))
   )
 })
-
-let i = 0
 
 function getGlobalComment(ast) {
   if (ast.nodes.length < 2) {
@@ -119,32 +117,34 @@ function getInfo(content, file) {
   }
 }
 
-export default function buildProxyDesignTokens(
-  content,
-  { name: routeName, component }
-) {
-  i += 1
+async function load(source, resourcePath) {
+  const template = await templatePromise
 
-  const relPath = path.relative(options.srcDir, component)
-  const { name } = getRouteInfo(routeName)
+  const relPath = path.relative(options.srcDir, resourcePath)
+  const name = relPathToName(relPath)
   const importPath =
     options.importFrom === 'local'
       ? `~/${relPath}`
       : `${options.name}/${relPath}`
 
-  return proxyTemplatePromise.then((template) => {
-    return {
-      contents: template({
-        rendererPath: require.resolve(
-          path.join(options.renderer, 'designTokens.vue')
-        ),
-        designTokens: JSON.stringify(getInfo(content, component)),
-        buildId: i,
-        layout: options.layout,
-        name,
-        importName: name.replace(/ /g, ''),
-        importPath,
-      }),
-    }
+  return template({
+    rendererPath: require.resolve(
+      path.join(options.renderer, 'designTokens.vue')
+    ),
+    designTokens: JSON.stringify(getInfo(source, resourcePath)),
+    layout: options.layout,
+    name,
+    importName: name.replace(/ /g, ''),
+    importPath,
   })
+}
+
+module.exports = function componentLoader(source, map) {
+  const callback = this.async()
+
+  load(source, this.resourcePath)
+    .then((result) => {
+      return callback(null, result, map)
+    })
+    .catch(callback)
 }

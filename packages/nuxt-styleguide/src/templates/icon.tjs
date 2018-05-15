@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Renderer from '<%= rendererPath %>'
 import iconUrl from '<%= file %>'
 
-const cacheBust = '<%= buildId %>'
-
 export default {
   layout: '<%= layout %>',
   render(createElement) {
