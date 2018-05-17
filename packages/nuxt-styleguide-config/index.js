@@ -54,25 +54,27 @@ const moduleOptions = Object.assign(
     }, {})
 )
 
-module.exports = Object.assign(
-  Options.defaults,
-  options,
-  pkg,
-  {
-    path: '/',
-    designTokenName: 'design-tokens',
-    importFrom: 'package',
-    docsDir: 'docs',
-    iconRoute: 'icons',
-    iconFolder: 'icons',
-    layout: 'default',
-    renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
-  },
-  moduleOptions,
-  {
-    extends:
-      moduleOptions.extends && !Array.isArray(moduleOptions.extends)
-        ? [moduleOptions.extends]
-        : moduleOptions.extends || [],
-  }
+module.exports = Options.from(
+  Object.assign(
+    {},
+    options,
+    pkg,
+    {
+      path: '/',
+      designTokenName: 'design-tokens',
+      importFrom: 'package',
+      docsDir: 'docs',
+      iconRoute: 'icons',
+      iconFolder: 'icons',
+      layout: 'default',
+      renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
+    },
+    moduleOptions,
+    {
+      extends:
+        moduleOptions.extends && !Array.isArray(moduleOptions.extends)
+          ? [moduleOptions.extends]
+          : moduleOptions.extends || [],
+    }
+  )
 )
