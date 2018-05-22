@@ -67,10 +67,9 @@ export default function NuxtStyleguide() {
 
   const createRoutes = customRoutes.withOptions({
     nuxt: this.nuxt,
-    extendRoutes: this.extendRoutes.bind(this),
   })
 
-  return Promise.all([
+  const done = Promise.all([
     createRoutes({
       glob: `${docsDir}/**/*.+(md|vue)`,
       priority: 1,
@@ -183,4 +182,8 @@ export default function NuxtStyleguide() {
     // eslint-disable-next-line no-console
     console.log(`  ${chalk.dim('nuxt:styleguide')} ${chalk.green('OK')}`)
   })
+
+  if (!this.nuxt.options.dev) {
+    return done
+  }
 }
