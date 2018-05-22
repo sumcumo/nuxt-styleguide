@@ -1,6 +1,14 @@
 import path from 'path'
 import kebabCase from 'lodash.kebabcase'
 import { Observable } from 'rxjs'
+import {
+  concatMap,
+  filter as rxFilter,
+  take,
+  delay,
+  flatMap,
+  bufferWhen,
+} from 'rxjs/operators'
 import observe from './observe'
 import getRoutes from './getRoutes'
 import CHUNK_PREFIX from './chunkPrefix'
@@ -8,7 +16,6 @@ import CHUNK_PREFIX from './chunkPrefix'
 export default function createCustomRoutesFromFolder({
   nuxt,
   glob,
-  extendRoutes,
   priority = 0,
   mapImport = (p) => p,
   mapRouteName = (basePath) => basePath.replace(/\//g, ':'),
@@ -18,21 +25,9 @@ export default function createCustomRoutesFromFolder({
   srcDir = nuxt.options.srcDir,
   watch = nuxt.options.dev,
 }) {
-  const routes = getRoutes(extendRoutes)
+  const routes = getRoutes(nuxt)
 
-  const observer = observe(glob, watch)
-
-  const readyObs = Observable.create((obs) => {
-    const subscription = observer
-      .filter(({ event }) => event === 'ready')
-      .subscribe(() => {
-        setTimeout(() => {
-          obs.next()
-          obs.complete()
-        }, 250)
-        subscription.unsubscribe()
-      })
-  })
+  const watch$ = observe(glob, watch)
 
   const getRoute = async ({ file }) => {
     const basePath = path
@@ -79,19 +74,27 @@ export default function createCustomRoutesFromFolder({
     }
   }
 
-  const fsEvents = observer
-    .buffer(readyObs)
-    .take(Infinity)
-    .concatMap((messages) => {
-      return Promise.all(messages.map(processFileMsg))
+  const readyFilter = rxFilter(({ event }) => event === 'ready')
+  const ready$ = watch$.pipe(readyFilter, delay(1))
+  const ready$$ = Observable.create((obs) => {
+    const sub = ready$.subscribe({
+      next() {
+        obs.complete()
+        sub.unsubscribe()
+      },
     })
-    .flatMap((m) => {
-      return m
-    })
-    .filter((m) => m)
+  })
 
-  fsEvents
-    .filter(({ event }) => event !== 'ready')
+  const fs$ = watch$.pipe(
+    bufferWhen(() => ready$$),
+    take(Infinity),
+    concatMap((messages) => Promise.all(messages.map(processFileMsg))),
+    flatMap((x) => x),
+    rxFilter((x) => x)
+  )
+
+  fs$
+    .pipe(rxFilter(({ event }) => event !== 'ready'))
     .forEach(({ event, route }) => {
       if (event === 'unlink') {
         routes.unlink(route)
@@ -101,9 +104,13 @@ export default function createCustomRoutesFromFolder({
     })
 
   return new Promise((resolve, reject) => {
-    fsEvents.filter(({ event }) => event === 'ready').subscribe(() => {
-      setTimeout(resolve, 0)
-    }, reject)
+    const sub = fs$.pipe(readyFilter, delay(2)).subscribe({
+      next() {
+        resolve()
+        sub.unsubscribe()
+      },
+      error: reject,
+    })
   })
 }
 
