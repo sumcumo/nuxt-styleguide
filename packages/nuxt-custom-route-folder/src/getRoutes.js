@@ -5,17 +5,28 @@ export default function getRoutes(nuxt) {
     const customRoutes = []
 
     let builder = null
+    let initialUpdate = false
     const update = () => {
       if (builder) {
         builder.generateRoutesAndFiles()
+      } else if (nuxt.options.dev) {
+        initialUpdate = true
       }
     }
 
     nuxt.hook('build:done', (b) => {
       builder = b
+      if (initialUpdate) {
+        console.log('routes got updated in initial build - rebuilding.')
+        b.generateRoutesAndFiles()
+      }
     })
 
     nuxt.hook('build:extendRoutes', (routes) => {
+      if (nuxt.options.dev && !builder) {
+        return
+      }
+
       customRoutes.forEach((route) => {
         if (!routes.includes(route)) {
           const conflictingRoute = routes.find(

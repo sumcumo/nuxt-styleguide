@@ -1,6 +1,7 @@
 import path from 'path'
 import kebabCase from 'lodash.kebabcase'
 import { Observable } from 'rxjs'
+import minimatch from 'minimatch'
 import {
   concatMap,
   filter as rxFilter,
@@ -27,7 +28,11 @@ export default function createCustomRoutesFromFolder({
 }) {
   const routes = getRoutes(nuxt)
 
-  const watch$ = observe(glob, watch)
+  const watch$ = observe(srcDir, watch).pipe(
+    rxFilter(({ event, file }) => {
+      return event === 'ready' || minimatch(file, glob)
+    })
+  )
 
   const getRoute = async ({ file }) => {
     const basePath = path
