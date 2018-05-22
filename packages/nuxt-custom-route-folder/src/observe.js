@@ -1,13 +1,19 @@
+import * as path from 'path'
 import { Observable } from 'rxjs'
 import chokidar from 'chokidar'
 
 const cache = {}
 
-export default function observe(glob, watch) {
-  if (!cache[glob]) {
-    cache[glob] = Observable.create((observer) => {
+export default function observe(srcDir, watch) {
+  if (!cache[srcDir]) {
+    const watcher = chokidar.watch(path.join(srcDir, '**'), {
+      ignored: path.join(srcDir, '**', 'node_modules', '**'),
+    })
+
+    watcher.setMaxListeners(30)
+
+    cache[srcDir] = Observable.create((observer) => {
       let done = false
-      const watcher = chokidar.watch(glob)
       ;['add', 'change', 'unlink'].forEach((event) => {
         watcher.on(event, (file) => {
           observer.next({
@@ -45,5 +51,5 @@ export default function observe(glob, watch) {
     })
   }
 
-  return cache[glob]
+  return cache[srcDir]
 }
