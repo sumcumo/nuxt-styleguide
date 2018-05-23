@@ -1,6 +1,6 @@
 <template>
   <div class="topbar">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
