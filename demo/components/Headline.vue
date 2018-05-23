@@ -3,7 +3,7 @@
     <span v-if="anchor">
       <a
         :id="anchor"
-        :href="`#${anchor}`"
+        :href="`${url}#${anchor}`"
       >#</a>&nbsp;
     </span>
     <!-- @slot headline content -->
@@ -48,6 +48,9 @@ export default {
     anchor: { type: String, default: null },
   },
   computed: {
+    url() {
+      return `${this.$router.history.base}${this.$route.path}`
+    },
     elm() {
       return `h${this.level}`
     },
