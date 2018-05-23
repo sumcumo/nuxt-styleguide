@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 4.0.1
+
+### 🐞 Bug Fixes
+
+→ **order route entries by category and name**
+
+
 ## Version 4.0.0
 
 ### 🚀  BREAKING CHANGES

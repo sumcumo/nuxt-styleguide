@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 4.1.0
+
+### 🆕  New Features
+
+→ **add option to configure the order of categories**
+
+
 ## Version 4.0.0
 
 ### 🚀  BREAKING CHANGES
