@@ -13,8 +13,16 @@ import relPathToName from './relPathToName'
 import toName from './toName'
 
 function metaMapper(category) {
+  const orderIndex = options.categoryOrder.indexOf(category)
+  const order = orderIndex === -1 ? 100 : orderIndex
+
   return (relPath) => {
-    return { name: relPathToName(relPath), category, nsg: true }
+    return {
+      name: relPathToName(relPath),
+      category,
+      nsg: true,
+      order,
+    }
   }
 }
 

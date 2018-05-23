@@ -28,6 +28,19 @@ function getRoutes(routes) {
           category,
         }
       })
+      .sort((a, b) => {
+        if (a.meta.order === b.meta.order) {
+          if (a.meta.name > b.meta.name) {
+            return 1
+          } else if (a.meta.name < b.meta.name) {
+            return -1
+          }
+
+          return 0
+        }
+
+        return a.meta.order - b.meta.order
+      })
   }
 
   return getRoutes.cache
