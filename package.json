@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "engines": {
-    "node": "^10.0.0"
+    "node": "^9.0.0 || ^10.0.0"
   },
   "scripts": {
     "start": "cd demo && yarn start $1",
