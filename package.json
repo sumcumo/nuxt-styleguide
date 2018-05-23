@@ -1,6 +1,6 @@
 {
   "name": "nuxt-styleguide-workspaces",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "styleguide and pattern library support for your nuxt application",
   "private": true,
   "workspaces": [
@@ -58,6 +58,8 @@
       "vue-markdown-component-loader": "@sum.cumo/vue-markdown-component-loader",
       "nuxt-custom-route-folder": "@sum.cumo/nuxt-custom-route-folder"
     },
-    "shouldBeCommitted": []
+    "shouldBeCommitted": [
+      "@sum.cumo/nuxt-styleguide"
+    ]
   }
 }
