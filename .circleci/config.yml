@@ -107,7 +107,7 @@ jobs:
           command: git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
       - run:
           name: Release
-          command: git diff-index --quiet HEAD -- || rlsr perform
+          command: git status && git diff-index --quiet HEAD -- || rlsr perform
 
 workflows:
   version: 2
