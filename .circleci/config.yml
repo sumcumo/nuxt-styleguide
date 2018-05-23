@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Lint
           command: npm run lint
-  deploy-gh-pages:
+  build:
     <<: *defaults
     steps:
       - restore_cache:
@@ -47,6 +47,22 @@ jobs:
       - run:
           name: Build
           command: cd demo && $(npm bin)/nuxt generate
+      - save_cache:
+          paths:
+            - ~/nuxt-styleguide/dist
+          key: v1-dist-{{ .Revision }}
+  deploy-gh-pages:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - restore_cache:
+          keys:
+          - v1-dist-{{ .Revision }}
+      - run:
+          name: Set git identity
+          command: git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
       - run:
           name: Checkout gh-pages branch
           command: git clone --depth=1 -b gh-pages https://github.com/sumcumo/nuxt-styleguide.git gh-pages
@@ -65,9 +81,12 @@ workflows:
       - lint:
           requires:
             - install
-      - deploy-gh-pages:
+      - build:
           requires:
             - lint
+      - deploy-gh-pages:
+          requires:
+            - build
           filters:
             branches:
               only: master
