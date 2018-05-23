@@ -17,7 +17,7 @@ jobs:
           - v1-dependencies-{{ checksum ".yarn-lock-sum" }}
       - run:
           name: Install yarn and rlsr
-          command: npm install yarn rlsr --no-save
+          command: npm install yarn rlsr@3 --no-save
       - run:
           name: Resolve rlsr-latest verions
           command: $(npm bin)/rlsr pre
@@ -87,6 +87,9 @@ jobs:
       - restore_cache:
           keys:
           - v1-repo-{{ .Revision }}
+      - run:
+          name: Install rlsr
+          command: npm install rlsr@3 --no-save
       - run:
           name: Set npmrc
           command: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
