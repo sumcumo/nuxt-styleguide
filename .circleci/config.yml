@@ -28,6 +28,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum ".yarn-lock-sum" }}
+      - run:
+          name: Remove yarn.lock checksum
+          command: rm .yarn-lock-sum
       - save_cache:
           paths:
             - ~/nuxt-styleguide
