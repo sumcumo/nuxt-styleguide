@@ -78,6 +78,27 @@ jobs:
       - run:
           name: Push gh-pages branch
           command: cd dist && git push origin gh-pages
+  release:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - run:
+          name: Set npmrc
+          command: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
+      - add_ssh_keys:
+          fingerprints:
+            - "ae:29:8b:7f:01:22:f8:71:f0:c7:06:2f:bf:c3:89:2d"
+      - run:
+          name: Add github.com host
+          command: echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==' >> ~/.ssh/known_hosts
+      - run:
+          name: Set git identity
+          command: git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
+      - run:
+          name: Release
+          command: $(npm bin)/rlsr pre && $(npm bin)/rlsr perform
 
 workflows:
   version: 2
@@ -93,6 +114,12 @@ workflows:
       - build:
           requires:
             - lint
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
       - deploy-gh-pages:
           requires:
             - build
