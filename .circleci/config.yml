@@ -60,9 +60,12 @@ jobs:
       - restore_cache:
           keys:
           - v1-dist-{{ .Revision }}
+      - add_ssh_keys:
+          fingerprints:
+            - "ae:29:8b:7f:01:22:f8:71:f0:c7:06:2f:bf:c3:89:2d"
       - run:
           name: Checkout gh-pages branch
-          command: git clone --depth=1 -b gh-pages https://github.com/sumcumo/nuxt-styleguide.git gh-pages
+          command: git clone --depth=1 -b gh-pages git@github.com:sumcumo/nuxt-styleguide.git gh-pages
       - run:
           name: Set git identity
           command: cd gh-pages && git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
