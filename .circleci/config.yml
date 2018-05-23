@@ -17,10 +17,10 @@ jobs:
           - v1-dependencies-{{ checksum ".yarn-lock-sum" }}
       - run:
           name: Install yarn
-          command: npm install -g yarn
+          command: npm install yarn --no-save
       - run:
           name: Install
-          command: yarn install
+          command: $(npm bin)/yarn install
       - save_cache:
           paths:
             - node_modules
