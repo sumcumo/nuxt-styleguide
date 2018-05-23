@@ -82,11 +82,11 @@ jobs:
 workflows:
   version: 2
   deploy:
-    branches:
-      ignore:
-        - gh-pages
     jobs:
-      - install
+      - install:
+          filters:
+            branches:
+              ignore: gh-pages
       - lint:
           requires:
             - install
