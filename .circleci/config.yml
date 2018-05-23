@@ -38,6 +38,24 @@ jobs:
       - run:
           name: Lint
           command: npm run lint
+  deploy-gh-pages:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - run:
+          name: Build
+          command: cd demo && $(npm bin)/nuxt generate
+      - run:
+          name: Checkout gh-pages branch
+          command: git clone --depth=1 -b gh-pages https://github.com/sumcumo/nuxt-styleguide.git gh-pages
+      - run:
+          name: Update gh-pages
+          command: mv gh-pages/.git dist/.git && cd dist && git add . && git commit -m'update gh-pages'
+      - run:
+          name: Push gh-pages branch
+          command: cd dist && git push origin gh-pages
 
 workflows:
   version: 2
@@ -47,3 +65,9 @@ workflows:
       - lint:
           requires:
             - install
+      - deploy-gh-pages:
+          requires:
+            - lint
+          filters:
+            branches:
+              only: master
