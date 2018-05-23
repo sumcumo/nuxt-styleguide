@@ -74,7 +74,7 @@ jobs:
           command: cd gh-pages && git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
       - run:
           name: Update gh-pages
-          command: mv gh-pages/.git dist/.git && cd dist && git add . && git commit -m'update gh-pages' -m'[ci skip]'
+          command: mv gh-pages/.git dist/.git && cd dist && git add . && git commit -m'update gh-pages' -m'[ci skip]' || true
       - run:
           name: Push gh-pages branch
           command: cd dist && git push origin gh-pages
