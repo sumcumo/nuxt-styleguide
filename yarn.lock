@@ -95,32 +95,9 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@sum.cumo/nuxt-custom-route-folder@rlsr-latest":
-  version "3.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-custom-route-folder/-/nuxt-custom-route-folder-3.0.0-beta.3.tgz#d4b5399ce1a7d27e9e54557591cf6ef5ee25a53f"
-  dependencies:
-    babel-runtime "^6.26.0"
-    chokidar "^2.0.3"
-    lodash.kebabcase "^4.1.1"
-    minimatch "^3.0.4"
-    rxjs "^6.2.0"
-
-"@sum.cumo/nuxt-styleguide-config@rlsr-latest":
-  version "4.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-styleguide-config/-/nuxt-styleguide-config-4.0.0-beta.1.tgz#1a7e2c611793748019d347f861aa6ba9f2a467c8"
-  dependencies:
-    minimist "^1.2.0"
-
 "@sum.cumo/nuxt-styleguide-renderer-default@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-styleguide-renderer-default/-/nuxt-styleguide-renderer-default-0.1.0.tgz#fc770ed83cbe6b0ef484a1e2d3d289b806ea5912"
-  dependencies:
-    node-sass "4.7.2"
-    sass-loader "6.0.6"
-
-"@sum.cumo/nuxt-styleguide-renderer-default@rlsr-latest":
-  version "3.0.1-beta.1"
-  resolved "https://registry.yarnpkg.com/@sum.cumo/nuxt-styleguide-renderer-default/-/nuxt-styleguide-renderer-default-3.0.1-beta.1.tgz#a38d1419390e2dadb340a63e3e4508e560cb8835"
   dependencies:
     node-sass "4.7.2"
     sass-loader "6.0.6"
@@ -137,15 +114,6 @@
     marked "0.3.17"
     url-join "4.0.0"
     vue-docgen-api "2.2.4"
-
-"@sum.cumo/vue-markdown-component-loader@rlsr-latest":
-  version "0.5.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@sum.cumo/vue-markdown-component-loader/-/vue-markdown-component-loader-0.5.0-beta.1.tgz#63efd51b8832c096012bdf0e6d6a78bde4ec154a"
-  dependencies:
-    cheerio "1.0.0-rc.2"
-    highlight.js "9.12.0"
-    loader-utils "1.1.0"
-    markdown-it "8.4.1"
 
 "@types/node@*":
   version "9.4.7"
