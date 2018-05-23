@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 4.0.2
+
+### 🐞 Bug Fixes
+
+→ **use latest version of nuxt-styleguide-config**
+
+
 ## Version 4.0.1
 
 ### 🐞 Bug Fixes

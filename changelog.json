@@ -1,4 +1,23 @@
 {
+  "6.1.1": {
+    "date": "Wed, 23 May 2018 15:28:48 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "4.0.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use latest version of nuxt-styleguide-config",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "6.1.0": {
     "date": "Wed, 23 May 2018 14:50:44 GMT",
     "changes": {
