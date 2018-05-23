@@ -10,6 +10,8 @@ It can live **inside your nuxt project** or as **a standalone library** that pro
 
 ## Documentation
 
+see [demo and documentation website](https://sumcumo.github.io/nuxt-styleguide/)
+
 * [Getting started](demo/docs/docs/getting-started.md)
 * [Configuration](./demo/docs/docs/configuration.md)
 * [Fragmentation](./demo/docs/docs/packages.md)
