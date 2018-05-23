@@ -17,17 +17,13 @@ jobs:
           - v1-dependencies-{{ checksum ".yarn-lock-sum" }}
       - run:
           name: Install yarn and rlsr
-          command: "mkdir .tools && cd .tools && echo '{\"name\": \"tools\"}' > package.json && npm install yarn rlsr@3 --no-save"
-      - save_cache:
-          paths:
-            - .tools
-          key: v1-tools-{{ .Revision }}
+          command: sudo npm i -g yarn rlsr@3
       - run:
           name: Resolve rlsr-latest verions
-          command: ./.tools/node_modules/.bin/rlsr pre
+          command: rlsr pre
       - run:
           name: Install
-          command: ./.tools/node_modules/.bin/yarn install
+          command: yarn install
       - save_cache:
           paths:
             - node_modules
@@ -91,9 +87,9 @@ jobs:
       - restore_cache:
           keys:
           - v1-repo-{{ .Revision }}
-      - restore_cache:
-          keys:
-          - v1-tools-{{ .Revision }}
+      - run:
+          name: Install rlsr
+          command: sudo npm i -g rlsr@3
       - run:
           name: Set npmrc
           command: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
@@ -108,7 +104,7 @@ jobs:
           command: git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
       - run:
           name: Release
-          command: ./.tools/node_modules/.bin/rlsr perform
+          command: rlsr perform
 
 workflows:
   version: 2
