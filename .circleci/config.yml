@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: circleci/node:10
+    - image: circleci/node:9
   working_directory: ~/nuxt-styleguide
 
 version: 2
