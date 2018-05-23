@@ -46,7 +46,7 @@ jobs:
           - v1-repo-{{ .Revision }}
       - run:
           name: Build
-          command: cd demo && $(npm bin)/nuxt generate
+          command: cd demo && ROUTER_BASE='/nuxt-styleguide/' $(npm bin)/nuxt generate
       - save_cache:
           paths:
             - ~/nuxt-styleguide/dist
