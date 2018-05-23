@@ -1,5 +1,7 @@
 # Nuxt-styleguide
 
+[![CircleCI](https://circleci.com/gh/sumcumo/nuxt-styleguide/tree/master.svg?style=svg)](https://circleci.com/gh/sumcumo/nuxt-styleguide/tree/master)
+
 Increase QUALITY and EFFICIENCY of product design and development workflows
 
 Nuxt styleguide is a [Nuxt](https://github.com/nuxt/nuxt.js) module that provides a isolated styleguide view for your components, design tokens and it's documentation.
