@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     url() {
-      return `${this.$router.history.base}${this.$route.path}`
+      return `${this.$router.history.base}${this.$route.path}/`
     },
     elm() {
       return `h${this.level}`
