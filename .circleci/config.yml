@@ -119,16 +119,18 @@ workflows:
             - install
       - build:
           requires:
-            - lint
+            - install
       - release:
           requires:
             - build
+            - lint
           filters:
             branches:
               only: master
       - deploy-gh-pages:
           requires:
             - build
+            - lint
           filters:
             branches:
               only: master
