@@ -17,6 +17,7 @@ export default function getRoutes(nuxt) {
     nuxt.hook('build:done', (b) => {
       builder = b
       if (initialUpdate) {
+        // eslint-disable-next-line no-console
         console.log('routes got updated in initial build - rebuilding.')
         b.generateRoutesAndFiles()
       }
