@@ -1,0 +1,49 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:10
+  working_directory: ~/nuxt-styleguide
+
+version: 2
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Create yarn.lock checksum
+          command: sha256sum yarn.lock > .yarn-lock-sum
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum ".yarn-lock-sum" }}
+      - run:
+          name: Install yarn
+          command: npm install -g yarn
+      - run:
+          name: Install
+          command: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum ".yarn-lock-sum" }}
+      - save_cache:
+          paths:
+            - ~/nuxt-styleguide
+          key: v1-repo-{{ .Revision }}
+  lint:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - run:
+          name: Lint
+          command: npm run lint
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
