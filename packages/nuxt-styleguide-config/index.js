@@ -68,6 +68,13 @@ module.exports = Options.from(
       iconFolder: 'icons',
       layout: 'default',
       renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
+      categoryOrder: [
+        'Docs',
+        'Components',
+        'Design Tokens',
+        'Icons',
+        'Layouts',
+      ],
     },
     moduleOptions,
     {
