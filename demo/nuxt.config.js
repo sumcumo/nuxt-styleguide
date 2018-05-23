@@ -6,6 +6,9 @@ const pkg = require('./package.json')
 module.exports = {
   rootDir: path.resolve(__dirname, '..'),
   srcDir: __dirname,
+  router: {
+    base: process.env.ROUTER_BASE || '/',
+  },
   modules: [
     [
       '@sum.cumo/nuxt-markdown-component-loader',
