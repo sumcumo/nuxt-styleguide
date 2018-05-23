@@ -1,5 +1,43 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 4.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **use latest tec (nuxt@2 and nuxt-custom-route-folder@3)**
+> BREAKING CHANGE:
+> nuxt@1.x is not supported anymore. Please update to nuxt@2 in order to use this package
+
+### 🐞 Bug Fixes
+
+→ **make compatible to nuxt@2**
+
+### 🏃 Performance Improvements
+
+→ **do not delay initial build in dev mode**
+> but do a direct rebuild instead
+> 
+>  - should be faster because custom folder filters and maps are executed parallel to initial build
+>    rebuild then uses cache from initial build
+>  - this feels a lot faster because we are not blocking the initial build anymore
+> 
+> 
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.1.0: **re-use same watcher for multiple custom folders**
+
+→ fix in @sum.cumo/nuxt-custom-route-folder@2.1.0: **use latest version of rxjs**
+
+→ feat in @sum.cumo/nuxt-custom-route-folder@2.1.0: **add import and meta mappers**
+
+→ fix in @sum.cumo/nuxt-styleguide-config@4.0.0: **use new options API of nuxt@2**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.0.1: **use scss variables instead of css variables**
+
+→ feat in @sum.cumo/vue-markdown-component-loader@0.5.0: **support options by global vueMarkdownComponentLoader**
+
+
 ## Version 3.0.0
 
 ### 🚀  BREAKING CHANGES

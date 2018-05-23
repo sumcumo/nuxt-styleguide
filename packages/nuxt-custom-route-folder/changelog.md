@@ -1,5 +1,33 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 2.1.0
+
+### 🆕  New Features
+
+→ **add import and meta mappers**
+> these can be used to use a different file or attach loaders for the route component import
+> and also add meta informations to the route
+> 
+> BREAKGIN CHANGE:
+> transform api has been removed in favour of custom inline loaders
+> migration: rewrite transformers to webpack loaders and apply these using mapImport
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **re-use same watcher for multiple custom folders**
+> in order to hopefully dont cause an segmentation fault again
+> 
+> 
+
+→ **use latest version of rxjs**
+> and also stop using extendRoutes callback
+> (seems not to work as expected in nuxt@2)
+> 
+> 
+
+
 ## Version 2.0.0
 
 ### 🚀  BREAKING CHANGES

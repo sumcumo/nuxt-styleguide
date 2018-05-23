@@ -1,4 +1,159 @@
 {
+  "6.0.0": {
+    "date": "Wed, 23 May 2018 08:25:27 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "2.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "re-use same watcher for multiple custom folders",
+            "body": "in order to hopefully dont cause an segmentation fault again\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "use latest version of rxjs",
+            "body": "and also stop using extendRoutes callback\n(seems not to work as expected in nuxt@2)\n\n"
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "add import and meta mappers",
+            "body": "these can be used to use a different file or attach loaders for the route component import\nand also add meta informations to the route\n\nBREAKGIN CHANGE:\ntransform api has been removed in favour of custom inline loaders\nmigration: rewrite transformers to webpack loaders and apply these using mapImport\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "4.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "use new options API of nuxt@2",
+            "body": "BREAKING CHANGE:\nincompatible with nuxt@1"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.0.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "use scss variables instead of css variables",
+            "body": "because i have no idea how to configure postcss in nuxt@2\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "4.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "perf",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "do not delay initial build in dev mode",
+            "body": "but do a direct rebuild instead\n\n - should be faster because custom folder filters and maps are executed parallel to initial build\n   rebuild then uses cache from initial build\n - this feels a lot faster because we are not blocking the initial build anymore\n\n"
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use latest tec (nuxt@2 and nuxt-custom-route-folder@3)",
+            "body": "BREAKING CHANGE:\nnuxt@1.x is not supported anymore. Please update to nuxt@2 in order to use this package"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "make compatible to nuxt@2",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "fix: re-use same watcher for multiple custom folders",
+            "body": "in order to hopefully dont cause an segmentation fault again\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "fix: use latest version of rxjs",
+            "body": "and also stop using extendRoutes callback\n(seems not to work as expected in nuxt@2)\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "feat: add import and meta mappers",
+            "body": "these can be used to use a different file or attach loaders for the route component import\nand also add meta informations to the route\n\nBREAKGIN CHANGE:\ntransform api has been removed in favour of custom inline loaders\nmigration: rewrite transformers to webpack loaders and apply these using mapImport\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "fix: use new options API of nuxt@2",
+            "body": "BREAKING CHANGE:\nincompatible with nuxt@1"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "fix: use scss variables instead of css variables",
+            "body": "because i have no idea how to configure postcss in nuxt@2\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "feat: support options by global vueMarkdownComponentLoader",
+            "body": "in order to enable complex options used by inline loaders\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.5.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "support options by global vueMarkdownComponentLoader",
+            "body": "in order to enable complex options used by inline loaders\n\n"
+          }
+        ]
+      }
+    }
+  },
   "5.0.0": {
     "date": "Fri, 11 May 2018 16:28:53 GMT",
     "changes": {

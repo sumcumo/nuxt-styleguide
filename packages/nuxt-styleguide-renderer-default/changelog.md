@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.0.1
+
+### 🐞 Bug Fixes
+
+→ **use scss variables instead of css variables**
+> because i have no idea how to configure postcss in nuxt@2
+> 
+> 
+
+
 ## Version 3.0.0
 
 ### 🚀  BREAKING CHANGES

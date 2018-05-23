@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.5.0
+
+### 🆕  New Features
+
+→ **support options by global vueMarkdownComponentLoader**
+> in order to enable complex options used by inline loaders
+> 
+> 
+
+
 ## Version 0.4.0
 
 ### 🆕  New Features

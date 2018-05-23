@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 4.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **use new options API of nuxt@2**
+> BREAKING CHANGE:
+> incompatible with nuxt@1
+
+
 ## Version 3.0.0
 
 ### 🚀  BREAKING CHANGES
