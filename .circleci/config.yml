@@ -61,11 +61,11 @@ jobs:
           keys:
           - v1-dist-{{ .Revision }}
       - run:
-          name: Set git identity
-          command: git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
-      - run:
           name: Checkout gh-pages branch
           command: git clone --depth=1 -b gh-pages https://github.com/sumcumo/nuxt-styleguide.git gh-pages
+      - run:
+          name: Set git identity
+          command: cd gh-pages && git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
       - run:
           name: Update gh-pages
           command: mv gh-pages/.git dist/.git && cd dist && git add . && git commit -m'update gh-pages'
