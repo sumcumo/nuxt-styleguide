@@ -53,9 +53,9 @@
         </svg>
       </label>
       <div class="sidebar">
-          <div class="sidebar__content">
-            <StyleguideNav />
-          </div>
+        <div class="sidebar__content">
+          <StyleguideNav />
+        </div>
       </div>
     </div>
     <div class="content">

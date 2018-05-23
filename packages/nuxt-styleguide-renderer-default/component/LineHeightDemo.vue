@@ -1,19 +1,24 @@
 <template lang="html">
   <div>
-    <div v-for="(size) in data" class="line-height-demo">
+    <div
+      v-for="(size) in data"
+      :key="size.name"
+      class="line-height-demo"
+    >
       <span class="line-height-name">
-        {{size.name}}
+        {{ size.name }}
       </span>
       <div
         class="line-height-demo-box"
       >
-      <div class="line-height-demo-paragraph" 
-        :style="{ height: size.value }"
-      >
-        The lazy dog jumps ofer the quick brown fox
+        <div
+          :style="{ height: size.value }"
+          class="line-height-demo-paragraph"
+        >
+          The lazy dog jumps ofer the quick brown fox
+        </div>
       </div>
-      </div>
-        {{ size.value }}
+      {{ size.value }}
     </div>
   </div>
 </template>

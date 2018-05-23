@@ -5,22 +5,22 @@
     <sg-tags :tags="tags" />
     <code><pre>@import "{{ importPath }}";</pre></code>
 
-      <sg-color-demo
-        v-if="colors.length"
-        :data="colors"
-      />
-      <sg-font-family-demo
-        v-if="fontFamilies.length"
-        :data="fontFamilies"
-      />
-      <sg-font-size-demo
-        v-if="fontSizes.length"
-        :data="fontSizes"
-      />
-      <sg-line-height-demo
-        v-if="lineHeights.length"
-        :data="lineHeights"
-      />
+    <sg-color-demo
+      v-if="colors.length"
+      :data="colors"
+    />
+    <sg-font-family-demo
+      v-if="fontFamilies.length"
+      :data="fontFamilies"
+    />
+    <sg-font-size-demo
+      v-if="fontSizes.length"
+      :data="fontSizes"
+    />
+    <sg-line-height-demo
+      v-if="lineHeights.length"
+      :data="lineHeights"
+    />
   </sg-frame>
 </template>
 
@@ -40,6 +40,28 @@ export default {
     SgFontSizeDemo,
     SgFontFamilyDemo,
     SgLineHeightDemo,
+  },
+  props: {
+    name: {
+      type: String,
+      default: null,
+    },
+    description: {
+      type: String,
+      default: null,
+    },
+    importPath: {
+      type: String,
+      default: null,
+    },
+    tags: {
+      type: Object,
+      default: null,
+    },
+    declarations: {
+      type: Array,
+      default: null,
+    },
   },
   computed: {
     colors() {
@@ -73,28 +95,6 @@ export default {
       return this.declarations.filter(({ render }) => {
         return render === 'lineHeight'
       })
-    },
-  },
-  props: {
-    name: {
-      type: String,
-      default: null,
-    },
-    description: {
-      type: String,
-      default: null,
-    },
-    importPath: {
-      type: String,
-      default: null,
-    },
-    tags: {
-      type: Object,
-      default: null,
-    },
-    declarations: {
-      type: Array,
-      default: null,
     },
   },
 }

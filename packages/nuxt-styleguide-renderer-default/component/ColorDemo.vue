@@ -1,18 +1,22 @@
 <template lang="html">
-<div class="color-grid">
-  <div class="color-demo" v-for="(clr) in data">
+  <div class="color-grid">
     <div
-      :style="{backgroundColor: clr.value}"
-      class="color-field"
-    />
-    <label class="color-value">
-      {{ clr.value }}
-    </label>
+      v-for="(clr) in data"
+      :key="clr.name"
+      class="color-demo"
+    >
+      <div
+        :style="{backgroundColor: clr.value}"
+        class="color-field"
+      />
+      <label class="color-value">
+        {{ clr.value }}
+      </label>
       <code>
         {{ clr.name }}
       </code>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -20,7 +24,10 @@ export default {
   props: {
     data: {
       type: Array,
-    }
+      default() {
+        return []
+      },
+    },
   },
 }
 </script>
