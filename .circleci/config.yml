@@ -16,8 +16,11 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum ".yarn-lock-sum" }}
       - run:
-          name: Install yarn
-          command: npm install yarn --no-save
+          name: Install yarn and rlsr
+          command: npm install yarn rlsr --no-save
+      - run:
+          name: Resolve rlsr-latest verions
+          command: $(npm bin)/rlsr pre
       - run:
           name: Install
           command: $(npm bin)/yarn install
@@ -98,7 +101,7 @@ jobs:
           command: git config user.email "nuxt-styleguide@xiphe.net" && git config user.name "nuxt-styleguide-bot"
       - run:
           name: Release
-          command: $(npm bin)/rlsr pre && $(npm bin)/rlsr perform
+          command: $(npm bin)/rlsr perform
 
 workflows:
   version: 2
