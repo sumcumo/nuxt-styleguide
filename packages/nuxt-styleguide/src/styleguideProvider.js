@@ -13,8 +13,19 @@ function getRoutes(routes) {
   }
 
   if (!getRoutes.cache) {
-    getRoutes.cache = routes
-      .filter((route) => route.meta && route.meta.nsg)
+    const sgRoutes = routes.filter((route) => route.meta && route.meta.nsg)
+
+    getRoutes.cache = sgRoutes
+      .filter((route) => {
+        if (route.name === 'icons:index') {
+          return (
+            sgRoutes.filter(({ meta: { category } }) => category === 'Icons')
+              .length > 1
+          )
+        }
+
+        return true
+      })
       .map((route) => {
         const { name, category } = route.meta
 
