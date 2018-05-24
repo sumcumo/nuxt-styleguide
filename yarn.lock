@@ -8094,9 +8094,9 @@ vue-docgen-api@2.2.4:
     vue "^2.5.2"
     vue-template-compiler "^2.5.2"
 
-vue-docgen-api@2.3.8:
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.3.8.tgz#d9e73cf40efb20c8310ffadd1073efa81d45af83"
+vue-docgen-api@2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.3.11.tgz#3c7fce7544f23a9d38373bf6830d5a85dd65f6b3"
   dependencies:
     babel-core "^6.25.0"
     babel-plugin-transform-object-rest-spread "^6.26.0"
