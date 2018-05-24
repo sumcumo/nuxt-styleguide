@@ -1,4 +1,23 @@
 {
+  "6.1.2": {
+    "date": "Thu, 24 May 2018 11:14:03 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "4.0.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "pass ressource path to doc generation",
+            "body": "so that relative paths can be resolved correctly bu vue-doc-gen\n\nfix https://github.com/sumcumo/nuxt-styleguide/issues/5\n\n"
+          }
+        ]
+      }
+    }
+  },
   "6.1.1": {
     "date": "Wed, 23 May 2018 15:28:48 GMT",
     "changes": {

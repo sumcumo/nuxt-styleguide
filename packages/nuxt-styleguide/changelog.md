@@ -1,5 +1,17 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 4.0.3
+
+### 🐞 Bug Fixes
+
+→ **pass ressource path to doc generation**
+> so that relative paths can be resolved correctly bu vue-doc-gen
+> 
+> fix https://github.com/sumcumo/nuxt-styleguide/issues/5
+> 
+> 
+
+
 ## Version 4.0.2
 
 ### 🐞 Bug Fixes
