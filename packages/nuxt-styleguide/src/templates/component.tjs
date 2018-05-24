@@ -15,6 +15,7 @@ export default {
         name: '<%= name %>',
         importName: '<%= importName %>',
         importPath: '<%= importPath %>',
+        kebabName: '<%= kebabName %>',
         states: normalizeStates(styleguide.states, componentInfo.props, componentInfo.slots),
         description: styleguide.docs || componentInfo.description,
       }),

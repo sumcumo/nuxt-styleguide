@@ -68,6 +68,13 @@ export default function normalizeStates(states, props, slots) {
       data.props = state.props
     }
 
+    if (state.content) {
+      data.scopedSlots = {
+        ...data.scopedSlots,
+        default: () => state.content,
+      }
+    }
+
     return Object.assign({}, state, { data })
   })
 }

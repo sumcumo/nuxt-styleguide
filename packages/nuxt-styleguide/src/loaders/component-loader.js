@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import _template from 'lodash.template'
+import kebabcase from 'lodash.kebabcase'
 import options from '@sum.cumo/nuxt-styleguide-config'
 import getComponentInfo from '../getComponentInfo'
 
@@ -36,6 +37,7 @@ async function load(source, resourcePath) {
     componentInfo: JSON.stringify(componentInfo),
     layout: options.layout,
     name: displayName,
+    kebabName: kebabcase(displayName),
     importName: displayName.replace(/ /g, ''),
     relPath,
     importPath,
