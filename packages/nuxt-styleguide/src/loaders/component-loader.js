@@ -17,7 +17,7 @@ const templatePromise = new Promise((resolve, reject) => {
 async function load(source, resourcePath) {
   const template = await templatePromise
 
-  const componentInfo = await getComponentInfo(source)
+  const componentInfo = await getComponentInfo(source, resourcePath)
   const { displayName } = componentInfo
 
   const relPath = path.relative(options.srcDir, resourcePath)

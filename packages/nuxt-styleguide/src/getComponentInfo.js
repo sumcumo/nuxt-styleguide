@@ -29,6 +29,6 @@ function applyMarkdown(data) {
   }
 }
 
-export default async function getComponentInfo(content) {
-  return applyMarkdown(await vueDocGenCached(content))
+export default async function getComponentInfo(content, file) {
+  return applyMarkdown(await vueDocGenCached(content, file))
 }
