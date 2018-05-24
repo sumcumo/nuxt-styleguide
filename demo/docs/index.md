@@ -69,7 +69,7 @@ But that's a explicit decision and therefore totally fine.
 
 ## How to capture the complexity of product development?
 
-You might have guessed by now, our answer is `nuxt-styleguide`.
+You might have guessed by now, our answer is **nuxt-styleguide**.
 
 There are [tons of other solutions](https://designsystemsrepo.com/) with
 different category names (like: pattern library, component library,
@@ -79,7 +79,7 @@ but in general they all try to solve the same problem.
 So while creating your product, lots of difficult questions will arise.
 The answers will require even more difficult decisions to be made which create
 **complexity**.
-`nuxt-styleguide` is meant to help you capture these decisions in a living
+nuxt-styleguide is meant to help you capture these decisions in a living
 system and will hopefully enable you to create abstractions across them so that
 future versions of yourself and other team members can be efficient in creating
 high quality products.
