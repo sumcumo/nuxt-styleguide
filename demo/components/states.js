@@ -4,6 +4,12 @@ export const A = [
       props: {
         href: '#',
       },
+      on: {
+        click(event) {
+          event.preventDefault()
+          alert('yeah🎉')
+        },
+      },
     },
     content: 'Click me!',
     wrapperStyle: {

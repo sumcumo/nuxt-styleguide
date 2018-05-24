@@ -1,5 +1,8 @@
 <template>
-  <a :href="target">
+  <a
+    :href="target"
+    @click="click"
+  >
     <!-- @slot clickable content of the link -->
     <slot />
   </a>
@@ -24,6 +27,15 @@ export default {
       return this.href
         .replace(/^~/, this.$styleguide.path.replace(/\/$/, ''))
         .replace(/^#/, `${this.$router.history.base}${this.$route.path}/#`)
+    },
+  },
+  methods: {
+    click(e) {
+      /**
+       * Propergates an event when clicked on the link
+       * @event click
+       */
+      this.$emit('click', e)
     },
   },
 }
