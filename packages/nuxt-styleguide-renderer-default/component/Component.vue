@@ -9,12 +9,15 @@
       class="component-demo"
     >
       <h4>{{ state.title }}</h4>
-      <sg-component-demo
-        :data="state.data"
-        :comp="Comp"
-      >
-        {{ state.content }}
-      </sg-component-demo>
+      <div :style="state.wrapperStyle">
+        <sg-component-demo
+          :wrapper="state.wrapper"
+          :data="state.data"
+          :comp="Comp"
+        >
+          {{ state.content }}
+        </sg-component-demo>
+      </div>
       <code><pre>import {{ importName }} from '{{ importPath }}';</pre></code>
     </div>
 

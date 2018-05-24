@@ -9,9 +9,15 @@ export default {
       type: Object,
       required: true,
     },
+    wrapper: {
+      type: Object,
+      default: null,
+    },
   },
   render(createElement) {
-    return createElement(this.comp, this.data, this.$slots.default)
+    const elm = createElement(this.comp, this.data, this.$slots.default)
+
+    return this.wrapper ? createElement(this.wrapper, [elm]) : elm
   },
 }
 </script>
