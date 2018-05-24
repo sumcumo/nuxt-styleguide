@@ -1,5 +1,25 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.1.0
+
+### 🆕  New Features
+
+→ **pass kebabName to renderer**
+> and use default scoped slot for demo content
+> 
+> in order to support code-views of a state
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **use latest version of nuxt-styleguide-renderer-default**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.2.0: **display a code preview of a state**
+
+
 ## Version 5.0.1
 
 ### 🐞 Bug Fixes

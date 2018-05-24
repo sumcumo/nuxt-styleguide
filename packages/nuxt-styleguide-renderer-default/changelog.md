@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.2.0
+
+### 🆕  New Features
+
+→ **display a code preview of a state**
+
+
 ## Version 3.1.1
 
 ### 🐞 Bug Fixes
