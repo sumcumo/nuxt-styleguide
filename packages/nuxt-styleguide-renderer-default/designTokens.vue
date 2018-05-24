@@ -3,7 +3,7 @@
     <h1>{{ name }}</h1>
     <div v-html="description" />
     <sg-tags :tags="tags" />
-    <code><pre>@import "{{ importPath }}";</pre></code>
+    <pre><code>@import "{{ importPath }}";</code></pre>
 
     <sg-color-demo
       v-if="colors.length"
