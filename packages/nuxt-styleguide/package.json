@@ -16,6 +16,7 @@
     "@sum.cumo/nuxt-styleguide-config": "^4.1.0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^3.0.1",
     "@sum.cumo/vue-markdown-component-loader": "^0.5.0",
+    "babel-core": "^6.26.3",
     "chalk": "2.4.1",
     "chokidar": "2.0.3",
     "doctrine": "2.1.0",
