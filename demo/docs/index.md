@@ -21,7 +21,7 @@ need teams or even whole companies to do it.
 And in these teams we have multiple specialists that care for very specific
 aspects of the product.
 
-![people thinking complex stuff](/img/people_thinking_complex_stuff.jpg)
+![people thinking complex stuff](~/img/people_thinking_complex_stuff.jpg)
 
 For example a **designer** is concerned with the looks of the product:  
 Are the contrasts just right? Does everything fit with the corporate identity?  
@@ -34,7 +34,7 @@ Does it work on all platforms? Is the code I write maintainable?
 
 ## It's Complex
 
-![individual trying to think all of the above complexity](/img/individual_thinking_to_much_complex_stuff.jpg)
+![individual trying to think all of the above complexity](~/img/individual_thinking_to_much_complex_stuff.jpg)
 
 Unwanted complexity is not only created by our teammates, but also by past
 versions of ourselves  
@@ -43,7 +43,7 @@ in mind.
 
 ## Good News is: Complexity can be contained in abstractions
 
-![abstraction of complex stuff](/img/abstraction_of_complex_stuff.jpg)
+![abstraction of complex stuff](~/img/abstraction_of_complex_stuff.jpg)
 
 We use abstractions every day. **Vue.js** is an abstraction around all the
 complex implementation details of view handling, state management and
@@ -59,7 +59,7 @@ abstracts these away.
 
 ## A good abstraction
 
-![individual thinking abstraction](/img/individual_thinking_abstraction.jpg)
+![individual thinking abstraction](~/img/individual_thinking_abstraction.jpg)
 
 Once we have a good abstraction, an individual does not need to care about the
 internal complexity. Which is a huge **timesaver** and **quality-booster**.  

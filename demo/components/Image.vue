@@ -1,6 +1,6 @@
 <template>
   <img
-    :src="src"
+    :src="target"
     :alt="alt"
     :class="`img${left === 'true' ? ' img-left' : ''}`"
   >
@@ -21,6 +21,11 @@ export default {
     alt: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    target() {
+      return this.src.replace(/^~/, this.$router.history.base)
     },
   },
 }
