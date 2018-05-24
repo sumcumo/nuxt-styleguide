@@ -4,6 +4,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "node-sass": "^4.9.0",
+    "pretty": "^2.0.0",
     "sass-loader": "^7.0.1"
   }
 }

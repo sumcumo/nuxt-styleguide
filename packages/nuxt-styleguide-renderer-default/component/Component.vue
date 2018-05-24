@@ -1,7 +1,7 @@
 <template>
   <sg-frame>
     <h1>{{ name }}</h1>
-
+    <pre><code>import {{ importName }} from '{{ importPath }}';</code></pre>
     <h2>Demo:</h2>
     <div
       v-for="(state) in states"
@@ -12,13 +12,16 @@
       <div :style="state.wrapperStyle">
         <sg-component-demo
           :wrapper="state.wrapper"
-          :data="state.data"
+          :data="copy(state.data)"
           :comp="Comp"
-        >
-          {{ state.content }}
-        </sg-component-demo>
+        />
       </div>
-      <pre><code>import {{ importName }} from '{{ importPath }}';</code></pre>
+      <br :style="{ clear: 'both' }">
+      <code-view
+        :comp="Comp"
+        :data="copy(state.data)"
+        :name="kebabName"
+      />
     </div>
 
     <div
@@ -102,17 +105,19 @@
 </style>
 
 <script>
+import CodeView from './CodeView.vue'
 import SgComponentDemo from './ComponentDemo.vue'
 import SgStyleguideNav from '../nav/nav.vue'
 import SgFrame from '../frame.vue'
 import SgTags from './Tags.vue'
 
 export default {
-  components: { SgStyleguideNav, SgTags, SgFrame, SgComponentDemo },
+  components: { SgStyleguideNav, SgTags, SgFrame, SgComponentDemo, CodeView },
   props: {
     Comp: { type: Object, default: null },
     name: { type: String, default: null },
     importName: { type: String, default: null },
+    kebabName: { type: String, default: null },
     description: { type: String, default: null },
     states: { type: Array, default: null },
     importPath: { type: String, default: null },
@@ -148,6 +153,11 @@ export default {
     },
     hasEvents() {
       return Object.keys(this.events || {}).length !== 0
+    },
+  },
+  methods: {
+    copy(obj) {
+      return { ...obj }
     },
   },
 }
