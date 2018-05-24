@@ -16,16 +16,16 @@
     "@sum.cumo/nuxt-styleguide-config": "^4.1.0",
     "@sum.cumo/nuxt-styleguide-renderer-default": "^3.0.1",
     "@sum.cumo/vue-markdown-component-loader": "^0.5.0",
-    "chalk": "2.3.1",
-    "chokidar": "2.0.2",
+    "chalk": "2.4.1",
+    "chokidar": "2.0.3",
     "doctrine": "2.1.0",
     "lodash.kebabcase": "4.1.1",
     "lodash.template": "4.4.0",
-    "marked": "0.3.17",
-    "postcss": "6.0.19",
-    "postcss-scss": "1.0.4",
+    "marked": "0.4.0",
+    "postcss": "6.0.22",
+    "postcss-scss": "1.0.5",
     "url-join": "4.0.0",
-    "vue-docgen-api": "2.3.8"
+    "vue-docgen-api": "2.3.11"
   },
   "peerDependencies": {
     "webpack": "^4"
