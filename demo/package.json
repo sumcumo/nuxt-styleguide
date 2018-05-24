@@ -6,12 +6,12 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@sum.cumo/nuxt-styleguide": "0.1.0",
+    "@sum.cumo/nuxt-styleguide": "4.0.1",
     "nuxt": "npm:nuxt-edge"
   },
   "dependencies": {
     "@sum.cumo/nuxt-markdown-component-loader": "^0",
-    "node-sass": "4.7.2",
-    "sass-loader": "6.0.6"
+    "node-sass": "4.9.0",
+    "sass-loader": "7.0.1"
   }
 }
