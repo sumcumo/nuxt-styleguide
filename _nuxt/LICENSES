@@ -29,9 +29,3 @@ object-assign
  *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
  * @version   v4.2.4+314e4831
  */
-
-/*!
- * Vue.js v2.5.13
- * (c) 2014-2017 Evan You
- * Released under the MIT License.
- */
