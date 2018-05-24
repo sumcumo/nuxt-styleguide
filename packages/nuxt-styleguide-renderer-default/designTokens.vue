@@ -21,12 +21,17 @@
       v-if="lineHeights.length"
       :data="lineHeights"
     />
+    <sg-default-dt-demo
+      v-if="other.length"
+      :data="other"
+    />
   </sg-frame>
 </template>
 
 <script>
 import SgTags from './component/Tags.vue'
 import SgColorDemo from './component/ColorDemo.vue'
+import SgDefaultDtDemo from './component/SgDefaultDtDemo.vue'
 import SgFontFamilyDemo from './component/FontFamilyDemo.vue'
 import SgFontSizeDemo from './component/FontSizeDemo.vue'
 import SgLineHeightDemo from './component/LineHeightDemo.vue'
@@ -40,6 +45,7 @@ export default {
     SgFontSizeDemo,
     SgFontFamilyDemo,
     SgLineHeightDemo,
+    SgDefaultDtDemo,
   },
   props: {
     name: {
@@ -96,6 +102,16 @@ export default {
         return render === 'lineHeight'
       })
     },
+    other() {
+      if (!this.declarations) {
+        return []
+      }
+
+      return this.declarations.filter(({ render }) => {
+        return ['color', 'fontSize', 'fontFamily', 'lineHeight']
+          .indexOf(render) === -1
+      })
+    }
   },
 }
 </script>
