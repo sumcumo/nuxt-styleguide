@@ -1,4 +1,77 @@
 {
+  "7.0.0": {
+    "date": "Thu, 24 May 2018 12:38:52 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.1.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "support wrapper and wrapperStyles in demo states",
+            "body": "fix https://github.com/sumcumo/nuxt-styleguide/issues/6\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "update dependencies",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.0.0",
+        "determinedIncrementLevel": "major",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use latest version of nuxt-styleguide-renderer-default",
+            "body": ""
+          },
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "treat component states as es module",
+            "body": "in order to suppoert imports, use of other modules and whatever comes to mind\n\nBREAKING CHANGE:\nstyleguide-states blocks in vue files must now `export default` the array of states\npreviously:\n```\n<styleguide-states>\n[{ /* ... */ }]\n</styleguide-states>\n```\n\nnow:\n```\n<styleguide-states>\nexport default [{ /* ... */ }]\n</styleguide-states>\n```"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update dependencies",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: support wrapper and wrapperStyles in demo states",
+            "body": "fix https://github.com/sumcumo/nuxt-styleguide/issues/6\n\n"
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "fix: update dependencies",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "6.1.2": {
     "date": "Thu, 24 May 2018 11:14:03 GMT",
     "changes": {

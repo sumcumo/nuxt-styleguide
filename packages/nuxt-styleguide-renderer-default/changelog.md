@@ -1,5 +1,19 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.1.0
+
+### 🆕  New Features
+
+→ **support wrapper and wrapperStyles in demo states**
+> fix https://github.com/sumcumo/nuxt-styleguide/issues/6
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **update dependencies**
+
+
 ## Version 3.0.1
 
 ### 🐞 Bug Fixes

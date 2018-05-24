@@ -1,5 +1,41 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.0.0
+
+### 🚀  BREAKING CHANGES
+
+→ **treat component states as es module**
+> in order to suppoert imports, use of other modules and whatever comes to mind
+> 
+> BREAKING CHANGE:
+> styleguide-states blocks in vue files must now `export default` the array of states
+> previously:
+> ```
+> <styleguide-states>
+> [{ /* ... */ }]
+> </styleguide-states>
+> ```
+> 
+> now:
+> ```
+> <styleguide-states>
+> export default [{ /* ... */ }]
+> </styleguide-states>
+> ```
+
+### 🐞 Bug Fixes
+
+→ **use latest version of nuxt-styleguide-renderer-default**
+
+→ **update dependencies**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.1.0: **support wrapper and wrapperStyles in demo states**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.1.0: **update dependencies**
+
+
 ## Version 4.0.3
 
 ### 🐞 Bug Fixes
