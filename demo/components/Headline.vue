@@ -12,16 +12,7 @@
 </template>
 
 <styleguide-states>
-[{
-  title: 'Default',
-  content: 'Hello World!'
-}, {
-  title: 'With anchor',
-  content: 'Hello See!',
-  props: {
-    anchor: 'hello-see'
-  }
-}]
+export { Headline as default } from './states'
 </styleguide-states>
 
 <script>

@@ -37,12 +37,5 @@ It is not part of the re-usable packages and mainly exits for demonstration purp
 </styleguide-doc>
 
 <styleguide-states>
-[{
-  data: {
-    props: {
-      href: "#"
-    },
-  },
-  content: 'Click me!'
-}]
+export { A as default } from './states';
 </styleguide-states>
