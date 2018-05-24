@@ -132,8 +132,17 @@ a {
 
 pre {
   background: $grey;
-  padding: 1em;
+  border-radius: 2px;
+  padding: 0.7em;
 }
+
+code {
+  background: $grey;
+  border-radius: 1px;
+  padding: 0 0.3em;
+  font-size: 1.1em;
+}
+
 .hamburger {
   display: none;
   position: relative;

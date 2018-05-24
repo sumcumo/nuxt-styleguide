@@ -18,7 +18,7 @@
           {{ state.content }}
         </sg-component-demo>
       </div>
-      <code><pre>import {{ importName }} from '{{ importPath }}';</pre></code>
+      <pre><code>import {{ importName }} from '{{ importPath }}';</code></pre>
     </div>
 
     <div
