@@ -30,6 +30,8 @@ module.exports = {
     'missing-doc': '~/components/MissingDoc',
     'sg-highlight': '~/components/Highlight',
     'repo-link': '~/components/RepoLink',
+    p: '~/components/P',
+    img: '~/components/Image',
     h2: {
       path: '~/components/Headline',
       props($el) {
