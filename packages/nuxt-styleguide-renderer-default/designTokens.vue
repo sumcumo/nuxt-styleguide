@@ -107,11 +107,12 @@ export default {
         return []
       }
 
-      return this.declarations.filter(({ render }) => {
-        return ['color', 'fontSize', 'fontFamily', 'lineHeight']
-          .indexOf(render) === -1
-      })
-    }
+      return this.declarations.filter(
+        ({ render }) =>
+          ['color', 'fontSize', 'fontFamily', 'lineHeight'].indexOf(render) ===
+          -1
+      )
+    },
   },
 }
 </script>
