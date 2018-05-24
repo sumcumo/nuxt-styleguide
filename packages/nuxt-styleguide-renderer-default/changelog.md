@@ -1,5 +1,14 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.1.1
+
+### 🐞 Bug Fixes
+
+→ **add default renderer for design tokens**
+
+→ **make code tags stand out a bit more**
+
+
 ## Version 3.1.0
 
 ### 🆕  New Features

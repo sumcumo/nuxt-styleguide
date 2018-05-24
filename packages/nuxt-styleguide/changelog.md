@@ -1,5 +1,23 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.0.1
+
+### 🐞 Bug Fixes
+
+→ **do not render icon route when there are no icons**
+> fix https://github.com/sumcumo/nuxt-styleguide/issues/3
+> 
+> 
+
+→ **use latest version of nuxt-styleguide-renderer-default**
+
+### 🔄  Dependency Updates
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.1.1: **add default renderer for design tokens**
+
+→ fix in @sum.cumo/nuxt-styleguide-renderer-default@3.1.1: **make code tags stand out a bit more**
+
+
 ## Version 5.0.0
 
 ### 🚀  BREAKING CHANGES
