@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.2.1
+
+### 🐞 Bug Fixes
+
+→ **fix import for design tokens**
+
+
 ## Version 3.2.0
 
 ### 🆕  New Features

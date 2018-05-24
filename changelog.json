@@ -1,4 +1,23 @@
 {
+  "7.1.1": {
+    "date": "Thu, 24 May 2018 15:54:17 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "fix import for design tokens",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "7.1.0": {
     "date": "Thu, 24 May 2018 15:49:24 GMT",
     "changes": {
