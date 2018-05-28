@@ -6,8 +6,8 @@ a common understanding and language when speaking about them.
 
 ## Best practices
 
-1.  Design tokens must be atomic
-2.  Therefore Not every sass variable is a design token.
+1.  Design tokens must be atomic.
+2.  Therefore not every sass variable is a design token.
 
 ## Creating design tokens
 
@@ -22,7 +22,7 @@ for example.
 Design token files can be documented inline using docBlock comments.
 
 A special `render` tag is used to specify how the value of the variable
-should be used. The Design Token is than parsen by the [Design Token Component](https://github.com/sumcumo/nuxt-styleguide/blob/master/packages/nuxt-styleguide-renderer-default/designTokens.vue)
+should be used. The Design Token is then parsed by the [Design Token Component](https://github.com/sumcumo/nuxt-styleguide/blob/master/packages/nuxt-styleguide-renderer-default/designTokens.vue)
 and directed to the selected render type.
 
 ```
