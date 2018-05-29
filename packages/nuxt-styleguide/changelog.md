@@ -1,5 +1,28 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.2.0
+
+### 🆕  New Features
+
+→ **allow nsg prefix for custom blocks**
+> vetur syntax highlighting for custom blocks does not like blocks that
+> start with "style"
+> 
+> ref: https://github.com/sumcumo/nuxt-styleguide/issues/8
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **use scss parser directly**
+> since postcss.parse does not seem to care for the syntax option
+> (previously the default parser has been used)
+> 
+> fix https://github.com/sumcumo/nuxt-styleguide/issues/10
+> 
+> 
+
+
 ## Version 5.1.0
 
 ### 🆕  New Features

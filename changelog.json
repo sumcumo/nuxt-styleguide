@@ -1,4 +1,31 @@
 {
+  "7.2.0": {
+    "date": "Tue, 29 May 2018 09:10:26 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "allow nsg prefix for custom blocks",
+            "body": "vetur syntax highlighting for custom blocks does not like blocks that\nstart with \"style\"\n\nref: https://github.com/sumcumo/nuxt-styleguide/issues/8\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use scss parser directly",
+            "body": "since postcss.parse does not seem to care for the syntax option\n(previously the default parser has been used)\n\nfix https://github.com/sumcumo/nuxt-styleguide/issues/10\n\n"
+          }
+        ]
+      }
+    }
+  },
   "7.1.1": {
     "date": "Thu, 24 May 2018 15:54:17 GMT",
     "changes": {
