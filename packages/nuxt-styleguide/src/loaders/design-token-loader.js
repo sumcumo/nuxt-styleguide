@@ -1,7 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import _template from 'lodash.template'
-import postcss from 'postcss'
 import syntax from 'postcss-scss'
 import doctrine from 'doctrine'
 import options from '@sum.cumo/nuxt-styleguide-config'
@@ -105,7 +104,7 @@ function getDecoratedDeclarations(ast, globalComment) {
 }
 
 function getInfo(content, file) {
-  const ast = postcss.parse(content, { syntax })
+  const ast = syntax.parse(content)
   validate(ast, file)
 
   const globalComment = getGlobalComment(ast)

@@ -23,7 +23,6 @@
     "lodash.kebabcase": "4.1.1",
     "lodash.template": "4.4.0",
     "marked": "0.4.0",
-    "postcss": "6.0.22",
     "postcss-scss": "1.0.5",
     "url-join": "4.0.0",
     "vue-docgen-api": "2.3.11"
