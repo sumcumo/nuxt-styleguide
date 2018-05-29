@@ -41,13 +41,13 @@ export default {
 }
 </script>
 
-<styleguide-doc>
+<nsg-states>
+export { A as default } from './states'
+</nsg-states>
+
+<nsg-doc>
 ### Meta Warning!
 
 This component is used in the documentation you are just reading.
 It is not part of the re-usable packages and mainly exits for demonstration purposes.
-</styleguide-doc>
-
-<styleguide-states>
-export { A as default } from './states';
-</styleguide-states>
+</nsg-doc>

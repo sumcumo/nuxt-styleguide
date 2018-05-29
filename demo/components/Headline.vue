@@ -11,9 +11,9 @@
   </component>
 </template>
 
-<styleguide-states>
+<nsg-states>
 export { Headline as default } from './states'
-</styleguide-states>
+</nsg-states>
 
 <script>
 /**
