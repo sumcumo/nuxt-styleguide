@@ -92,3 +92,18 @@ export default [{
 }]
 </nsg-states>
 ```
+
+### highlighting
+
+If you use [vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+extension for vscode, you can enable highlighting for these blocks by
+[following this guide about highlighting in vetur](https://github.com/vuejs/vetur/blob/master/docs/highlighting.md)
+
+You will need to add these custom grammars:
+
+```json
+"vetur.grammar.customBlocks": {
+  "nsg-doc": "md",
+  "nsg-states": "js"
+}
+```
