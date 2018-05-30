@@ -1,6 +1,6 @@
 import path from 'path'
 import kebabCase from 'lodash.kebabcase'
-import { Observable } from 'rxjs'
+import { Observable, interval } from 'rxjs'
 import minimatch from 'minimatch'
 import {
   concatMap,
@@ -81,17 +81,20 @@ export default function createCustomRoutesFromFolder({
 
   const readyFilter = rxFilter(({ event }) => event === 'ready')
   const ready$ = watch$.pipe(readyFilter, delay(1))
+  let rdy = false
   const ready$$ = Observable.create((obs) => {
     const sub = ready$.subscribe({
       next() {
+        rdy = true
         obs.complete()
         sub.unsubscribe()
       },
     })
   })
+  const throttle = interval(100)
 
   const fs$ = watch$.pipe(
-    bufferWhen(() => ready$$),
+    bufferWhen(() => (!rdy ? ready$$ : throttle)),
     take(Infinity),
     concatMap((messages) => Promise.all(messages.map(processFileMsg))),
     flatMap((x) => x),
@@ -108,7 +111,7 @@ export default function createCustomRoutesFromFolder({
       }
     })
 
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     const sub = fs$.pipe(readyFilter, delay(2)).subscribe({
       complete() {
         resolve()
@@ -117,6 +120,10 @@ export default function createCustomRoutesFromFolder({
       error: reject,
     })
   })
+
+  promise.ready$ = ready$
+
+  return promise
 }
 
 createCustomRoutesFromFolder.withOptions = (options) => {
