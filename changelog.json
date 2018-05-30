@@ -1,4 +1,45 @@
 {
+  "7.3.0": {
+    "date": "Wed, 30 May 2018 09:41:00 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "highlight active navigation entries",
+            "body": "fix https://github.com/sumcumo/nuxt-styleguide/issues/11\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update to latest version of nuxt-styleguide-renderer-default",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: highlight active navigation entries",
+            "body": "fix https://github.com/sumcumo/nuxt-styleguide/issues/11\n\n"
+          }
+        ]
+      }
+    }
+  },
   "7.2.0": {
     "date": "Tue, 29 May 2018 09:10:26 GMT",
     "changes": {

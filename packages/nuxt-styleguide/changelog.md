@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.2.1
+
+### 🐞 Bug Fixes
+
+→ **update to latest version of nuxt-styleguide-renderer-default**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/nuxt-styleguide-renderer-default@3.3.0: **highlight active navigation entries**
+
+
 ## Version 5.2.0
 
 ### 🆕  New Features
