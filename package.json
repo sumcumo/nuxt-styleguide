@@ -44,8 +44,26 @@
     "eslint-plugin-jest": "21.15.2",
     "eslint-plugin-prettier": "2.6.0",
     "eslint-plugin-vue": "4.5.0",
+    "jest": "^23.0.1",
     "lerna": "2.11.0",
     "prettier": "1.12.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!dist/**",
+      "!**/node_modules/**",
+      "!coverage/**",
+      "!**/lib/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "rlsr": {
     "scopeToNameMap": {
