@@ -2,7 +2,7 @@ import * as path from 'path'
 import { Observable } from 'rxjs'
 import chokidar from 'chokidar'
 
-const cache = {}
+export const cache = {}
 
 export default function observe(srcDir, watch) {
   if (!cache[srcDir]) {
