@@ -1,4 +1,31 @@
 {
+  "7.3.1": {
+    "date": "Wed, 30 May 2018 12:11:38 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "2.1.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "ensure fs events called after ready are not buffered forever",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "resolve initial promise on complete",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "7.3.0": {
     "date": "Wed, 30 May 2018 09:41:00 GMT",
     "changes": {
