@@ -110,7 +110,7 @@ export default function createCustomRoutesFromFolder({
 
   return new Promise((resolve, reject) => {
     const sub = fs$.pipe(readyFilter, delay(2)).subscribe({
-      next() {
+      complete() {
         resolve()
         sub.unsubscribe()
       },
