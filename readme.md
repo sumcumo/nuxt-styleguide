@@ -1,6 +1,7 @@
 # Nuxt-styleguide
 
 [![CircleCI](https://circleci.com/gh/sumcumo/nuxt-styleguide/tree/master.svg?style=shield)](https://circleci.com/gh/sumcumo/nuxt-styleguide/tree/master)
+[![codecov](https://codecov.io/gh/sumcumo/nuxt-styleguide/branch/master/graph/badge.svg)](https://codecov.io/gh/sumcumo/nuxt-styleguide)
 
 Increase QUALITY and EFFICIENCY of product design and development workflows
 
