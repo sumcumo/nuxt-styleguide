@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-markdown-component-loader
 
+## Version 0.2.1
+
+### 🔨 Refactorings
+
+→ **move logic out of index file**
+> in order to have a realistic coverage report
+> 
+> 
+
+
 ## Version 0.2.0
 
 ### 🆕  New Features
