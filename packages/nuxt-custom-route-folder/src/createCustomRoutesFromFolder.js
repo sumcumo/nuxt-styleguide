@@ -89,6 +89,9 @@ export default function createCustomRoutesFromFolder({
         obs.complete()
         sub.unsubscribe()
       },
+      error() {
+        /* noop */
+      },
     })
   })
   const throttle = interval(100)
@@ -101,15 +104,18 @@ export default function createCustomRoutesFromFolder({
     rxFilter((x) => x)
   )
 
-  fs$
-    .pipe(rxFilter(({ event }) => event !== 'ready'))
-    .forEach(({ event, route }) => {
+  fs$.pipe(rxFilter(({ event }) => event !== 'ready')).subscribe({
+    next({ event, route }) {
       if (event === 'unlink') {
         routes.unlink(route)
       } else {
         routes.add(route)
       }
-    })
+    },
+    error() {
+      /* noop */
+    },
+  })
 
   const promise = new Promise((resolve, reject) => {
     const sub = fs$.pipe(readyFilter, delay(2)).subscribe({
