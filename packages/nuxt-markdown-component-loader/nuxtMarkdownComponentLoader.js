@@ -1,14 +1,7 @@
 module.exports = function NuxtMarkdownComponentLoader(moduleOptions) {
-  const options = Object.assign(
-    {
-      components: this.options.markdownComponents,
-      marked: this.options.marked,
-    },
-    {
-      components: moduleOptions.components,
-      marked: moduleOptions.marked,
-    }
-  )
+  const options = {
+    components: moduleOptions.components || this.options.markdownComponents,
+  }
 
   this.extendBuild((config) => {
     config.module.rules.push(
