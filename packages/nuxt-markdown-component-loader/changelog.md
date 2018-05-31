@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-markdown-component-loader
 
+## Version 0.3.0
+
+### 🆕  New Features
+
+→ **remove unused marked option**
+
+
 ## Version 0.2.2
 
 ### 🔨 Refactorings

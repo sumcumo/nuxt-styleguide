@@ -1,4 +1,23 @@
 {
+  "7.4.0": {
+    "date": "Thu, 31 May 2018 11:13:48 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-markdown-component-loader": {
+        "version": "0.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "remove unused marked option",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "7.3.4": {
     "date": "Thu, 31 May 2018 10:51:57 GMT",
     "changes": {
