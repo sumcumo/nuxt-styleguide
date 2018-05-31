@@ -1,4 +1,23 @@
 {
+  "7.3.2": {
+    "date": "Thu, 31 May 2018 10:10:11 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "2.1.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "add noop-error-handlers to non-final subscriptions",
+            "body": "errors are catched in final subscription\n\n"
+          }
+        ]
+      }
+    }
+  },
   "7.3.1": {
     "date": "Wed, 30 May 2018 12:11:38 GMT",
     "changes": {
