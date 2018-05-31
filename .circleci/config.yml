@@ -70,6 +70,18 @@ jobs:
           paths:
             - ~/nuxt-styleguide/coverage
           key: v1-coverage-{{ .Revision }}
+  codecov:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - restore_cache:
+          keys:
+          - v1-coverage-{{ .Revision }}
+      - run:
+          name: Upload coverage
+          command: $(npm bin)/codecov
   deploy-gh-pages:
     <<: *defaults
     steps:
@@ -155,3 +167,8 @@ workflows:
           filters:
             branches:
               only: master
+      - codecov:
+          requires:
+            - build
+            - test
+            - lint
