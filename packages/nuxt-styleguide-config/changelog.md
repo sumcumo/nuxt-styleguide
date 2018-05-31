@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 4.1.1
+
+### 🔨 Refactorings
+
+→ **move logic out of index file**
+> in order to have a realistic coverage report
+> 
+> 
+
+
 ## Version 4.1.0
 
 ### 🆕  New Features

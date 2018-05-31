@@ -1,4 +1,51 @@
 {
+  "7.3.3": {
+    "date": "Thu, 31 May 2018 10:25:25 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-markdown-component-loader": {
+        "version": "0.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "4.1.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.5.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      }
+    }
+  },
   "7.3.2": {
     "date": "Thu, 31 May 2018 10:10:11 GMT",
     "changes": {
