@@ -3,7 +3,7 @@
 [![CircleCI](https://circleci.com/gh/sumcumo/nuxt-styleguide/tree/master.svg?style=shield)](https://circleci.com/gh/sumcumo/nuxt-styleguide/tree/master)
 [![codecov](https://codecov.io/gh/sumcumo/nuxt-styleguide/branch/master/graph/badge.svg)](https://codecov.io/gh/sumcumo/nuxt-styleguide)
 
-Increase QUALITY and EFFICIENCY of product design and development workflows
+Increase the **quality** and **efficiency** of product design and development workflows.
 
 Nuxt styleguide is a [Nuxt](https://github.com/nuxt/nuxt.js) module that provides a isolated styleguide view for your components, design tokens and it's documentation.
 
@@ -11,7 +11,7 @@ It can live **inside your nuxt project** or as **a standalone library** that pro
 
 ## Documentation
 
-see [demo and documentation website](https://sumcumo.github.io/nuxt-styleguide/)
+See [demo and documentation website](https://sumcumo.github.io/nuxt-styleguide/):
 
 * [Getting started](demo/docs/docs/getting-started.md)
 * [Configuration](./demo/docs/docs/configuration.md)
