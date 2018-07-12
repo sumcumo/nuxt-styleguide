@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.3.0
+
+### 🆕  New Features
+
+→ **highlight active navigation entries**
+> fix https://github.com/sumcumo/nuxt-styleguide/issues/11
+> 
+> 
+
+
 ## Version 3.2.1
 
 ### 🐞 Bug Fixes

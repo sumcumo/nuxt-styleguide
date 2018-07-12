@@ -1,6 +1,6 @@
 import path from 'path'
 import kebabCase from 'lodash.kebabcase'
-import { Observable } from 'rxjs'
+import { Observable, interval } from 'rxjs'
 import minimatch from 'minimatch'
 import {
   concatMap,
@@ -81,42 +81,55 @@ export default function createCustomRoutesFromFolder({
 
   const readyFilter = rxFilter(({ event }) => event === 'ready')
   const ready$ = watch$.pipe(readyFilter, delay(1))
+  let rdy = false
   const ready$$ = Observable.create((obs) => {
     const sub = ready$.subscribe({
       next() {
+        rdy = true
         obs.complete()
         sub.unsubscribe()
       },
+      error() {
+        /* noop */
+      },
     })
   })
+  const throttle = interval(100)
 
   const fs$ = watch$.pipe(
-    bufferWhen(() => ready$$),
+    bufferWhen(() => (!rdy ? ready$$ : throttle)),
     take(Infinity),
     concatMap((messages) => Promise.all(messages.map(processFileMsg))),
     flatMap((x) => x),
     rxFilter((x) => x)
   )
 
-  fs$
-    .pipe(rxFilter(({ event }) => event !== 'ready'))
-    .forEach(({ event, route }) => {
+  fs$.pipe(rxFilter(({ event }) => event !== 'ready')).subscribe({
+    next({ event, route }) {
       if (event === 'unlink') {
         routes.unlink(route)
       } else {
         routes.add(route)
       }
-    })
+    },
+    error() {
+      /* noop */
+    },
+  })
 
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     const sub = fs$.pipe(readyFilter, delay(2)).subscribe({
-      next() {
+      complete() {
         resolve()
         sub.unsubscribe()
       },
       error: reject,
     })
   })
+
+  promise.ready$ = ready$
+
+  return promise
 }
 
 createCustomRoutesFromFolder.withOptions = (options) => {

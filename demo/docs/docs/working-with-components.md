@@ -47,27 +47,27 @@ A component can be documented using comments in the code as specified
 by the [`vue-docgen-api`](https://github.com/vue-styleguidist/vue-docgen-api)
 package.
 
-### styleguide-doc
+### nsg-doc
 
-Custom introduction text can be set using the `styleguide-doc` element
+Custom introduction text can be set using the `nsg-doc` element
 in a component file
 
 ```vue
 <!-- ... -->
-<styleguide-doc>
+<nsg-doc>
 ### MyButton is special, it’s the best special button there is.
-</styleguide-doc>
+</nsg-doc>
 ```
 
-### styleguide-states
+### nsg-states
 
 The styleguide will do its best to render an appropriate demo
 for each component. But the demos can be customized using the
-`styleguide-states` element in a component file.
+`nsg-states` element in a component file.
 
 ```vue
 <!-- ... -->
-<styleguide-states>
+<nsg-states>
 export default [{
   name: 'Ghost Button',
   // https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth
@@ -90,5 +90,20 @@ export default [{
     transparent: false
   }
 }]
-</styleguide-states>
+</nsg-states>
+```
+
+### highlighting
+
+If you use [vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+extension for vscode, you can enable highlighting for these blocks by
+[following this guide about highlighting in vetur](https://github.com/vuejs/vetur/blob/master/docs/highlighting.md)
+
+You will need to add these custom grammars:
+
+```json
+"vetur.grammar.customBlocks": {
+  "nsg-doc": "md",
+  "nsg-states": "js"
+}
 ```

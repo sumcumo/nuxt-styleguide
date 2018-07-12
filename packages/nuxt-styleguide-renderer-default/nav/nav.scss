@@ -28,12 +28,18 @@
   margin: 0;
 }
 .nav-title__content {
+  cursor: default;
   display: inline-block;
   padding: 0.5em 1rem;
 }
 
+a.nav-title__content,
 .nav-item {
+  cursor: pointer;
   transition: background 120ms ease-in-out;
+  &.active {
+    background: $grey;
+  }
   &:hover {
     background: $turquoiseColor;
   }

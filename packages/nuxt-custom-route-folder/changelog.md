@@ -1,5 +1,26 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 2.1.2
+
+### 🐞 Bug Fixes
+
+→ **add noop-error-handlers to non-final subscriptions**
+> errors are catched in final subscription
+> 
+> 
+
+
+## Version 2.1.1
+
+### 🐞 Bug Fixes
+
+→ **ensure fs events called after ready are not buffered forever**
+
+### 🔨 Refactorings
+
+→ **resolve initial promise on complete**
+
+
 ## Version 2.1.0
 
 ### 🆕  New Features

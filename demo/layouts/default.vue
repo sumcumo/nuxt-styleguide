@@ -2,10 +2,10 @@
   <nuxt/>
 </template>
 
-<styleguide-doc>
+<nsg-doc>
 ## Default empty noop-layout
 
-</styleguide-doc>
+</nsg-doc>
 
 <script>
 export default {

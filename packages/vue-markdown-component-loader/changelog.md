@@ -1,5 +1,30 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.5.2
+
+### 🔨 Refactorings
+
+→ **move logic out of index file**
+> in order to have a realistic coverage report
+> 
+> 
+
+→ **move logic out of index file**
+> in order to have a realistic coverage report
+> 
+> 
+
+
+## Version 0.5.1
+
+### 🔨 Refactorings
+
+→ **move logic out of index file**
+> in order to have a realistic coverage report
+> 
+> 
+
+
 ## Version 0.5.0
 
 ### 🆕  New Features

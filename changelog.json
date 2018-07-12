@@ -1,4 +1,255 @@
 {
+  "7.4.0": {
+    "date": "Thu, 31 May 2018 11:13:48 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-markdown-component-loader": {
+        "version": "0.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "remove unused marked option",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
+  "7.3.4": {
+    "date": "Thu, 31 May 2018 10:51:57 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-markdown-component-loader": {
+        "version": "0.2.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "4.1.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.5.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      }
+    }
+  },
+  "7.3.3": {
+    "date": "Thu, 31 May 2018 10:25:25 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-markdown-component-loader": {
+        "version": "0.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "4.1.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.5.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "move logic out of index file",
+            "body": "in order to have a realistic coverage report\n\n"
+          }
+        ]
+      }
+    }
+  },
+  "7.3.2": {
+    "date": "Thu, 31 May 2018 10:10:11 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "2.1.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "add noop-error-handlers to non-final subscriptions",
+            "body": "errors are catched in final subscription\n\n"
+          }
+        ]
+      }
+    }
+  },
+  "7.3.1": {
+    "date": "Wed, 30 May 2018 12:11:38 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-custom-route-folder": {
+        "version": "2.1.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "ensure fs events called after ready are not buffered forever",
+            "body": ""
+          },
+          {
+            "type": "refactor",
+            "affected": [
+              "@sum.cumo/nuxt-custom-route-folder"
+            ],
+            "subject": "resolve initial promise on complete",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
+  "7.3.0": {
+    "date": "Wed, 30 May 2018 09:41:00 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.3.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "highlight active navigation entries",
+            "body": "fix https://github.com/sumcumo/nuxt-styleguide/issues/11\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.2.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update to latest version of nuxt-styleguide-renderer-default",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "feat: highlight active navigation entries",
+            "body": "fix https://github.com/sumcumo/nuxt-styleguide/issues/11\n\n"
+          }
+        ]
+      }
+    }
+  },
+  "7.2.0": {
+    "date": "Tue, 29 May 2018 09:10:26 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.2.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "allow nsg prefix for custom blocks",
+            "body": "vetur syntax highlighting for custom blocks does not like blocks that\nstart with \"style\"\n\nref: https://github.com/sumcumo/nuxt-styleguide/issues/8\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "use scss parser directly",
+            "body": "since postcss.parse does not seem to care for the syntax option\n(previously the default parser has been used)\n\nfix https://github.com/sumcumo/nuxt-styleguide/issues/10\n\n"
+          }
+        ]
+      }
+    }
+  },
   "7.1.1": {
     "date": "Thu, 24 May 2018 15:54:17 GMT",
     "changes": {

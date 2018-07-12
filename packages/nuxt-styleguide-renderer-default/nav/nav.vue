@@ -11,9 +11,9 @@
         class="nav-title"
       >
         <a
-          v-if="subRoutes.find(({ name }) => name.toLowerCase() === 'index')"
-          :href="subRoutes.find(({ name }) => name.toLowerCase() === 'index').path"
-          class="nav-title__content"
+          v-if="findIndex(subRoutes)"
+          :href="findIndex(subRoutes).path"
+          :class="`nav-title__content ${findIndex(subRoutes).path === $route.path ? 'active' : ''}`"
         >
           {{ name }}
         </a>
@@ -32,7 +32,7 @@
           <a
             v-if="route.name.toLowerCase() !== 'index'"
             :href="route.path"
-            class="nav-item"
+            :class="`nav-item ${route.path === $route.path ? 'active' : ''}`"
           >
             {{ route.name }}
           </a>
@@ -64,6 +64,11 @@ export default {
         return memo
       }, {}),
     }
+  },
+  methods: {
+    findIndex(routes) {
+      return routes.find(({ name }) => name.toLowerCase() === 'index')
+    },
   },
 }
 </script>
