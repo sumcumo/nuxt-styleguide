@@ -7,7 +7,7 @@ export const A = [
       on: {
         click(event) {
           event.preventDefault()
-          alert('yeah🎉')
+          alert('yeah 🎉')
         },
       },
     },

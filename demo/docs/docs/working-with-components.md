@@ -55,7 +55,7 @@ in a component file
 ```vue
 <!-- ... -->
 <nsg-doc>
-### MyButton is special, its the best special button there is.
+### MyButton is special, it’s the best special button there is.
 </nsg-doc>
 ```
 
