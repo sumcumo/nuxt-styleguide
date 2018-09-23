@@ -84,14 +84,14 @@
 > previously:
 > ```
 > <styleguide-states>
-> [{ /* ... */ }]
+> [{ /* … */ }]
 > </styleguide-states>
 > ```
 > 
 > now:
 > ```
 > <styleguide-states>
-> export default [{ /* ... */ }]
+> export default [{ /* … */ }]
 > </styleguide-states>
 > ```
 

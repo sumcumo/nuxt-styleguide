@@ -71,7 +71,7 @@ export default {
       }
     },
     onAttr(name) {
-      return `@${name}="/* ... */"`
+      return `@${name}="/* … */"`
     },
   },
 }

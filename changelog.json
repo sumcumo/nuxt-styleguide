@@ -426,7 +426,7 @@
               "@sum.cumo/nuxt-styleguide"
             ],
             "subject": "treat component states as es module",
-            "body": "in order to suppoert imports, use of other modules and whatever comes to mind\n\nBREAKING CHANGE:\nstyleguide-states blocks in vue files must now `export default` the array of states\npreviously:\n```\n<styleguide-states>\n[{ /* ... */ }]\n</styleguide-states>\n```\n\nnow:\n```\n<styleguide-states>\nexport default [{ /* ... */ }]\n</styleguide-states>\n```"
+            "body": "in order to suppoert imports, use of other modules and whatever comes to mind\n\nBREAKING CHANGE:\nstyleguide-states blocks in vue files must now `export default` the array of states\npreviously:\n```\n<styleguide-states>\n[{ /* … */ }]\n</styleguide-states>\n```\n\nnow:\n```\n<styleguide-states>\nexport default [{ /* … */ }]\n</styleguide-states>\n```"
           },
           {
             "type": "fix",
