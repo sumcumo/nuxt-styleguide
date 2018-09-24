@@ -7,7 +7,7 @@ a common understanding and language when speaking about them.
 ## Best practices
 
 1.  Design tokens must be atomic.
-2.  Therefore not every sass variable is a design token.
+2.  Therefore not every Sass variable is a design token.
 
 ## Creating design tokens
 

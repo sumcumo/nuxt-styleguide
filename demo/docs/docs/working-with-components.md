@@ -7,11 +7,11 @@ in an ubiquitous language.
 
 ## Specification
 
-1.  A component must be a `.vue` single file component
+1.  A component must be a `.vue` single file component.
 2.  A component must be placed in the `~/components` folder.
-3.  A component must have a name
+3.  A component must have a name:
     ```vue
-    <!-- ... -->
+    <!-- … -->
     <script>
     export default {
       name: 'MyButton',
@@ -27,14 +27,14 @@ In order to be re-usable:
     Use props and events to leave state management to the application.
 2.  A component should not have static content
     Use slots to leave handling of text resources to the application.
-3.  A component should have a template
+3.  A component should have a template:
     ```vue
     <template>
     <button><slot /></button>
     </template>
-    <!-- ... -->
+    <!-- … -->
     ```
-4.  A component should be reusable and therefore used at least twice in a project
+4.  A component should be reusable and therefore used at least twice in a project.
 
 ## Documentation
 
@@ -50,10 +50,10 @@ package.
 ### nsg-doc
 
 Custom introduction text can be set using the `nsg-doc` element
-in a component file
+in a component file:
 
 ```vue
-<!-- ... -->
+<!-- … -->
 <nsg-doc>
 ### MyButton is special, it’s the best special button there is.
 </nsg-doc>
@@ -66,7 +66,7 @@ for each component. But the demos can be customized using the
 `nsg-states` element in a component file.
 
 ```vue
-<!-- ... -->
+<!-- … -->
 <nsg-states>
 export default [{
   name: 'Ghost Button',
@@ -97,7 +97,7 @@ export default [{
 
 If you use [vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 extension for vscode, you can enable highlighting for these blocks by
-[following this guide about highlighting in vetur](https://github.com/vuejs/vetur/blob/master/docs/highlighting.md)
+[following this guide about highlighting in vetur](https://github.com/vuejs/vetur/blob/master/docs/highlighting.md).
 
 You will need to add these custom grammars:
 

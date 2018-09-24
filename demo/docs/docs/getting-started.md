@@ -14,10 +14,10 @@ add `'@sum.cumo/nuxt-styleguide'` to the `modules` array.
 ```js
 // nuxt.config.js
 module.exports = {
-  // other options ...
+  // other options …
   modules: [
     '@sum.cumo/nuxt-styleguide',
-    // other modules ...
+    // other modules …
   ],
 };
 ```
@@ -27,7 +27,7 @@ module.exports = {
 Depending on your [setup](#create-a-nuxt-project), `npm start`, `npm run dev` or
 `$(npm bin)/nuxt` will start a development environment.
 
-Now [`http://localhost:3000`](http://localhost:3000)
+Now visit [`http://localhost:3000`](http://localhost:3000).
 
 You can now add components by following the [guide on how to work with components](~/docs/working-with-components).
 
@@ -42,7 +42,7 @@ it's recommended to conditionally only use the module under specific circumstanc
 // nuxt.config.js
 
 const modules = [
-  // other modules ...
+  // other modules …
 ];
 
 /* only use the module in non-production environment */
@@ -54,12 +54,12 @@ if (process.env.NODE_ENV !== 'production') {
       path: '/styleguide',
       /* make import paths of components relative to project root */
       importFrom: 'local',
-      // other config ...
+      // other config …
     },
   ]);
 }
 module.exports = {
-  // other options ...
+  // other options …
   modules,
 };
 ```

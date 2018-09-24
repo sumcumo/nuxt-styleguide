@@ -5,7 +5,7 @@ can be re-used out of context or replaced by custom implementation.
 
 ### <repo-link file="packages/nuxt-styleguide"><code>@sum.cumo/nuxt-styleguide</code></repo-link>
 
-The main package that is already documented here
+The main package that is already documented here.
 
 ### <repo-link file="packages/nuxt-markdown-component-loader"><code>@sum.cumo/nuxt-markdown-component-loader</code></repo-link>
 
