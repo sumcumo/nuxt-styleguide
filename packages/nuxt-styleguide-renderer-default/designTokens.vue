@@ -3,7 +3,7 @@
     <h1>{{ name }}</h1>
     <div v-html="description" />
     <sg-tags :tags="tags" />
-    <pre><code>@import "{{ importPath }}";</code></pre>
+    <code-block language="css">@import "{{ importPath }}";</code-block>
 
     <sg-color-demo
       v-if="colors.length"
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import CodeBlock from './component/CodeBlock.vue'
 import SgTags from './component/Tags.vue'
 import SgColorDemo from './component/ColorDemo.vue'
 import SgDefaultDtDemo from './component/SgDefaultDtDemo.vue'
@@ -39,6 +40,7 @@ import SgFrame from './frame.vue'
 
 export default {
   components: {
+    CodeBlock,
     SgTags,
     SgFrame,
     SgColorDemo,

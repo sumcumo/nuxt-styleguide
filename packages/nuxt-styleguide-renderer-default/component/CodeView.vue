@@ -1,14 +1,15 @@
 <template>
-  <div><pre><code>{{ code }}</code></pre></div>
+  <div><code-block language="html">{{ code }}</code-block></div>
 </template>
-
-<style>
-</style>
 
 <script>
 import pretty from 'pretty'
+import CodeBlock from './CodeBlock.vue'
 
 export default {
+  components: {
+    CodeBlock,
+  },
   props: {
     comp: {
       type: Object,
