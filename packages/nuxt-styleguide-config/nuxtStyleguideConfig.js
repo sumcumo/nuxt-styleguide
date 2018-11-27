@@ -1,5 +1,5 @@
 const parseArgs = require('minimist')
-const { Utils, Options } = require('nuxt')
+const consola = require('consola')
 const { resolve } = require('path')
 const { existsSync } = require('fs')
 
@@ -22,7 +22,7 @@ if (existsSync(nuxtConfigFile)) {
   // eslint-disable-next-line global-require, import/no-dynamic-require
   options = require(nuxtConfigFile)
 } else if (argv['config-file'] !== 'nuxt.config.js') {
-  Utils.fatalError(`Could not load config file: ${argv['config-file']}`)
+  consola.fatal(`Could not load config file: ${argv['config-file']}`)
 }
 
 if (typeof options.rootDir !== 'string') {
@@ -54,34 +54,26 @@ const moduleOptions = Object.assign(
     }, {})
 )
 
-module.exports = Options.from(
-  Object.assign(
-    {},
-    options,
-    pkg,
-    {
-      path: '/',
-      designTokenName: 'design-tokens',
-      importFrom: 'package',
-      docsDir: 'docs',
-      iconRoute: 'icons',
-      iconFolder: 'icons',
-      layout: 'default',
-      renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
-      categoryOrder: [
-        'Docs',
-        'Components',
-        'Design Tokens',
-        'Icons',
-        'Layouts',
-      ],
-    },
-    moduleOptions,
-    {
-      extends:
-        moduleOptions.extends && !Array.isArray(moduleOptions.extends)
-          ? [moduleOptions.extends]
-          : moduleOptions.extends || [],
-    }
-  )
+module.exports = Object.assign(
+  {},
+  options,
+  pkg,
+  {
+    path: '/',
+    designTokenName: 'design-tokens',
+    importFrom: 'package',
+    docsDir: 'docs',
+    iconRoute: 'icons',
+    iconFolder: 'icons',
+    layout: 'default',
+    renderer: '@sum.cumo/nuxt-styleguide-renderer-default',
+    categoryOrder: ['Docs', 'Components', 'Design Tokens', 'Icons', 'Layouts'],
+  },
+  moduleOptions,
+  {
+    extends:
+      moduleOptions.extends && !Array.isArray(moduleOptions.extends)
+        ? [moduleOptions.extends]
+        : moduleOptions.extends || [],
+  }
 )
