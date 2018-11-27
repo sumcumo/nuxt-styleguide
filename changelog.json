@@ -1,4 +1,23 @@
 {
+  "7.5.0": {
+    "date": "Tue, 27 Nov 2018 13:06:01 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.4.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "add markup highlighting",
+            "body": "by using prism.js for code blocks.\n\nfixes #15"
+          }
+        ]
+      }
+    }
+  },
   "7.4.0": {
     "date": "Thu, 31 May 2018 11:13:48 GMT",
     "changes": {

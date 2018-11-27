@@ -1,5 +1,15 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.4.0
+
+### 🆕  New Features
+
+→ **add markup highlighting**
+> by using prism.js for code blocks.
+> 
+> fixes #15
+
+
 ## Version 3.3.0
 
 ### 🆕  New Features
