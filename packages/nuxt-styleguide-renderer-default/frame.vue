@@ -140,7 +140,7 @@ code {
   background: $grey;
   border-radius: 1px;
   padding: 0 0.3em;
-  font-size: 1.1em;
+  font-size: 0.85em;
 }
 
 .hamburger {
@@ -191,6 +191,7 @@ code {
     background: black;
     color: white;
     transform: translateY(-100vh);
+    z-index: 42;
   }
 }
 </style>

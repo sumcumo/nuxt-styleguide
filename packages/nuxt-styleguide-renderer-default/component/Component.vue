@@ -1,7 +1,7 @@
 <template>
   <sg-frame>
     <h1>{{ name }}</h1>
-    <pre><code>import {{ importName }} from '{{ importPath }}';</code></pre>
+    <code-block language="js">import {{ importName }} from '{{ importPath }}';</code-block>
     <h2>Demo:</h2>
     <div
       v-for="(state) in states"
@@ -106,13 +106,21 @@
 
 <script>
 import CodeView from './CodeView.vue'
+import CodeBlock from './CodeBlock.vue'
 import SgComponentDemo from './ComponentDemo.vue'
 import SgStyleguideNav from '../nav/nav.vue'
 import SgFrame from '../frame.vue'
 import SgTags from './Tags.vue'
 
 export default {
-  components: { SgStyleguideNav, SgTags, SgFrame, SgComponentDemo, CodeView },
+  components: {
+    SgStyleguideNav,
+    SgTags,
+    SgFrame,
+    SgComponentDemo,
+    CodeView,
+    CodeBlock,
+  },
   props: {
     Comp: { type: Object, default: null },
     name: { type: String, default: null },

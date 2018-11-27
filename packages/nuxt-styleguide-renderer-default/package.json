@@ -5,6 +5,8 @@
   "dependencies": {
     "node-sass": "^4.9.0",
     "pretty": "^2.0.0",
-    "sass-loader": "^7.0.1"
+    "prismjs": "^1.15.0",
+    "sass-loader": "^7.0.1",
+    "vue-prism-component": "^1.1.1"
   }
 }
