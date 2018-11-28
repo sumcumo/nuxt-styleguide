@@ -1,4 +1,23 @@
 {
+  "7.5.1": {
+    "date": "Wed, 28 Nov 2018 09:46:35 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "4.1.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "remove usage of invalid Nuxt APIs",
+            "body": "by throwing errors through consola which is used within Nuxt to do\nexactly this anyways. And by not using Options which apparently\ncannot be required from Nuxt (anymore?) and this we just go back\nto using Object.assign as it was done before.\n\nfixes #16"
+          }
+        ]
+      }
+    }
+  },
   "7.5.0": {
     "date": "Tue, 27 Nov 2018 13:06:01 GMT",
     "changes": {

@@ -1,5 +1,18 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 4.1.3
+
+### 🐞 Bug Fixes
+
+→ **remove usage of invalid Nuxt APIs**
+> by throwing errors through consola which is used within Nuxt to do
+> exactly this anyways. And by not using Options which apparently
+> cannot be required from Nuxt (anymore?) and this we just go back
+> to using Object.assign as it was done before.
+> 
+> fixes #16
+
+
 ## Version 4.1.2
 
 ### 🔨 Refactorings
