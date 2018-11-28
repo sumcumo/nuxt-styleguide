@@ -7356,6 +7356,13 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+markdown-it-prism@^1.1.2:
+  version "1.1.2"
+  resolved "https://artifactory.sumcumo.net:443/api/npm/npm/markdown-it-prism/-/markdown-it-prism-1.1.2.tgz#503f3439f76357d0ee0087cc0fc95c4d4c65b1bd"
+  integrity sha1-UD80OfdjV9DuAIfMD8lcTUxlsb0=
+  dependencies:
+    prismjs "^1.5.1"
+
 markdown-it@8.4.2:
   version "8.4.2"
   resolved "https://artifactory.sumcumo.net:443/api/npm/npm/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
@@ -9220,7 +9227,7 @@ pretty@^2.0.0:
     extend-shallow "^2.0.1"
     js-beautify "^1.6.12"
 
-prismjs@^1.15.0:
+prismjs@^1.15.0, prismjs@^1.5.1:
   version "1.15.0"
   resolved "https://artifactory.sumcumo.net:443/api/npm/npm/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
   integrity sha1-iAHTMuRyCRuo3vlJdsiHetYDmNk=
