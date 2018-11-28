@@ -4,7 +4,10 @@ If you want to start from scratch we've got you covered with [an Example Stylegu
 
 ## Install nuxt-styleguide
 
-`npm install @sum.cumo/nuxt-styleguide --save-dev`
+```sh
+npm install @sum.cumo/nuxt-styleguide --save-dev
+yarn add @sum.cumo/nuxt-styleguide --dev
+```
 
 ## Add as nuxt module
 
@@ -22,9 +25,20 @@ module.exports = {
 };
 ```
 
+## Use as a standalone styleguide
+
+If you're not using [nuxt](https://nuxtjs.org/) for building your app, you can
+still use nuxt-styleguide to create a styleguide for your app.
+
+In this case, nuxt-styleguide will run as a tiny nuxt "sub"-app within your app.
+The structure used in the [example styleguide](https://github.com/sumcumo/nuxt-styleguide-example)
+would apply for this as well. You'd put this into a subfolder within your project.
+
+The `nuxt.config.js` file is then also located in this folder.
+
 ## Start developing
 
-Depending on your [setup](#create-a-nuxt-project), `npm start`, `npm run dev` or
+Depending on your setup, `npm start`, `npm run dev` or
 `$(npm bin)/nuxt` will start a development environment.
 
 Now visit [`http://localhost:3000`](http://localhost:3000).
