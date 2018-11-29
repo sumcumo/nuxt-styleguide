@@ -11,7 +11,6 @@ module.exports = {
   },
   head() {
     return {
-      title: this.title,
       meta: [
         { hid: 'viewport', name: 'viewport', content: 'width=device-width' },
       ],
