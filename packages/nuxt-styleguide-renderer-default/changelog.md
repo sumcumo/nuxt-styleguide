@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.5.0
+
+### 🆕  New Features
+
+→ **adjust styling**
+> and enable altering the theme by setting own custom properties
+> in a very basic first step
+> 
+> 
+
+
 ## Version 3.4.0
 
 ### 🆕  New Features

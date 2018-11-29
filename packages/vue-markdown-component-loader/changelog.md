@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.6.0
+
+### 🆕  New Features
+
+→ **use prismjs for code highlighting**
+
+### 🐞 Bug Fixes
+
+→ **update dependencies**
+
+
 ## Version 0.5.2
 
 ### 🔨 Refactorings

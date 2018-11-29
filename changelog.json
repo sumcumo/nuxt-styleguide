@@ -1,4 +1,75 @@
 {
+  "7.6.0": {
+    "date": "Thu, 29 Nov 2018 09:17:29 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.5.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "adjust styling",
+            "body": "and enable altering the theme by setting own custom properties\nin a very basic first step\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.2.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "update dependencies",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "feat: use prismjs for code highlighting",
+            "body": ""
+          },
+          {
+            "type": "dependency update",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "fix: update dependencies",
+            "body": ""
+          }
+        ]
+      },
+      "@sum.cumo/vue-markdown-component-loader": {
+        "version": "0.6.0",
+        "determinedIncrementLevel": "minor",
+        "messages": [
+          {
+            "type": "feat",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "use prismjs for code highlighting",
+            "body": ""
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/vue-markdown-component-loader"
+            ],
+            "subject": "update dependencies",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "7.5.1": {
     "date": "Wed, 28 Nov 2018 09:46:35 GMT",
     "changes": {

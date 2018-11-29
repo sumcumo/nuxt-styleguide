@@ -1,5 +1,18 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.2.2
+
+### 🐞 Bug Fixes
+
+→ **update dependencies**
+
+### 🔄  Dependency Updates
+
+→ feat in @sum.cumo/vue-markdown-component-loader@0.6.0: **use prismjs for code highlighting**
+
+→ fix in @sum.cumo/vue-markdown-component-loader@0.6.0: **update dependencies**
+
+
 ## Version 5.2.1
 
 ### 🐞 Bug Fixes
