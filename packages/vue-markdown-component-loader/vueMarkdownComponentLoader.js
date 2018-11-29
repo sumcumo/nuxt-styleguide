@@ -2,7 +2,7 @@ const markdownIt = require('markdown-it')
 const loaderUtils = require('loader-utils')
 const cheerio = require('cheerio')
 const compiler = require('vue-template-compiler')
-const hljs = require('highlight.js')
+const prism = require('markdown-it-prism')
 
 const COMPONENT_PREFIX = 'vmc-custom-'
 
@@ -72,19 +72,8 @@ module.exports = function componentLoader(markdown) {
   const md = markdownIt(
     options.renderer || {
       html: true,
-      highlight(str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return hljs.highlight(lang, str).value
-          } catch (_) {
-            /* noop */
-          }
-        }
-
-        return ''
-      },
     }
-  )
+  ).use(prism)
 
   const html = md.render(markdown)
   const $ = cheerio.load(html)

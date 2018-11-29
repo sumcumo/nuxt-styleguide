@@ -7,10 +7,10 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@sum.cumo/nuxt-styleguide": "4.0.1",
-    "nuxt": "npm:nuxt-edge"
+    "nuxt": "2.3.4"
   },
   "dependencies": {
-    "@sum.cumo/nuxt-markdown-component-loader": "^0",
+    "@sum.cumo/nuxt-markdown-component-loader": "0.3.0",
     "node-sass": "4.9.0",
     "sass-loader": "7.0.1"
   }

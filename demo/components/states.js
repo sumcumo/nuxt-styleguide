@@ -7,6 +7,7 @@ export const A = [
       on: {
         click(event) {
           event.preventDefault()
+          // eslint-disable-next-line no-alert
           alert('yeah 🎉')
         },
       },

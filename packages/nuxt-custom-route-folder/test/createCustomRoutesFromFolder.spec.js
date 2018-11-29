@@ -62,7 +62,7 @@ describe('createCustomRoutesFromFolder', () => {
     const routes = []
     extendRoutes(routes)
 
-    expect(routes.length).toBe(1)
+    expect(routes).toHaveLength(1)
     expect(routes[0]).toEqual({
       path: '/foo',
       priority: 0,
@@ -102,7 +102,7 @@ describe('createCustomRoutesFromFolder', () => {
     const routes = []
     extendRoutes(routes)
 
-    expect(routes.length).toBe(1)
+    expect(routes).toHaveLength(1)
 
     emitter.emit('unlink', `${srcDir}/foo.js`)
 
@@ -110,7 +110,7 @@ describe('createCustomRoutesFromFolder', () => {
     extendRoutes(routes)
 
     expect(builder.generateRoutesAndFiles).toHaveBeenCalledTimes(2)
-    expect(routes.length).toBe(0)
+    expect(routes).toHaveLength(0)
   })
 
   it('caches watcher and route builder', async () => {
@@ -134,8 +134,8 @@ describe('createCustomRoutesFromFolder', () => {
     expect(watchMock).toHaveBeenCalledTimes(1)
 
     expect(
-      fakeNuxt.hook.mock.calls.filter(([name]) => name === 'build:done').length
-    ).toBe(1)
+      fakeNuxt.hook.mock.calls.filter(([name]) => name === 'build:done')
+    ).toHaveLength(1)
   })
 
   it('overwrites routes based on path and priority', async () => {
@@ -175,7 +175,7 @@ describe('createCustomRoutesFromFolder', () => {
     /* ensure idempotence */
     extendRoutes(routes)
 
-    expect(routes.length).toBe(1)
+    expect(routes).toHaveLength(1)
     expect(routes[0]).toEqual({
       path: '/foo',
       priority: 1,
@@ -251,7 +251,7 @@ describe('createCustomRoutesFromFolder', () => {
     const routes = []
     extendRoutes(routes)
 
-    expect(routes.length).toBe(1)
+    expect(routes).toHaveLength(1)
     expect(routes[0]).toEqual({
       path: '/',
       priority: 0,
@@ -296,7 +296,7 @@ describe('createCustomRoutesFromFolder', () => {
       const routes = []
       extendRoutes(routes)
 
-      expect(routes.length).toBe(1)
+      expect(routes).toHaveLength(1)
       expect(routes[0]).toEqual({
         path: '/foo',
         priority: 0,

@@ -18,7 +18,7 @@ describe('nuxtMarkdownComponentLoader', () => {
       components: { foo: 'bar.js' },
     })
 
-    expect(config.module.rules.length).toBe(1)
+    expect(config.module.rules).toHaveLength(1)
     expect(config.module.rules[0]).toEqual({
       loader: '@sum.cumo/vue-markdown-component-loader',
       options: {
@@ -47,7 +47,7 @@ describe('nuxtMarkdownComponentLoader', () => {
 
     NuxtMarkdownComponentLoader.call(context, {})
 
-    expect(config.module.rules.length).toBe(1)
+    expect(config.module.rules).toHaveLength(1)
     expect(config.module.rules[0]).toEqual({
       loader: '@sum.cumo/vue-markdown-component-loader',
       options: {
@@ -74,7 +74,7 @@ describe('nuxtMarkdownComponentLoader', () => {
 
     NuxtMarkdownComponentLoader.call(context, { loader: { exclude: 'foo.js' } })
 
-    expect(config.module.rules.length).toBe(1)
+    expect(config.module.rules).toHaveLength(1)
     expect(config.module.rules[0]).toEqual({
       loader: '@sum.cumo/vue-markdown-component-loader',
       options: {

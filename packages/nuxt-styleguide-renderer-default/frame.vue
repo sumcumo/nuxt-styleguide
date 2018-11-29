@@ -74,32 +74,55 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import './vars.scss';
+<style>
+@import 'prismjs/themes/prism.css';
+
+:root {
+  --white: var(--theme-clr-white, #fff);
+  --grey-100: var(--theme-clr-gray-100, #f2f3f3);
+  --grey-200: var(--theme-clr-gray-200, #e6e6e7);
+  --grey-300: var(--theme-clr-gray-300, #cecfd0);
+  --primary-color-200: var(----theme-clr-primary-200, #e7eff6);
+  --primary-color-500: var(----theme-clr-primary-500, #0785b9);
+  --primary-color-800: var(----theme-clr-primary-800, #294355);
+  --secondary-color-200: var(----theme-clr-secondary-200, #e4f1f2);
+  --secondary-color-500: var(----theme-clr-secondary-500, #55b0b7);
+  --secondary-color-800: var(----theme-clr-secondary-800, #2f5457);
+  --sidebarWidth: 250px;
+}
 
 body {
   padding: 0;
   margin: 0;
 }
 
-.frame {
-  font-family: Avenir, sans-serif;
-  display: grid;
-  justify-content: start;
-  grid-template-columns: $sidebarWidth 1fr;
-  grid-column-gap: 3em;
-
-  padding-right: 3em;
+body::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--primary-color-500);
+  z-index: 1337;
 }
 
-.sidebar__placebo {
+.frame {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: grid;
+  justify-content: start;
+  grid-template-columns: var(--sidebarWidth) 1fr minmax(900px, 4fr) 1fr;
+  grid-column-gap: 40px;
 }
 
 .sidebar {
-  width: $sidebarWidth;
+  width: var(--sidebarWidth);
   height: 100vh;
   position: fixed;
-  border-right: 1px solid $grey;
+  background: var(--grey-100);
+  border-top: 4px solid var(--primary-color-500);
 }
 
 .sidebar__content {
@@ -109,38 +132,47 @@ body {
 
 .content {
   box-sizing: border-box;
-  max-width: 100%;
-  overflow: hidden;
+  max-width: 900px;
+  margin-top: 5rem;
+  padding: 2rem;
+  grid-column: 3;
+  line-height: 1.5;
 }
 
 h1 {
-  text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 h1,
 h2,
 h3 {
-  padding-top: 1.8em;
-  padding-bottom: 0.5em;
+  padding: 0 0 1rem;
   margin: 0;
 }
 
-a {
-  color: $blueColor;
+p + h1,
+p + h2,
+p + h3 {
+  margin-top: 3rem;
+}
+.content a {
+  color: var(--primary-color-500);
 }
 
-pre {
-  background: $grey;
+.content pre {
   border-radius: 2px;
   padding: 0.7em;
+  margin-bottom: 3rem;
 }
 
-code {
-  background: $grey;
+.content p code,
+.content h1 code,
+.content h2 code,
+.content h3 code {
+  background-color: var(--grey-200);
   border-radius: 1px;
-  padding: 0 0.3em;
-  font-size: 0.85em;
+  padding: 0.1em 0.3em;
+  font-size: 1.1em;
 }
 
 .hamburger {
@@ -173,6 +205,14 @@ code {
   display: block;
 }
 
+@media (max-width: 1140px) {
+  .frame {
+    grid-template-columns: 250px 1fr;
+  }
+  .content {
+    grid-column: 2;
+  }
+}
 @media (max-width: 850px) {
   .hamburger {
     display: block;
@@ -181,6 +221,9 @@ code {
   .frame {
     padding: 3em 2em;
     grid-template-columns: 1fr;
+  }
+  .content {
+    grid-column: 1;
   }
 
   .sidebar {
