@@ -1,5 +1,20 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 4.1.4
+
+### 🐞 Bug Fixes
+
+→ **publish package**
+> this again triggers a new release because the last one failed
+> 
+> 
+
+→ **publish package**
+> this just triggers a new release because the last one failed
+> 
+> 
+
+
 ## Version 4.1.3
 
 ### 🐞 Bug Fixes

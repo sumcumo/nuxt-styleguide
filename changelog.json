@@ -1,4 +1,45 @@
 {
+  "7.6.1": {
+    "date": "Thu, 29 Nov 2018 13:32:04 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-config": {
+        "version": "4.1.4",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "publish package",
+            "body": "this again triggers a new release because the last one failed\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-config"
+            ],
+            "subject": "publish package",
+            "body": "this just triggers a new release because the last one failed\n\n"
+          }
+        ]
+      },
+      "@sum.cumo/nuxt-styleguide": {
+        "version": "5.2.3",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide"
+            ],
+            "subject": "adjust repository url to show up on npm",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "7.6.0": {
     "date": "Thu, 29 Nov 2018 09:17:29 GMT",
     "changes": {

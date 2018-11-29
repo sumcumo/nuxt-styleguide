@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.2.3
+
+### 🐞 Bug Fixes
+
+→ **adjust repository url to show up on npm**
+
+
 ## Version 5.2.2
 
 ### 🐞 Bug Fixes
