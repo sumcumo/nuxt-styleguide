@@ -9,6 +9,13 @@ module.exports = {
   router: {
     base: process.env.ROUTER_BASE || '/',
   },
+  head() {
+    return {
+      meta: [
+        { hid: 'viewport', name: 'viewport', content: 'width=device-width' },
+      ],
+    }
+  },
   modules: [
     [
       '@sum.cumo/nuxt-markdown-component-loader',

@@ -18,11 +18,9 @@
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xml:space="preserve"
-          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"
         >
-          <g id="Burger">
+          <g>
             <path
-              id="Rechteck-15-Kopie-4"
               d="M11.024,8.886l0,0.957l-11.024,0l0,-0.957l11.024,0Zm-11.024,-4.449l11.024,0l0,0.957l-11.024,0l0,-0.957Zm0,-4.437l11.024,0l0,0.944l-11.024,0l0,-0.944Z"
             />
           </g>
@@ -36,18 +34,13 @@
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xml:space="preserve"
-          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"
         >
-          <g id="Schliessen">
+          <g>
             <path
-              id="Rechteck-15-Kopie-4"
               d="M0.861,0.026l9.743,9.743l-0.835,0.835l-9.743,-9.743l0.835,-0.835Z"
-              style="fill:#fff;"
             />
             <path
-              id="Rechteck-15-Kopie-41"
               d="M0.001,9.79l9.789,-9.789l0.839,0.839l-9.789,9.789l-0.839,-0.839Z"
-              style="fill:#fff;"
             />
           </g>
         </svg>
@@ -79,6 +72,7 @@ export default {
 
 :root {
   --white: var(--theme-clr-white, #fff);
+  --black: var(--theme-clr-black, #111);
   --grey-100: var(--theme-clr-gray-100, #f2f3f3);
   --grey-200: var(--theme-clr-gray-200, #e6e6e7);
   --grey-300: var(--theme-clr-gray-300, #cecfd0);
@@ -94,6 +88,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
+  min-width: 100vw;
 }
 
 body::before {
@@ -111,18 +106,22 @@ body::before {
 .frame {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: grid;
-  justify-content: start;
-  grid-template-columns: var(--sidebarWidth) 1fr minmax(900px, 4fr) 1fr;
-  grid-column-gap: 40px;
+  display: block;
+  padding: 3em 0;
+  width: 100vw;
 }
 
 .sidebar {
-  width: var(--sidebarWidth);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  position: fixed;
-  background: var(--grey-100);
-  border-top: 4px solid var(--primary-color-500);
+  background: var(--black);
+  color: var(--white);
+  transform: translateY(-100vh);
+  transition: transform 200ms ease-in;
+  z-index: 42;
 }
 
 .sidebar__content {
@@ -134,8 +133,7 @@ body::before {
   box-sizing: border-box;
   max-width: 900px;
   margin-top: 5rem;
-  padding: 2rem;
-  grid-column: 3;
+  padding: 1rem;
   line-height: 1.5;
 }
 
@@ -176,13 +174,26 @@ p + h3 {
 }
 
 .hamburger {
-  display: none;
+  display: block;
   position: relative;
-  width: 50px;
+  width: 32px;
   position: fixed;
   right: 25px;
   top: 25px;
   z-index: 50;
+  color: var(--black);
+}
+
+.hamburger svg {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1.41421;
+}
+
+.icon-closed,
+.icon-open {
+  fill: currentColor;
 }
 .icon-open {
   display: none;
@@ -198,6 +209,9 @@ p + h3 {
 #toggleNav:checked ~ .sidebar {
   transform: translateY(0);
 }
+#toggleNav:checked ~ .hamburger {
+  color: var(--white);
+}
 #toggleNav:checked ~ .hamburger .icon-closed {
   display: none;
 }
@@ -205,36 +219,40 @@ p + h3 {
   display: block;
 }
 
-@media (max-width: 1140px) {
+@media (min-width: 851px) {
+  .hamburger {
+    display: none;
+  }
   .frame {
+    display: grid;
+    justify-content: start;
     grid-template-columns: 250px 1fr;
+    grid-column-gap: 20px;
+    padding: 0;
   }
   .content {
     grid-column: 2;
   }
-}
-@media (max-width: 850px) {
-  .hamburger {
-    display: block;
+  .sidebar {
+    width: var(--sidebarWidth);
+    height: 100vh;
+    position: fixed;
+    background: var(--grey-100);
+    color: var(--black);
+    border-top: 4px solid var(--primary-color-500);
+    transform: none;
+    transition: none;
   }
+}
 
+@media (min-width: 1140px) {
   .frame {
-    padding: 3em 2em;
-    grid-template-columns: 1fr;
+    grid-template-columns: var(--sidebarWidth) 1fr minmax(800px, 4fr) 1fr;
   }
   .content {
-    grid-column: 1;
-  }
-
-  .sidebar {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    color: white;
-    transform: translateY(-100vh);
-    z-index: 42;
+    grid-column: 3;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>
