@@ -117,7 +117,7 @@ jobs:
           - v1-repo-{{ .Revision }}
       - run:
           name: Install rlsr
-          command: sudo yarn install -g rlsr@3
+          command: sudo yarn global add rlsr@3
       - run:
           name: Set npmrc
           command: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
