@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: circleci/node:9
+    - image: circleci/node:10
   working_directory: ~/nuxt-styleguide
 
 version: 2
@@ -16,10 +16,10 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum ".yarn-lock-sum" }}
       - run:
-          name: Install yarn and rlsr
-          command: sudo npm i -g yarn rlsr@3
+          name: Install rlsr
+          command: sudo yarn global add rlsr@3
       - run:
-          name: Resolve rlsr-latest verions
+          name: Resolve rlsr-latest versions
           command: rlsr pre
       - run:
           name: Install
@@ -43,7 +43,7 @@ jobs:
           - v1-repo-{{ .Revision }}
       - run:
           name: Lint
-          command: npm run lint
+          command: yarn lint
   build:
     <<: *defaults
     steps:
@@ -65,7 +65,7 @@ jobs:
           - v1-repo-{{ .Revision }}
       - run:
           name: Test
-          command: npm test -- --coverage
+          command: yarn test -- --coverage
       - save_cache:
           paths:
             - ~/nuxt-styleguide/coverage
@@ -117,7 +117,7 @@ jobs:
           - v1-repo-{{ .Revision }}
       - run:
           name: Install rlsr
-          command: sudo npm i -g rlsr@3
+          command: sudo yarn install -g rlsr@3
       - run:
           name: Set npmrc
           command: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
