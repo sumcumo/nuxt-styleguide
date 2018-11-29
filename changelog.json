@@ -1,4 +1,23 @@
 {
+  "7.6.2": {
+    "date": "Thu, 29 Nov 2018 13:49:18 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.5.1",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "mobile first CSS",
+            "body": ""
+          }
+        ]
+      }
+    }
+  },
   "7.6.1": {
     "date": "Thu, 29 Nov 2018 13:32:04 GMT",
     "changes": {

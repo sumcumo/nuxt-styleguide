@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.5.1
+
+### 🐞 Bug Fixes
+
+→ **mobile first CSS**
+
+
 ## Version 3.5.0
 
 ### 🆕  New Features
