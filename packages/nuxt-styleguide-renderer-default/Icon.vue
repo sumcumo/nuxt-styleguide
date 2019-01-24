@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="single"
-    class="single-icon"
+    class="nsg-single-icon"
   >
     <img :src="iconUrl">
     {{ name }}
@@ -41,11 +41,11 @@ export default {
 
 
 <style>
-.single-icon {
+.nsg-single-icon {
   display: flex;
   align-items: center;
 }
-.single-icon img {
+.nsg-single-icon img {
   margin-right: 0.3em;
 }
 </style>

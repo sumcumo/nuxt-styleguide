@@ -1,33 +1,33 @@
 <template>
   <nav>
-    <ul class="nav">
+    <ul class="nsg-nav">
       <li
         v-for="(subRoutes, name) in routes"
         v-if="name !== 'Pages'"
         :key="name"
-        class="list-section"
+        class="nsg-list-section"
       >
         <h3
           v-if="name !== rootCategory"
-          class="title"
+          class="nsg-title"
         >
           <a
             v-if="findIndex(subRoutes)"
             :href="findIndex(subRoutes).path"
-            :class="`title-content ${findIndex(subRoutes).path === $route.path ? 'active' : ''}`"
+            :class="`nsg-title-content ${findIndex(subRoutes).path === $route.path ? 'nsg-active' : ''}`"
           >
             {{ name }}
           </a>
           <span
             v-else
-            class="title-content"
+            class="nsg-title-content"
           >
             {{ name }}
           </span>
         </h3>
         <ul
           v-if="name !== 'Icons'"
-          class="nav-list"
+          class="nsg-nav-list"
         >
           <li
             v-for="(route) in subRoutes"
@@ -36,7 +36,7 @@
             <a
               v-if="route.name.toLowerCase() !== 'index'"
               :href="route.path"
-              :class="`nav-item ${route.path === $route.path ? 'active' : ''}`"
+              :class="`nsg-nav-item ${route.path === $route.path ? 'nsg-active' : ''}`"
             >
               {{ route.name }}
             </a>
@@ -48,23 +48,24 @@
 </template>
 
 <style scoped>
-.nav {
+.nsg-nav {
   margin: 0 0.5rem;
   padding: 5rem 0 1rem;
   box-sizing: border-box;
 }
 
-.nav-list {
+.nsg-nav-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.list-section {
+.nsg-list-section {
   margin-bottom: 2rem;
+  width: 100%;
 }
 
-.title {
+.nsg-title {
   padding: 0;
   margin: 0;
   font-size: 0.9rem;
@@ -72,19 +73,19 @@
   letter-spacing: 0.05em;
 }
 
-.title a {
+.nsg-title a {
   color: var(--primary-color-500);
   text-decoration: none;
   cursor: pointer;
 }
 
-.title-content {
+.nsg-title-content {
   cursor: default;
   display: inline-block;
   padding: 0.5rem 1rem;
 }
 
-.nav-item {
+.nsg-nav-item {
   position: relative;
   display: block;
   margin: 0.25rem 0;
@@ -96,7 +97,7 @@
   cursor: pointer;
 }
 
-.nav-item::before {
+.nsg-nav-item::before {
   content: '';
   height: 100%;
   width: 4px;
@@ -108,23 +109,23 @@
   transition: opacity 200ms ease-in-out;
 }
 
-.active {
+.nsg-active {
   color: var(--secondary-color-800);
 }
 
-.active::before {
+.nsg-active::before {
   opacity: 0.6;
 }
 
-.nav-item:hover,
-.nav-item:focus,
-.nav-item:active {
+.nsg-nav-item:hover,
+.nsg-nav-item:focus,
+.nsg-nav-item:active {
   color: var(--secondary-color-800);
 }
 
-.nav-item:hover::before,
-.nav-item:focus::before,
-.nav-item:active::before {
+.nsg-nav-item:hover::before,
+.nsg-nav-item:focus::before,
+.nsg-nav-item:active::before {
   opacity: 1;
 }
 </style>
