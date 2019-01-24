@@ -47,7 +47,6 @@
       </label>
       <div class="nsg-sidebar">
         <div class="nsg-sidebar__content">
-          <h1>TESTING</h1>
           <StyleguideNav />
         </div>
       </div>
