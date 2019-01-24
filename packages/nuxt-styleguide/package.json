@@ -12,9 +12,9 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sum.cumo/nuxt-custom-route-folder": "^2.1.0",
-    "@sum.cumo/nuxt-styleguide-config": "^4.1.0",
-    "@sum.cumo/nuxt-styleguide-renderer-default": "^3.3.0",
+    "@sum.cumo/nuxt-custom-route-folder": "^2.1.2",
+    "@sum.cumo/nuxt-styleguide-config": "^4.1.4",
+    "@sum.cumo/nuxt-styleguide-renderer-default": "^3.5.2",
     "@sum.cumo/vue-markdown-component-loader": "^0",
     "babel-core": "^6.26.3",
     "chalk": "2.4.1",
