@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="font-family-demo">
+  <div class="nsg-font-family-demo">
     <div
       v-for="(family) in data"
       :key="family.name"
@@ -7,7 +7,7 @@
       <span>{{ family.value }}</span>
       <h1
         :style="{fontFamily: family.value}"
-        class="font-family-demo-h1"
+        class="nsg-font-family-demo-h1"
       >
         The lazy dog jumps ofer the quick brown fox
       </h1>
@@ -24,10 +24,10 @@ export default {
 </script>
 
 <style lang="css">
-  .font-family-demo{
+  .nsg-font-family-demo{
     margin-bottom: 1em ;
   }
-  .font-family-demo-h1{
+  .nsg-font-family-demo-h1{
     text-transform: initial;
     font-weight: initial;
     padding: 0;
