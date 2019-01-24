@@ -1,4 +1,31 @@
 {
+  "7.6.3": {
+    "date": "Thu, 24 Jan 2019 12:37:08 GMT",
+    "changes": {
+      "@sum.cumo/nuxt-styleguide-renderer-default": {
+        "version": "3.5.2",
+        "determinedIncrementLevel": "patch",
+        "messages": [
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "require prism.css in JS",
+            "body": "to make sure it is correctly used and referenced\nin a Nuxt project\n\n"
+          },
+          {
+            "type": "fix",
+            "affected": [
+              "@sum.cumo/nuxt-styleguide-renderer-default"
+            ],
+            "subject": "namespace layout components",
+            "body": "in order to avoid generic classnames being styled by\nglobal styles from the project CSS\n\nExample: Bootstrap uses a `.nav` class that would\napply its styles. With this change, the classes used\nare scoped with `nsg-` to avoid these cases.\n\nThis also renames the default template to not interfere\nwith a projects default layout.\n\n"
+          }
+        ]
+      }
+    }
+  },
   "7.6.2": {
     "date": "Thu, 29 Nov 2018 13:49:18 GMT",
     "changes": {

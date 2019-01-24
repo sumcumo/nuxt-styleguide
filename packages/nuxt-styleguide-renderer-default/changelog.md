@@ -1,5 +1,29 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.5.2
+
+### 🐞 Bug Fixes
+
+→ **require prism.css in JS**
+> to make sure it is correctly used and referenced
+> in a Nuxt project
+> 
+> 
+
+→ **namespace layout components**
+> in order to avoid generic classnames being styled by
+> global styles from the project CSS
+> 
+> Example: Bootstrap uses a `.nav` class that would
+> apply its styles. With this change, the classes used
+> are scoped with `nsg-` to avoid these cases.
+> 
+> This also renames the default template to not interfere
+> with a projects default layout.
+> 
+> 
+
+
 ## Version 3.5.1
 
 ### 🐞 Bug Fixes
