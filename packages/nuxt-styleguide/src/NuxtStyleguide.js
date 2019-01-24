@@ -30,6 +30,8 @@ export default function NuxtStyleguide() {
   // eslint-disable-next-line no-console
   console.log(`  ${chalk.dim('nuxt:styleguide')} initiating`)
   const docsDir = path.resolve(options.srcDir, options.docsDir)
+  const tempCompDir = options.componentsDir || 'components'
+  const componentsDir = path.resolve(options.srcDir, tempCompDir)
 
   this.options.env.nsgLayout = options.layout
 
@@ -108,7 +110,7 @@ export default function NuxtStyleguide() {
       },
     }),
     createRoutes({
-      glob: `${path.join(options.srcDir, 'components')}/**/*.vue`,
+      glob: `${componentsDir}/**/*.vue`,
       async mapMeta(_, component) {
         return metaMapper('Components')(
           (await docGenCached(component)).displayName
