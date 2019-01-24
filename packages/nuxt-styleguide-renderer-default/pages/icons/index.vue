@@ -1,7 +1,7 @@
 <template>
   <sg-frame>
     <h1>All Icons</h1>
-    <div class="iconGrid">
+    <div class="nsg-iconGrid">
       <div
         v-for="(icon) in icons"
         :key="icon.path"
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style>
-.iconGrid {
+.nsg-iconGrid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

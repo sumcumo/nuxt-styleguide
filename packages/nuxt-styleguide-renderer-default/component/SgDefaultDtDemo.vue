@@ -5,7 +5,7 @@
       v-for="(token) in data"
       :key="token.name"
     >
-      <code class="default-dt-label">
+      <code class="nsg-default-dt-label">
         {{ token.name }}:
       </code>
       <code>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="css">
-.default-dt-label {
+.nsg-default-dt-label {
   font-weight: bold
 }
 </style>

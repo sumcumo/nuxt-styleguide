@@ -6,7 +6,7 @@
     <div
       v-for="(state) in states"
       :key="state.title"
-      class="component-demo"
+      class="nsg-component-demo"
     >
       <h4>{{ state.title }}</h4>
       <div :style="state.wrapperStyle">
@@ -99,7 +99,7 @@
 </template>
 
 <style>
-.component-demo {
+.nsg-component-demo {
   transform: translateX(1px);
 }
 </style>

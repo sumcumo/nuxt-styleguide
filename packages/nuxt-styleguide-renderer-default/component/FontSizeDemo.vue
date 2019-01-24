@@ -3,9 +3,9 @@
     <div
       v-for="(size) in data"
       :key="size.name"
-      class="font-size-demo"
+      class="nsg-font-size-demo"
     >
-      <span class="font-size-value">
+      <span class="nsg-font-size-value">
         {{ size.value }}
       </span>
       {{ size.name }}
@@ -23,11 +23,11 @@ export default {
 </script>
 
 <style lang="css">
-  .font-size-value{
+  .nsg-font-size-value{
     font-size: 30px;
     font-weight: 900;
   }
-  .font-size-demo{
+  .nsg-font-size-demo{
     font-size: 20px;
     margin-bottom: 1em;
   }

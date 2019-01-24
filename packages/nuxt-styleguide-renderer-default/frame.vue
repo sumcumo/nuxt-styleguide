@@ -1,16 +1,16 @@
 <template lang="html">
-  <div class="frame">
-    <div class="sidebar__placebo">
+  <div class="nsg-frame">
+    <div class="nsg-sidebar__placebo">
       <input
-        id="toggleNav"
+        id="nsg-toggleNav"
         type="checkbox"
       >
       <label
-        for="toggleNav"
+        for="nsg-toggleNav"
         class="hamburger"
       >
         <svg
-          class="icon-closed"
+          class="nsg-icon-closed"
           width="100%"
           height="100%"
           viewBox="0 0 12 10"
@@ -26,7 +26,7 @@
           </g>
         </svg>
         <svg
-          class="icon-open"
+          class="nsg-icon-open"
           width="100%"
           height="100%"
           viewBox="0 0 11 11"
@@ -45,13 +45,14 @@
           </g>
         </svg>
       </label>
-      <div class="sidebar">
-        <div class="sidebar__content">
+      <div class="nsg-sidebar">
+        <div class="nsg-sidebar__content">
+          <h1>TESTING</h1>
           <StyleguideNav />
         </div>
       </div>
     </div>
-    <div class="content">
+    <div class="nsg-content">
       <slot />
     </div>
   </div>
@@ -103,7 +104,7 @@ body::before {
   z-index: 1337;
 }
 
-.frame {
+.nsg-frame {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: block;
@@ -111,7 +112,7 @@ body::before {
   width: 100vw;
 }
 
-.sidebar {
+.nsg-sidebar {
   position: absolute;
   top: 0;
   left: 0;
@@ -124,12 +125,12 @@ body::before {
   z-index: 42;
 }
 
-.sidebar__content {
+.nsg-sidebar__content {
   max-height: 100%;
   overflow: auto;
 }
 
-.content {
+.nsg-content {
   box-sizing: border-box;
   max-width: 900px;
   margin-top: 5rem;
@@ -153,27 +154,27 @@ p + h2,
 p + h3 {
   margin-top: 3rem;
 }
-.content a {
+.nsg-content a {
   color: var(--primary-color-500);
 }
 
-.content pre {
+.nsg-content pre {
   border-radius: 2px;
   padding: 0.7em;
   margin-bottom: 3rem;
 }
 
-.content p code,
-.content h1 code,
-.content h2 code,
-.content h3 code {
+.nsg-content p code,
+.nsg-content h1 code,
+.nsg-content h2 code,
+.nsg-content h3 code {
   background-color: var(--grey-200);
   border-radius: 1px;
   padding: 0.1em 0.3em;
   font-size: 1.1em;
 }
 
-.hamburger {
+.nsg-hamburger {
   display: block;
   position: relative;
   width: 32px;
@@ -184,56 +185,56 @@ p + h3 {
   color: var(--black);
 }
 
-.hamburger svg {
+.nsg-hamburger svg {
   fill-rule: evenodd;
   clip-rule: evenodd;
   stroke-linejoin: round;
   stroke-miterlimit: 1.41421;
 }
 
-.icon-closed,
-.icon-open {
+.nsg-icon-closed,
+.nsg-icon-open {
   fill: currentColor;
 }
-.icon-open {
+.nsg-icon-open {
   display: none;
 }
 
-#toggleNav {
+#nsg-toggleNav {
   opacity: 0;
   visibility: hidden;
   position: absolute;
   z-index: -1;
 }
 
-#toggleNav:checked ~ .sidebar {
+#nsg-toggleNav:checked ~ .sidebar {
   transform: translateY(0);
 }
-#toggleNav:checked ~ .hamburger {
+#nsg-toggleNav:checked ~ .hamburger {
   color: var(--white);
 }
-#toggleNav:checked ~ .hamburger .icon-closed {
+#nsg-toggleNav:checked ~ .hamburger .icon-closed {
   display: none;
 }
-#toggleNav:checked ~ .hamburger .icon-open {
+#nsg-toggleNav:checked ~ .hamburger .icon-open {
   display: block;
 }
 
 @media (min-width: 851px) {
-  .hamburger {
+  .nsg-hamburger {
     display: none;
   }
-  .frame {
+  .nsg-frame {
     display: grid;
     justify-content: start;
     grid-template-columns: 250px 1fr;
     grid-column-gap: 20px;
     padding: 0;
   }
-  .content {
+  .nsg-content {
     grid-column: 2;
   }
-  .sidebar {
+  .nsg-sidebar {
     width: var(--sidebarWidth);
     height: 100vh;
     position: fixed;
@@ -246,10 +247,10 @@ p + h3 {
 }
 
 @media (min-width: 1140px) {
-  .frame {
+  .nsg-frame {
     grid-template-columns: var(--sidebarWidth) 1fr minmax(800px, 4fr) 1fr;
   }
-  .content {
+  .nsg-content {
     grid-column: 3;
     margin-left: auto;
     margin-right: auto;
