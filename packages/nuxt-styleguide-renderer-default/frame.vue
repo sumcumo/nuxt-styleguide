@@ -61,6 +61,8 @@
 <script>
 import StyleguideNav from './nav/nav.vue'
 
+require('prismjs/themes/prism.css')
+
 export default {
   components: {
     StyleguideNav,
@@ -69,8 +71,6 @@ export default {
 </script>
 
 <style>
-@import 'prismjs/themes/prism.css';
-
 :root {
   --white: var(--theme-clr-white, #fff);
   --black: var(--theme-clr-black, #111);
