@@ -1,5 +1,28 @@
 # Changelog @sum.cumo/nuxt-styleguide
 
+## Version 5.3.0
+
+### 🆕  New Features
+
+→ **enable custom components directory**
+> which takes a componentsDir config option and falls back to
+> the currently hardcoded components folder
+> 
+> 
+
+### 🐞 Bug Fixes
+
+→ **use consola logger correctly**
+
+→ **get correct componentsDir path**
+> by using `path.join` instead of `path.resolve`.
+> https://twitter.com/chrisvfritz/status/989536488546324480
+> 
+> 
+
+→ **bump dependencies**
+
+
 ## Version 5.2.3
 
 ### 🐞 Bug Fixes

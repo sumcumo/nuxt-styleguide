@@ -1,5 +1,26 @@
 # Changelog @sum.cumo/nuxt-styleguide-renderer-default
 
+## Version 3.5.3
+
+### 🐞 Bug Fixes
+
+→ **apply new linter rules**
+> which were switched from vue/recommended to vue/essential,
+> thus triggering some errors that were not flagged before.
+> 
+> 
+
+→ **remove test headline**
+> which was a sloppy leftover I missed before.
+> 
+> 
+
+→ **fix font family demo classnames**
+> to also be namespaced like the rest
+> 
+> 
+
+
 ## Version 3.5.2
 
 ### 🐞 Bug Fixes

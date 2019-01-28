@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-custom-route-folder
 
+## Version 2.1.3
+
+### 🐞 Bug Fixes
+
+→ **apply linter changes**
+> which is basically a style type of commit, but I want
+> to make sure to release this, so fix it is.
+> 
+> 
+
+
 ## Version 2.1.2
 
 ### 🐞 Bug Fixes

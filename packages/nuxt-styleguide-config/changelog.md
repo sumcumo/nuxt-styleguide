@@ -1,5 +1,16 @@
 # Changelog @sum.cumo/nuxt-styleguide-config
 
+## Version 4.2.0
+
+### 🆕  New Features
+
+→ **add componentsDir option, rename default layout**
+> in order to have a namespaced layout which will not collide
+> with a standard default layout from Nuxt apps
+> 
+> 
+
+
 ## Version 4.1.4
 
 ### 🐞 Bug Fixes

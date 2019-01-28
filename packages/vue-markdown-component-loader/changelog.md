@@ -1,5 +1,12 @@
 # Changelog @sum.cumo/vue-markdown-component-loader
 
+## Version 0.6.1
+
+### 🐞 Bug Fixes
+
+→ **bump dependencies**
+
+
 ## Version 0.6.0
 
 ### 🆕  New Features
