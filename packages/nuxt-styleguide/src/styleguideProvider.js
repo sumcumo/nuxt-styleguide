@@ -43,7 +43,8 @@ function getRoutes(routes) {
         if (a.meta.order === b.meta.order) {
           if (a.meta.name > b.meta.name) {
             return 1
-          } else if (a.meta.name < b.meta.name) {
+          }
+          if (a.meta.name < b.meta.name) {
             return -1
           }
 
@@ -53,7 +54,6 @@ function getRoutes(routes) {
         return a.meta.order - b.meta.order
       })
   }
-
   return getRoutes.cache
 }
 getRoutes.cache = null
