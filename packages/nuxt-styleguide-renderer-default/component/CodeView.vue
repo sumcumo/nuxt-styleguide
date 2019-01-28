@@ -18,6 +18,7 @@ export default {
     comp: {
       type: Object,
       required: true,
+      default: () => {},
     },
     data: {
       type: Object,
@@ -66,14 +67,10 @@ export default {
       if (name === 'default') {
         return this.slotContent(name)
       }
-
       return `<template slot="${name}">${this.slotContent(name)}</template>`
     },
     propAttr(name) {
-      switch (this.comp.props[name].type) {
-        default:
-          return `${name}="${this.data.props[name]}"`
-      }
+      return `${name}="${this.data.props[name]}"`
     },
     onAttr(name) {
       return `@${name}="/* … */"`
