@@ -16,7 +16,6 @@ export default {
   },
   render(createElement) {
     const elm = createElement(this.comp, this.data, this.$slots.default)
-
     return this.wrapper ? createElement(this.wrapper, [elm]) : elm
   },
 }

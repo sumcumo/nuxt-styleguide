@@ -1,5 +1,9 @@
 <template>
-  <div><code-block language="html">{{ code }}</code-block></div>
+  <div>
+    <code-block language="html">
+      {{ code }}
+    </code-block>
+  </div>
 </template>
 
 <script>

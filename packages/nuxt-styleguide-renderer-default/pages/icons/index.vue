@@ -2,15 +2,9 @@
   <sg-frame>
     <h1>All Icons</h1>
     <div class="nsg-iconGrid">
-      <div
-        v-for="(icon) in icons"
-        :key="icon.path"
-      >
+      <div v-for="icon in icons" :key="icon.path">
         <a :href="icon.path">
-          <component
-            :is="icon.component"
-            v-bind="{ single: true }"
-          />
+          <component :is="icon.component" v-bind="{ single: true }" />
         </a>
       </div>
     </div>

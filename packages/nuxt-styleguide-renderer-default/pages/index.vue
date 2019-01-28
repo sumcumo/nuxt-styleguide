@@ -6,7 +6,6 @@
   </sg-frame>
 </template>
 
-
 <script>
 import SgFrame from '../frame.vue'
 

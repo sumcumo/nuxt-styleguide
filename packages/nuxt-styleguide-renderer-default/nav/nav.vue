@@ -2,41 +2,34 @@
   <nav>
     <ul class="nsg-nav">
       <li
-        v-for="(subRoutes, name) in routes"
-        v-if="name !== 'Pages'"
+        v-for="(subRoutes, name) in routesWithoutPages"
         :key="name"
         class="nsg-list-section"
       >
-        <h3
-          v-if="name !== rootCategory"
-          class="nsg-title"
-        >
+        <h3 v-if="name !== rootCategory" class="nsg-title">
           <a
             v-if="findIndex(subRoutes)"
             :href="findIndex(subRoutes).path"
-            :class="`nsg-title-content ${findIndex(subRoutes).path === $route.path ? 'nsg-active' : ''}`"
+            :class="
+              `nsg-title-content ${
+                findIndex(subRoutes).path === $route.path ? 'nsg-active' : ''
+              }`
+            "
           >
             {{ name }}
           </a>
-          <span
-            v-else
-            class="nsg-title-content"
-          >
+          <span v-else class="nsg-title-content">
             {{ name }}
           </span>
         </h3>
-        <ul
-          v-if="name !== 'Icons'"
-          class="nsg-nav-list"
-        >
-          <li
-            v-for="(route) in subRoutes"
-            :key="route.name"
-          >
+        <ul v-if="name !== 'Icons'" class="nsg-nav-list">
+          <li v-for="route in subRoutes" :key="route.name">
             <a
               v-if="route.name.toLowerCase() !== 'index'"
               :href="route.path"
-              :class="`nsg-nav-item ${route.path === $route.path ? 'nsg-active' : ''}`"
+              :class="
+                `nsg-nav-item ${route.path === $route.path ? 'nsg-active' : ''}`
+              "
             >
               {{ route.name }}
             </a>
@@ -152,6 +145,20 @@ export default {
   methods: {
     findIndex(routes) {
       return routes.find(({ name }) => name.toLowerCase() === 'index')
+    },
+  },
+  computed: {
+    routesWithoutPages() {
+      return Object.keys(this.routes)
+        .filter((route) => {
+          return route !== 'Pages'
+        })
+        .reduce((filtered, route) => {
+          return {
+            ...filtered,
+            [route]: this.routes[route],
+          }
+        }, {})
     },
   },
 }

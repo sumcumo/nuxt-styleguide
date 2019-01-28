@@ -1,14 +1,7 @@
 <template lang="html">
   <div class="nsg-color-grid">
-    <div
-      v-for="(clr) in data"
-      :key="clr.name"
-      class="nsg-color-demo"
-    >
-      <div
-        :style="{backgroundColor: clr.value}"
-        class="nsg-color-field"
-      />
+    <div v-for="clr in data" :key="clr.name" class="nsg-color-demo">
+      <div :style="{ backgroundColor: clr.value }" class="nsg-color-field" />
       <label class="nsg-color-value">
         {{ clr.value }}
       </label>

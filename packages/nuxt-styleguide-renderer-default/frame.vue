@@ -1,14 +1,8 @@
 <template lang="html">
   <div class="nsg-frame">
     <div class="nsg-sidebar__placebo">
-      <input
-        id="nsg-toggleNav"
-        type="checkbox"
-      >
-      <label
-        for="nsg-toggleNav"
-        class="hamburger"
-      >
+      <input id="nsg-toggleNav" type="checkbox" />
+      <label for="nsg-toggleNav" class="hamburger">
         <svg
           class="nsg-icon-closed"
           width="100%"
