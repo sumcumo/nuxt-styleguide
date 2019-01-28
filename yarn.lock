@@ -3604,6 +3604,17 @@ connect@^3.6.6:
     parseurl "~1.3.2"
     utils-merge "1.0.1"
 
+consola@2.3.2:
+  version "2.3.2"
+  resolved "https://artifactory.sumcumo.net:443/api/npm/npm/consola/-/consola-2.3.2.tgz#ec75dd9847fa963dc41e21bc2737ac8c962677bb"
+  integrity sha1-7HXdmEf6lj3EHiG8JzesjJYmd7s=
+  dependencies:
+    chalk "^2.4.1"
+    dayjs "^1.7.7"
+    figures "^2.0.0"
+    std-env "^2.2.1"
+    string-width "^2.1.1"
+
 consola@^2.0.0-1, consola@^2.3.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/consola/-/consola-2.3.2.tgz#ec75dd9847fa963dc41e21bc2737ac8c962677bb"
