@@ -80,7 +80,10 @@ export default function createCustomRoutesFromFolder({
   }
 
   const readyFilter = rxFilter(({ event }) => event === 'ready')
-  const ready$ = watch$.pipe(readyFilter, delay(1))
+  const ready$ = watch$.pipe(
+    readyFilter,
+    delay(1)
+  )
   let rdy = false
   const ready$$ = Observable.create((obs) => {
     const sub = ready$.subscribe({
@@ -118,13 +121,18 @@ export default function createCustomRoutesFromFolder({
   })
 
   const promise = new Promise((resolve, reject) => {
-    const sub = fs$.pipe(readyFilter, delay(2)).subscribe({
-      complete() {
-        resolve()
-        sub.unsubscribe()
-      },
-      error: reject,
-    })
+    const sub = fs$
+      .pipe(
+        readyFilter,
+        delay(2)
+      )
+      .subscribe({
+        complete() {
+          resolve()
+          sub.unsubscribe()
+        },
+        error: reject,
+      })
   })
 
   promise.ready$ = ready$

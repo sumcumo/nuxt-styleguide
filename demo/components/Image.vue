@@ -3,7 +3,7 @@
     :src="target"
     :alt="alt"
     :class="`img${left === 'true' ? ' img-left' : ''}`"
-  >
+  />
 </template>
 
 <script>

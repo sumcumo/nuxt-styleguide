@@ -1,7 +1,7 @@
 import * as path from 'path'
 
 import options from '@sum.cumo/nuxt-styleguide-config'
-
+import consola from 'consola'
 import urlJoin from 'url-join'
 import chalk from 'chalk'
 import kebabCase from 'lodash.kebabcase'
@@ -27,9 +27,10 @@ function metaMapper(category) {
 }
 
 export default function NuxtStyleguide() {
-  // eslint-disable-next-line no-console
-  console.log(`  ${chalk.dim('nuxt:styleguide')} initiating`)
+  consola.info(`  ${chalk.dim('nuxt:styleguide')} initiating`)
   const docsDir = path.resolve(options.srcDir, options.docsDir)
+  const tempCompDir = options.componentsDir || 'components'
+  const componentsDir = path.join(options.srcDir, tempCompDir)
 
   this.options.env.nsgLayout = options.layout
 
@@ -108,7 +109,7 @@ export default function NuxtStyleguide() {
       },
     }),
     createRoutes({
-      glob: `${path.join(options.srcDir, 'components')}/**/*.vue`,
+      glob: `${componentsDir}/**/*.vue`,
       async mapMeta(_, component) {
         return metaMapper('Components')(
           (await docGenCached(component)).displayName
@@ -188,7 +189,7 @@ export default function NuxtStyleguide() {
     }),
   ]).then(() => {
     // eslint-disable-next-line no-console
-    console.log(`  ${chalk.dim('nuxt:styleguide')} ${chalk.green('OK')}`)
+    consola.info(`  ${chalk.dim('nuxt:styleguide')} ${chalk.green('OK')}`)
   })
 
   if (!this.nuxt.options.dev) {

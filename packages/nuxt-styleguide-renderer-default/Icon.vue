@@ -1,14 +1,11 @@
 <template>
-  <div
-    v-if="single"
-    class="nsg-single-icon"
-  >
-    <img :src="iconUrl">
+  <div v-if="single" class="nsg-single-icon">
+    <img :src="iconUrl" />
     {{ name }}
   </div>
   <sg-frame v-else>
     <h1>{{ name }}</h1>
-    <img :src="iconUrl">
+    <img :src="iconUrl" />
   </sg-frame>
 </template>
 
@@ -37,8 +34,6 @@ export default {
   },
 }
 </script>
-
-
 
 <style>
 .nsg-single-icon {

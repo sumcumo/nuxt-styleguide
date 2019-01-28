@@ -8,24 +8,25 @@
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "webpack": "4.8.3"
+    "webpack": "4.29.0"
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sum.cumo/nuxt-custom-route-folder": "^2.1.0",
-    "@sum.cumo/nuxt-styleguide-config": "^4.1.0",
-    "@sum.cumo/nuxt-styleguide-renderer-default": "^3.3.0",
+    "@sum.cumo/nuxt-custom-route-folder": "^2.1.2",
+    "@sum.cumo/nuxt-styleguide-config": "^4.1.4",
+    "@sum.cumo/nuxt-styleguide-renderer-default": "^3.5.2",
     "@sum.cumo/vue-markdown-component-loader": "^0",
     "babel-core": "^6.26.3",
-    "chalk": "2.4.1",
+    "chalk": "2.4.2",
     "chokidar": "2.0.4",
+    "consola": "2.3.2",
     "doctrine": "3.0.0",
     "lodash.kebabcase": "4.1.1",
     "lodash.template": "4.4.0",
-    "marked": "0.5.2",
+    "marked": "0.6.0",
     "postcss-scss": "2.0.0",
     "url-join": "4.0.0",
-    "vue-docgen-api": "2.6.0"
+    "vue-docgen-api": "3.3.2"
   },
   "peerDependencies": {
     "webpack": "^4"

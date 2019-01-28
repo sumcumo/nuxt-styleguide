@@ -1,10 +1,7 @@
 <template>
   <component :is="elm">
     <span v-if="anchor">
-      <a
-        :id="anchor"
-        :href="`${url}#${anchor}`"
-      >#</a>&nbsp;
+      <a :id="anchor" :href="`${url}#${anchor}`"> # </a>&nbsp;
     </span>
     <!-- @slot headline content -->
     <slot />

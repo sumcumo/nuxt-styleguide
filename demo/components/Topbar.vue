@@ -10,7 +10,6 @@ export default {
 }
 </script>
 
-
 <style>
 .topbar {
   top: 0;

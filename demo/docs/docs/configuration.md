@@ -48,6 +48,12 @@ change how things are technically imported.
   When the component library is consumed as an npm package, the import paths
   should include the package name. This will use the [`name` option](#name-styleguidename).
 
+## `componentsDir: <dirName>`
+
+default value: `'components'`
+
+The directory that includes the components. For a fresh Nuxt project, the default value should work out of the box. Change this value if you adjust your project's structure.
+
 ## `docsDir: <dirName>`
 
 default value: `'docs'`

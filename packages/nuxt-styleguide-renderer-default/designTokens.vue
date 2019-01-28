@@ -3,28 +3,13 @@
     <h1>{{ name }}</h1>
     <div v-html="description" />
     <sg-tags :tags="tags" />
-    <code-block language="css">@import "{{ importPath }}";</code-block>
+    <code-block language="css"> @import "{{ importPath }}"; </code-block>
 
-    <sg-color-demo
-      v-if="colors.length"
-      :data="colors"
-    />
-    <sg-font-family-demo
-      v-if="fontFamilies.length"
-      :data="fontFamilies"
-    />
-    <sg-font-size-demo
-      v-if="fontSizes.length"
-      :data="fontSizes"
-    />
-    <sg-line-height-demo
-      v-if="lineHeights.length"
-      :data="lineHeights"
-    />
-    <sg-default-dt-demo
-      v-if="other.length"
-      :data="other"
-    />
+    <sg-color-demo v-if="colors.length" :data="colors" />
+    <sg-font-family-demo v-if="fontFamilies.length" :data="fontFamilies" />
+    <sg-font-size-demo v-if="fontSizes.length" :data="fontSizes" />
+    <sg-line-height-demo v-if="lineHeights.length" :data="lineHeights" />
+    <sg-default-dt-demo v-if="other.length" :data="other" />
   </sg-frame>
 </template>
 
