@@ -1,8 +1,5 @@
 <template>
-  <span
-    :title="hint"
-    :class="$style.elm"
-  >
+  <span :title="hint" :class="$style.elm">
     <slot />
   </span>
 </template>

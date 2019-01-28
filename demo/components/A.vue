@@ -1,8 +1,5 @@
 <template>
-  <a
-    :href="target"
-    @click="click"
-  >
+  <a :href="target" @click="click">
     <!-- @slot clickable content of the link -->
     <slot />
   </a>

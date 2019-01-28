@@ -1,5 +1,7 @@
 <template>
-  <a :href="`${$styleguide.repositoryHomepage}/${file}`"><slot /></a>
+  <a :href="`${$styleguide.repositoryHomepage}/${file}`">
+    <slot />
+  </a>
 </template>
 
 <script>
