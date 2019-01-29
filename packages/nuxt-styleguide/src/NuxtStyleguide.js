@@ -188,7 +188,6 @@ export default function NuxtStyleguide() {
       },
     }),
   ]).then(() => {
-    // eslint-disable-next-line no-console
     consola.info(`  ${chalk.dim('nuxt:styleguide')} ${chalk.green('OK')}`)
   })
 
