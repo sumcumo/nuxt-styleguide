@@ -1,6 +1,6 @@
 import marked from 'marked'
 
-function tryInline(desc) {
+export function tryInline(desc) {
   if (typeof desc !== 'string') {
     return desc
   }
@@ -12,7 +12,7 @@ function tryInline(desc) {
   return marked.inlineLexer(desc.trim(), [])
 }
 
-function getNormalizedTags(data) {
+export function getNormalizedTags(data) {
   if (Array.isArray(data.tags)) {
     return data.tags.reduce((memo, tag) => {
       if (!memo[tag.title]) {
@@ -23,7 +23,6 @@ function getNormalizedTags(data) {
       memo[tag.title].push({
         ...tag,
       })
-
       return memo
     }, {})
   }
@@ -33,7 +32,6 @@ function getNormalizedTags(data) {
 
 export default function applyMarkdownToDocs(data) {
   const tags = getNormalizedTags(data)
-
   const retVal = {
     ...data,
     description: data.description ? marked(data.description) : null,
@@ -43,7 +41,6 @@ export default function applyMarkdownToDocs(data) {
         ...tag,
         description: tryInline(tag.description),
       }))
-
       return memo
     }, {}),
   }
@@ -58,6 +55,5 @@ export default function applyMarkdownToDocs(data) {
   }
 
   delete retVal.comment
-
   return retVal
 }
